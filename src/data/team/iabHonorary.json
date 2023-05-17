@@ -1,0 +1,68 @@
+[
+  {
+    "name": { "en": "Noeleen Heyzer", "ko": "" },
+    "subtitles": { "en": ["Singapore"], "ko": [] },
+    "socials": ["https://en.wikipedia.org/wiki/Noeleen_Heyzer"],
+    "bio": {
+      "en": "Noeleen Heyzer was the first woman to serve as the Executive Secretary of the United Nations Economic and Social Commission for Asia and the Pacific (ESCAP). Also, she served as the Under-Secretary-General of the United Nations. Dr. Heyzer is an active advocate for women empowerment. She played an important role in the UN Security Council’s adoption and implementation of the landmark Resolution 1325 (2000) on Women, Peace and Security. She was responsible for the establishment of the United Nations Trust Fund to End Violence Against Women, and successfully advocated to place issues affecting women worldwide on the United Nations agenda.",
+      "ko": ""
+    },
+    "titles": {
+      "en": ["Executive Secretary of UNESCAP", "Former Under-Secretary-General of the United Nations"],
+      "ko": []
+    },
+    "articles": []
+  },
+  {
+    "name": { "en": "Stanley O. Roth", "ko": "" },
+    "subtitles": { "en": ["United States of America"], "ko": [] },
+    "socials": ["https://en.wikipedia.org/wiki/Stanley_O._Roth"],
+    "bio": {
+      "en": "Stanley O. Roth is an American foreign policy advisor who served as the Assistant Secretary of State for East Asian and Pacific Affairs during the presidency of Bill Clinton. Mr. Roth has served as the vice president of International Government Relations at Boeing.",
+      "ko": ""
+    },
+    "titles": {
+      "en": [
+        "Former US Assistant Secretary of State for Asia and the Pacific",
+        "Former Vice-president, Boeing for International Affairs"
+      ],
+      "ko": []
+    },
+    "articles": []
+  },
+  {
+    "name": { "en": "Zulfiquar Z. Ghadiyali", "ko": "" },
+    "subtitles": { "en": ["UAE"], "ko": [] },
+    "socials": [
+      "https://www.linkedin.com/today/author/h-e-mr-zulfiquar-z-ghadiyali-4717b5b",
+      "https://youtu.be/AK2O_apNkrU"
+    ],
+    "bio": {
+      "en": "Zulfiquar Z. Ghadiyali is our Advisor from the Middle East. Mr. Ghadiyali is the Executive Director, Directions Investment Holding Co (DIHC) under Chairmanship of HH Sheikh Mohammed Bin Sultan Bin Hamdan Al Nahyan, the Crown Prince of the Emirate of Abu Dhabi.",
+      "ko": ""
+    },
+    "titles": {
+      "en": [
+        "Executive Director, Directions Investment Holding Co (DIHC) under Chairmanship of HH Sheikh Mohammed Bin Sultan Bin Hamdan Al Nahyan"
+      ],
+      "ko": []
+    },
+    "articles": []
+  },
+  {
+    "name": { "en": "Ong Boon Hwee", "ko": "옹본희" },
+    "subtitles": { "en": ["Singapore"], "ko": [] },
+    "socials": [
+      "https://www.icgn.org/speakers/ong-boon-hwee-chief-executive-officer-stewardship-asia-centre-singapore"
+    ],
+    "bio": {
+      "en": "Ong Boon Hwee is a Former CEO of Stewardship Asia Centre, a thought leadership center promoting effective stewardship and governance. Mr. Ong has extensive working experience in the civil service as well as the commercial sectors. He has also acted as the CEO of Temasek Management Services, and the COO of Singapore Power.",
+      "ko": ""
+    },
+    "titles": {
+      "en": ["Former CEO of Stewardship Asia Centre", "Former Managing Director (Strategic Relations), Temasek"],
+      "ko": []
+    },
+    "articles": []
+  }
+]

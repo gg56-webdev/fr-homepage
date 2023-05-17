@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Contact'>
+  <section class='mx-auto grid h-full max-w-screen-sm items-center p-2'>
+    <div class='space-y-4'>
+      <div class='text-center'>
+        <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>Contact Us</h1>
+        <p class='text-sm'>
+          We're always happy to help with any questions or requests you may have! If you need a more personalized
+          response, we'll do our best to get back to you as quickly as possible.
+        </p>
+      </div>
+      <form class='grid gap-6 rounded-lg bg-slate-950/80 p-6' action='https://api.web3forms.com/submit' method='POST'>
+        <input type='hidden' name='access_key' value={import.meta.env.PUBLIC_WEB3_FORM_ACCESS_KEY} />
+        <input type='checkbox' name='botcheck' class='hidden' style='display: none;' />
+        <div class='grid gap-2'>
+          <label class='text-cyberLilac' for='name'>Your Name</label>
+          <input
+            class='rounded border-none bg-slate-800 focus:border-neonBlue'
+            type='text'
+            name='name'
+            id='name'
+            required
+          />
+        </div>
+        <div class='grid gap-2'>
+          <label class='text-cyberLilac' for='email'>Your Email</label>
+          <input
+            class='rounded border-none bg-slate-800 focus:border-neonBlue'
+            type='email'
+            name='email'
+            id='email'
+            required
+          />
+        </div>
+        <div class='grid gap-2'>
+          <label class='text-cyberLilac' for='message'>Message <span class='text-sm'>(max 225 characters)</span></label>
+          <textarea
+            maxlength='225'
+            class='rounded border-none bg-slate-800 focus:border-neonBlue'
+            name='message'
+            id='message'
+            required></textarea>
+        </div>
+        <input type='hidden' name='subject' value='Contact us from fingerate.world' />
+        <input type='hidden' name='redirect' value='https://web3forms.com/success' />
+
+        <button
+          type='submit'
+          class='mt-4 inline-block rounded-full bg-cyberLilac px-4 py-2 font-medium text-deepSpace ring-offset-black transition hover:bg-intelligentBlue hover:text-white hover:ring-2 hover:ring-cyberLilac hover:ring-offset-1'
+          >Submit Form</button
+        >
+      </form>
+      <!-- <section class='rounded-lg p-4 [background-image:var(--brand-gradient)]'>
+        <h2 class='text-2xl font-bold mb-2'>Contact Details</h2>
+        <p>
+          We're always happy to help with any questions or requests you may have! If you need a more personalized
+          response, we'll do our best to get back to you as quickly as possible. Alternatively, if you'd like to speak
+          with someone directly, you can find our phone number listed below. Don't hesitate to reach out!
+        </p>
+      </section> -->
+    </div>
+  </section>
+</Layout>

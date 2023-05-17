@@ -1,0 +1,95 @@
+---
+import logo from '../assets/logo.jpg';
+const icons = await Astro.glob('../assets/social/*.svg').then((files) => files.map((f) => f.default));
+
+const getIcon = (href: string) => {
+  if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'));
+  if (href.includes('youtu.be')) return icons.find(({ src }) => src.includes('YT'));
+  if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'));
+  return icons.find(({ src }) => src.includes('LI'));
+};
+
+type Person = {
+  name: string;
+  subtitles: string[];
+  socials?: string[];
+  titles?: string[];
+  bio?: string;
+  articles?: { href: string; title: string }[];
+};
+export interface Props {
+  person: Person;
+  photo: ImageMetadata;
+}
+
+const { person, photo: img = logo } = Astro.props;
+
+const hasInfo = person.titles || person.bio || person.articles;
+---
+
+<div
+  class='group relative flex h-full flex-col items-center rounded-lg bg-slate-900/80 p-4 transition hover:bg-slate-800 hover:shadow-md'
+>
+  {
+    hasInfo && (
+      <button
+        data-profile-info-btn
+        class='absolute right-2 top-2 h-6 w-6 rounded-full opacity-100 transition hover:cursor-pointer focus:opacity-100 group-hover:opacity-100 sm:opacity-0'
+      >
+        <span class='sr-only'>lear more about {person.name}</span>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='1.5'
+          stroke='currentColor'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z'
+          />
+        </svg>
+      </button>
+    )
+  }
+  <img
+    data-profile-photo
+    class={`grayscale transition ${hasInfo ? 'hover:cursor-pointer' : ''} group-hover:grayscale-0`}
+    src={img.src}
+    width={img.width}
+    height={img.height}
+    alt={`Portrait of ${person.name}`}
+  />
+  <div class='mt-2 flex h-full flex-col gap-2'>
+    <div>
+      <b class='text-sm'>{person.name}</b>
+      {
+        person.subtitles.length > 0 && (
+          <ul>
+            {person.subtitles.map((st) => (
+              <li class='text-cyberLilac text-xs'>{st}</li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+    {
+      person.socials && person.socials.length > 0 && (
+        <ul class='mt-auto flex flex-wrap justify-center gap-2'>
+          {person.socials.map((s) => {
+            const icon = getIcon(s);
+            return (
+              <li class='rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1'>
+                <a href={s} target='_blank' class='rounded-full' rel='noopener noreferrer'>
+                  <span class='sr-only'>go to {person.name}&apos;s social page</span>
+                  <img class='h-7 w-7' src={icon.src} width={icon.width} height={icon.height} alt='SNS logo' />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      )
+    }
+  </div>
+</div>

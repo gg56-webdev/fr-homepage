@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ceoSpeech from '../assets/team/ceo-speech.webp';
+import founders from '../data/team/founders.json';
+import main from '../data/team/main.json';
+import Person from '../components/Person.astro';
+import { getLangFromUrl } from '../i18n/utils';
+// const lang = getLangFromUrl(Astro.url);
+const lang = 'en';
+const photos = await Astro.glob('../assets/team/photos/**/*.{png,webp}').then((files) => files.map((f) => f.default));
+
+type Person = {
+  name: { en: string; ko?: string };
+  subtitles: { en: string[]; ko?: string[] };
+  bio?: { en: string; ko?: string };
+  socials?: string[];
+  titles?: { en: string[]; ko?: string[] };
+  articles?: { href: string; title: string }[];
+};
+
+const formatPerson = (person: Person) => {
+  return {
+    name: person.name[lang] || person.name.en,
+    subtitles: person.subtitles && person.subtitles[lang] ? person.subtitles[lang] : person.subtitles.en,
+    bio: person.bio?.[lang] || person.bio?.en,
+    socials: person?.socials,
+    titles: person.titles && person.titles[lang] ? person.titles[lang] : person.titles?.en,
+    articles: person.articles,
+  };
+};
+---
+
+<Layout title='Team'>
+  <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-2'>
+    <div class='grid items-center gap-4 sm:grid-cols-2'>
+      <img
+        src={ceoSpeech.src}
+        alt='CEO of GG56 giving speech to the GG56 Founder, team and advisors'
+        width={ceoSpeech.width}
+        height={ceoSpeech.height}
+        class='block max-h-[350px] -scale-x-100 rounded-lg object-cover sm:order-2'
+      />
+      <div>
+        <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>Our Team</h1>
+        <p class='max-w-[60ch]'>
+          Welcome to the FingeRate team page, where you can get to know the dedicated and passionate individuals behind
+          our revolutionary survey platform. Our team consists of experts from diverse fields, including blockchain
+          technology and software development, among others. We are united in our commitment to leveraging the power of
+          the metaverse to provide our users with an engaging and rewarding survey experience.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class='mx-auto max-w-screen-lg p-2 text-center'>
+    <ul class='flex flex-wrap justify-center gap-2'>
+      {
+        founders.map((p) => {
+          const personInfo = formatPerson(p);
+          return (
+            <li
+              data-person={JSON.stringify({
+                ...personInfo,
+                photo: photos.find(({ src }) => src.includes(p.name.en)),
+              })}
+              class='w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
+            >
+              <Person person={formatPerson(p)} photo={photos.find(({ src }) => src.includes(p.name.en))} />
+            </li>
+          );
+        })
+      }
+    </ul>
+    <hr class='my-4' />
+    <ul class='flex flex-wrap justify-center gap-2'>
+      {
+        main.map((p) => {
+          return (
+            <li
+              data-person={JSON.stringify({
+                ...formatPerson(p),
+                photo: photos.find(({ src }) => src.includes(p.name.en)),
+              })}
+              class=' w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
+            >
+              <Person person={formatPerson(p)} photo={photos.find(({ src }) => src.includes(p.name.en))} />
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Layout>
+
+<dialog
+  class='pointer-events-none fixed inset-0 block max-w-[calc((100%-6px)-2em)] rounded-lg bg-slate-800 text-white opacity-0 transition backdrop:bg-slate-900/50 open:pointer-events-auto open:opacity-100'
+>
+  <button type='button' id='close-modal' class='absolute right-2 top-2'>
+    <span class='sr-only'>close modal</span>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'
+      class='h-6 w-6'
+    >
+      <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12'></path>
+    </svg>
+  </button>
+  <div id='content' class='grid max-w-screen-md items-center gap-2 md:grid-cols-[auto_1fr] md:gap-4'></div>
+</dialog>
+
+<template>
+  <div class='grid items-center justify-center gap-2 self-start'>
+    <img id='person-photo' loading='lazy' />
+    <div id='person-info' class='text-center'>
+      <b id='person-name'></b>
+    </div>
+  </div>
+</template>
+
+<script>
+  type Person = globalThis.Person & { photo: globalThis.ImageMetadata };
+
+  const personCards = document.querySelectorAll<HTMLLIElement>('[data-person]');
+  const dialog = document.querySelector('dialog') as HTMLDialogElement;
+  const dialogTemplate = document.querySelector('template') as HTMLTemplateElement;
+  const dialogContent = dialog.querySelector('#content') as HTMLDivElement;
+  const closeBtn = document.querySelector('#close-modal') as HTMLButtonElement;
+
+  personCards.forEach((card) =>
+    card.querySelectorAll('[data-profile-photo],[data-profile-info-btn]')!.forEach((item) =>
+      item.addEventListener('click', () => {
+        const personInfo: Person = JSON.parse(card.dataset.person!);
+        const hasInfo = personInfo.titles || personInfo.bio || personInfo.articles;
+        if (!hasInfo) return;
+        addInfoToModal(personInfo);
+        dialog.showModal();
+      })
+    )
+  );
+
+  const closeModal = () => {
+    dialog.close();
+  };
+
+  const addInfoToModal = (person: Person) => {
+    dialogContent.innerHTML = '';
+    dialogContent.appendChild(dialogTemplate.content.cloneNode(true));
+    const personInfo = dialogContent.querySelector('#person-info')!;
+
+    personInfo.querySelector('#person-name')!.textContent = person.name;
+
+    const photo = dialogContent.querySelector('#person-photo') as HTMLImageElement;
+    photo.src = person.photo.src;
+    photo.width = person.photo.width;
+    photo.height = person.photo.height;
+    photo.alt = `Portrait of ${person.name}`;
+
+    if (person?.subtitles.length > 0) {
+      const ul = document.createElement('ul');
+      ul.classList.add('text-sm', 'text-cyberLilac');
+      person.subtitles.forEach((st: string) => {
+        const li = document.createElement('li');
+        li.textContent = st;
+        ul.appendChild(li);
+      });
+      personInfo.appendChild(ul);
+    }
+
+    // TODO: add social buttons to person info modal
+    // if (person.socials) {
+    //   const ul = document.createElement('ul');
+    //   person.socials.forEach((s) => {
+    //     const li = document.createElement('li')
+    //     const a = document.createElement('a')
+    //     const img = document.createElement('img')
+
+    //     img.src =
+    //   })
+    // }
+
+    if (person.titles || person.bio || person.articles) {
+      const personBio = document.createElement('div');
+      personBio.classList.add('grid', 'gap-2', 'text-sm');
+
+      if (person.titles) {
+        const ul = document.createElement('ul');
+        ul.classList.add('font-bold');
+        person.titles.forEach((t: string) => {
+          const li = document.createElement('li');
+          li.textContent = t;
+          ul.appendChild(li);
+        });
+        personBio.appendChild(ul);
+      }
+      if (person.bio) {
+        const p = document.createElement('p');
+        p.classList.add('border-l', 'pl-2');
+        p.textContent = person.bio;
+        personBio.appendChild(p);
+      }
+      dialogContent.appendChild(personBio);
+    }
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  // dialog.addEventListener('click', ({ clientX, clientY }) => {
+
+  //   const { top, right, left, bottom } = dialog.getBoundingClientRect();
+  //   if (clientX < left || clientX > right || clientY < top || clientY > bottom) closeModal();
+  // });
+  dialog.addEventListener('click', ({ target }) => {
+    if ((target as HTMLDialogElement).nodeName === 'DIALOG') closeModal();
+  });
+</script>

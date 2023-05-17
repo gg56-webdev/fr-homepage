@@ -1,35 +1,67 @@
 ---
+import CookieBanner from '../components/CookieBanner.astro';
+import bg from '../assets/bg.webp';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl } from '../i18n/utils';
+import ScrollToTop from '../components/ScrollToTop.astro';
+
+const lang = getLangFromUrl(Astro.url);
+
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang={lang}>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='shortcut icon' href='favicon.jpg' type='image/x-icon' />
+    <meta
+      name='description'
+      content='Earn rewards with ease using FingeRate! Complete surveys anywhere, anytime. Convenient and user-friendly. Download now on Play Store and iOS for extra rewards!'
+    />
+    <title>{title}</title>
+  </head>
+  <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace text-white'>
+    <Header />
+    <main class='bg-[url(bg.webp)] bg-cover bg-no-repeat pb-8 sm:space-y-16' id='swup'><slot /></main>
+    <ScrollToTop />
+    <CookieBanner />
+    <Footer />
+  </body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  :root {
+    --intelligent-blue: 80 47 198;
+    --soft-fire: 202 68 80;
+    --neon-blue: 38 151 194;
+    --deep-space: 34 33 52;
+    --cyber-lilac: 216 201 213;
+    --brand-gradient: linear-gradient(-5deg, rgb(var(--intelligent-blue) / 0.5), rgb(var(--intelligent-blue) / 0) 50%),
+      linear-gradient(225deg, rgb(var(--neon-blue) / 1), rgb(var(--neon-blue) / 0) 50%),
+      linear-gradient(100deg, rgb(var(--soft-fire) / 1) 35%, rgb(var(--intelligent-blue) / 1));
+  }
+
+  html,
+  body {
+    min-height: 100vh;
+  }
+
+  .brand-text {
+    background-image: var(--brand-gradient);
+    display: inline;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 </style>
+
+<!-- <script>
+  import '../scripts/swup.js';
+</script> -->

@@ -1,81 +1,238 @@
 ---
+import { NAV_LINKS } from '../constants';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Partners from '../components/Partners.astro';
+import metaverse from '../assets/home/metaverse.webp';
+import Apple from '../components/DownloadBtn/Apple.astro';
+import Google from '../components/DownloadBtn/Google.astro';
+import BtnLink from '../components/BtnLink.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title='FingeRate'>
+  <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center px-2 py-12' id='hero'>
+    <div class='sm:text-center'>
+      <div class='h-[clamp(1rem,8.5vw,3.5rem)] overflow-hidden'>
+        <h1 class='brand-text text-[clamp(1.1rem,5vw,2.5rem)] font-bold drop-shadow-[0_0_8px_#000]'>
+          Survey ×
+          <span id='anim' class='inline-grid text-center text-neonBlue'>
+            <span>Metaverse</span>
+            <span>Avatar</span>
+            <span>Rewards</span>
+            <span>Business</span>
+            <span>Satisfaction</span>
+            <span>LBS</span>
+            <span>Simple</span>
+            <span>Metaverse</span>
+          </span>
+          = FingeRate
+        </h1>
+      </div>
+      <p class='mt-4 max-w-[70ch] sm:mx-auto sm:text-lg'>
+        Join the FingeRate community and experience the future of surveys! Earn rewards by participating in engaging
+        activities and surveys without face-to-face interactions. Our platform allows you to easily run surveys,
+        participate in them, and be rewarded for it. Sign up now to redeem your rewards and be a part of our growing
+        community!
+      </p>
+      <div class='mt-8 flex w-full flex-wrap items-center justify-center gap-4'>
+        <Google />
+        <Apple />
+      </div>
+    </div>
+  </section>
+  <section class='bg-slate-950/90 px-2 py-12 text-center' id='benefits'>
+    <div class='mx-auto grid max-w-screen-xl gap-8 sm:gap-2 md:grid-cols-3'>
+      <div class='p-2'>
+        <svg class='mx-auto h-20 w-20' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <g class='fill-intelligentBlue'>
+            <path
+              d='M76.4142 26.4142C77.1953 25.6332 77.1953 24.3668 76.4142 23.5858C75.6332 22.8047 74.3668 22.8047 73.5858 23.5858L50 47.1716L38.9142 36.0858C38.1332 35.3047 36.8668 35.3047 36.0858 36.0858C35.3047 36.8668 35.3047 38.1332 36.0858 38.9142L47.1716 50C48.7337 51.5621 51.2663 51.5621 52.8284 50L76.4142 26.4142Z'
+            ></path>
+            <path
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+              d='M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM96 50C96 75.4051 75.4051 96 50 96C24.5949 96 4 75.4051 4 50C4 24.5949 24.5949 4 50 4C75.4051 4 96 24.5949 96 50Z'
+            ></path>
+          </g>
+        </svg>
+
+        <strong class='mt-4 block text-lg uppercase'>Anytime & Anywhere</strong>
+        <p class='text-sm'>
+          Earn unique rewards worldwide by accessing surveys directly on the metaverse. Join now and expand your earning
+          potential beyond geographical limits!
+        </p>
+      </div>
+      <div class='p-2'>
+        <div class='flex justify-center'>
+          <svg class='h-20 w-20' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <g class='fill-neonBlue'>
+              <path
+                d='M48.4269 44.5278C48.4269 45.2867 49.0079 45.8981 49.7216 45.8981V45.9016C50.4386 45.9016 51.0162 45.2867 51.0162 44.5313V37.3703C51.0162 36.6114 50.4386 36 49.7216 36C49.0045 36 48.4269 36.6149 48.4269 37.3703V44.5278Z'
+              ></path>
+              <path
+                d='M45.7313 47.5109C45.0176 47.5109 44.4367 46.8995 44.4367 46.1406V39.9283C44.4367 39.1729 45.0143 38.558 45.7313 38.558C46.4484 38.558 47.026 39.1694 47.026 39.9283V46.1406C47.026 46.896 46.4484 47.5109 45.7313 47.5109Z'
+              ></path>
+              <path
+                d='M52.4171 46.1405C52.4171 46.8995 52.9981 47.5109 53.7118 47.5109V47.5144C54.4288 47.5144 55.0065 46.8995 55.0065 46.1441V39.4118C55.0065 38.6528 54.4288 38.0415 53.7118 38.0415C52.9947 38.0415 52.4171 38.6564 52.4171 39.4118V46.1405Z'
+              ></path>
+              <path
+                d='M57.7053 49.0358C56.9916 49.0358 56.4107 48.4245 56.4107 47.6655V43.1363C56.4107 42.3809 56.9883 41.766 57.7053 41.766C58.4224 41.766 59 42.3774 59 43.1363V47.6655C59 48.4209 58.4224 49.0358 57.7053 49.0358Z'
+              ></path>
+              <path
+                d='M41.5585 50.3148C41.7976 50.754 42.2324 51 42.6806 51C42.8997 51 43.1221 50.9403 43.3246 50.8173C43.9454 50.4413 44.1578 49.6015 43.7993 48.948L42.415 46.4111C42.0598 45.754 41.2664 45.5292 40.649 45.9086C40.0282 46.2846 39.8157 47.1244 40.1742 47.7779L41.5585 50.3148Z'
+              ></path>
+              <path
+                fill-rule='evenodd'
+                clip-rule='evenodd'
+                d='M28 22C28 17.5817 31.5817 14 36 14H64C68.4183 14 72 17.5817 72 22V66C72 70.4183 68.4183 74 64 74H36C31.5817 74 28 70.4183 28 66V22ZM36 18H64C66.2091 18 68 19.7909 68 22V66C68 68.2091 66.2091 70 64 70H36C33.7909 70 32 68.2091 32 66V22C32 19.7909 33.7909 18 36 18Z'
+              ></path>
+              <path
+                fill-rule='evenodd'
+                clip-rule='evenodd'
+                d='M78 98H22C20.8954 98 20 97.1046 20 96V88C20 84.6863 22.6863 82 26 82H74C77.3137 82 80 84.6863 80 88V96C80 97.1046 79.1046 98 78 98ZM26 86H74C75.1046 86 76 86.8954 76 88V94H60C60 90.6863 57.3137 88 54 88H46C42.6863 88 40 90.6863 40 94H24V88C24 86.8954 24.8954 86 26 86ZM54 92C55.1046 92 56 92.8954 56 94H44C44 92.8954 44.8954 92 46 92H54Z'
+              ></path>
+            </g>
+          </svg>
+          <svg class='h-20 w-20' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <g class='fill-neonBlue'>
+              <path
+                d='M48.4269 44.5278C48.4269 45.2867 49.0078 45.8981 49.7216 45.8981V45.9016C50.4386 45.9016 51.0162 45.2867 51.0162 44.5313V37.3703C51.0162 36.6114 50.4386 36 49.7216 36C49.0045 36 48.4269 36.6149 48.4269 37.3703V44.5278Z'
+              ></path>
+              <path
+                d='M45.7313 47.5109C45.0176 47.5109 44.4367 46.8995 44.4367 46.1406V39.9283C44.4367 39.1729 45.0143 38.558 45.7313 38.558C46.4484 38.558 47.026 39.1694 47.026 39.9283V46.1406C47.026 46.896 46.4484 47.5109 45.7313 47.5109Z'
+              ></path>
+              <path
+                d='M52.4171 46.1405C52.4171 46.8995 52.9981 47.5109 53.7118 47.5109V47.5144C54.4288 47.5144 55.0065 46.8995 55.0065 46.1441V39.4118C55.0065 38.6528 54.4288 38.0415 53.7118 38.0415C52.9947 38.0415 52.4171 38.6564 52.4171 39.4118V46.1405Z'
+              ></path>
+              <path
+                d='M57.7053 49.0358C56.9916 49.0358 56.4107 48.4245 56.4107 47.6655V43.1363C56.4107 42.3809 56.9883 41.766 57.7053 41.766C58.4224 41.766 59 42.3774 59 43.1363V47.6655C59 48.4209 58.4224 49.0358 57.7053 49.0358Z'
+              ></path>
+              <path
+                d='M41.5585 50.3148C41.7976 50.754 42.2324 51 42.6806 51C42.8997 51 43.1221 50.9403 43.3246 50.8173C43.9454 50.4413 44.1578 49.6015 43.7993 48.948L42.415 46.4111C42.0598 45.754 41.2664 45.5292 40.649 45.9086C40.0282 46.2846 39.8157 47.1244 40.1742 47.7779L41.5585 50.3148Z'
+              ></path>
+              <path
+                fill-rule='evenodd'
+                clip-rule='evenodd'
+                d='M28 22C28 17.5817 31.5817 14 36 14H64C68.4183 14 72 17.5817 72 22V66C72 70.4183 68.4183 74 64 74H36C31.5817 74 28 70.4183 28 66V22ZM32 22C32 19.7909 33.7909 18 36 18H64C66.2091 18 68 19.7909 68 22V66C68 68.2091 66.2091 70 64 70H36C33.7909 70 32 68.2091 32 66V22Z'
+              ></path>
+              <path
+                fill-rule='evenodd'
+                clip-rule='evenodd'
+                d='M26 2C22.6863 2 20 4.68629 20 8V96C20 97.1046 20.8954 98 22 98H78C79.1046 98 80 97.1046 80 96V8C80 4.68629 77.3137 2 74 2H26ZM40 6L26 6C24.8954 6 24 6.89543 24 8V94H76V8C76 6.89543 75.1046 6 74 6H60C60 9.31371 57.3137 12 54 12H46C42.6863 12 40 9.31371 40 6ZM56 6L44 6C44 7.10457 44.8954 8 46 8L54 8C55.1046 8 56 7.10457 56 6Z'
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <strong class='mt-4 block text-lg uppercase'>Digital & Real</strong>
+        <p class='text-sm'>
+          Use FingeRate ecosystem for ultimate control. FingeRate app, Bot & MSOT Tokens help reach goals and create
+          seamless digital experiences. Discover its power today!
+        </p>
+      </div>
+      <div class='p-2'>
+        <svg class='mx-auto h-20 w-20' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <g class='fill-softFire'>
+            <path
+              d='M46.4012 50.8648C46.4012 53.2617 48.3447 55.203 50.7393 55.203C53.1362 55.203 55.0774 53.2594 55.0774 50.8648V28.3373C55.0774 25.9404 53.1362 23.9992 50.7393 23.9992C48.3424 23.9992 46.4012 25.9404 46.4012 28.3373V50.8648Z'
+            ></path>
+            <path
+              d='M33.1148 55.9353C33.1148 58.3322 35.0584 60.2734 37.4529 60.2734C39.8498 60.2734 41.791 58.3298 41.791 55.9353V36.3928C41.791 33.9959 39.8498 32.0547 37.4529 32.0547C35.056 32.0547 33.1148 33.9982 33.1148 36.3928V55.9353Z'
+            ></path>
+            <path
+              d='M64.028 60.2734C61.6334 60.2734 59.6899 58.3322 59.6899 55.9353V34.7631C59.6899 32.3685 61.6311 30.425 64.028 30.425C66.4249 30.425 68.3661 32.3662 68.3661 34.7631V55.9353C68.3661 58.3298 66.4249 60.2734 64.028 60.2734Z'
+            ></path>
+            <path
+              d='M72.9762 60.7337C72.9762 63.1306 74.9198 65.0718 77.3144 65.0718C79.7113 65.0718 81.6525 63.1283 81.6525 60.7337V46.4849C81.6525 44.088 79.7113 42.1467 77.3144 42.1467C74.9175 42.1467 72.9762 44.0903 72.9762 46.4849V60.7337Z'
+            ></path>
+            <path
+              d='M27.2958 71.2512C25.7963 71.2512 24.3386 70.4724 23.5342 69.0822L18.9287 61.1057C17.7314 59.0319 18.4428 56.3793 20.5166 55.1797C22.5926 53.9847 25.2429 54.6938 26.4426 56.7676L31.048 64.744C32.2453 66.8178 31.5339 69.4704 29.4602 70.67C28.7767 71.0629 28.0304 71.2512 27.2958 71.2512Z'
+            ></path>
+            <path
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+              d='M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM96 50C96 75.4051 75.4051 96 50 96C24.5949 96 4 75.4051 4 50C4 24.5949 24.5949 4 50 4C75.4051 4 96 24.5949 96 50Z'
+            ></path>
+          </g>
+        </svg>
+
+        <strong class='mt-4 block text-lg uppercase'>Get More Rewards</strong>
+        <p class='text-sm'>
+          Earn rewards effortlessly by participating in surveys within the FingeRate Ecosystem. You'll have access to a
+          variety of rewards, including SoM simply by sharing your opinions.
+        </p>
+      </div>
+    </div>
+
+    <BtnLink href={NAV_LINKS.TOKEN.href} text='Read More About MSOT' />
+  </section>
+  <section id='app' class='mx-auto grid max-w-6xl sm:grid-cols-2 lg:grid-cols-none lg:px-2'>
+    <div class='lg:h-[calc(100%-4rem)] lg:w-[calc(100%-4rem)] lg:[grid-area:1/1/1/1]'>
+      <img
+        src={metaverse.src}
+        width={metaverse.width}
+        height={metaverse.height}
+        alt='FingeRate Bot device inside Metaverse'
+        class='h-full w-full object-cover lg:rounded-lg'
+        loading='lazy'
+      />
+    </div>
+    <div class='bg-slate-950/90 lg:w-[40%] lg:self-end lg:justify-self-end lg:rounded-lg lg:[grid-area:1/1/1/1]'>
+      <div class='p-6 sm:p-12'>
+        <h2 class='brand-text text-3xl font-bold leading-[initial]'>FingeRate App</h2>
+        <ul class='mt-4 list-disc space-y-2'>
+          <li>Access the metaverse. Answer and create surveys. Earn rewards</li>
+          <li>Access real-time data and make informed decisions</li>
+          <li>Personalize your experience: create your own avatar and make it stand out</li>
+          <li>Join a growing community and voice your opinion</li>
+        </ul>
+      </div>
+      <div class='flex w-full flex-wrap items-center justify-center gap-4 pb-12'>
+        <Google />
+        <Apple />
+      </div>
+    </div>
+  </section>
+
+  <Partners />
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  #anim {
+    animation-name: stack;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes stack {
+    6.25% {
+      translate: 0 0%;
+    }
+    12.5%,
+    18.75% {
+      translate: 0 -12.5%;
+    }
+    25%,
+    31.25% {
+      translate: 0 -25%;
+    }
+    37.5%,
+    43.75% {
+      translate: 0 -37.5%;
+    }
+    50%,
+    56.25% {
+      translate: 0 -50%;
+    }
+    62.5%,
+    68.75% {
+      translate: 0 -62.5%;
+    }
+    75%,
+    81.25% {
+      translate: 0 -75%;
+    }
+    87.5%,
+    100% {
+      translate: 0 -87.5%;
+    }
+  }
 </style>

@@ -1,0 +1,35 @@
+---
+import { NAV_LINKS, type Link } from '../constants';
+import logo from '../assets/logo.jpg';
+import Social from './Social.astro';
+const footerLinks: Link[] = [NAV_LINKS.HOME, NAV_LINKS.PRIVACY, NAV_LINKS.TERMS, NAV_LINKS.APP];
+---
+
+<footer class=' bg-slate-950/50 p-2'>
+  <div class='mx-auto flex w-full max-w-screen-lg flex-col items-center gap-4 sm:flex-row'>
+    <img
+      class='h-10 w-10 rounded-md'
+      src={logo.src}
+      width={logo.width}
+      height={logo.height}
+      alt='FingeRate Logo without text'
+    />
+    <nav aria-label='secondary navigation'>
+      <ul class='flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm'>
+        {
+          footerLinks.map((l) => (
+            <li class='hover:underline'>
+              <a href={l.href} target={l.isExternal ? '_blank' : ''} rel={l.isExternal ? 'noopener noreferrer' : ''}>
+                {l.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <Social />
+  </div>
+  <small class='mt-4 block text-center text-xs text-white/70 md:mt-2'>
+    @{new Date().getFullYear().toString()} GG56 Ltd. ALL RIGHTS RESERVED.
+  </small>
+</footer>

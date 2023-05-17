@@ -1,0 +1,36 @@
+<button
+  type='button'
+  id='scrollToTop'
+  class='group fixed bottom-2 right-2 z-20 rounded-full bg-slate-950/80 p-2 opacity-0 transition'
+>
+  <span class='sr-only'>Scroll to top</span>
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    fill='none'
+    viewBox='0 0 24 24'
+    stroke-width='3'
+    stroke='currentColor'
+    class='h-4 w-4 transition group-hover:-translate-y-1'
+  >
+    <path stroke-linecap='round' stroke-linejoin='round' d='M4.5 15.75l7.5-7.5 7.5 7.5'></path>
+  </svg>
+</button>
+
+<script>
+  const scrollToTopBtn = document.querySelector<HTMLButtonElement>('#scrollToTop');
+  scrollToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  if (scrollToTopBtn) {
+    const toggleBtnOpacity = () => {
+      document.documentElement.scrollTop > window.innerHeight * 0.75
+        ? scrollToTopBtn.classList.remove('opacity-0')
+        : scrollToTopBtn.classList.add('opacity-0');
+    };
+
+    toggleBtnOpacity();
+
+    document.addEventListener('scroll', toggleBtnOpacity);
+  }
+</script>

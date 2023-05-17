@@ -1,0 +1,58 @@
+---
+import efkba from '../assets/partners/efkba.png';
+import gl from '../assets/partners/gl.png';
+import iff from '../assets/partners/iff.png';
+import imecc from '../assets/partners/imecc.png';
+import kim from '../assets/partners/kim.png';
+import uppsala from '../assets/partners/uppsala.png';
+import ybm from '../assets/partners/ybm.png';
+
+const partners = [
+  [gl, 'Genesis Lab', 'https://www.genesislab.com/'],
+  [uppsala, 'Uppsala Security', 'https://uppsalasecurity.com/'],
+  [kim, 'Kim & Chang', 'https://www.kimchang.com/'],
+  [efkba, 'European Federation of Korean Business Association', ''],
+  [ybm, 'YBM', 'https://www.ybm.co.kr/'],
+  [iff, 'International Finance Forum', 'http://www.iff.org.cn/'],
+  [imecc, 'International Medical Exchange & Cooperation Committee', ''],
+] as const;
+---
+
+<section id='partners' class='mx-auto max-w-screen-lg px-2 py-12'>
+  <ul class='flex flex-wrap items-center justify-center gap-6'>
+    {
+      partners.map(([file, name, href]) => {
+        return (
+          <li class='h-[80px] basis-[120px] transition hover:scale-105 md:basis-[220px]'>
+            {href ? (
+              <a
+                href={href}
+                target={href ? '_blank' : ''}
+                rel='noopener noreferrer'
+                title={href ? `Go to ${name} website` : ''}
+              >
+                <img
+                  loading='lazy'
+                  class='h-full object-contain'
+                  src={file.src}
+                  width={file.width}
+                  height={file.height}
+                  alt={`logo of ${name}`}
+                />
+              </a>
+            ) : (
+              <img
+                loading='lazy'
+                class='h-full object-contain'
+                src={file.src}
+                width={file.width}
+                height={file.height}
+                alt={`logo of ${name}`}
+              />
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

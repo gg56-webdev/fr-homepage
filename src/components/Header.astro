@@ -1,0 +1,141 @@
+---
+import { NAV_LINKS, type Link } from '../constants';
+type Dropdown = { name: string; href?: string; links: Link[] };
+const navLinks: Array<Link | Dropdown> = [
+  NAV_LINKS.HOME,
+  {
+    name: 'Ecosystem',
+    links: [NAV_LINKS.APP, NAV_LINKS.TOKEN, NAV_LINKS.BOT],
+  },
+  {
+    name: 'About',
+    links: [NAV_LINKS.TEAM, NAV_LINKS.WHITEPAPER, NAV_LINKS.CONTACT],
+  },
+];
+const currentUrl = Astro.url.pathname;
+---
+
+<header class='sticky top-0 z-20 bg-slate-950/90'>
+  <nav class='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-1'>
+    <a href={NAV_LINKS.HOME.href} class='brand-text text-2xl font-bold'>FingeRate</a>
+    <button
+      id='hamburger'
+      data-collapse-toggle='navbar-dropdown'
+      type='button'
+      class='inline-flex items-center rounded-lg p-2 text-sm text-neonBlue focus:outline-none focus:ring-2 focus:ring-blue-200 sm:hidden'
+      aria-controls='navbar-dropdown'
+      aria-expanded='false'
+    >
+      <span class='sr-only'>Toggle navigation menu</span>
+      <svg class='h-6 w-6' aria-hidden='true' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'
+        ><path
+          fill-rule='evenodd'
+          d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
+          clip-rule='evenodd'></path></svg
+      >
+    </button>
+    <div class='hidden w-full sm:block sm:w-auto' id='navbar-dropdown'>
+      <ul class='mt-4 flex flex-col items-center gap-2 sm:m-0 sm:flex-row md:items-baseline'>
+        {
+          navLinks.map((i) => (
+            <li>
+              {'links' in i ? (
+                <>
+                  <button
+                    id={`${i.name}-dropdownNavbarLink`}
+                    data-dropdown-toggle={`${i.name}-dropdownNavbar`}
+                    class={`hover:text-neonBlue ${
+                      i.links.some(({ href }) => href === currentUrl) ? 'text-cyberLilac' : ''
+                    } flex w-full items-center gap-1 rounded p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                    data-dropdown-trigger='hover'
+                  >
+                    {i.name}{' '}
+                    <svg
+                      class='h-5 w-5'
+                      fill='currentColor'
+                      aria-hidden='true'
+                      viewBox='0 0 20 20'
+                      xmlns='http://www.w3.org/2000/svg'
+                    >
+                      <path
+                        fill-rule='evenodd'
+                        d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
+                        clip-rule='evenodd'
+                      />
+                    </svg>
+                  </button>
+
+                  <div id={`${i.name}-dropdownNavbar`} class='z-10 hidden w-44  rounded-lg bg-slate-900 shadow'>
+                    <ul class='py-2 text-sm ' aria-labelledby={`${i.name}-dropdownNavbarLink`}>
+                      {i.links.map((l) => (
+                        <li class={`${currentUrl === l.href ? 'border-cyberLilac border-l-2' : ''}`}>
+                          <a
+                            href={l.href}
+                            aria-current={currentUrl === l.href ? 'page' : null}
+                            target={l.isExternal ? '_blank' : '_self'}
+                            rel='noopener noreferrer'
+                            class={`hover:text-neonBlue block px-4 py-2 transition ${
+                              currentUrl === l.href ? 'text-bold text-cyberLilac' : ''
+                            }`}
+                          >
+                            {l.name} {l.isExternal && '↗'}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                <a
+                  href={i.href}
+                  target={i.isExternal ? '_blank' : ''}
+                  aria-current={currentUrl === i.href ? 'page' : null}
+                  rel='noopener noreferrer'
+                  class={`hover:text-neonBlue inline-block  rounded p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200 ${
+                    i.href === currentUrl ? 'text-cyberLilac' : ''
+                  }`}
+                >
+                  {i.name} {i.isExternal && '↗'}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  import { Collapse } from 'flowbite';
+  import type { CollapseOptions, CollapseInterface } from 'flowbite';
+
+  // set the target element that will be collapsed or expanded (eg. navbar menu)
+  const $targetEl = document.querySelector<HTMLDivElement>('#navbar-dropdown');
+
+  // optionally set a trigger element (eg. a button, hamburger icon)
+  const $triggerEl = document.querySelector<HTMLButtonElement>('#hamburger');
+
+  // optional options with default values and callback functions
+  // const options: CollapseOptions = {
+  //   onCollapse: () => {
+  //     console.log('element has been collapsed');
+  //   },
+  //   onExpand: () => {
+  //     console.log('element has been expanded');
+  //   },
+  //   onToggle: () => {
+  //     console.log('element has been toggled');
+  //   },
+  // };
+
+  /*
+   * $targetEl: required
+   * $triggerEl: optional
+   * options: optional
+   */
+  const collapse: CollapseInterface = new Collapse($targetEl, $triggerEl);
+
+  // show the target element
+  // collapse.expand();
+</script>
