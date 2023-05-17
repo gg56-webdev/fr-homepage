@@ -29,7 +29,9 @@ const { title } = Astro.props;
   </head>
   <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace text-white'>
     <Header />
-    <main class='bg-[url(bg.webp)] bg-cover bg-no-repeat pb-8 sm:space-y-16' id='swup'><slot /></main>
+    <main style={`background-image: url(${bg.src})`} class='bg-cover bg-no-repeat pb-8 sm:space-y-16' id='swup'>
+      <slot />
+    </main>
     <ScrollToTop />
     <CookieBanner />
     <Footer />
