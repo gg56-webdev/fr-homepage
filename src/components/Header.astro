@@ -12,7 +12,12 @@ const navLinks: Array<Link | Dropdown> = [
     links: [NAV_LINKS.TEAM, NAV_LINKS.WHITEPAPER, NAV_LINKS.CONTACT],
   },
 ];
-const currentUrl = Astro.url.pathname;
+
+const currentUrl = import.meta.env.DEV
+  ? Astro.url.pathname
+  : Astro.url.pathname === '/'
+  ? '/'
+  : Astro.url.pathname.slice(0, -1);
 ---
 
 <header class='sticky top-0 z-20 bg-slate-950/90'>
