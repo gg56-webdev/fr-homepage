@@ -23,7 +23,7 @@ const partners = [
     {
       partners.map(([file, name, href]) => {
         return (
-          <li class='h-[80px] basis-[120px] transition hover:scale-105 md:basis-[220px]'>
+          <li class={`h-[80px] basis-[120px] transition ${href ? 'hover:scale-105' : ''} md:basis-[220px]`}>
             {href ? (
               <a
                 href={href}
