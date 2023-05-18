@@ -92,6 +92,7 @@ const formatPerson = (person: Person) => {
 </Layout>
 
 <dialog
+  inert
   class='pointer-events-none fixed inset-0 block max-w-[calc((100%-6px)-2em)] rounded-lg bg-slate-800 text-white opacity-0 transition backdrop:bg-slate-900/50 open:pointer-events-auto open:opacity-100'
 >
   <button type='button' id='close-modal' class='absolute right-2 top-2'>
@@ -135,13 +136,19 @@ const formatPerson = (person: Person) => {
         const hasInfo = personInfo.titles || personInfo.bio || personInfo.articles;
         if (!hasInfo) return;
         addInfoToModal(personInfo);
-        dialog.showModal();
+        openModal();
       })
     )
   );
 
+  const openModal = () => {
+    dialog.showModal();
+    dialog.removeAttribute('inert');
+  };
+
   const closeModal = () => {
     dialog.close();
+    dialog.setAttribute('inert', '');
   };
 
   const addInfoToModal = (person: Person) => {
