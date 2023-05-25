@@ -9,21 +9,35 @@ import ybm from '../assets/partners/ybm.png';
 
 const partners = [
   [gl, 'Genesis Lab', 'https://www.genesislab.com/'],
-  [uppsala, 'Uppsala Security', 'https://uppsalasecurity.com/'],
   [kim, 'Kim & Chang', 'https://www.kimchang.com/'],
+  [uppsala, 'Uppsala Security', 'https://uppsalasecurity.com/'],
   [efkba, 'European Federation of Korean Business Association', ''],
   [ybm, 'YBM', 'https://www.ybm.co.kr/'],
   [iff, 'International Finance Forum', 'http://www.iff.org.cn/'],
   [imecc, 'International Medical Exchange & Cooperation Committee', ''],
 ] as const;
+
+const order = `
+md:[&>*:nth-child(1)]:order-1 
+md:[&>*:nth-child(2)]:order-3 
+md:[&>*:nth-child(3)]:order-5 
+md:[&>*:nth-child(4)]:order-7
+md:[&>*:nth-child(5)]:order-2
+md:[&>*:nth-child(6)]:order-4
+md:[&>*:nth-child(7)]:order-6
+`;
 ---
 
-<section id='partners' class='mx-auto max-w-screen-lg px-2 py-12'>
-  <ul class='flex flex-wrap items-center justify-center gap-6'>
+<section id='partners' class='mx-auto mb-4 max-w-screen-xl px-2'>
+  <ul class={`flex flex-wrap items-center justify-center gap-x-4 gap-y-2 ${order}`}>
     {
       partners.map(([file, name, href]) => {
         return (
-          <li class={`h-[80px] basis-[120px] transition ${href ? 'hover:scale-105' : ''} md:basis-[220px]`}>
+          <li
+            class={`h-[40px] w-[calc(25%-0.75rem)] transition sm:h-[60px] md:w-auto md:flex-1 ${
+              href ? 'hover:scale-105' : ''
+            } hover:opacity-100 md:opacity-75`}
+          >
             {href ? (
               <a
                 href={href}
