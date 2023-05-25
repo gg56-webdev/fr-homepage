@@ -20,7 +20,7 @@ const links = [
     Object.values(links).map(([href, name, file]) => (
       <li class='rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1'>
         <a class='rounded-full' href={href} target='_blank' rel='noopener noreferrer'>
-          <img class='w-8' src={file.src} width={file.width} height={file.height} alt={`${name} logo`} />
+          <img class='w-8' loading='lazy' src={file.src} width={file.width} height={file.height} alt={`${name} logo`} />
           <span class='sr-only'>{`link to FingeRate's ${name}`}</span>
         </a>
       </li>

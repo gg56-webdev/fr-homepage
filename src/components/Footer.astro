@@ -1,6 +1,6 @@
 ---
 import { NAV_LINKS, type Link } from '../constants';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo.webp';
 import Social from './Social.astro';
 const footerLinks: Link[] = [NAV_LINKS.HOME, NAV_LINKS.PRIVACY, NAV_LINKS.TERMS];
 ---
@@ -9,6 +9,7 @@ const footerLinks: Link[] = [NAV_LINKS.HOME, NAV_LINKS.PRIVACY, NAV_LINKS.TERMS]
   <div class='mx-auto flex w-full max-w-screen-lg flex-col items-center gap-4 sm:flex-row'>
     <img
       class='h-10 w-10 rounded-md'
+      loading='lazy'
       src={logo.src}
       width={logo.width}
       height={logo.height}
