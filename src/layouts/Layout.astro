@@ -1,6 +1,6 @@
 ---
 import CookieBanner from '../components/CookieBanner.astro';
-import bg from '../assets/bg.webp';
+import bg from '../assets/bg.avif';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../i18n/utils';
@@ -26,10 +26,11 @@ const { title } = Astro.props;
       content='Earn rewards with ease using FingeRate! Complete surveys anywhere, anytime. Convenient and user-friendly. Download now on Play Store and iOS for extra rewards!'
     />
     <title>{title}</title>
+    <link rel='preload' as='image' href={bg} />
   </head>
   <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace text-white'>
     <Header />
-    <main style={`background-image: url(${bg.src})`} class='bg-cover bg-no-repeat pb-8 sm:space-y-16' id='swup'>
+    <main style={`background-image: url(${bg})`} class='bg-cover bg-center bg-no-repeat pb-8 sm:space-y-16' id='swup'>
       <slot />
     </main>
     <ScrollToTop />
