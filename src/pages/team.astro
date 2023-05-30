@@ -31,7 +31,8 @@ const formatPerson = (person: Person) => {
 ---
 
 <Layout title='Team'>
-  <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-2'>
+  <div class='pb-12 md:pb-24'>
+  <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-2 '>
     <div class='grid items-center gap-4 sm:grid-cols-2'>
       <img
         src={ceoSpeech.src}
@@ -89,6 +90,7 @@ const formatPerson = (person: Person) => {
       }
     </ul>
   </section>
+</div>
 </Layout>
 
 <dialog
