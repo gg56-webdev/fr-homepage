@@ -7,7 +7,9 @@ import Person from '../components/Person.astro';
 import { getLangFromUrl } from '../i18n/utils';
 // const lang = getLangFromUrl(Astro.url);
 const lang = 'en';
-const photos = await Astro.glob('../assets/team/photos/**/*.{png,webp}').then((files) => files.map((f) => f.default));
+const photos: ImageMetadata[] = await Astro.glob('../assets/team/photos/**/*.{png,webp}').then((files) =>
+  files.map((f) => f.default)
+);
 
 type Person = {
   name: { en: string; ko?: string };
@@ -32,65 +34,68 @@ const formatPerson = (person: Person) => {
 
 <Layout title='Team'>
   <div class='pb-12 md:pb-24'>
-  <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-2 '>
-    <div class='grid items-center gap-4 sm:grid-cols-2'>
-      <img
-        src={ceoSpeech.src}
-        alt='CEO of GG56 giving speech to the GG56 Founder, team and advisors'
-        width={ceoSpeech.width}
-        height={ceoSpeech.height}
-        class='block max-h-[350px] -scale-x-100 rounded-lg object-cover sm:order-2'
-      />
-      <div>
-        <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>Our Team</h1>
-        <p class='max-w-[60ch]'>
-          Welcome to the FingeRate team page, where you can get to know the dedicated and passionate individuals behind
-          our revolutionary survey platform. Our team consists of experts from diverse fields, including blockchain
-          technology and software development, among others. We are united in our commitment to leveraging the power of
-          the metaverse to provide our users with an engaging and rewarding survey experience.
-        </p>
+    <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-2'>
+      <div class='grid items-center gap-4 sm:grid-cols-2'>
+        <img
+          src={ceoSpeech.src}
+          alt='CEO of GG56 giving speech to the GG56 Founder, team and advisors'
+          width={ceoSpeech.width}
+          height={ceoSpeech.height}
+          class='block max-h-[350px] -scale-x-100 rounded-lg object-cover sm:order-2'
+        />
+        <div>
+          <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>Our Team</h1>
+          <p class='max-w-[60ch]'>
+            Welcome to the FingeRate team page, where you can get to know the dedicated and passionate individuals
+            behind our revolutionary survey platform. Our team consists of experts from diverse fields, including
+            blockchain technology and software development, among others. We are united in our commitment to leveraging
+            the power of the metaverse to provide our users with an engaging and rewarding survey experience.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class='mx-auto max-w-screen-lg p-2 text-center'>
-    <ul class='flex flex-wrap justify-center gap-2'>
-      {
-        founders.map((p) => {
-          const personInfo = formatPerson(p);
-          return (
-            <li
-              data-person={JSON.stringify({
-                ...personInfo,
-                photo: photos.find(({ src }) => src.includes(p.name.en)),
-              })}
-              class='w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
-            >
-              <Person person={formatPerson(p)} photo={photos.find(({ src }) => src.includes(p.name.en))} />
-            </li>
-          );
-        })
-      }
-    </ul>
-    <hr class='my-4' />
-    <ul class='flex flex-wrap justify-center gap-2'>
-      {
-        main.map((p) => {
-          return (
-            <li
-              data-person={JSON.stringify({
-                ...formatPerson(p),
-                photo: photos.find(({ src }) => src.includes(p.name.en)),
-              })}
-              class=' w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
-            >
-              <Person person={formatPerson(p)} photo={photos.find(({ src }) => src.includes(p.name.en))} />
-            </li>
-          );
-        })
-      }
-    </ul>
-  </section>
-</div>
+    </section>
+    <section class='mx-auto max-w-screen-lg p-2 text-center'>
+      <ul class='flex flex-wrap justify-center gap-2'>
+        {
+          founders.map((p) => {
+            const personInfo = formatPerson(p);
+            const photo = photos.find(({ src }) => src.includes(p.name.en))!;
+            return (
+              <li
+                data-person={JSON.stringify({
+                  ...personInfo,
+                  photo,
+                })}
+                class='w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
+              >
+                <Person person={personInfo} photo={photo} />
+              </li>
+            );
+          })
+        }
+      </ul>
+      <hr class='my-4' />
+      <ul class='flex flex-wrap justify-center gap-2'>
+        {
+          main.map((p) => {
+            const personInfo = formatPerson(p);
+            const photo = photos.find(({ src }) => src.includes(p.name.en))!;
+            return (
+              <li
+                data-person={JSON.stringify({
+                  ...personInfo,
+                  photo,
+                })}
+                class=' w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
+              >
+                <Person person={personInfo} photo={photo} />
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+  </div>
 </Layout>
 
 <dialog
@@ -131,17 +136,18 @@ const formatPerson = (person: Person) => {
   const dialogContent = dialog.querySelector('#content') as HTMLDivElement;
   const closeBtn = document.querySelector('#close-modal') as HTMLButtonElement;
 
-  personCards.forEach((card) =>
-    card.querySelectorAll('[data-profile-photo],[data-profile-info-btn]')!.forEach((item) =>
-      item.addEventListener('click', () => {
-        const personInfo: Person = JSON.parse(card.dataset.person!);
-        const hasInfo = personInfo.titles || personInfo.bio || personInfo.articles;
-        if (!hasInfo) return;
-        addInfoToModal(personInfo);
-        openModal();
-      })
-    )
-  );
+  personCards.forEach((card) => {
+    const personInfo = JSON.parse(card.dataset.person!) as Person;
+    const hasExtraInfo = !!personInfo.bio || !!personInfo.titles || !!personInfo.articles;
+    if (hasExtraInfo) {
+      card.querySelectorAll('[data-profile-photo],[data-profile-info-btn]').forEach((item) =>
+        item.addEventListener('click', () => {
+          addInfoToModal(personInfo);
+          openModal();
+        })
+      );
+    }
+  });
 
   const openModal = () => {
     dialog.showModal();
@@ -154,7 +160,7 @@ const formatPerson = (person: Person) => {
   };
 
   const addInfoToModal = (person: Person) => {
-    dialogContent.innerHTML = '';
+    dialogContent.replaceChildren();
     dialogContent.appendChild(dialogTemplate.content.cloneNode(true));
     const personInfo = dialogContent.querySelector('#person-info')!;
 
@@ -214,11 +220,7 @@ const formatPerson = (person: Person) => {
   };
 
   closeBtn.addEventListener('click', closeModal);
-  // dialog.addEventListener('click', ({ clientX, clientY }) => {
 
-  //   const { top, right, left, bottom } = dialog.getBoundingClientRect();
-  //   if (clientX < left || clientX > right || clientY < top || clientY > bottom) closeModal();
-  // });
   dialog.addEventListener('click', ({ target }) => {
     if ((target as HTMLDialogElement).nodeName === 'DIALOG') closeModal();
   });

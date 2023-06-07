@@ -1,12 +1,13 @@
 ---
 import logo from '../assets/logo.jpg';
-const icons = await Astro.glob('../assets/social/*.svg').then((files) => files.map((f) => f.default));
+import linkIcon from '../assets/social/LI.svg';
+const icons: ImageMetadata[] = await Astro.glob('../assets/social/*.svg').then((files) => files.map((f) => f.default));
 
 const getIcon = (href: string) => {
-  if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'));
-  if (href.includes('youtu.be')) return icons.find(({ src }) => src.includes('YT'));
-  if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'));
-  return icons.find(({ src }) => src.includes('LI'));
+  if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!;
+  if (href.includes('youtu.be')) return icons.find(({ src }) => src.includes('YT'))!;
+  if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'))!;
+  return linkIcon;
 };
 
 type Person = {
@@ -22,9 +23,9 @@ export interface Props {
   photo: ImageMetadata;
 }
 
-const { person, photo: img = logo } = Astro.props;
+const { person, photo = logo } = Astro.props;
 
-const hasInfo = person.titles || person.bio || person.articles;
+const hasInfo = !!person.titles || !!person.bio || !!person.articles;
 ---
 
 <div
@@ -55,10 +56,10 @@ const hasInfo = person.titles || person.bio || person.articles;
   }
   <img
     data-profile-photo
-    class={`grayscale transition ${hasInfo ? 'hover:cursor-pointer' : ''} group-hover:grayscale-0`}
-    src={img.src}
-    width={img.width}
-    height={img.height}
+    class={`grayscale transition ${hasInfo ? 'hover:cursor-pointer' : ''} group-hover:grayscale-0 rounded-full`}
+    src={photo.src}
+    width={photo.width}
+    height={photo.height}
     alt={`Portrait of ${person.name}`}
   />
   <div class='mt-2 flex h-full flex-col gap-2'>
