@@ -47,6 +47,7 @@ const currentUrl = import.meta.env.DEV
               {'links' in i ? (
                 <>
                   <button
+                    type='button'
                     id={`${i.name}-dropdownNavbarLink`}
                     data-dropdown-toggle={`${i.name}-dropdownNavbar`}
                     class={`hover:text-neonBlue ${
