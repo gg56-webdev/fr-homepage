@@ -3,6 +3,7 @@ import phone from '../assets/app/phone.webp';
 import phones from '../assets/app/phones.webp';
 import Apple from '../components/DownloadBtn/Apple.astro';
 import Google from '../components/DownloadBtn/Google.astro';
+import { Image } from 'astro:assets';
 ---
 
 <section
@@ -21,12 +22,12 @@ import Google from '../components/DownloadBtn/Google.astro';
     </svg>
     <picture>
       <source media='(max-width: 767px)' srcset={phone.src} />
-      <img
-        src={phones.src}
-        width={phones.width}
-        height={phones.height}
-        alt='A phone with a FingeRate App demo'
+
+      <Image
+        src={phones}
+        alt='Phone/s with a FingeRate App demo'
         class='block h-[350px] object-contain md:order-2 md:h-[500px] md:w-fit'
+        decoding={'auto'}
       />
     </picture>
   </div>

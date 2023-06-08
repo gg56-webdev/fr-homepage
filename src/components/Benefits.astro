@@ -2,6 +2,7 @@
 import img1 from '../assets/home/1.webp';
 import img2 from '../assets/home/2.webp';
 import img3 from '../assets/home/3.webp';
+import { Image } from 'astro:assets';
 
 const content = [
   [
@@ -27,14 +28,7 @@ const content = [
     content.map(([h2, p, img], i) => (
       <div class={`flex flex-col items-center md:flex-row md:even:flex-row-reverse `}>
         <div class='flex-1'>
-          <img
-            src={img.src}
-            alt={`illustration to show how FingeRate app is ${h2}`}
-            width={img.width}
-            loading='lazy'
-            height={img.height}
-            class=' object-fit'
-          />
+          <Image src={img} alt={`illustration to show how FingeRate app is ${h2}`} class=' object-fit' />
         </div>
         <div
           class={`relative mx-auto -mt-4 flex-1 rounded-lg bg-slate-950/90 p-6 md:mt-0 md:p-12 ${

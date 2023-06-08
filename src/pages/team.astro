@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ceoSpeech from '../assets/team/ceo-speech.webp';
+import { Image } from 'astro:assets';
 import founders from '../data/team/founders.json';
 import main from '../data/team/main.json';
 import Person from '../components/Person.astro';
@@ -36,11 +37,9 @@ const formatPerson = (person: Person) => {
   <div class='pb-12 md:pb-24'>
     <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-2'>
       <div class='grid items-center gap-4 sm:grid-cols-2'>
-        <img
-          src={ceoSpeech.src}
+        <Image
+          src={ceoSpeech}
           alt='CEO of GG56 giving speech to the GG56 Founder, team and advisors'
-          width={ceoSpeech.width}
-          height={ceoSpeech.height}
           class='block max-h-[350px] -scale-x-100 rounded-lg object-cover sm:order-2'
         />
         <div>

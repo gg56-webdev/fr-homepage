@@ -2,6 +2,7 @@
 import logo from '../assets/logo.jpg';
 import linkIcon from '../assets/social/LI.svg';
 const icons: ImageMetadata[] = await Astro.glob('../assets/social/*.svg').then((files) => files.map((f) => f.default));
+import { Image } from 'astro:assets';
 
 const getIcon = (href: string) => {
   if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!;
@@ -55,13 +56,13 @@ const hasInfo = !!person.titles || !!person.bio || !!person.articles;
       </button>
     )
   }
-  <img
+
+  <Image
     data-profile-photo
-    class={`grayscale transition ${hasInfo ? 'hover:cursor-pointer' : ''} group-hover:grayscale-0 rounded-full`}
-    src={photo.src}
-    width={photo.width}
-    height={photo.height}
+    src={photo}
     alt={`Portrait of ${person.name}`}
+    class={`grayscale transition ${hasInfo ? 'hover:cursor-pointer' : ''} group-hover:grayscale-0 rounded-full`}
+    quality={'high'}
   />
   <div class='mt-2 flex h-full flex-col gap-2'>
     <div>

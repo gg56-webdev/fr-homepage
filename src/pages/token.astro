@@ -2,19 +2,14 @@
 import BtnLink from '../components/BtnLink.astro';
 import Layout from '../layouts/Layout.astro';
 import token from '~/assets/token/msot.webp';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title='MSOT Token'>
   <div class='pb-12 md:pb-24'>
     <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-6'>
       <div>
-        <img
-          class='mx-auto h-32 w-32'
-          src={token.src}
-          width={token.width}
-          height={token.height}
-          alt='MSOT token logo'
-        />
+        <Image src={token} alt='MSOT token logo' class='mx-auto h-32 w-32' />
         <div class='text-center'>
           <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>MSOT Tokens</h1>
         </div>

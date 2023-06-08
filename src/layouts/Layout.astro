@@ -5,6 +5,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../i18n/utils';
 import ScrollToTop from '../components/ScrollToTop.astro';
+import { getImage } from 'astro:assets';
+const optimizedBg = await getImage({ src: bg });
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -26,11 +28,11 @@ const { title } = Astro.props;
       content='Earn rewards with ease using FingeRate! Complete surveys anywhere, anytime. Convenient and user-friendly. Download now on Play Store and iOS for extra rewards!'
     />
     <title>{title}</title>
-    <link rel='preload' as='image' href={bg.src} />
+    <link rel='preload' as='image' href={optimizedBg.src} />
   </head>
   <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace text-white'>
     <Header />
-    <main style={`background-image: url(${bg.src})`} class='bg-cover bg-center bg-no-repeat' id='swup'>
+    <main class='bg-cover bg-center bg-no-repeat' style={`background-image: url(${optimizedBg.src});`} id='swup'>
       <slot />
     </main>
     <ScrollToTop />

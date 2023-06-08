@@ -6,6 +6,7 @@ import imecc from '../assets/partners/imecc.webp';
 import kim from '../assets/partners/kim.webp';
 import uppsala from '../assets/partners/uppsala.webp';
 import ybm from '../assets/partners/ybm.webp';
+import { Image } from 'astro:assets';
 
 const partners = [
   [gl, 'Genesis Lab', 'https://www.genesislab.com/'],
@@ -45,24 +46,10 @@ md:[&>*:nth-child(7)]:order-6
                 rel='noopener noreferrer'
                 title={href ? `Go to ${name} website` : ''}
               >
-                <img
-                  loading='lazy'
-                  class='mx-auto h-full object-contain'
-                  src={file.src}
-                  width={file.width}
-                  height={file.height}
-                  alt={`logo of ${name}`}
-                />
+                <Image src={file} alt={`logo of ${name}`} class='mx-auto h-full object-contain' />
               </a>
             ) : (
-              <img
-                loading='lazy'
-                class='mx-auto h-full object-contain'
-                src={file.src}
-                width={file.width}
-                height={file.height}
-                alt={`logo of ${name}`}
-              />
+              <Image src={file} alt={`logo of ${name}`} class='mx-auto h-full object-contain' />
             )}
           </li>
         );
