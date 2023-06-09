@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      backgroundImage: {
+        brandGradient: 'var(--brand-gradient)',
+      },
       colors: {
         intelligentBlue: `rgb(var(--intelligent-blue) / <alpha-value>)`,
         softFire: `rgb(var(--soft-fire) / <alpha-value>)`,
@@ -24,5 +27,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('flowbite/plugin'), require('@tailwindcss/container-queries')],
+  plugins: [require('flowbite/plugin'), require('@tailwindcss/container-queries'), require('@tailwindcss/typography')],
 };

@@ -6,9 +6,11 @@ import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../i18n/utils';
 import ScrollToTop from '../components/ScrollToTop.astro';
 import { getImage } from 'astro:assets';
+import { NAV_LINKS } from '../constants';
 const optimizedBg = await getImage({ src: bg });
 
 const lang = getLangFromUrl(Astro.url);
+const isTermsPage = [NAV_LINKS.TERMS.href, NAV_LINKS.PRIVACY.href].includes(Astro.url.pathname);
 
 export interface Props {
   title: string;
@@ -36,7 +38,7 @@ const { title } = Astro.props;
       <slot />
     </main>
     <ScrollToTop />
-    <CookieBanner />
+    {!isTermsPage && <CookieBanner />}
     <Footer />
   </body>
 </html>

@@ -19,11 +19,11 @@ export const NAV_LINKS: LinksMap = {
   CONTACT: { name: 'Contact', href: '/contact', isExternal: false, isImportant: false },
   PRIVACY: {
     name: 'Privacy Policy',
-    href: 'https://www.termsfeed.com/live/a0365b56-6fff-4f73-84bc-6eaad5146d42',
-    isExternal: true,
+    href: '/privacy-policy',
+    isExternal: false,
     isImportant: false,
   },
-  TERMS: { name: 'Terms of Use', href: '/', isExternal: false, isImportant: false },
+  TERMS: { name: 'Terms of Use', href: '/terms-of-use', isExternal: false, isImportant: false },
 } as const;
 
 export const SOCIAL_LINKS: LinksMap = {

@@ -21,6 +21,7 @@
     "@swup/fade-theme": "^1.0.5",
     "@swup/head-plugin": "^1.3.0",
     "@swup/slide-theme": "^1.0.5",
+    "@tailwindcss/typography": "^0.5.9",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "swup": "^3.0.6"
