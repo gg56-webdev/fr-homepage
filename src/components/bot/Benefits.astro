@@ -1,27 +1,27 @@
 ---
 import bot from '@assets/bot/bot.webp';
-import stats from '@assets/bot/stats.png';
-import map from '@assets/bot/map.png';
-import shield from '@assets/bot/shield.jpg';
+import stats from '@assets/bot/stats.webp';
+import shield from '@assets/bot/shield.webp';
+import { Image } from 'astro:assets';
 
 const cards = [
   [
     "Capture Visitors' Emotions in Real-Time",
     " FingeRate Bot empowers you to elevate your customer experience and drive business growth. By capturing feedback directly through touchless surveys, you can gather accurate and timely insights, enabling you to make data-driven decisions and implement targeted improvements. Stay ahead of the competition by putting your customers' opinions at the heart of your business strategy.",
     bot,
-    'img alt text',
+    'Person showing gesture to the FingeRate Bot',
   ],
   [
     'Access to Data in Real-Time',
     'We understand the importance of timely data to drive informed actions. FingeRate Bot provides you with real-time access to the captured data, allowing you to monitor and analyze visitor feedback instantly. Our intuitive dashboard presents the information in a visually appealing and easy-to-understand format, empowering you to make proactive adjustments and improvements based on real-time insights.',
     stats,
-    '',
+    'Screenshot of FingeRate Dashboard showing graph of visitors and participants in survey',
   ],
   [
     'Secure and Reliable',
     'At FingeRate Bot, we prioritize the security and privacy of your data. Our platform is built with robust encryption protocols and follows industry best practices to ensure that your information remains confidential. You can trust us to handle your data with the utmost care and protect it from unauthorized access.',
     shield,
-    '',
+    'Illustration of FingeRate Security feature',
   ],
 ] as const;
 ---
@@ -36,7 +36,7 @@ const cards = [
     {
       cards.map(([h3, p, img, alt]) => (
         <div class='flex  flex-col overflow-hidden rounded-lg bg-slate-950/80'>
-          <img loading='lazy' src={img.src} alt={alt} class='aspect-video h-52 object-cover' />
+          <Image src={img} alt={alt} class='aspect-video h-52 object-cover' />
           <div class='p-4'>
             <h3 class='mb-2 text-lg font-bold'>{h3}</h3>
             <p class='text-sm'>{p}</p>
