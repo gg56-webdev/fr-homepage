@@ -1,0 +1,45 @@
+---
+import dataIcon from '@assets/bot/how/data.svg';
+import decisionIcon from '@assets/bot/how/decision.svg';
+import easyIcon from '@assets/bot/how/easy.svg';
+import feedbackIcon from '@assets/bot/how/feedback.svg';
+import installIcon from '@assets/bot/how/install.svg';
+import secureIcon from '@assets/bot/how/secure.svg';
+
+const features = [
+  ['Install Your Own FingeRate Bot', 'Sit Back and Relax as we Set Up Your FingeRate Bot', installIcon, 'img alt', '+'],
+  ['Hassle-Free Solution', undefined, easyIcon, 'img alt', undefined],
+
+  ['Start Collecting Feedback', 'Create Surveys and Capture Valuable Insights', feedbackIcon, 'img alt', '='],
+  ['Safe & Secure', undefined, secureIcon, 'img alt', undefined],
+
+  [
+    'Data-driven decisions',
+    "Analyze Visitors' Feedback Instantly with Your Dashboard",
+    decisionIcon,
+    'img alt',
+    undefined,
+  ],
+  ['Real-time Data Collection', undefined, dataIcon, 'img alt', undefined],
+] as const;
+---
+
+<section class='mx-auto max-w-screen-md rounded-lg bg-slate-950/80 p-8'>
+  <div class='mx-auto mb-8 w-fit'>
+    <h2 class='brand-text text-center text-3xl font-bold drop-shadow-[0_0_8px_#000]'>How Does it Work?</h2>
+  </div>
+  <div class='grid grid-cols-2 gap-4 [align-items:start;]'>
+    {
+      features.map(([h3, p, img, alt, symbol]) => (
+        <div class='grid gap-2 md:grid-cols-[auto_1fr]'>
+          <img loading='lazy' src={img.src} alt={alt} width={img.width} height={img.height} />
+          <div>
+            <h3 class='text-lg font-bold'>{h3}</h3>
+            {p && <p class='text-sm'>{p}</p>}
+          </div>
+          {symbol && <b class='text-cyberLilac text-center text-2xl'>{symbol}</b>}
+        </div>
+      ))
+    }
+  </div>
+</section>

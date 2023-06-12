@@ -1,0 +1,152 @@
+---
+import hand1 from '@assets/bot/hands/1.png';
+import hand2 from '@assets/bot/hands/2.png';
+import hand3 from '@assets/bot/hands/3.png';
+import hand4 from '@assets/bot/hands/4.png';
+import hand5 from '@assets/bot/hands/5.png';
+import hotel from '@assets/bot/hotel.avif';
+
+const question = 'How was our opening event?';
+const options = [
+  ['Loved it!', hand5],
+  ['Great', hand4],
+  ['OK', hand3],
+  ['Boring', hand2],
+  ['Bad', hand1],
+] as const;
+
+const colors = {
+  dark: 'bg-slate-800 text-slate-800',
+  light: 'bg-slate-200 text-slate-200',
+  blue: 'bg-blue-700 text-blue-700',
+  purple: 'bg-purple-800 text-purple-800',
+  emerald: 'bg-emerald-500 text-emerald-500',
+  // pink: 'bg-pink-500 text-pink-500',
+};
+
+const dataTheme: Record<keyof typeof colors, string> = {
+  dark: 'bg-slate-800 text-slate-800',
+  light: 'bg-slate-200 text-slate-200',
+  blue: 'bg-blue-700 text-blue-700',
+  purple: 'bg-purple-800 text-purple-800',
+  emerald: 'bg-emerald-500 text-emerald-500',
+};
+
+const themes: Array<keyof typeof colors> = ['dark', 'light', 'blue', 'purple', 'emerald'];
+---
+
+<section>
+  <div class='p-4 text-center'>
+    <h2 class='brand-text text-4xl font-bold leading-normal drop-shadow-[0_0_8px_#000]'>Give Bot a Try!</h2>
+  </div>
+  <div class='relative isolate'>
+    <img loading='lazy' src={hotel} alt='' class='absolute bottom-0 -z-10 h-[85%] w-full object-cover' />
+    <div class='mx-auto grid max-w-screen-xl items-center md:grid-cols-[500px_auto] md:gap-2 md:px-2 md:pt-8 lg:gap-8'>
+      <div
+        id='bot'
+        class='relative h-[450px] w-[min(500px,100%)] justify-self-center rounded-t-3xl bg-white shadow-lg after:absolute after:left-[50%] after:top-[40px] after:aspect-[2/4] after:w-[25px] after:-translate-x-1/2 after:rounded-full after:bg-black'
+      >
+        <div
+          id='screen'
+          class='text group absolute inset-[min(40%,125px)_min(4%,30px)_0] overflow-hidden break-words bg-slate-800 p-4 text-center text-white shadow-inner transition after:mt-6 after:block after:h-[300px] after:rounded-lg after:bg-white/10 data-[theme=blue]:bg-blue-700 data-[theme=emerald]:bg-emerald-400 data-[theme=light]:bg-slate-100 data-[theme=purple]:bg-purple-800 data-[theme=emerald]:text-slate-950 data-[theme=light]:text-slate-950 data-[theme=light]:after:bg-slate-200/50'
+        >
+          <div class='animate-bounce text-5xl'>↑</div>
+          <output class='mb-6 mt-2 block text-2xl font-bold' for='q'>{question}</output>
+          <ol
+            class='grid min-h-[50px] grid-cols-5 gap-0.5 rounded-lg bg-white/10 p-2 text-sm group-data-[theme=light]:bg-slate-200/50'
+          >
+            {
+              options.map(([value, img], i) => (
+                <li>
+                  <img
+                    loading='lazy'
+                    class='mx-auto mb-1 h-12 w-12'
+                    src={img.src}
+                    width={img.width}
+                    height={img.height}
+                    alt='Hand gesture'
+                  />
+                  <output for={`o${i + 1}`}>{value}</output>
+                </li>
+              ))
+            }
+          </ol>
+          <p class='mt-3 text-lg font-medium opacity-50'>Thank you for participating!</p>
+        </div>
+      </div>
+      <div class='space-y-8 bg-slate-950/80 p-4 md:mt-[5%] md:rounded-lg'>
+        <div class='grid gap-2'>
+          <label for='q' class='mb-1 block text-sm font-medium text-white'>Question</label>
+          <input
+            type='text'
+            id='q'
+            maxlength='50'
+            value={question}
+            class='block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm text-white placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue'
+          />
+        </div>
+        <div class='grid grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-2'>
+          {
+            options.map(([value], i) => {
+              const id = i + 1;
+              return (
+                <div class='grid gap-2'>
+                  <label for={`o${id}`} class='mb-1 block text-sm font-medium  text-white'>
+                    Option {id}
+                  </label>
+                  <input
+                    type='text'
+                    id={`o${id}`}
+                    maxlength='15'
+                    value={value}
+                    class='focus:border-neonBlue focus:ring-neonBlue block w-full  rounded-lg border  border-gray-600 bg-gray-700 p-2.5 text-sm text-white placeholder-gray-400 '
+                  />
+                </div>
+              );
+            })
+          }
+        </div>
+        <div class='flex flex-wrap gap-4'>
+          {
+            themes.map((theme) => {
+              const color = colors[theme];
+              return (
+                <div>
+                  <label for={theme} class='sr-only'>
+                    {theme}
+                  </label>
+                  <input
+                    id={theme}
+                    type='radio'
+                    value={theme}
+                    autocomplete='off'
+                    name='name'
+                    checked={theme === 'dark'}
+                    class={`h-8 w-8 border-gray-300 ${color} cursor-pointer`}
+                  />
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const botScreen = document.querySelector('#screen') as HTMLDivElement;
+  const radios = document.querySelectorAll('[type=radio]');
+
+  radios.forEach((r) =>
+    r.addEventListener('change', (e) => (botScreen.dataset.theme = (e.target as HTMLInputElement).value))
+  );
+
+  const inputs = document.querySelectorAll('[type=text]');
+  inputs.forEach((i) =>
+    i.addEventListener(
+      'input',
+      (e) => (document.querySelector(`output[for=${i.id}]`)!.textContent = (e.target as HTMLInputElement).value)
+    )
+  );
+</script>

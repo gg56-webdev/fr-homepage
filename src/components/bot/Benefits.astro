@@ -1,0 +1,48 @@
+---
+import bot from '@assets/bot/bot.webp';
+import stats from '@assets/bot/stats.png';
+import map from '@assets/bot/map.png';
+import shield from '@assets/bot/shield.jpg';
+
+const cards = [
+  [
+    "Capture Visitors' Emotions in Real-Time",
+    " FingeRate Bot empowers you to elevate your customer experience and drive business growth. By capturing feedback directly through touchless surveys, you can gather accurate and timely insights, enabling you to make data-driven decisions and implement targeted improvements. Stay ahead of the competition by putting your customers' opinions at the heart of your business strategy.",
+    bot,
+    'img alt text',
+  ],
+  [
+    'Access to Data in Real-Time',
+    'We understand the importance of timely data to drive informed actions. FingeRate Bot provides you with real-time access to the captured data, allowing you to monitor and analyze visitor feedback instantly. Our intuitive dashboard presents the information in a visually appealing and easy-to-understand format, empowering you to make proactive adjustments and improvements based on real-time insights.',
+    stats,
+    '',
+  ],
+  [
+    'Secure and Reliable',
+    'At FingeRate Bot, we prioritize the security and privacy of your data. Our platform is built with robust encryption protocols and follows industry best practices to ensure that your information remains confidential. You can trust us to handle your data with the utmost care and protect it from unauthorized access.',
+    shield,
+    '',
+  ],
+] as const;
+---
+
+<section class='mx-auto max-w-screen-xl px-4'>
+  <div class='mx-auto mb-8 w-fit text-center'>
+    <h2 class='brand-text text-3xl font-bold leading-normal drop-shadow-[0_0_8px_#000]'>
+      Why Work With FingeRate&nbsp;Bot?
+    </h2>
+  </div>
+  <div class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,40ch),1fr))] gap-4'>
+    {
+      cards.map(([h3, p, img, alt]) => (
+        <div class='flex  flex-col overflow-hidden rounded-lg bg-slate-950/80'>
+          <img loading='lazy' src={img.src} alt={alt} class='aspect-video h-52 object-cover' />
+          <div class='p-4'>
+            <h3 class='mb-2 text-lg font-bold'>{h3}</h3>
+            <p class='text-sm'>{p}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

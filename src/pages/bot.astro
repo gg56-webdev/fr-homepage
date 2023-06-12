@@ -1,46 +1,55 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { NAV_LINKS } from '../constants';
-import vid from '~/assets/bot/bot_intro.mp4';
-import bot from '~/assets/bot/bot.webp';
+import vid from '@assets/bot/bot_intro.mp4';
+import Benefits from '@/components/bot/Benefits.astro';
+import Contact from '@/components/bot/Contact.astro';
+import Dashboard from '@/components/bot/Dashboard.astro';
+import How from '@/components/bot/How.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title='FingeRate Bot'>
-  <section class='mx-auto grid min-h-[70vh] max-w-screen-xl place-items-center py-6 lg:px-2' id='app'>
-    <div class='grid h-full lg:grid-cols-[1fr_0.75fr] lg:place-items-center lg:gap-12'>
-      <div class='h-fit w-fit overflow-hidden lg:rounded-lg'>
-        <video src={vid} width='1280' height='720' controls muted autoplay loop></video>
+  <div class='space-y-12 pb-12 md:space-y-24 md:pb-24'>
+    <section class='mx-auto grid min-h-[70vh] max-w-screen-xl place-items-center py-6 lg:px-2' id='app'>
+      <div class='grid h-full lg:grid-cols-[1fr_0.75fr] lg:place-items-center lg:gap-12'>
+        <div class='h-fit w-fit overflow-hidden lg:rounded-lg'>
+          <video src={vid} width='1280' height='720' controls muted autoplay loop></video>
+        </div>
+        <div class='p-4'>
+          <h1 class='brand-text text-4xl font-bold leading-normal drop-shadow-[0_0_8px_#000]'>
+            Introducing FingeRate&nbsp;Bot!
+          </h1>
+          <p class='mt-4'>
+            FingeRate Bot offers a cutting-edge touchless survey solution, revolutionizing the way you collect feedback
+            and measure customer satisfaction. With our advanced technology, you can gather valuable insights without
+            the need for physical contact or paper-based surveys. Our touchless approach ensures a seamless and safe
+            experience for your visitors.
+          </p>
+        </div>
       </div>
-      <div class='p-6'>
-        <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>FingeRate Bot</h1>
-        <p class=''>
-          Welcome to FingeRate Bot, a revolutionary IoT-based feedback system that simplifies the feedback process for
-          users and service providers alike. Our touch-less system allows users to rate their experience with just five
-          fingers, providing a seamless and touch-less experience. Our advanced analytics software collects this
-          information, along with other data such as visitor numbers and weather conditions, to provide valuable
-          insights that can help improve services.
+    </section>
+    <Benefits />
+    <How />
+    <Dashboard />
+    <Contact />
+    <!-- <section class='mx-auto grid max-w-screen-xl md:grid-cols-2 lg:px-2'>
+      <img
+        class='h-full object-cover shadow-md md:order-2 lg:h-[400px] lg:rounded-lg'
+        src={bot.src}
+        alt='Person giving a response to survey with hand gesture pointed towards the camera of FingeRate Bot'
+        width={bot.width}
+        height={bot.height}
+        loading='lazy'
+      />
+      <div class='z-10 bg-slate-950/80 p-6 sm:p-12 lg:-mr-12 lg:-mt-12 lg:self-start lg:rounded-lg'>
+        <h2 class='brand-text inline-block text-2xl font-bold'>Easy to Use</h2>
+        <p class='mt-4'>
+          FingeRate Bot is designed to provide the ultimate experience for both visitors and businesses. With our
+          user-friendly FingeRate Dashboard, businesses have access to a comprehensive overview of the data collected,
+          enabling them to make informed, data-driven decisions in real-time. By leveraging the insights gained from the
+          FingeRate Bot system, businesses can enhance the overall customer experience and optimize their operations.
+          With FingeRate Bot, everyone can stay ahead of the curve and exceed customer expectations.
         </p>
       </div>
-    </div>
-  </section>
-  <section class='mx-auto grid max-w-screen-xl md:grid-cols-2 lg:px-2'>
-    <img
-      class='h-full object-cover shadow-md md:order-2 lg:h-[400px] lg:rounded-lg'
-      src={bot.src}
-      alt='Person giving a response to survey with hand gesture pointed towards the camera of FingeRate Bot'
-      width={bot.width}
-      height={bot.height}
-      loading='lazy'
-    />
-    <div class='z-10 bg-slate-950/80 p-6 sm:p-12 lg:-mr-12 lg:-mt-12 lg:self-start lg:rounded-lg'>
-      <h2 class='brand-text inline-block text-2xl font-bold'>Easy to Use</h2>
-      <p class='mt-4'>
-        FingeRate Bot is designed to provide the ultimate experience for both visitors and businesses. With our
-        user-friendly FingeRate Dashboard, businesses have access to a comprehensive overview of the data collected,
-        enabling them to make informed, data-driven decisions in real-time. By leveraging the insights gained from the
-        FingeRate Bot system, businesses can enhance the overall customer experience and optimize their operations. With
-        FingeRate Bot, everyone can stay ahead of the curve and exceed customer expectations.
-      </p>
-    </div>
-  </section>
+    </section> -->
+  </div>
 </Layout>
