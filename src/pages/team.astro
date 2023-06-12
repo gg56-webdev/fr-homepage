@@ -2,13 +2,14 @@
 import Layout from '@layouts/Layout.astro';
 import { founders, mainTeam } from '@data/team/exports';
 import ceoSpeech from '@assets/team/ceo-speech.webp';
-import { Image } from 'astro:assets';
-import PersonJSON from '@components/Person.astro';
+import { Image, getImage } from 'astro:assets';
+import Person from '@components/Person.astro';
 import { getLangFromUrl } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const photos: ImageMetadata[] = await Astro.glob('../assets/team/photos/**/*.{png,webp}').then((files) =>
   files.map((f) => f.default)
 );
+const optimizedPhotos = await Promise.all(photos.map((p) => getImage({ src: p, format: 'webp', quality: 'high' })));
 
 type PersonJSON = {
   name: { en: string; ko?: string };
@@ -27,6 +28,15 @@ const formatPerson = (person: PersonJSON): Person => {
     bio: person.bio?.[lang] || person.bio?.en,
     titles: person.titles?.[lang] || person.titles?.en,
   };
+};
+
+const getOptimizedPhoto = (name: string) => {
+  return optimizedPhotos.find(({ options: { src } }) => {
+    if (typeof src === 'string') {
+      return src.includes(name);
+    }
+    return src.src.includes(name);
+  });
 };
 ---
 
@@ -55,16 +65,16 @@ const formatPerson = (person: PersonJSON): Person => {
         {
           founders.map((p) => {
             const personInfo = formatPerson(p);
-            const photo = photos.find(({ src }) => src.includes(p.name.en));
+            const photo = getOptimizedPhoto(p.name.en);
             return (
               <li
                 data-person={JSON.stringify({
                   ...personInfo,
-                  photo,
+                  photo: { src: photo?.src, attributes: photo?.attributes },
                 })}
                 class='w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
               >
-                <PersonJSON person={personInfo} photo={photo} />
+                <Person person={personInfo} photo={photo} />
               </li>
             );
           })
@@ -75,16 +85,17 @@ const formatPerson = (person: PersonJSON): Person => {
         {
           mainTeam.map((p) => {
             const personInfo = formatPerson(p);
-            const photo = photos.find(({ src }) => src.includes(p.name.en));
+            const photo = getOptimizedPhoto(p.name.en);
+
             return (
               <li
                 data-person={JSON.stringify({
                   ...personInfo,
-                  photo,
+                  photo: { src: photo?.src, attributes: photo?.attributes },
                 })}
                 class=' w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
               >
-                <PersonJSON person={personInfo} photo={photo} />
+                <Person person={personInfo} photo={photo} />
               </li>
             );
           })
@@ -126,7 +137,8 @@ const formatPerson = (person: PersonJSON): Person => {
 </template>
 
 <script>
-  type Person = globalThis.Person & { photo: globalThis.ImageMetadata };
+  // TODO: type photo as GetImageResult
+  type Person = globalThis.Person & { photo: any };
 
   const personCards = document.querySelectorAll<HTMLLIElement>('[data-person]');
   const dialog = document.querySelector('dialog')!;
@@ -170,10 +182,10 @@ const formatPerson = (person: PersonJSON): Person => {
     personInfo.querySelector('b')!.textContent = person.name;
 
     const photo = personInfo.querySelector('img')!;
+
     photo.src = person.photo.src;
-    photo.width = person.photo.width;
-    photo.height = person.photo.height;
     photo.alt = `Portrait of ${person.name}`;
+    Object.entries(person.photo.attributes).forEach(([key, val]) => photo.setAttribute(key, val as string));
 
     const subtitles = personInfo.querySelector('ul')!;
     person.subtitles.forEach((st: string) => {

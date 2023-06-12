@@ -1,7 +1,11 @@
 ---
 import logo from '@assets/logo.webp';
+import type { GetImageResult } from 'astro';
+import { Image, getImage } from 'astro:assets';
+
+const optimizedLogo = await getImage(logo);
+
 const icons: ImageMetadata[] = await Astro.glob('../assets/social/*.svg').then((files) => files.map((f) => f.default));
-import { Image } from 'astro:assets';
 
 const getIcon = (href: string) => {
   if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!;
@@ -12,10 +16,10 @@ const getIcon = (href: string) => {
 
 export interface Props {
   person: Person;
-  photo: ImageMetadata | undefined;
+  photo: GetImageResult | undefined;
 }
 
-const { person, photo = logo } = Astro.props;
+const { person, photo = optimizedLogo } = Astro.props;
 
 const hasInfo = !!person.titles || !!person.bio || !!person.articles;
 ---
@@ -49,12 +53,12 @@ const hasInfo = !!person.titles || !!person.bio || !!person.articles;
     )
   }
 
-  <Image
+  <img
     data-profile-photo
-    src={photo}
+    src={photo.src}
+    {...photo.attributes}
     alt={`Portrait of ${person.name}`}
     class={`grayscale transition ${hasInfo ? 'hover:cursor-pointer' : ''} group-hover:grayscale-0 rounded-full`}
-    quality={'high'}
   />
   <div class='mt-2 flex h-full flex-col gap-2'>
     <div>
@@ -78,7 +82,15 @@ const hasInfo = !!person.titles || !!person.bio || !!person.articles;
               <li class='rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1'>
                 <a href={s} target='_blank' class='rounded-full' rel='noopener noreferrer'>
                   <span class='sr-only'>go to {person.name}&apos;s social page</span>
-                  <img class='h-7 w-7' src={icon.src} width={icon.width} height={icon.height} alt='SNS logo' />
+                  <img
+                    loading='lazy'
+                    decoding='async'
+                    class='h-7 w-7'
+                    src={icon.src}
+                    width={icon.width}
+                    height={icon.height}
+                    alt='SNS logo'
+                  />
                 </a>
               </li>
             );
