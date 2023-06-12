@@ -1,18 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ceoSpeech from '../assets/team/ceo-speech.webp';
+import Layout from '@layouts/Layout.astro';
+import { founders, mainTeam } from '@data/team/exports';
+import ceoSpeech from '@assets/team/ceo-speech.webp';
 import { Image } from 'astro:assets';
-import founders from '../data/team/founders.json';
-import main from '../data/team/main.json';
-import Person from '../components/Person.astro';
-import { getLangFromUrl } from '../i18n/utils';
-// const lang = getLangFromUrl(Astro.url);
-const lang = 'en';
+import PersonJSON from '@components/Person.astro';
+import { getLangFromUrl } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 const photos: ImageMetadata[] = await Astro.glob('../assets/team/photos/**/*.{png,webp}').then((files) =>
   files.map((f) => f.default)
 );
 
-type Person = {
+type PersonJSON = {
   name: { en: string; ko?: string };
   subtitles: { en: string[]; ko?: string[] };
   bio?: { en: string; ko?: string };
@@ -21,14 +19,13 @@ type Person = {
   articles?: { href: string; title: string }[];
 };
 
-const formatPerson = (person: Person) => {
+const formatPerson = (person: PersonJSON): Person => {
   return {
+    ...person,
     name: person.name[lang] || person.name.en,
-    subtitles: person.subtitles && person.subtitles[lang] ? person.subtitles[lang] : person.subtitles.en,
+    subtitles: person.subtitles[lang] || person.subtitles.en,
     bio: person.bio?.[lang] || person.bio?.en,
-    socials: person?.socials,
-    titles: person.titles && person.titles[lang] ? person.titles[lang] : person.titles?.en,
-    articles: person.articles,
+    titles: person.titles?.[lang] || person.titles?.en,
   };
 };
 ---
@@ -58,7 +55,7 @@ const formatPerson = (person: Person) => {
         {
           founders.map((p) => {
             const personInfo = formatPerson(p);
-            const photo = photos.find(({ src }) => src.includes(p.name.en))!;
+            const photo = photos.find(({ src }) => src.includes(p.name.en));
             return (
               <li
                 data-person={JSON.stringify({
@@ -67,7 +64,7 @@ const formatPerson = (person: Person) => {
                 })}
                 class='w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
               >
-                <Person person={personInfo} photo={photo} />
+                <PersonJSON person={personInfo} photo={photo} />
               </li>
             );
           })
@@ -76,9 +73,9 @@ const formatPerson = (person: Person) => {
       <hr class='my-4' />
       <ul class='flex flex-wrap justify-center gap-2'>
         {
-          main.map((p) => {
+          mainTeam.map((p) => {
             const personInfo = formatPerson(p);
-            const photo = photos.find(({ src }) => src.includes(p.name.en))!;
+            const photo = photos.find(({ src }) => src.includes(p.name.en));
             return (
               <li
                 data-person={JSON.stringify({
@@ -87,7 +84,7 @@ const formatPerson = (person: Person) => {
                 })}
                 class=' w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
               >
-                <Person person={personInfo} photo={photo} />
+                <PersonJSON person={personInfo} photo={photo} />
               </li>
             );
           })
@@ -114,37 +111,42 @@ const formatPerson = (person: Person) => {
       <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12'></path>
     </svg>
   </button>
-  <div id='content' class='grid max-w-screen-md items-center gap-2 md:grid-cols-[auto_1fr] md:gap-4'></div>
+  <div id='dialog-content' class='grid max-w-screen-md items-center gap-2 md:grid-cols-[auto_1fr] md:gap-4'></div>
 </dialog>
 
 <template>
-  <div class='grid items-center justify-center gap-2 self-start'>
-    <img id='person-photo' loading='lazy' />
-    <div id='person-info' class='text-center'>
-      <b id='person-name'></b>
+  <div id='person-info' class='grid items-center justify-center gap-2 self-start'>
+    <img loading='lazy' decoding='async' />
+    <div class='text-center'>
+      <b></b>
+      <ul class='text-sm text-cyberLilac'></ul>
     </div>
   </div>
+  <div class='space-y-4' id='person-bio'></div>
 </template>
 
 <script>
   type Person = globalThis.Person & { photo: globalThis.ImageMetadata };
 
   const personCards = document.querySelectorAll<HTMLLIElement>('[data-person]');
-  const dialog = document.querySelector('dialog') as HTMLDialogElement;
-  const dialogTemplate = document.querySelector('template') as HTMLTemplateElement;
-  const dialogContent = dialog.querySelector('#content') as HTMLDivElement;
+  const dialog = document.querySelector('dialog')!;
+  const dialogTemplate = document.querySelector('template')!;
+  const dialogContent = dialog.querySelector('#dialog-content') as HTMLDivElement;
   const closeBtn = document.querySelector('#close-modal') as HTMLButtonElement;
 
   personCards.forEach((card) => {
-    const personInfo = JSON.parse(card.dataset.person!) as Person;
+    if (!card.dataset.person) return;
+    const personInfo = JSON.parse(card.dataset.person) as Person;
     const hasExtraInfo = !!personInfo.bio || !!personInfo.titles || !!personInfo.articles;
     if (hasExtraInfo) {
-      card.querySelectorAll('[data-profile-photo],[data-profile-info-btn]').forEach((item) =>
-        item.addEventListener('click', () => {
-          addInfoToModal(personInfo);
-          openModal();
-        })
-      );
+      card.addEventListener('click', ({ target }) => {
+        if (target instanceof HTMLElement) {
+          if ('profilePhoto' in target.dataset || 'profileInfoBtn' in target.dataset) {
+            addInfoToModal(personInfo);
+            openModal();
+          }
+        }
+      });
     }
   });
 
@@ -161,26 +163,24 @@ const formatPerson = (person: Person) => {
   const addInfoToModal = (person: Person) => {
     dialogContent.replaceChildren();
     dialogContent.appendChild(dialogTemplate.content.cloneNode(true));
-    const personInfo = dialogContent.querySelector('#person-info')!;
 
-    personInfo.querySelector('#person-name')!.textContent = person.name;
+    const personInfo = dialogContent.querySelector('#person-info') as HTMLDivElement;
+    const personBio = dialogContent.querySelector('#person-bio') as HTMLDivElement;
 
-    const photo = dialogContent.querySelector('#person-photo') as HTMLImageElement;
+    personInfo.querySelector('b')!.textContent = person.name;
+
+    const photo = personInfo.querySelector('img')!;
     photo.src = person.photo.src;
     photo.width = person.photo.width;
     photo.height = person.photo.height;
     photo.alt = `Portrait of ${person.name}`;
 
-    if (person?.subtitles.length > 0) {
-      const ul = document.createElement('ul');
-      ul.classList.add('text-sm', 'text-cyberLilac');
-      person.subtitles.forEach((st: string) => {
-        const li = document.createElement('li');
-        li.textContent = st;
-        ul.appendChild(li);
-      });
-      personInfo.appendChild(ul);
-    }
+    const subtitles = personInfo.querySelector('ul')!;
+    person.subtitles.forEach((st: string) => {
+      const li = document.createElement('li');
+      li.textContent = st;
+      subtitles.appendChild(li);
+    });
 
     // TODO: add social buttons to person info modal
     // if (person.socials) {
@@ -194,28 +194,25 @@ const formatPerson = (person: Person) => {
     //   })
     // }
 
-    if (person.titles || person.bio || person.articles) {
-      const personBio = document.createElement('div');
-      personBio.classList.add('grid', 'gap-2', 'text-sm');
-
-      if (person.titles) {
-        const ul = document.createElement('ul');
-        ul.classList.add('font-bold');
-        person.titles.forEach((t: string) => {
-          const li = document.createElement('li');
-          li.textContent = t;
-          ul.appendChild(li);
-        });
-        personBio.appendChild(ul);
-      }
-      if (person.bio) {
-        const p = document.createElement('p');
-        p.classList.add('border-l', 'pl-2');
-        p.textContent = person.bio;
-        personBio.appendChild(p);
-      }
-      dialogContent.appendChild(personBio);
+    if (person.titles) {
+      const ul = document.createElement('ul');
+      ul.classList.add('font-bold');
+      person.titles.forEach((t: string) => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        ul.appendChild(li);
+      });
+      personBio.appendChild(ul);
     }
+
+    if (person.bio) {
+      const p = document.createElement('p');
+      p.classList.add('border-l', 'pl-2', 'text-sm');
+      p.textContent = person.bio;
+      personBio.appendChild(p);
+    }
+
+    // TODO: add articles
   };
 
   closeBtn.addEventListener('click', closeModal);

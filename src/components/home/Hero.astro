@@ -1,0 +1,102 @@
+---
+import phone from '@assets/app/phone.webp';
+import phones from '@assets/app/phones.webp';
+import Apple from '@components/DownloadBtn/Apple.astro';
+import Google from '@components/DownloadBtn/Google.astro';
+import { Image } from 'astro:assets';
+---
+
+<section
+  class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center justify-items-center gap-4 px-2 md:grid-cols-2 md:overflow-hidden'
+  id='hero'
+>
+  <div class='relative isolate md:order-2'>
+    <svg
+      class='absolute -z-10 h-full w-full fill-intelligentBlue md:inset-[-5rem_-7rem] md:h-auto md:w-auto'
+      viewBox='0 0 200 200'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path
+        d='M52.4,-61.1C67.2,-50,78,-32.9,82.6,-13.6C87.1,5.7,85.5,27.1,74.1,39.1C62.8,51.1,41.6,53.7,22.9,58.7C4.2,63.8,-12.2,71.2,-29.1,69.5C-45.9,67.9,-63.2,57.2,-71.3,41.8C-79.4,26.5,-78.2,6.4,-69.6,-7C-60.9,-20.5,-44.8,-27.3,-32,-38.7C-19.1,-50.1,-9.6,-66.1,4.6,-71.6C18.8,-77.1,37.6,-72.2,52.4,-61.1Z'
+        transform='translate(100 100)'></path>
+    </svg>
+    <picture>
+      <source media='(max-width: 767px)' srcset={phone.src} />
+
+      <Image
+        src={phones}
+        alt='Phone/s with a FingeRate App demo'
+        class='block h-[350px] object-contain md:order-2 md:h-[500px] md:w-fit'
+        decoding={'auto'}
+      />
+    </picture>
+  </div>
+  <div class='relative z-10 text-center'>
+    <div class='h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]'>
+      <h1 class='text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]'>
+        Survey ×
+        <span id='anim' class='inline-grid text-center'>
+          <span>Metaverse</span>
+          <span>Avatar</span>
+          <span>Business</span>
+          <span>Rewards</span>
+          <span>Satisfaction</span>
+          <span>LBS</span>
+          <span>Simplicity</span>
+          <span>Metaverse</span>
+        </span>
+        = <span class='brand-text drop-shadow-[0_0_8px_#000]'>FingeRate</span>
+      </h1>
+    </div>
+    <p class='mx-auto mt-4 max-w-[70ch] sm:text-xl md:mx-0 md:mt-8'>
+      Take surveys and earn rewards instantly! Share your opinions effortlessly and be rewarded for it! It is safe,
+      secure, and global!
+    </p>
+    <div class='mt-8 flex w-full flex-wrap justify-center gap-4 md:mt-12'>
+      <Google />
+      <Apple />
+    </div>
+  </div>
+</section>
+
+<style>
+  #anim {
+    animation-name: stack;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes stack {
+    6.25% {
+      translate: 0 0%;
+    }
+    12.5%,
+    18.75% {
+      translate: 0 -12.5%;
+    }
+    25%,
+    31.25% {
+      translate: 0 -25%;
+    }
+    37.5%,
+    43.75% {
+      translate: 0 -37.5%;
+    }
+    50%,
+    56.25% {
+      translate: 0 -50%;
+    }
+    62.5%,
+    68.75% {
+      translate: 0 -62.5%;
+    }
+    75%,
+    81.25% {
+      translate: 0 -75%;
+    }
+    87.5%,
+    100% {
+      translate: 0 -87.5%;
+    }
+  }
+</style>

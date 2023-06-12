@@ -1,21 +1,18 @@
 ---
-import CookieBanner from '../components/CookieBanner.astro';
-import bg from '../assets/bg2.webp';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { getLangFromUrl } from '../i18n/utils';
-import ScrollToTop from '../components/ScrollToTop.astro';
+import bg from '@assets/bg2.webp';
+import CookieBanner from '@components/CookieBanner.astro';
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import ScrollToTop from '@components/ScrollToTop.astro';
+import { getLangFromUrl } from '@i18n/utils';
 import { getImage } from 'astro:assets';
-import { NAV_LINKS } from '../constants';
-const optimizedBg = await getImage({ src: bg });
 
+const optimizedBg = await getImage(bg);
 const lang = getLangFromUrl(Astro.url);
-const isTermsPage = [NAV_LINKS.TERMS.href, NAV_LINKS.PRIVACY.href].includes(Astro.url.pathname);
 
 export interface Props {
   title: string;
 }
-
 const { title } = Astro.props;
 ---
 
@@ -34,11 +31,12 @@ const { title } = Astro.props;
   </head>
   <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace text-white'>
     <Header />
-    <main class='bg-cover bg-center bg-no-repeat' style={`background-image: url(${optimizedBg.src});`} id='swup'>
+    <!-- TODO: change bg to bigger image -->
+    <main class='bg-cover bg-center bg-no-repeat' style={`background-image: url(${optimizedBg.src});`}>
       <slot />
     </main>
     <ScrollToTop />
-    {!isTermsPage && <CookieBanner />}
+    <CookieBanner />
     <Footer />
   </body>
 </html>
@@ -72,7 +70,3 @@ const { title } = Astro.props;
     color: transparent;
   }
 </style>
-
-<!-- <script>
-  import '../scripts/swup.js';
-</script> -->

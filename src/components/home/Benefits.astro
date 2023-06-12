@@ -1,0 +1,44 @@
+---
+import benefit1 from '@assets/home/benefit-1.webp';
+import benefit2 from '@assets/home/benefit-2.webp';
+import benefit3 from '@assets/home/benefit-3.webp';
+import { Image } from 'astro:assets';
+
+const content = [
+  [
+    'Earning Rewards Effortlessly',
+    'Select from a wide range of surveys, share your valuable opinions, and enjoy instant rewards.  Say goodbye to waiting and hello to instant gratification!',
+    benefit1,
+  ],
+  [
+    'Safe & Secure',
+    'Our app was developed with security and privacy in mind! Our app was meticulously designed, leveraging the power of blockchain technology, to provide an unparalleled level of security and privacy.',
+    benefit2,
+  ],
+  [
+    'Easy & Fast',
+    'FingeRate app presents a swift and straightforward method to earn rewards! Bid farewell to never-ending surveys and say hello to a platform that values your time and effort.',
+    benefit3,
+  ],
+] as const;
+---
+
+<section class='mx-auto max-w-screen-xl space-y-12 px-2'>
+  {
+    content.map(([h2, p, img], i) => (
+      <div class={`flex flex-col items-center md:flex-row md:even:flex-row-reverse `}>
+        <div class='flex-1'>
+          <Image src={img} alt={`illustration to show how FingeRate app is ${h2}`} class=' object-fit' />
+        </div>
+        <div
+          class={`relative mx-auto -mt-4 flex-1 rounded-lg bg-slate-950/90 p-6 md:mt-0 md:p-12 ${
+            i % 2 === 0 ? 'md:-ml-8' : 'md:-mr-8'
+          }`}
+        >
+          <h2 class='brand-text text-2xl font-bold md:text-3xl'>{h2}</h2>
+          <p class='mt-2 md:mt-4 md:text-lg'>{p}</p>
+        </div>
+      </div>
+    ))
+  }
+</section>

@@ -1,6 +1,5 @@
 ---
-import logo from '../assets/logo.jpg';
-import linkIcon from '../assets/social/LI.svg';
+import logo from '@assets/logo.webp';
 const icons: ImageMetadata[] = await Astro.glob('../assets/social/*.svg').then((files) => files.map((f) => f.default));
 import { Image } from 'astro:assets';
 
@@ -8,20 +7,12 @@ const getIcon = (href: string) => {
   if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!;
   if (href.includes('youtu.be')) return icons.find(({ src }) => src.includes('YT'))!;
   if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'))!;
-  return linkIcon;
+  return icons.find(({ src }) => src.includes('LI'))!;
 };
 
-type Person = {
-  name: string;
-  subtitles: string[];
-  socials?: string[];
-  titles?: string[];
-  bio?: string;
-  articles?: { href: string; title: string }[];
-};
 export interface Props {
   person: Person;
-  photo: ImageMetadata;
+  photo: ImageMetadata | undefined;
 }
 
 const { person, photo = logo } = Astro.props;
@@ -41,6 +32,7 @@ const hasInfo = !!person.titles || !!person.bio || !!person.articles;
       >
         <span class='sr-only'>lear more about {person.name}</span>
         <svg
+          class='pointer-events-none'
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
           viewBox='0 0 24 24'

@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/DocumentLayout.astro
+layout: '@layouts/DocumentLayout.astro'
 title: 'Privacy Policy'
 ---
 
