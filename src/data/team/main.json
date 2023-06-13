@@ -1,8 +1,8 @@
 [
   {
     "name": { "en": "Choi Myung-ju", "ko": "최명주" },
-    "subtitles": { "en": ["President, UAE & Middle East"], "ko": ["대표님"] },
-    "socials": ["https://www.linkedin.com/in/myungju-choi-13037a160", "https://youtu.be/ntm25nqwG3o"],
+    "subtitles": { "en": ["President", "UAE & Middle East"], "ko": ["대표님"] },
+    "socials": ["https://www.linkedin.com/in/myungju-choi-13037a160"],
     "bio": {
       "en": "Choi Myung-ju currently serves as CEO of MEA & Co. which provides financial and business development consulting for Korean companies in middle east and Arab companies in Korea. He has served as CEO of PECSA and served as CEO at POSCO Capital. He transformed a brokerage house into small cap specialized investment bank as CEO at Kyobo Securities. He is the president of UAE & Middle East region of GG56 limited's blockchain project FingeRate."
     }
