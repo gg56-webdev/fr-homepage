@@ -19,8 +19,9 @@ export const NAV_LINKS: LinksMap = {
   CONTACT: { name: 'Contact', href: '/contact', isExternal: false, isImportant: false },
   PRIVACY: {
     name: 'Privacy Policy',
-    href: '/privacy-policy',
-    isExternal: false,
+    // href: '/privacy-policy',
+    href: 'https://fingerate.gitbook.io/fingerate-personal-information-processing-policy/',
+    isExternal: true,
     isImportant: false,
   },
   TERMS: { name: 'Terms of Use', href: '/terms-of-use', isExternal: false, isImportant: false },
