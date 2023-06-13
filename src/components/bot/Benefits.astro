@@ -24,6 +24,12 @@ const cards = [
     'Illustration of FingeRate Security feature',
   ],
 ] as const;
+
+const delays: Record<number, string> = {
+  0: 'lg:delay-0',
+  1: 'lg:delay-200',
+  2: 'lg:delay-[400ms]',
+};
 ---
 
 <section class='mx-auto max-w-screen-xl px-4'>
@@ -34,15 +40,17 @@ const cards = [
   </div>
   <div class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,40ch),1fr))] gap-4'>
     {
-      cards.map(([h3, p, img, alt]) => (
-        <div class='flex  flex-col overflow-hidden rounded-lg bg-slate-950/80'>
-          <Image src={img} alt={alt} class='aspect-video h-52 object-cover' />
-          <div class='p-4'>
-            <h3 class='mb-2 text-lg font-bold'>{h3}</h3>
-            <p class='text-sm'>{p}</p>
+      cards.map(([h3, p, img, alt], i) => {
+        return (
+          <div data-scroll-animation class={`${delays[i]} flex  flex-col overflow-hidden rounded-lg bg-slate-950/80`}>
+            <Image src={img} alt={alt} class='aspect-video h-52 object-cover' />
+            <div class='p-4'>
+              <h3 class='mb-2 text-lg font-bold'>{h3}</h3>
+              <p class='text-sm'>{p}</p>
+            </div>
           </div>
-        </div>
-      ))
+        );
+      })
     }
   </div>
 </section>

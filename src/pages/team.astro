@@ -38,6 +38,13 @@ const getOptimizedPhoto = (name: string) => {
     return src.src.includes(name);
   });
 };
+
+const delays: Record<number, string> = {
+  0: 'lg:delay-0',
+  1: 'lg:delay-100',
+  2: 'lg:delay-200',
+  3: 'lg:delay-300',
+};
 ---
 
 <Layout title='Team'>
@@ -68,6 +75,7 @@ const getOptimizedPhoto = (name: string) => {
             const photo = getOptimizedPhoto(p.name.en);
             return (
               <li
+                data-scroll-animation
                 data-person={JSON.stringify({
                   ...personInfo,
                   photo: { src: photo?.src, attributes: photo?.attributes },
@@ -83,17 +91,20 @@ const getOptimizedPhoto = (name: string) => {
       <hr class='my-4' />
       <ul class='flex flex-wrap justify-center gap-2'>
         {
-          mainTeam.map((p) => {
+          mainTeam.map((p, i) => {
             const personInfo = formatPerson(p);
             const photo = getOptimizedPhoto(p.name.en);
 
             return (
               <li
+                data-scroll-animation
                 data-person={JSON.stringify({
                   ...personInfo,
                   photo: { src: photo?.src, attributes: photo?.attributes },
                 })}
-                class=' w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)] '
+                class={`${
+                  delays[i % 4]
+                } w-[calc(50%-0.5rem)] min-w-[140px] sm:w-[calc(33.33%-0.5rem)] md:w-[calc(25%-0.5rem)]`}
               >
                 <Person person={personInfo} photo={photo} />
               </li>

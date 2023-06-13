@@ -17,7 +17,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang={lang} >
+<html lang={lang}>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -29,7 +29,7 @@ const { title } = Astro.props;
     <title>{title}</title>
     <link rel='preload' as='image' href={optimizedBg.src} />
   </head>
-  <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace '>
+  <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace'>
     <Header />
     <main class='bg-cover bg-center bg-no-repeat' style={`background-image: url(${optimizedBg.src});`}>
       <slot />
@@ -70,3 +70,31 @@ const { title } = Astro.props;
     color: transparent;
   }
 </style>
+
+<script>
+  const sections = document.querySelectorAll('[data-scroll-animation]');
+
+  if (sections.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('motion-safe:opacity-0', 'motion-safe:translate-y-[10%]');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '-15%' }
+    );
+
+    sections.forEach((section) => {
+      section.classList.add(
+        'motion-safe:opacity-0',
+        'motion-safe:transition',
+        'motion-safe:translate-y-[10%]',
+        '!duration-300'
+      );
+      observer.observe(section);
+    });
+  }
+</script>
