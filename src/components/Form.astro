@@ -1,0 +1,45 @@
+<form class='grid gap-6' action='https://api.web3forms.com/submit' method='POST'>
+  <input type='hidden' name='access_key' value={import.meta.env.PUBLIC_WEB3_FORM_ACCESS_KEY} />
+  <input type='checkbox' name='botcheck' class='hidden' />
+  <div class='grid gap-2'>
+    <label class='mb-1 block text-sm font-medium' for='name'>Your Name</label>
+    <input
+      class='block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue'
+      type='text'
+      name='name'
+      id='name'
+      autocomplete='name'
+      required
+    />
+  </div>
+  <div class='grid gap-2'>
+    <label class='mb-1 block text-sm font-medium' for='email'>Your Email</label>
+    <input
+      class='block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue'
+      type='email'
+      name='email'
+      autocomplete='email'
+      id='email'
+      required
+    />
+  </div>
+  <div class='grid gap-2'>
+    <label class='mb-1 block text-sm font-medium' for='message'
+      >Message <span class='text-xs'>(max 225 characters)</span></label
+    >
+    <textarea
+      maxlength='225'
+      class='block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue'
+      name='message'
+      id='message'
+      required></textarea>
+  </div>
+  <input type='hidden' name='subject' value='Bot Contact from fingerate.world' />
+  <input type='hidden' name='redirect' value='https://web3forms.com/success' />
+
+  <button
+    type='submit'
+    class='rounded-lg bg-intelligentBlue px-5 py-2.5 text-center text-sm font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300'
+    >Submit</button
+  >
+</form>

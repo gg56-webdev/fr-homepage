@@ -1,3 +1,7 @@
+---
+import Form from '@components/Form.astro';
+---
+
 <section data-scroll-animation class='mx-auto max-w-screen-lg space-y-4 p-2'>
   <div class='text-center'>
     <h2 class='brand-text text-3xl font-bold leading-normal drop-shadow-[0_0_8px_#000]'>
@@ -9,7 +13,7 @@
     demo, and discover how our solution can transform your business. Don't miss out on the opportunity to unlock the
     true potential of your customer interactions.
   </p>
-  <div class='grid gap-4 overflow-hidden rounded-xl bg-slate-950/80 p-4 md:grid-cols-[1fr_2fr]'>
+  <div class='grid gap-4 rounded-xl bg-slate-950/80 p-4 md:grid-cols-[1fr_2fr]'>
     <div class='grid content-between gap-8 rounded-lg bg-brandGradient p-4'>
       <div>
         <h3 class='text-2xl font-bold'>Contact Information</h3>
@@ -68,50 +72,6 @@
         </div>
       </address>
     </div>
-    <form class='grid gap-6' action='https://api.web3forms.com/submit' method='POST'>
-      <input type='hidden' name='access_key' value={import.meta.env.PUBLIC_WEB3_FORM_ACCESS_KEY} />
-      <input type='checkbox' name='botcheck' class='hidden' />
-      <div class='grid gap-2'>
-        <label class='mb-1 block text-sm font-medium' for='name'>Your Name</label>
-        <input
-          class='block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue'
-          type='text'
-          name='name'
-          id='name'
-          autocomplete='name'
-          required
-        />
-      </div>
-      <div class='grid gap-2'>
-        <label class='mb-1 block text-sm font-medium' for='email'>Your Email</label>
-        <input
-          class='block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue'
-          type='email'
-          name='email'
-          autocomplete='email'
-          id='email'
-          required
-        />
-      </div>
-      <div class='grid gap-2'>
-        <label class='mb-1 block text-sm font-medium' for='message'
-          >Message <span class='text-sm'>(max 225 characters)</span></label
-        >
-        <textarea
-          maxlength='225'
-          class='block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue'
-          name='message'
-          id='message'
-          required></textarea>
-      </div>
-      <input type='hidden' name='subject' value='Bot Contact from fingerate.world' />
-      <input type='hidden' name='redirect' value='https://web3forms.com/success' />
-
-      <button
-        type='submit'
-        class='rounded-lg bg-intelligentBlue px-5 py-2.5 text-center text-sm font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300'
-        >Submit</button
-      >
-    </form>
+    <Form />
   </div>
 </section>
