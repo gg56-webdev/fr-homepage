@@ -21,7 +21,7 @@ const currentUrl = import.meta.env.DEV
 ---
 
 <header class='sticky top-0 z-20 bg-slate-950/90'>
-  <nav class='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-2'>
+  <nav class='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-2 py-1 sm:py-0'>
     <a href={NAV_LINKS.HOME.href} class='brand-text text-2xl font-bold'>FingeRate</a>
     <button
       id='hamburger'
@@ -51,8 +51,10 @@ const currentUrl = import.meta.env.DEV
                     id={`${i.name}-dropdownNavbarLink`}
                     data-dropdown-toggle={`${i.name}-dropdownNavbar`}
                     class={`hover:text-neonBlue ${
-                      i.links.some(({ href }) => href === currentUrl) ? 'text-cyberLilac' : ''
-                    } flex w-full items-center gap-1 rounded p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200`}
+                      i.links.some(({ href }) => href === currentUrl)
+                        ? 'text-cyberLilac border-cyberLilac sm:border-b-2 '
+                        : ''
+                    } flex w-full items-center gap-1  p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200`}
                     data-dropdown-trigger='hover'
                   >
                     {i.name}{' '}
@@ -97,8 +99,8 @@ const currentUrl = import.meta.env.DEV
                   target={i.isExternal ? '_blank' : ''}
                   aria-current={currentUrl === i.href ? 'page' : null}
                   rel='noopener noreferrer'
-                  class={`hover:text-neonBlue inline-block  rounded p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200 ${
-                    i.href === currentUrl ? 'text-cyberLilac' : ''
+                  class={`hover:text-neonBlue inline-block  p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200 ${
+                    i.href === currentUrl ? 'text-cyberLilac border-cyberLilac sm:border-b-2 ' : ''
                   }`}
                 >
                   {i.name} {i.isExternal && '↗'}
