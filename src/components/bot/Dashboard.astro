@@ -24,8 +24,6 @@ const colors = {
   // pink: 'bg-pink-500 text-pink-500',
 };
 
-
-
 const themes: Array<keyof typeof colors> = ['dark', 'light', 'blue', 'purple', 'emerald'];
 ---
 
@@ -42,7 +40,7 @@ const themes: Array<keyof typeof colors> = ['dark', 'light', 'blue', 'purple', '
       >
         <div
           id='screen'
-          class='text group absolute inset-[min(40%,125px)_min(4%,30px)_0] overflow-hidden break-words bg-slate-800 p-4 text-center shadow-inner transition after:mt-6 after:block after:h-[300px] after:rounded-lg after:bg-white/10 data-[theme=blue]:bg-blue-700 data-[theme=emerald]:bg-emerald-400 data-[theme=light]:bg-slate-100 data-[theme=purple]:bg-purple-800 data-[theme=emerald]:text-slate-950 data-[theme=light]:text-slate-950 data-[theme=light]:after:bg-slate-200/50'
+          class='text group absolute inset-[min(40%,125px)_min(3%,30px)_0] overflow-hidden break-words bg-slate-800 p-4 text-center shadow-inner transition after:mt-6 after:block after:h-[300px] after:rounded-lg after:bg-white/10 data-[theme=blue]:bg-blue-700 data-[theme=emerald]:bg-emerald-400 data-[theme=light]:bg-slate-100 data-[theme=purple]:bg-purple-800 data-[theme=emerald]:text-slate-950 data-[theme=light]:text-slate-950 data-[theme=light]:after:bg-slate-200/50'
         >
           <div class='animate-bounce text-5xl'>↑</div>
           <output class='mb-6 mt-2 block text-2xl font-bold' for='q'>{question}</output>
