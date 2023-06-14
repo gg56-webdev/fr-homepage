@@ -24,17 +24,17 @@ const features = [
 ] as const;
 ---
 
-<section data-scroll-animation class='mx-auto max-w-screen-md rounded-lg bg-slate-950/80 p-8'>
+<section data-scroll-animation class='mx-auto max-w-screen-md bg-slate-950/80 p-8 md:rounded-lg'>
   <div class='mx-auto mb-8 w-fit'>
     <h2 class='brand-text text-center text-3xl font-bold drop-shadow-[0_0_8px_#000]'>How Does it Work?</h2>
   </div>
-  <div class='grid grid-cols-2 gap-4 [align-items:start;]'>
+  <div class='grid grid-cols-2  gap-4 [align-items:start;]'>
     {
       features.map(([h3, p, img, alt, symbol]) => (
-        <div class='grid gap-2 md:grid-cols-[auto_1fr]'>
+        <div class='grid gap-2 md:grid-cols-[auto_1fr] justify-items-center md:justify-items-normal'>
           <img loading='lazy' src={img.src} alt={alt} width={img.width} height={img.height} />
-          <div>
-            <h3 class='text-lg font-bold'>{h3}</h3>
+          <div class='text-center md:text-left'>
+            <h3 class='text-lg font-bold mb-1 [text-wrap:balance;] '>{h3}</h3>
             {p && <p class='text-sm'>{p}</p>}
           </div>
           {symbol && <b class='text-cyberLilac text-center text-2xl'>{symbol}</b>}
