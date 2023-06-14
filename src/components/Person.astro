@@ -1,7 +1,7 @@
 ---
 import logo from '@assets/logo.webp';
 import type { GetImageResult } from 'astro';
-import { Image, getImage } from 'astro:assets';
+import { getImage } from 'astro:assets';
 
 const optimizedLogo = await getImage(logo);
 
@@ -58,7 +58,7 @@ const hasInfo = !!person.titles || !!person.bio || !!person.articles;
     src={photo.src}
     {...photo.attributes}
     alt={`Portrait of ${person.name}`}
-    class={`grayscale transition ${hasInfo ? 'hover:cursor-pointer' : ''} group-hover:grayscale-0 rounded-full`}
+    class:list={['grayscale transition group-hover:grayscale-0 rounded-full', { 'hover:cursor-pointer': hasInfo }]}
   />
   <div class='mt-2 flex h-full flex-col gap-2'>
     <div>
