@@ -1,26 +1,29 @@
 ---
 import BtnLink from '@components/BtnLink.astro';
+import FAQ from '@components/token/FAQ.astro';
+import About from '@components/token/About.astro';
 import Layout from '@layouts/Layout.astro';
 import token from '@assets/token/msot.webp';
 import { Image } from 'astro:assets';
+import Hero from '@/components/token/Hero.astro';
 ---
 
 <Layout title='MSOT Token'>
-  <div class='pb-12 md:pb-24'>
-    <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-6'>
-      <div>
-        <Image src={token} alt='MSOT token logo' class='mx-auto h-32 w-32' />
-        <div class='text-center'>
-          <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>MSOT Tokens</h1>
-        </div>
-        <p class='mx-auto max-w-[75ch] md:text-center'>
-          MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and
-          enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to
-          the ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units.
-        </p>
-        <div class='mt-4 text-center'>
-          <BtnLink href='https://latoken.com/exchange/MSOT_BTC' isExternal={true} text='Get MSOT' />
-        </div>
+  <div class='space-y-12 pb-12 md:space-y-24 md:pb-24'>
+    <Hero />
+    <About />
+    <!-- <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-6'>
+      <Image src={token} alt='MSOT token logo' class='mx-auto' />
+      <div class='text-center'>
+        <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>MSOT Tokens</h1>
+      </div>
+      <p class='mx-auto max-w-[75ch] md:text-center'>
+        MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and
+        enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the
+        ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units.
+      </p>
+      <div class='mt-4 text-center'>
+        <BtnLink href='https://latoken.com/exchange/MSOT_BTC' isExternal={true} text='Get MSOT' />
       </div>
     </section>
     <section data-scroll-animation class='bg-slate-950/80 px-2 py-12 text-center'>
@@ -49,6 +52,7 @@ import { Image } from 'astro:assets';
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
+    <FAQ />
   </div>
 </Layout>

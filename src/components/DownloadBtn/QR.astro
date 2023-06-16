@@ -812,7 +812,7 @@
       super();
       const btn = this.querySelector('[data-qr-btn]') as HTMLButtonElement;
       const dialog = this.querySelector('[data-qr-dialog]') as HTMLDialogElement;
-      const toggleModal = () => (dialog.hasAttribute('open') ? dialog.close() : dialog.show());
+      const toggleModal = () => (dialog.open ? dialog.close() : dialog.show());
 
       btn.addEventListener('click', toggleModal);
       dialog.addEventListener('click', () => dialog.close());
