@@ -16,13 +16,15 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
     <div class='flex gap-8 rounded-full bg-slate-950/80 p-2'>
       <Image src={token} alt='MSOT token logo' class='h-24 w-24' />
       <dl class='flex flex-1 items-center justify-around gap-8 pr-8'>
-        <div class='flex flex-col-reverse gap-2'>
+        <div class='flex flex-col-reverse flex-wrap gap-2'>
           <dt>Quantity</dt>
           <dd class='text-4xl font-bold'>{formatNumber(1_800_000_000)}</dd>
         </div>
         <div class='flex flex-col-reverse gap-2'>
           <dt>Price</dt>
-          <dd class='text-4xl font-bold'>{formatNumber(0.0601, { currency: 'USD', style: 'currency' })}</dd>
+          <dd id='token-price' class='text-4xl font-bold'>
+            {formatNumber(0.06, { currency: 'USD', style: 'currency' })}
+          </dd>
         </div>
       </dl>
     </div>
@@ -43,5 +45,20 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
 </section>
 
 <script>
-  // TODO: price api
+  const TICKER = 'MSOT';
+  const LATOKEN_API_URL = `https://api.latoken.com/v2/ticker/${TICKER}/BTC`;
+  const BINANCE_API_URL = 'https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT';
+
+  const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
+    new Intl.NumberFormat('en-us', { notation: 'compact', maximumFractionDigits: 2, ...options }).format(num);
+
+  const tokenPrice = document.querySelector('#token-price') as HTMLElement;
+
+  Promise.all([
+    fetch(LATOKEN_API_URL).then((res) => res.json()),
+    fetch(BINANCE_API_URL).then((res) => res.json()),
+  ]).then(([{ lastPrice }, { price: btcPrice }]) => {
+    const price = +lastPrice * +btcPrice;
+    tokenPrice.textContent = formatNumber(price, { currency: 'USD', style: 'currency' });
+  });
 </script>

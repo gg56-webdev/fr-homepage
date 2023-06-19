@@ -1,58 +1,14 @@
 ---
-import BtnLink from '@components/BtnLink.astro';
-import FAQ from '@components/token/FAQ.astro';
-import About from '@components/token/About.astro';
-import Layout from '@layouts/Layout.astro';
-import token from '@assets/token/msot.webp';
-import { Image } from 'astro:assets';
 import Hero from '@/components/token/Hero.astro';
+import About from '@components/token/About.astro';
+import FAQ from '@components/token/FAQ.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title='MSOT Token'>
-  <div class='space-y-12 pb-12 md:space-y-24 md:pb-24'>
+  <div class='space-y-12 pb-12 md:space-y-28 md:pb-24'>
     <Hero />
     <About />
-    <!-- <section class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center p-6'>
-      <Image src={token} alt='MSOT token logo' class='mx-auto' />
-      <div class='text-center'>
-        <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>MSOT Tokens</h1>
-      </div>
-      <p class='mx-auto max-w-[75ch] md:text-center'>
-        MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and
-        enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the
-        ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units.
-      </p>
-      <div class='mt-4 text-center'>
-        <BtnLink href='https://latoken.com/exchange/MSOT_BTC' isExternal={true} text='Get MSOT' />
-      </div>
-    </section>
-    <section data-scroll-animation class='bg-slate-950/80 px-2 py-12 text-center'>
-      <h2 class='brand-text text-3xl font-bold'>One Solution</h2>
-      <div class='mx-auto mt-4 grid max-w-screen-xl gap-8 sm:gap-2 md:grid-cols-3'>
-        <div class='p-2'>
-          <strong class='block text-lg uppercase'>One Ecosystem</strong>
-          <p class='text-sm'>
-            By enabling users to design surveys, collect data, participate, and receive incentives, the FingeRate
-            platform relieves the burden associated with survey-taking and captures genuine participant sentiments in
-            real-time.
-          </p>
-        </div>
-        <div class='p-2'>
-          <strong class='block text-lg uppercase'>One App</strong>
-          <p class='text-sm'>
-            By providing valuable feedback to businesses through our surveys, you can earn rewards and contribute to
-            improving services. With FingeRate App, participating in surveys has never been more fun and rewarding.
-          </p>
-        </div>
-        <div class='p-2'>
-          <strong class='block text-lg uppercase'>One Token</strong>
-          <p class='text-sm'>
-            Within the FingeRate Ecosystem, the MSOT Token operates as an ERC-20 utility token utilized for
-            transactions, personalized experiences, and rewards.
-          </p>
-        </div>
-      </div>
-    </section> -->
     <FAQ />
   </div>
 </Layout>

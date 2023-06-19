@@ -1,23 +1,28 @@
 ---
 // TODO: answers
 const faqs = [
-  ['What is blockchain?', 'test'],
-  ['How do you protect my data? ', 'test'],
-  ['Why is MSOT based on Polygon?', 'test'],
-  ['Who is behind FingeRate?', 'test'],
-  ['What airdrops do you have coming and how do I get involved?', 'test'],
-  ['How can I join the community?', 'test'],
+  [
+    'What is blockchain?',
+    `Blockchain is a decentralized digital ledger that records transactions across multiple computers. It provides a secure and transparent way to track and verify transactions without the need for intermediaries, offering the potential to revolutionize industries by enhancing trust, security, and efficiency.`,
+  ],
+  // ['How do you protect my data? ', 'test'],
+  // ['Why is MSOT based on Polygon?', 'test'],
+  // ['Who is behind FingeRate?', 'test'],
+  // ['What airdrops do you have coming and how do I get involved?', 'test'],
+  // ['How can I join the community?', 'test'],
 ];
 ---
 
 <section data-scroll-animation>
-  <h2>FAQ</h2>
-  <div class='rounded-lg bg-slate-950/80 p-4'>
+  <div class='mb-8 text-center'>
+    <h2 class='brand-text text-4xl font-bold drop-shadow-[0_0_8px_#000]'>FAQ</h2>
+  </div>
+  <div class='mx-auto max-w-screen-md space-y-4 p-2'>
     {
       faqs.map(([q, a]) => (
-        <details class='marker:text-neonBlue'>
-          <summary>{q}</summary>
-          <p>{a}</p>
+        <details class='border-neonBlue ring-intelligentBlue marker:text-neonBlue rounded-lg  bg-slate-950/80  transition open:border-2 [&:has(summary:hover)]:ring'>
+          <summary class='p-4 font-medium hover:cursor-pointer'>{q}</summary>
+          <p class='whitespace-pre-line px-4 pb-4'>{a}</p>
         </details>
       ))
     }

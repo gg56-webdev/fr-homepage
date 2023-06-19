@@ -1,6 +1,64 @@
-<section data-scroll-animation class='max-w-screen-lg p-2 mx-auto'>
-  <div class='grid grid-cols-2'>
-    <h2 class='brand-text  text-4xl font-bold drop-shadow-[0_0_8px_#000] '>FingeRate: One App, One Token, One Ecosystem.</h2>
-    <p class='text-lg'>MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units.</p>
+---
+// TODO: make images smaller
+import ethLogo from '@assets/token/eth.webp';
+import ecosystemLogo from '@assets/token/ecosystem.webp';
+import laLogo from '@assets/token/la.webp';
+import { Image } from 'astro:assets';
+
+const images = [
+  [ethLogo, 'ethereum logo', 'ERC-20 Standard'],
+  [ecosystemLogo, 'fingerate ecosystem logo', 'FingeRate Ecosystem'],
+  [laLogo, 'LA Token logo', 'Available on Latoken'],
+] as const;
+---
+
+<section data-scroll-animation class='mx-auto max-w-screen-lg p-2'>
+  <div class='grid gap-4 md:grid-cols-2'>
+    <h2 class='brand-text text-4xl font-bold drop-shadow-[0_0_8px_#000]'>
+      FingeRate: One&nbsp;App, One&nbsp;Token, One&nbsp;Ecosystem.
+    </h2>
+    <p class='text-lg'>
+      MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and
+      enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the
+      ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units.
+    </p>
+  </div>
+  <div class='mt-16 flex flex-wrap justify-around gap-4 md:mt-24'>
+    {
+      images.map(([src, alt, tooltip], i) => (
+        <div>
+          <Image data-tooltip-trigger={i} src={src} alt={alt} />
+          <div
+            data-tooltip-content={i}
+            id='tooltipContent'
+            role='tooltip'
+            class='tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-950 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 '
+          >
+            {tooltip}
+            <div class='tooltip-arrow' data-popper-arrow />
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>
+
+<script>
+  import { Tooltip } from 'flowbite';
+  import type { TooltipOptions } from 'flowbite';
+
+  const triggers = document.querySelectorAll<HTMLElement>('[data-tooltip-trigger]');
+
+  const options: TooltipOptions = {
+    placement: 'top',
+    triggerType: 'hover',
+  };
+
+  triggers.forEach((t) => {
+    new Tooltip(
+      document.querySelector(`[data-tooltip-content='${t.dataset.tooltipTrigger!}']`) as HTMLElement,
+      t,
+      options
+    );
+  });
+</script>
