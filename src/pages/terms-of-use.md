@@ -5,9 +5,7 @@ title: 'Terms of Use'
 
 # Terms of Use
 
-<!-- TODO: date -->
-
-Date:
+Date: <time datetime="2023-06-08">2023.06.08</time>
 
 Please read these Terms of Use ("Terms") carefully before using the FingeRate mobile application ("App") provided by GG56 Ltd ("Company"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the App.
 
