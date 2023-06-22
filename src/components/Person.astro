@@ -1,9 +1,9 @@
 ---
-import logo from '@assets/logo.webp';
+import logo from '../assets/logo.webp';
 import type { GetImageResult } from 'astro';
 import { getImage } from 'astro:assets';
 
-const optimizedLogo = await getImage(logo);
+const optimizedLogo = await getImage({ src: logo });
 
 const icons: ImageMetadata[] = await Astro.glob('../assets/social/*.svg').then((files) => files.map((f) => f.default));
 
