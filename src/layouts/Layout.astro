@@ -74,7 +74,9 @@ const { title } = Astro.props;
 <script>
   const sections = document.querySelectorAll('[data-scroll-animation]');
 
-  if (sections.length > 0) {
+  const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true;
+
+  if (sections.length > 0 && isMotionSafe) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

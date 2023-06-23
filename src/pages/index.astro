@@ -8,9 +8,9 @@ import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title='FingeRate | Survey to Earn Platform'>
-  <div id='vanta' class='absolute h-[50vh] md:h-screen w-full'></div>
+  <div id='vanta' class='absolute h-[50vh] w-full bg-[#191e3c] md:h-screen'></div>
 
-  <div class='space-y-12 py-12 md:space-y-32 md:pb-24 relative z-10'>
+  <div class='relative z-10 space-y-12 py-12 md:space-y-32 md:pb-24'>
     <div class='space-y-12'>
       <Hero />
       <Partners />
@@ -22,22 +22,22 @@ import Layout from '@layouts/Layout.astro';
 </Layout>
 
 <script>
-  import HALO from 'vanta/dist/vanta.halo.min';
-  import * as THREE from 'three';
+  const isSaveData = window.matchMedia(`(prefers-reduced-data: reduce)`).matches === true;
+  const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true;
 
- 
-  HALO({
-    el: '#vanta',
-    mouseControls: true,
-    xOffset: 0.2,
-    THREE,
-    baseColor: 0x502fc6,
-    backgroundColor: 0x191E3C,
-    backgroundAlpha: 0,
-    size: 1.2,
-    amplitudeFactor: 1.5,
-  });
-
-
-  
+  if (!isSaveData && isMotionSafe) {
+    Promise.all([import('three'), import('vanta/dist/vanta.halo.min')]).then(([THREE, { default: HALO }]) => {
+      HALO({
+        el: '#vanta',
+        mouseControls: true,
+        xOffset: 0.2,
+        THREE,
+        baseColor: 0x502fc6,
+        backgroundColor: 0x191e3c,
+        backgroundAlpha: 0,
+        size: 1.2,
+        amplitudeFactor: 1.5,
+      }).catch(() => document.querySelector('#vanta')?.remove());
+    });
+  }
 </script>

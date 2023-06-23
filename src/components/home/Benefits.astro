@@ -26,11 +26,12 @@ const content = [
 <section class='mx-auto max-w-screen-xl space-y-12 px-2'>
   {
     content.map(([h2, p, img], i) => (
-      <div data-scroll-animation class={`flex flex-col items-center md:flex-row md:even:flex-row-reverse `}>
-        <div class='flex-1'>
+      <div  class={`flex flex-col items-center md:flex-row md:even:flex-row-reverse `}>
+        <div data-scroll-animation class='flex-1'>
           <Image src={img} alt={`illustration to show how FingeRate app is ${h2}`} class=' object-fit' />
         </div>
         <div
+        data-scroll-animation
           class={`relative mx-auto -mt-4 flex-1 rounded-lg bg-slate-950/90 p-6 md:mt-0 md:p-12 ${
             i % 2 === 0 ? 'md:-ml-8' : 'md:-mr-8'
           }`}
