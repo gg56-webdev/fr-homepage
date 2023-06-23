@@ -8,7 +8,9 @@ import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title='FingeRate | Survey to Earn Platform'>
-  <div class='space-y-12 py-12 md:space-y-32 md:pb-24'>
+  <div id='vanta' class='absolute h-[50vh] md:h-screen w-full'></div>
+
+  <div class='space-y-12 py-12 md:space-y-32 md:pb-24 relative z-10'>
     <div class='space-y-12'>
       <Hero />
       <Partners />
@@ -18,3 +20,24 @@ import Layout from '@layouts/Layout.astro';
     <App />
   </div>
 </Layout>
+
+<script>
+  import HALO from 'vanta/dist/vanta.halo.min';
+  import * as THREE from 'three';
+
+ 
+  HALO({
+    el: '#vanta',
+    mouseControls: true,
+    xOffset: 0.2,
+    THREE,
+    baseColor: 0x502fc6,
+    backgroundColor: 0x191E3C,
+    backgroundAlpha: 0,
+    size: 1.2,
+    amplitudeFactor: 1.5,
+  });
+
+
+  
+</script>
