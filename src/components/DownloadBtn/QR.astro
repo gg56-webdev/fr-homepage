@@ -1,3 +1,10 @@
+---
+export interface Props {
+  isOpen?: boolean;
+}
+const { isOpen = false } = Astro.props;
+---
+
 <qr-dialog class='relative hidden md:block'>
   <button
     title='QR code for FingeRate App download'
@@ -26,7 +33,7 @@
       ></path>
     </svg>
   </button>
-  <dialog data-qr-dialog class='top-0 z-10 rounded border-2 border-cyberLilac p-0'>
+  <dialog data-qr-dialog class='top-0 z-10 rounded p-0 shadow-center shadow-neonBlue' open={isOpen}>
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' class='h-36 w-36 fill-white'>
       <path
         d='M61.9,13.2h1.8c0.4,0,0.7-0.3,0.7-0.7v-1.8c0-0.4-0.3-0.7-0.7-0.7h-1.8c-0.4,0-0.7,0.3-0.7,0.7v1.8
@@ -317,6 +324,7 @@
       super();
       const btn = this.querySelector('[data-qr-btn]') as HTMLButtonElement;
       const dialog = this.querySelector('[data-qr-dialog]') as HTMLDialogElement;
+
       const toggleModal = () => (dialog.open ? dialog.close() : dialog.show());
 
       btn.addEventListener('click', toggleModal);
