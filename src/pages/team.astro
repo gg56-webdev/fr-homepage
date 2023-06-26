@@ -14,9 +14,9 @@ const optimizedPhotos = await Promise.all(photos.map((p) => getImage({ src: p, f
 type PersonJSON = {
   name: { en: string; ko?: string };
   subtitles: { en: string[]; ko?: string[] };
-  bio?: { en: string; ko?: string };
+  bio?: { en?: string; ko?: string };
   socials?: string[];
-  titles?: { en: string[]; ko?: string[] };
+  titles?: { en?: string[]; ko?: string[] };
   articles?: { href: string; title: string }[];
 };
 
@@ -117,7 +117,7 @@ const delays: Record<number, string> = {
 </Layout>
 
 <dialog
-data-modal
+  data-modal
   inert
   class='pointer-events-none fixed inset-0 block max-w-[calc((100%-6px)-2em)] rounded-lg bg-slate-800 opacity-0 transition backdrop:bg-slate-900/50 open:pointer-events-auto open:opacity-100'
 >

@@ -25,11 +25,21 @@
   },
   {
     "name": { "en": "Ko Young-seok", "ko": "고영석" },
-    "subtitles": { "en": ["Business Team Lead"], "ko": ["팀장", "사업관리"] }
+    "socials": ["https://www.linkedin.com/in/shokun335/"],
+
+    "subtitles": {
+      "en": ["Business Team Lead"],
+      "ko": ["팀장", "사업관리"]
+    }
   },
   {
     "name": { "en": "Jang Jae-hyouk", "ko": "장재혁" },
-    "subtitles": { "en": ["Management Team Lead"], "ko": ["팀장", "경영 지원팀"] }
+    "subtitles": {
+      "en": ["Management Team Lead"],
+      "ko": ["팀장", "경영 지원팀"]
+    },
+    "socials": ["https://www.linkedin.com/in/%EC%9E%AC%ED%98%81-%EC%9E%A5-208283216/"],
+    "bio": { "ko": "경희대학교 경영대학 회계세무학과" }
   },
   {
     "name": { "en": "Mari", "ko": "오마리" },
