@@ -145,32 +145,8 @@ const currentUrl = import.meta.env.DEV
 <script>
   import { Collapse } from 'flowbite';
 
-  // set the target element that will be collapsed or expanded (eg. navbar menu)
   const $targetEl = document.querySelector<HTMLDivElement>('#navbar-dropdown');
-
-  // optionally set a trigger element (eg. a button, hamburger icon)
   const $triggerEl = document.querySelector<HTMLButtonElement>('#hamburger');
 
-  // optional options with default values and callback functions
-  // const options: CollapseOptions = {
-  //   onCollapse: () => {
-  //     console.log('element has been collapsed');
-  //   },
-  //   onExpand: () => {
-  //     console.log('element has been expanded');
-  //   },
-  //   onToggle: () => {
-  //     console.log('element has been toggled');
-  //   },
-  // };
-
-  /*
-   * $targetEl: required
-   * $triggerEl: optional
-   * options: optional
-   */
   new Collapse($targetEl, $triggerEl);
-
-  // show the target element
-  // collapse.expand();
 </script>

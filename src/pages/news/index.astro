@@ -1,0 +1,64 @@
+---
+import { getPosts } from '@/api';
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+const posts = await getPosts();
+---
+
+<Layout title='News'>
+  <section class='mx-auto max-w-screen-lg'>
+    <h1>News</h1>
+    <ul class='grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4'>
+      {
+        posts.map((post) => {
+          // TODO: types for _embedded
+          const {
+            media_details: {
+              sizes: {
+                medium: { width, height, source_url },
+              },
+            },
+            alt_text,
+          } = post._embedded?.['wp:featuredmedia']?.at(0);
+          const [categories, tags] = post._embedded?.['wp:term'];
+          return (
+            <li data-scroll-animation class='overflow-hidden rounded bg-slate-950/80 '>
+              <article class='flex h-full flex-col'>
+                <a href={`/news/${post.slug}`} tabindex='0'>
+                  <span class='sr-only'>Read Post</span>
+                  <Image
+                    class='aspect-[2/1] w-full object-cover'
+                    width={width}
+                    height={height}
+                    src={source_url}
+                    alt={alt_text || ''}
+                  />
+                </a>
+                <div class='flex grow flex-col p-4 '>
+                  <h2 class='mb-4 font-bold' set:html={post.title.rendered} />
+
+                  {tags.length > 0 && (
+                    <ul class='flex gap-1 text-sm'>
+                      {tags.map(({ name }) => (
+                        <li class='rounded-full bg-neonBlue px-2 py-0.5'>{name}</li>
+                      ))}
+                    </ul>
+                  )}
+                  <div class='mt-auto flex items-center justify-between'>
+                    <time class=' text-cyberLilac' datetime={post.date}>
+                      {new Date(post.date).toLocaleDateString('ko')}
+                    </time>
+                    <a href={`/news/${post.slug}`} class='hover:underline'>
+                      Read Post →
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Layout>
