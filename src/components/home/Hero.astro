@@ -1,28 +1,82 @@
 ---
-import phone from '@assets/app/phone.webp';
+import phone from '@assets/home/phone-v2.png';
+import bot from '@assets/home/bot.png';
 import phones from '@assets/app/phones.webp';
 import Apple from '@components/DownloadBtn/Apple.astro';
 import Google from '@components/DownloadBtn/Google.astro';
 import QR from '@components/DownloadBtn/QR.astro';
+import c1 from '@assets/home/c1.jpg';
+import c2 from '@assets/home/c2.jpg';
+import c3 from '@assets/home/c3.jpg';
 import { Image } from 'astro:assets';
+
+const now = new Date();
+const setExpireDate = (num?: number) => {
+  const expire = new Date();
+  const month = now.getMonth() === 11 ? 0 : now.getMonth() + 1;
+  expire.setMonth(month);
+  if (num) expire.setDate(num);
+
+  return expire.toLocaleDateString('en');
+};
 ---
 
 <section
-  class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center justify-items-center gap-4 px-2 md:grid-cols-2 md:overflow-hidden'
+  class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center justify-items-center gap-4 overflow-hidden px-2 md:grid-cols-2'
   id='hero'
 >
-  <div class='relative isolate md:order-2 '>
-    <picture>
-      <source media='(max-width: 767px)' srcset={phone.src} />
-
-      <Image
+  <div class='relative isolate animate-fadeIn md:order-2'>
+    <div
       data-tilt-animation
+      class='relative [transform-style:preserve-3d] [transform:perspective(5000px)_rotateY(var(--rotateY))_rotateX(var(--rotateX))]'
+    >
+      <Image
         src={phone}
         alt='Phone/s with a FingeRate App demo'
-        class='block h-[350px] animate-fadeIn object-contain md:order-2 md:h-[450px] md:w-fit  [transform:perspective(1000px)_rotateY(var(--rotateY))_rotateX(var(--rotateX))]'
+        class='block h-[350px] object-contain md:order-2 md:h-[450px] md:w-fit'
         decoding={'auto'}
       />
-    </picture>
+      <Image
+        src={bot}
+        alt=''
+        class='absolute left-1/2 top-[45%] h-[120px] object-contain [translate:-50%_-50%_15px] md:order-2 md:w-fit animate-bob'
+        decoding={'auto'}
+      />
+      <div
+        class='absolute -left-[30%] top-10 grid aspect-video w-44 grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)]'
+      >
+        <div class='grid place-items-center font-bold'>4500 SoM</div>
+        <p class='justify-self-end text-xs'>1 SoM = $0.1</p>
+      </div>
+      <ul
+        class='absolute -right-[40%] top-[40%] flex gap-2 text-sm/[1.5] [transform:translateZ(-30px)] md:-right-[90%]'
+      >
+        <li
+          class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
+        >
+          <Image src={c3} alt='' class='aspect-video w-full object-cover' />
+          <div class='flex grow flex-col px-2 py-1'>
+            <small class='text-cyan-700'>Olive Young</small>
+            <b class='grow text-[80%]'>CRÈME concentree de AURORA -50%</b>
+          </div>
+          <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-intelligentBlue'>
+            until {setExpireDate()}
+          </footer>
+        </li>
+        <li
+          class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
+        >
+          <Image src={c2} alt='' class='aspect-video w-full object-cover' />
+          <div class='flex grow flex-col px-2 py-1'>
+            <small class='text-cyan-700'>Twosome Place</small>
+            <b class='grow text-[80%]'>Couple Set<br />Cake + Coffee x2</b>
+          </div>
+          <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-intelligentBlue'>
+            until {setExpireDate(15)}
+          </footer>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class='relative z-10 text-center'>
     <div class='h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]'>
@@ -96,21 +150,20 @@ import { Image } from 'astro:assets';
 </style>
 
 <script>
-  const $img = document.querySelector('[data-tilt-animation]') as HTMLImageElement
-  
-  document.addEventListener('mousemove', ({clientX, clientY}) => {
-    const {x,y, width, height} = $img.parentElement!.getBoundingClientRect()
+  const $tiltEl = document.querySelector('[data-tilt-animation]') as HTMLDivElement;
 
-    const imgMiddleX = (x + width / 2)
-    const imgMiddleY = (y + height / 2)
+  document.addEventListener('mousemove', ({ clientX, clientY }) => {
+    const { x, y, width, height } = $tiltEl.parentElement!.getBoundingClientRect();
 
-    const offsetX = ((clientX - imgMiddleX) / window.innerWidth ) * 35
-    const offsetY = ((clientY - imgMiddleY) / window.innerHeight ) * 35
+    const imgMiddleX = x + width / 2;
+    const imgMiddleY = y + height / 2;
 
-    console.log({offsetX, offsetY})
+    const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25;
+    const offsetY = ((clientY - imgMiddleY) / window.innerHeight) * 15;
 
-    $img.style.setProperty('--rotateX', `${-1 * offsetY}deg`)
-    $img.style.setProperty('--rotateY', `${offsetX}deg`)
-  })
+    console.log({ offsetX, offsetY });
 
+    $tiltEl.style.setProperty('--rotateX', `${-1 * offsetY + 5}deg`);
+    $tiltEl.style.setProperty('--rotateY', `${offsetX - 5}deg`);
+  });
 </script>
