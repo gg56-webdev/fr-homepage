@@ -33,7 +33,7 @@ const setExpireDate = (num?: number) => {
       <Image
         src={phone}
         alt='Phone/s with a FingeRate App demo'
-        class='block h-[350px] object-contain md:order-2 md:h-[450px] md:w-fit'
+        class='block h-[350px] object-contain md:order-2 md:h-[450px] w-fit'
         decoding={'auto'}
       />
       <Image
@@ -43,13 +43,13 @@ const setExpireDate = (num?: number) => {
         decoding={'auto'}
       />
       <div
-        class='absolute -left-[30%] top-10 grid aspect-video w-44 grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)]'
+        class='absolute hover:ring-4 w-[70%] gap-2 ring-white transition -left-[25%] top-[4%] grid aspect-video  grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)]'
       >
-        <div class='grid place-items-center font-bold'>4500 SoM</div>
+        <div class='grid place-items-center font-bold '>4500 SoM</div>
         <p class='justify-self-end text-xs'>1 SoM = $0.1</p>
       </div>
       <ul
-        class='absolute -right-[40%] top-[40%] flex gap-2 text-sm/[1.5] [transform:translateZ(-30px)] md:-right-[90%]'
+        class='absolute -right-[40%] top-[40%] flex gap-2 text-sm/[1.5] [transform:translateZ(-30px)] [translate:-40%] hover:[translate:0] transition-all md:-right-[90%]'
       >
         <li
           class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
@@ -76,6 +76,15 @@ const setExpireDate = (num?: number) => {
           </footer>
         </li>
       </ul>
+      <div class='text-deepSpace space-y-4 absolute bottom-0 left-0 w-[40%] [transform-style:preserve-3d] [transform:translateZ(30px)] [translate:-50%] p-2 bg-white rounded-lg '>
+        <div class='font-bold'>Total %</div>
+        <div class="[transform:translateZ(15px)] " >
+        <div class="rounded-full aspect-square  hover:animate-spin bg-[conic-gradient(red_6deg,orange_6deg_18deg,yellow_18deg_45deg,green_45deg_110deg,blue_110deg_200deg,purple_200deg)]"/>
+      </div>
+      <ul class='flex gap-1 flex-wrap justify-center'>
+        {['red','orange','yellow','green','blue','purple'].map(c => <li style={`background-color: ${c}`} class="aspect-square rounded-full  h-4"></li>)}
+      </ul>
+      </div>
     </div>
   </div>
   <div class='relative z-10 text-center'>
