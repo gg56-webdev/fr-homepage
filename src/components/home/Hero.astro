@@ -11,14 +11,15 @@ import { Image } from 'astro:assets';
   class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center justify-items-center gap-4 px-2 md:grid-cols-2 md:overflow-hidden'
   id='hero'
 >
-  <div class='relative isolate md:order-2'>
+  <div class='relative isolate md:order-2 '>
     <picture>
       <source media='(max-width: 767px)' srcset={phone.src} />
 
       <Image
-        src={phones}
+      data-tilt-animation
+        src={phone}
         alt='Phone/s with a FingeRate App demo'
-        class='block h-[350px] animate-fadeIn object-contain md:order-2 md:h-[500px] md:w-fit'
+        class='block h-[350px] animate-fadeIn object-contain md:order-2 md:h-[450px] md:w-fit  [transform:perspective(1000px)_rotateY(var(--rotateY))_rotateX(var(--rotateX))]'
         decoding={'auto'}
       />
     </picture>
@@ -93,3 +94,23 @@ import { Image } from 'astro:assets';
     }
   }
 </style>
+
+<script>
+  const $img = document.querySelector('[data-tilt-animation]') as HTMLImageElement
+  
+  document.addEventListener('mousemove', ({clientX, clientY}) => {
+    const {x,y, width, height} = $img.parentElement!.getBoundingClientRect()
+
+    const imgMiddleX = (x + width / 2)
+    const imgMiddleY = (y + height / 2)
+
+    const offsetX = ((clientX - imgMiddleX) / window.innerWidth ) * 35
+    const offsetY = ((clientY - imgMiddleY) / window.innerHeight ) * 35
+
+    console.log({offsetX, offsetY})
+
+    $img.style.setProperty('--rotateX', `${-1 * offsetY}deg`)
+    $img.style.setProperty('--rotateY', `${offsetX}deg`)
+  })
+
+</script>
