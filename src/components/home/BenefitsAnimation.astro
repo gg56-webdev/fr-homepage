@@ -1,0 +1,44 @@
+---
+import benefit1 from '@assets/home/benefit-1.webp';
+import benefit2 from '@assets/home/benefit-2.webp';
+import benefit3 from '@assets/home/benefit-3.webp';
+import { Image } from 'astro:assets';
+
+const content = [
+  [
+    'Earning Rewards Effortlessly',
+    'Select from a wide range of surveys, share your valuable opinions, and enjoy instant rewards.  Say goodbye to waiting and hello to instant gratification!',
+    benefit1,
+  ],
+  [
+    'Safe & Secure',
+    'Our app was developed with security and privacy in mind! Our app was meticulously designed, leveraging the power of blockchain technology, to provide an unparalleled level of security and privacy.',
+    benefit2,
+  ],
+  [
+    'Easy & Fast',
+    'FingeRate app presents a swift and straightforward method to earn rewards! Bid farewell to never-ending surveys and say hello to a platform that values your time and effort.',
+    benefit3,
+  ],
+] as const;
+---
+
+<section class='h-screen'>
+  <div class='h-full bg-white/50'>
+    {content.map(([t]) => <div data-scroll-trigger>{t}</div>)}
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('[data-scroll-trigger]', {
+    scrollTrigger: {trigger:'[data-scroll-trigger]', pin: true},
+    x: 400,
+    duration: 3,
+    
+  });
+</script>
