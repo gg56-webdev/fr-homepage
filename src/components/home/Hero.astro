@@ -1,6 +1,7 @@
 ---
 import phone from '@assets/home/phone-v2.png';
 import bot from '@assets/home/bot.png';
+import jacket from '@assets/home/jacket.png';
 import phones from '@assets/app/phones.webp';
 import Apple from '@components/DownloadBtn/Apple.astro';
 import Google from '@components/DownloadBtn/Google.astro';
@@ -9,6 +10,9 @@ import c1 from '@assets/home/c1.jpg';
 import c2 from '@assets/home/c2.jpg';
 import c3 from '@assets/home/c3.jpg';
 import { Image } from 'astro:assets';
+
+// TODO: optimize images
+// TODO: check A11y
 
 const now = new Date();
 const setExpireDate = (num?: number) => {
@@ -19,6 +23,8 @@ const setExpireDate = (num?: number) => {
 
   return expire.toLocaleDateString('en');
 };
+
+
 ---
 
 <section
@@ -30,37 +36,38 @@ const setExpireDate = (num?: number) => {
       data-tilt-animation
       class='relative [transform-style:preserve-3d] [transform:perspective(5000px)_rotateY(var(--rotateY))_rotateX(var(--rotateX))]'
     >
+    <div class="relative [transform-style:preserve-3d]">
       <Image
         src={phone}
         alt='Phone/s with a FingeRate App demo'
-        class='block h-[350px] object-contain md:order-2 md:h-[450px] w-fit'
+        class='block h-[350px] object-contain md:order-2 md:h-[450px] w-fit drop-shadow-md'
         decoding={'auto'}
       />
       <Image
         src={bot}
         alt=''
-        class='absolute left-1/2 top-[45%] h-[120px] object-contain [translate:-50%_-50%_15px] md:order-2 md:w-fit animate-bob'
+        class='absolute left-1/2 top-[45%] h-[120px] object-contain [translate:-50%_-50%_20px] md:order-2 md:w-fit animate-bob drop-shadow-md'
         decoding={'auto'}
       />
+      </div>
       <div
-        class='absolute hover:ring-4 w-[70%] gap-2 ring-white transition -left-[25%] top-[4%] grid aspect-video  grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)]'
+        class='absolute hover:ring-4 w-[70%] gap-2 ring-white transition -left-[25%] top-[4%] grid aspect-video  grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)] shadow-lg'
       >
         <div class='grid place-items-center font-bold '>4500 SoM</div>
         <p class='justify-self-end text-xs'>1 SoM = $0.1</p>
       </div>
       <ul
-        class='absolute -right-[40%] top-[40%] flex gap-2 text-sm/[1.5] [transform:translateZ(-30px)] [translate:-40%] hover:[translate:0] transition-all md:-right-[90%]'
+        class='absolute -right-[50%] top-[30%] md:top-[20%] flex gap-2 text-sm/[1.5] [transform:translateZ(-30px)] md:[translate:-40%] hover:[translate:0] transition-all md:-right-[90%]'
       >
         <li
           class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
         >
           <Image src={c3} alt='' class='aspect-video w-full object-cover' />
           <div class='flex grow flex-col px-2 py-1'>
-            <small class='text-cyan-700'>Olive Young</small>
             <b class='grow text-[80%]'>CRÈME concentree de AURORA -50%</b>
           </div>
-          <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-intelligentBlue'>
-            until {setExpireDate()}
+          <footer class='m-1 rounded-full bg-yellow-200 p-0.5 text-center text-[80%] text-yellow-950'>
+            Discount
           </footer>
         </li>
         <li
@@ -68,22 +75,38 @@ const setExpireDate = (num?: number) => {
         >
           <Image src={c2} alt='' class='aspect-video w-full object-cover' />
           <div class='flex grow flex-col px-2 py-1'>
-            <small class='text-cyan-700'>Twosome Place</small>
             <b class='grow text-[80%]'>Couple Set<br />Cake + Coffee x2</b>
           </div>
-          <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-intelligentBlue'>
-            until {setExpireDate(15)}
+          <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-blue-900'>
+            Coupon
           </footer>
         </li>
       </ul>
-      <div class='text-deepSpace space-y-4 absolute bottom-0 left-0 w-[40%] [transform-style:preserve-3d] [transform:translateZ(30px)] [translate:-50%] p-2 bg-white rounded-lg '>
-        <div class='font-bold'>Total %</div>
-        <div class="[transform:translateZ(15px)] " >
-        <div class="rounded-full aspect-square  hover:animate-spin bg-[conic-gradient(red_6deg,orange_6deg_18deg,yellow_18deg_45deg,green_45deg_110deg,blue_110deg_200deg,purple_200deg)]"/>
+      <div class='hidden md:block shadow-lg text-deepSpace space-y-4 absolute bottom-0  right-0 [transform-style:preserve-3d] [transform:translateZ(20px)] [translate:50%] p-2 bg-white rounded-lg '>
+        <div class='font-bold text-sm'>Survey Result</div>
+        <div class={`rounded-full aspect-square  hover:animate-spin bg-[conic-gradient(theme(colors.red.600)_6deg,theme(colors.emerald.500)_6deg_18deg,theme(colors.orange.400)_18deg_45deg,theme(colors.blue.300)_45deg_110deg,theme(colors.yellow.300)_110deg_200deg,theme(colors.purple.700)_200deg)]`}/>
+        <ul class='flex gap-1 justify-between'>
+          <li class="hover:scale-110 transition aspect-square rounded-full h-3 bg-red-600"/>
+          <li class="hover:scale-110 transition aspect-square rounded-full h-3 bg-emerald-500"/>
+          <li class="hover:scale-110 transition aspect-square rounded-full h-3 bg-orange-400"/>
+          <li class="hover:scale-110 transition aspect-square rounded-full h-3 bg-blue-300"/>
+          <li class="hover:scale-110 transition aspect-square rounded-full h-3 bg-yellow-300"/>
+          <li class="hover:scale-110 transition aspect-square rounded-full h-3 bg-purple-700"/>
+        </ul>
       </div>
-      <ul class='flex gap-1 flex-wrap justify-center'>
-        {['red','orange','yellow','green','blue','purple'].map(c => <li style={`background-color: ${c}`} class="aspect-square rounded-full  h-4"></li>)}
-      </ul>
+      <div class="bg-white rounded-lg shadow-lg p-2 absolute left-[-40%] bottom-0 md:bottom-[15%] [transform:translateZ(30px)]">
+        <Image src={jacket} alt='' class=' md:w-full'/>
+        <div class="flex justify-between items-center gap-2 mt-2">
+          <div class="text-xs bg-blue-500 px-2 py-0.5 rounded-full">NEW</div>
+          <div class="">
+            <input type="checkbox" name="like" id='like' class="peer hidden"/>
+            <label for='like' class="hover:cursor-pointer peer-checked:fill-red-600 fill-none">
+            <svg viewBox="0 0 25 25" class="w-6 h-6  stroke-red-600 fill-inherit transition-all"  xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.3311 8.41992C21.3311 5.93492 19.2321 3.91992 16.6431 3.91992C14.7081 3.91992 13.0461 5.04592 12.3311 6.65292C11.6161 5.04592 9.95405 3.91992 8.01805 3.91992C5.43105 3.91992 3.33105 5.93492 3.33105 8.41992C3.33105 15.6399 12.3311 20.4199 12.3311 20.4199C12.3311 20.4199 21.3311 15.6399 21.3311 8.41992Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </label>
+</div>
+        </div>
       </div>
     </div>
   </div>
