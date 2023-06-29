@@ -51,7 +51,7 @@ const setExpireDate = (num?: number) => {
       />
       </div>
       <div
-        class='absolute hover:ring-4 w-[70%] gap-2 ring-white transition left-[-50%] md:left-[-25%] top-[4%] grid aspect-video  grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)] shadow-lg'
+        class='absolute hover:ring-4 w-[60%] gap-2 ring-white transition left-[-50%] md:left-[-25%] top-[4%] grid aspect-video  grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)] shadow-lg'
       >
         <div class='grid place-items-center font-bold '>4500 SoM</div>
         <p class='justify-self-end text-xs'>1 SoM = $0.1</p>
@@ -95,7 +95,7 @@ const setExpireDate = (num?: number) => {
         </ul>
       </div> -->
       <div class="bg-white rounded-lg shadow-lg p-2 absolute left-[-35%] bottom-0 md:bottom-[15%] [transform:translateZ(20px)]">
-        <Image src={jacket} alt='' class=' md:w-full w-[80px]'/>
+        <Image src={jacket} alt='' class=' md:w-[100px] w-[80px]'/>
         <div class="flex justify-between items-center gap-2 mt-2">
           <div class="text-xs bg-blue-500 px-2 py-0.5 rounded-full">NEW</div>
           <div class="">
@@ -193,7 +193,6 @@ const setExpireDate = (num?: number) => {
     const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25;
     const offsetY = ((clientY - imgMiddleY) / window.innerHeight) * 15;
 
-    console.log({ offsetX, offsetY });
 
     $tiltEl.style.setProperty('--rotateX', `${-1 * offsetY + 5}deg`);
     $tiltEl.style.setProperty('--rotateY', `${offsetX - 5}deg`);
