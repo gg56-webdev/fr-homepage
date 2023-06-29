@@ -9,7 +9,7 @@ import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title='FingeRate | Survey to Earn Platform'>
-  <div id='vanta' class='absolute h-[50vh] w-full overflow-hidden bg-[#191e3c] md:h-screen'></div>
+  <div id='vanta' class='absolute h-[50vh] w-full opacity-75 overflow-hidden bg-[#191e3c] md:h-screen'></div>
 
   <div class='relative z-10 space-y-12 py-12 md:space-y-32 md:pb-24 overflow-x-hidden'>
     <div class='space-y-12'>
@@ -37,11 +37,10 @@ import Layout from '@layouts/Layout.astro';
           mouseControls: true,
           xOffset: 0.2,
           THREE,
-          baseColor: 0x502fc6,
+          baseColor: 0x0000ff,
           backgroundColor: 0x191e3c,
-          backgroundAlpha: 0,
-          size: 1.2,
-          amplitudeFactor: 1.5,
+          size: 0.9,
+          amplitudeFactor: 0,
         });
       })
       .catch(() => removeVantaContainer());

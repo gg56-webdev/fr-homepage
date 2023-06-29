@@ -50,7 +50,7 @@ const setExpireDate = (num?: number) => {
       />
       </div>
       <div
-        class='absolute hover:ring-4 w-[60%] gap-2 ring-white transition left-[-50%] md:left-[-25%] top-[4%] grid aspect-video  grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)] shadow-lg'
+        class='absolute hover:ring-4 w-[65%] gap-2 ring-white transition left-[-50%] md:left-[-25%] top-[4%] grid aspect-video  grid-rows-[1fr_auto] rounded-lg bg-blue-400 bg-brandGradient p-4 text-center [transform:translateZ(30px)] shadow-lg'
       >
         <div class='grid place-items-center font-bold '>4500 SoM</div>
         <p class='justify-self-end text-xs'>1 SoM = $0.1</p>
@@ -74,7 +74,7 @@ const setExpireDate = (num?: number) => {
         >
           <Image src={c2} alt='' class='aspect-video w-full object-cover' />
           <div class='flex grow flex-col px-2 py-1'>
-            <b class='grow text-[80%]'>Family Set<br />Coffee x5</b>
+            <b class='grow text-[80%]'>Friend Group Set<br />Coffee x5</b>
           </div>
           <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-blue-900'>
             Coupon
@@ -109,7 +109,7 @@ const setExpireDate = (num?: number) => {
       </div>
     </div>
   </div>
-  <div class='relative z-10'>
+  <div class='relative z-10 text-center md:text-left'>
     <div class='h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]'>
       <h1 class='text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]'>
         Survey ×
@@ -126,10 +126,10 @@ const setExpireDate = (num?: number) => {
         = <span class=''>FingeRate</span>
       </h1>
     </div>
-    <p class='mx-auto mt-4 max-w-[70ch] sm:text-xl md:mx-0 md:mt-8'>
+    <p class='mx-auto mt-4 max-w-[70ch] sm:text-xl md:mx-0 md:mt-8 '>
       Get instantly rewarded for each survey you complete! It is easy, fast, and completely safe! Why not giving it a try?
     </p>
-    <div class='mt-8 flex w-full flex-wrap  gap-4 md:mt-12'>
+    <div class='mt-8 flex w-full flex-wrap justify-center md:justify-start gap-4 md:mt-12'>
       <Google />
       <Apple />
       <QR isOpen={true} />
