@@ -45,7 +45,7 @@ const setExpireDate = (num?: number) => {
       <Image
         src={bot}
         alt=''
-        class='absolute left-1/2 top-[43%]  h-[100px] md:h-[150px] object-contain [translate:-50%_-50%_20px] md:order-2 md:w-fit animate-bob [animation-duration:3s] drop-shadow-md'
+        class='absolute left-1/2 top-[43%]  h-[100px] md:h-[150px] object-contain [translate:-50%_-50%_20px] md:order-2 md:w-fit motion-safe:animate-bob motion-safe:[animation-duration:3s] drop-shadow-md'
         decoding={'auto'}
       />
       </div>
@@ -96,10 +96,10 @@ const setExpireDate = (num?: number) => {
       <div class="bg-white rounded-lg shadow-lg p-2 absolute left-[-35%] bottom-0 md:bottom-[15%] [transform:translateZ(20px)]">
         <Image src={jacket} alt='' class=' md:w-[100px] w-[80px]'/>
         <div class="flex justify-between items-center gap-2 mt-2">
-          <div class="text-xs bg-blue-500 px-2 py-0.5 rounded-full">NEW</div>
+          <div class="text-xs bg-intelligentBlue px-2 py-0.5 rounded-full">NEW</div>
           <div class="">
             <input type="checkbox" name="like" id='like' class="peer hidden"/>
-            <label for='like' class="hover:cursor-pointer peer-checked:fill-red-600 fill-none">
+            <label for='like' class="hover:cursor-pointer peer-checked:fill-red-600 fill-transparent">
             <svg viewBox="0 0 25 25" class="w-6 h-6  stroke-red-600 fill-inherit transition-all"  xmlns="http://www.w3.org/2000/svg">
               <path d="M21.3311 8.41992C21.3311 5.93492 19.2321 3.91992 16.6431 3.91992C14.7081 3.91992 13.0461 5.04592 12.3311 6.65292C11.6161 5.04592 9.95405 3.91992 8.01805 3.91992C5.43105 3.91992 3.33105 5.93492 3.33105 8.41992C3.33105 15.6399 12.3311 20.4199 12.3311 20.4199C12.3311 20.4199 21.3311 15.6399 21.3311 8.41992Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
