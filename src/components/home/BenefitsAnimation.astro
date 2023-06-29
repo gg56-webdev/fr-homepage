@@ -23,22 +23,37 @@ const content = [
 ] as const;
 ---
 
-<section class='h-screen'>
-  <div class='h-full bg-white/50'>
-    {content.map(([t]) => <div data-scroll-trigger>{t}</div>)}
-  </div>
+<section class='mx-auto max-w-screen-xl space-y-12 px-2'>
+  {
+    content.map(([h2, p, img], i) => (
+      <div class:list={['flex flex-col items-center md:flex-row md:even:flex-row-reverse ']} >
+        <div data-scroll-animation class='flex-1'>
+          <Image src={img} alt={`illustration to show how FingeRate app is ${h2}`} class=' object-fit' />
+        </div>
+        <div
+        data-scroll-animation
+          class={`relative mx-auto -mt-4 flex-1 rounded-lg bg-slate-950/90 p-6 md:mt-0 md:p-12 ${
+            i % 2 === 0 ? 'md:-ml-8' : 'md:-mr-8'
+          }`}
+        >
+          <h2 class='brand-text text-2xl font-bold md:text-3xl'>{h2}</h2>
+          <p class='mt-2 md:mt-4 md:text-lg'>{p}</p>
+        </div>
+      </div>
+    ))
+  }
 </section>
 
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  // import { gsap } from 'gsap';
+  // import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to('[data-scroll-trigger]', {
-    scrollTrigger: {trigger:'[data-scroll-trigger]', pin: true},
-    x: 400,
-    duration: 3,
+  // gsap.to('[data-scroll-trigger]', {
+  //   scrollTrigger: {trigger:'[data-scroll-trigger]', pin: true},
+  //   x: 400,
+  //   duration: 3,
     
-  });
+  // });
 </script>
