@@ -6,8 +6,7 @@ import phones from '@assets/app/phones.webp';
 import Apple from '@components/DownloadBtn/Apple.astro';
 import Google from '@components/DownloadBtn/Google.astro';
 import QR from '@components/DownloadBtn/QR.astro';
-import c1 from '@assets/home/c1.jpg';
-import c2 from '@assets/home/c2.jpg';
+import c2 from '@assets/home/coffee.jpg';
 import c3 from '@assets/home/c3.jpg';
 import { Image } from 'astro:assets';
 
@@ -46,7 +45,7 @@ const setExpireDate = (num?: number) => {
       <Image
         src={bot}
         alt=''
-        class='absolute left-1/2 top-[43%]  h-[100px] md:h-[150px] object-contain [translate:-50%_-50%_20px] md:order-2 md:w-fit animate-bob drop-shadow-md'
+        class='absolute left-1/2 top-[43%]  h-[100px] md:h-[150px] object-contain [translate:-50%_-50%_20px] md:order-2 md:w-fit animate-bob [animation-duration:3s] drop-shadow-md'
         decoding={'auto'}
       />
       </div>
@@ -75,7 +74,7 @@ const setExpireDate = (num?: number) => {
         >
           <Image src={c2} alt='' class='aspect-video w-full object-cover' />
           <div class='flex grow flex-col px-2 py-1'>
-            <b class='grow text-[80%]'>Couple Set<br />Cake + Coffee x2</b>
+            <b class='grow text-[80%]'>Family Set<br />Coffee x5</b>
           </div>
           <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-blue-900'>
             Coupon
@@ -110,7 +109,7 @@ const setExpireDate = (num?: number) => {
       </div>
     </div>
   </div>
-  <div class='relative z-10 text-center'>
+  <div class='relative z-10'>
     <div class='h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]'>
       <h1 class='text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]'>
         Survey ×
@@ -128,9 +127,9 @@ const setExpireDate = (num?: number) => {
       </h1>
     </div>
     <p class='mx-auto mt-4 max-w-[70ch] sm:text-xl md:mx-0 md:mt-8'>
-      Take surveys and earn rewards instantly! Share your opinions effortlessly and be rewarded for it! It is safe, secure, and global!	Get instantly rewarded for each survey you complete! It is easy, fast, and completely safe! Why not giving it a try?
+      Get instantly rewarded for each survey you complete! It is easy, fast, and completely safe! Why not giving it a try?
     </p>
-    <div class='mt-8 flex w-full flex-wrap justify-center gap-4 md:mt-12'>
+    <div class='mt-8 flex w-full flex-wrap  gap-4 md:mt-12'>
       <Google />
       <Apple />
       <QR isOpen={true} />
@@ -190,7 +189,7 @@ const setExpireDate = (num?: number) => {
     const imgMiddleY = y + height / 2;
 
     const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25;
-    const offsetY = ((clientY - imgMiddleY) / window.innerHeight) * 15;
+    const offsetY = Math.min(((clientY - imgMiddleY) / window.innerHeight) * 15, 15);
 
 
     $tiltEl.style.setProperty('--rotateX', `${-1 * offsetY + 5}deg`);
