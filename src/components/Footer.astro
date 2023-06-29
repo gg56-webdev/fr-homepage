@@ -2,7 +2,7 @@
 import { NAV_LINKS, type Link } from '../constants';
 import logo from '../assets/logo.webp';
 import Social from './Social.astro';
-const footerLinks: Link[] = [NAV_LINKS.PRIVACY, NAV_LINKS.TERMS];
+const footerLinks: Link[] = [NAV_LINKS.PRIVACY, NAV_LINKS.TERMS, NAV_LINKS.WHITEPAPER];
 ---
 
 <footer class='bg-slate-950/50 p-2 pt-4'>
@@ -22,7 +22,7 @@ const footerLinks: Link[] = [NAV_LINKS.PRIVACY, NAV_LINKS.TERMS];
           footerLinks.map((l) => (
             <li class='hover:underline'>
               <a href={l.href} target={l.isExternal ? '_blank' : ''} rel={l.isExternal ? 'noopener noreferrer' : ''}>
-                {l.name}
+                {l.name} {l.isExternal && '↗'}
               </a>
             </li>
           ))
