@@ -1,5 +1,5 @@
 ---
-import Benefits from '@/components/home/Benefits.astro';
+import Benefits from '@components/home/Benefits.astro';
 import App from '@components/home/App.astro';
 import Hero from '@components/home/Hero.astro';
 import Partners from '@components/home/Partners.astro';
@@ -8,9 +8,9 @@ import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title='FingeRate | Survey to Earn Platform'>
-  <div id='vanta' class='absolute h-[50vh] w-full opacity-75 overflow-hidden bg-[#191e3c] md:h-screen'></div>
+  <div id='vanta' class='absolute h-[50vh] w-full overflow-hidden bg-[#191e3c] opacity-75 md:h-screen'></div>
 
-  <div class='relative z-10 space-y-12 py-12 md:space-y-32 md:pb-24 overflow-x-hidden'>
+  <div class='relative z-10 space-y-12 overflow-x-hidden py-12 md:space-y-32 md:pb-24'>
     <div class='space-y-12'>
       <Hero />
       <Partners />
