@@ -1,45 +1,52 @@
 ---
-import benefit1 from '@assets/home/benefit-1.webp';
-import benefit2 from '@assets/home/benefit-2.webp';
-import benefit3 from '@assets/home/benefit-3.webp';
+import benefit1 from '@assets/home/p1.png';
+import benefit2 from '@assets/home/p2.png';
+import benefit3 from '@assets/home/p3.png';
 import { Image } from 'astro:assets';
 
 const content = [
   [
-    'Earning Rewards Effortlessly',
-    'Select from a wide range of surveys, share your valuable opinions, and enjoy instant rewards.  Say goodbye to waiting and hello to instant gratification!',
+    'Earn Rewards Effortlessly',
+    'Select from a wide range of surveys, share your opinions, and enjoy instant rewards. Say goodbye to waiting and hello to instant gratification!',
     benefit1,
+    'FingeRate App Screenshot of getting rewarded for survey participation'
   ],
   [
     'Safe & Secure',
-    'Our app was developed with security and privacy in mind! Our app was meticulously designed, leveraging the power of blockchain technology, to provide an unparalleled level of security and privacy.',
+    'Our app prioritizes security and privacy. We have carefully developed it using the latest technology to ensure an unmatched level of protection for your data.',
     benefit2,
+    'FingeRate App Screenshot of My Profile page'
   ],
   [
     'Easy & Fast',
-    'FingeRate app presents a swift and straightforward method to earn rewards! Bid farewell to never-ending surveys and say hello to a platform that values your time and effort.',
+    'The FingeRate app makes earning rewards quick and easy! No more long surveys - this platform respects your time and effort.',
     benefit3,
+    'FingeRate App Screenshot of My Wallet page, showing amount of SoM points and coupons'
+    
   ],
 ] as const;
+
 ---
 
-<section class='mx-auto max-w-screen-xl space-y-12 px-2'>
+<section class='mx-auto max-w-screen-lg space-y-36 py-24 px-2'>
   {
-    content.map(([h2, p, img], i) => (
-      <div  class={`flex flex-col items-center md:flex-row md:even:flex-row-reverse `}>
-        <div data-scroll-animation class='flex-1'>
-          <Image src={img} alt={`illustration to show how FingeRate app is ${h2}`} class=' object-fit' />
-        </div>
+    content.map(([h2, p, src, alt], i) => (
+      <div class:list={['flex flex-col items-center gap-6 md:justify-between', i%2===0 ? 'md:flex-row' : 'md:flex-row-reverse']} >
+        <div data-scroll-animation class=" relative motion-safe:animate-bob motion-safe:[animation-duration:8s] w-[200px] md:w-[300px]">
+          <div class:list={[i%2===0 ? '[animation-delay:0s]' : '[animation-delay:2s]','animate-blob  mix-blend-overlay blur-2xl absolute top-1/4 -left-1/4 w-full aspect-square rounded-full bg-softFire/50']}/>
+          <div class:list={[i%2===0 ? '[animation-delay:2s]' : '[animation-delay:0s]','animate-blob  mix-blend-overlay blur-2xl absolute top-0 -right-1/4 w-full aspect-square rounded-full bg-neonBlue/50']}/>
+          <div class:list={[i%2===0 ? '[animation-delay:4s]' : '[animation-delay:2s]','animate-blob  mix-blend-overlay blur-2xl absolute bottom-0 -right-1/4 w-full aspect-square rounded-full bg-intelligentBlue/50']}/>
+          <Image   {src} {alt} class:list={[' object-contain',i % 2 === 0 ? '[rotate:12deg]' : '[rotate:-12deg]']}  />
+          </div>
         <div
-        data-scroll-animation
-          class={`relative mx-auto -mt-4 flex-1 rounded-lg bg-slate-950/90 p-6 md:mt-0 md:p-12 ${
-            i % 2 === 0 ? 'md:-ml-8' : 'md:-mr-8'
-          }`}
+          class:list={['text-center space-y-4 md:text-left relative z-10 md:w-1/2']}
         >
-          <h2 class='brand-text text-2xl font-bold md:text-3xl'>{h2}</h2>
-          <p class='mt-2 md:mt-4 md:text-lg'>{p}</p>
+          <h2 data-scroll-animation  class='text-3xl font-bold md:text-5xl'>{h2}</h2>
+          <p  data-scroll-animation class="[text-wrap:balance] md:[text-wrap:initial] text-cyberLilac md:text-xl">{p}</p>
         </div>
       </div>
     ))
   }
 </section>
+
+
