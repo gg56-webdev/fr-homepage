@@ -18,12 +18,21 @@ module.exports = {
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease',
+        bob: 'bob 2s ease-in-out infinite',
+        blob: 'blob 8s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
           from: { opacity: 0 },
           to: { opacity: 1 },
         },
+        bob: {
+          '50%': {transform: 'translateY(-5%)'}
+        },
+        blob: {
+          '33%': {scale: '1.1', translate: '30px -50px'},
+          '66%': {scale: '0.85', translate: '-20px 20px'},
+        }
       },
     },
   },
