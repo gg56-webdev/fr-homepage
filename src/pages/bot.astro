@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import vid from "@assets/bot/bot_intro.mp4";
 import Benefits from "@/components/bot/Benefits.astro";
 import Contact from "@/components/bot/Contact.astro";
@@ -18,14 +18,10 @@ changeLanguage("en");
           <video src={vid} width='1280' height='720' controls muted autoplay loop></video>
         </div>
         <div class='p-4'>
-          <h1 class='brand-text text-4xl font-bold leading-normal drop-shadow-[0_0_8px_#000]'>
-            Introducing FingeRate&nbsp;Bot!
+          <h1 class=' text-4xl font-bold' set:html={t('bot.hero.h1')} />
           </h1>
           <p class='mt-4'>
-            FingeRate Bot offers a cutting-edge touchless survey solution, revolutionizing the way you collect feedback
-            and measure customer satisfaction. With our advanced technology, you can gather valuable insights without
-            the need for physical contact or paper-based surveys. Our touchless approach ensures a seamless and safe
-            experience for your visitors.
+           {t('bot.hero.p')}
           </p>
         </div>
       </div>

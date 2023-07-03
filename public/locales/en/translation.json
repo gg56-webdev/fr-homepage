@@ -50,5 +50,11 @@
         "Free!"
       ]
     }
+  },
+  "bot": {
+    "hero": {
+      "h1": "Introducing FingeRate&nbsp;Bot!",
+      "p": "Introducing FingeRate Bot - the cutting-edge touchless survey solution revolutionizing feedback collection and customer satisfaction measurement. Our advanced AI technology ensures a seamless and safe experience for your visitors, eliminating the need for physical contact or paper-based surveys. With real-time data and a user-friendly dashboard, FingeRate Bot empowers you to gather invaluable insights and make informed business decisions. Join the touchless revolution and optimize your operations with FingeRate Bot today!"
+    }
   }
 }

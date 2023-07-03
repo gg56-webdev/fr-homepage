@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import vid from "@assets/bot/bot_intro.mp4";
 import Benefits from "@/components/bot/Benefits.astro";
 import Contact from "@/components/bot/Contact.astro";
@@ -22,10 +22,7 @@ changeLanguage("ko");
             Introducing FingeRate&nbsp;Bot!
           </h1>
           <p class='mt-4'>
-            FingeRate Bot offers a cutting-edge touchless survey solution, revolutionizing the way you collect feedback
-            and measure customer satisfaction. With our advanced technology, you can gather valuable insights without
-            the need for physical contact or paper-based surveys. Our touchless approach ensures a seamless and safe
-            experience for your visitors.
+           {t('bot.hero.p')}
           </p>
         </div>
       </div>
