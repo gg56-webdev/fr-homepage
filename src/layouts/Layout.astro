@@ -30,10 +30,10 @@ const { title = t('site.title'), description = t('site.description') } = Astro.p
     <HeadHrefLangs />
     <link rel='preload' as='image' href={optimizedBg.src} />
   </head>
-  <body class='grid min-h-screen grid-rows-[auto_1fr_auto] bg-deepSpace'>
+  <body class='flex min-h-screen flex-col bg-deepSpace'>
     {lang === 'ko' && <div class="bg-intelligentBlue text-center  p-1 font-medium">🚧 개발중인. 곧 다시 찾아 뵙겠습니다. 🚧</div>}
     <Header />
-    <main class='bg-cover bg-center bg-no-repeat' style={`background-image: url(${optimizedBg.src});`}>
+    <main class='bg-cover bg-center grow bg-no-repeat' style={`background-image: url(${optimizedBg.src});`}>
       <slot />
     </main>
     <ScrollToTop />
