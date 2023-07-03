@@ -56,5 +56,11 @@
       "h1": "Introducing FingeRate&nbsp;Bot!",
       "p": "Introducing FingeRate Bot - the cutting-edge touchless survey solution revolutionizing feedback collection and customer satisfaction measurement. Our advanced AI technology ensures a seamless and safe experience for your visitors, eliminating the need for physical contact or paper-based surveys. With real-time data and a user-friendly dashboard, FingeRate Bot empowers you to gather invaluable insights and make informed business decisions. Join the touchless revolution and optimize your operations with FingeRate Bot today!"
     }
+  },
+  "token": {
+    "about": {
+      "h2": "FingeRate: One&nbsp;App, One&nbsp;Token, One&nbsp;Ecosystem",
+      "p": "MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units."
+    }
   }
 }

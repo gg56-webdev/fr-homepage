@@ -18,8 +18,7 @@ changeLanguage("ko");
           <video src={vid} width='1280' height='720' controls muted autoplay loop></video>
         </div>
         <div class='p-4'>
-          <h1 class='brand-text text-4xl font-bold leading-normal drop-shadow-[0_0_8px_#000]'>
-            Introducing FingeRate&nbsp;Bot!
+          <h1 class=' text-4xl font-bold' set:html={t('bot.hero.h1')} />
           </h1>
           <p class='mt-4'>
            {t('bot.hero.p')}
