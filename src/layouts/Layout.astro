@@ -4,32 +4,31 @@ import CookieBanner from '@components/CookieBanner.astro';
 import Footer from '@components/Footer.astro';
 import Header from '@components/Header.astro';
 import ScrollToTop from '@components/ScrollToTop.astro';
-import { getLangFromUrl } from '@i18n/utils';
 import { getImage } from 'astro:assets';
+import i18next, { t } from 'i18next';
+import { HeadHrefLangs } from 'astro-i18next/components';
 
 const optimizedBg = await getImage({ src: bg, format: 'avif', quality: 'mid' });
-const lang = getLangFromUrl(Astro.url);
 
 export interface Props {
-  title: string;
+  title?: string;
+  description?: string;
 }
-const { title } = Astro.props;
+const { title = t('site.title'), description = t('site.description') } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={i18next.language} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep">
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <link rel='shortcut icon' href='/favicon.jpg' type='image/x-icon' />
-    <meta
-      name='description'
-      content='Earn rewards with ease using FingeRate! Complete surveys anywhere, anytime. Convenient and user-friendly. Download now on Play Store and iOS for extra rewards!'
-    />
+    <meta name='description' content={description} />
     <title>{title}</title>
+    <HeadHrefLangs />
     <link rel='preload' as='image' href={optimizedBg.src} />
   </head>
-  <body class='grid grid-rows-[auto_1fr_auto] bg-deepSpace'>
+  <body class='grid min-h-screen grid-rows-[auto_1fr_auto] bg-deepSpace'>
     <Header />
     <main class='bg-cover bg-center bg-no-repeat' style={`background-image: url(${optimizedBg.src});`}>
       <slot />
@@ -37,66 +36,62 @@ const { title } = Astro.props;
     <ScrollToTop />
     <CookieBanner />
     <Footer />
+
   </body>
 </html>
 
-<style is:global>
-  :root {
-    color-scheme: dark;
-    --intelligent-blue: 80 47 198;
-    --soft-fire: 202 68 80;
-    --neon-blue: 38 151 194;
-    --deep-space: 34 33 52;
-    --cyber-lilac: 216 201 213;
-    --brand-gradient: linear-gradient(-5deg, rgb(var(--intelligent-blue) / 0.5), rgb(var(--intelligent-blue) / 0) 50%),
-      linear-gradient(225deg, rgb(var(--neon-blue) / 1), rgb(var(--neon-blue) / 0) 50%),
-      linear-gradient(100deg, rgb(var(--soft-fire) / 1) 35%, rgb(var(--intelligent-blue) / 1));
-  }
+    <style is:global>
+      :root {
+        color-scheme: dark;
+        --intelligent-blue: 80 47 198;
+        --soft-fire: 202 68 80;
+        --neon-blue: 38 151 194;
+        --deep-space: 34 33 52;
+        --cyber-lilac: 216 201 213;
+        --brand-gradient: linear-gradient(
+            -5deg,
+            rgb(var(--intelligent-blue) / 0.5),
+            rgb(var(--intelligent-blue) / 0) 50%
+          ),
+          linear-gradient(225deg, rgb(var(--neon-blue) / 1), rgb(var(--neon-blue) / 0) 50%),
+          linear-gradient(100deg, rgb(var(--soft-fire) / 1) 35%, rgb(var(--intelligent-blue) / 1));
+      }
 
-  html,
-  body {
-    min-height: 100vh;
-  }
+      .brand-text {
+        display: inline;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: var(--brand-gradient);
+        color: transparent;
+      }
+    </style>
 
-  html:has(dialog[data-modal][open]) {
-    overflow: hidden;
-  }
+    <script>
+      const sections = document.querySelectorAll('[data-scroll-animation]');
 
-  .brand-text {
-    display: inline;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: var(--brand-gradient);
-    color: transparent;
-  }
-</style>
+      const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true;
 
-<script>
-  const sections = document.querySelectorAll('[data-scroll-animation]');
+      if (sections.length > 0 && isMotionSafe) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove('motion-safe:opacity-0', 'motion-safe:translate-y-[10%]');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '-15%' }
+        );
 
-  const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true;
-
-  if (sections.length > 0 && isMotionSafe) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('motion-safe:opacity-0', 'motion-safe:translate-y-[10%]');
-            observer.unobserve(entry.target);
-          }
+        sections.forEach((section) => {
+          section.classList.add(
+            'motion-safe:opacity-0',
+            'motion-safe:transition',
+            'motion-safe:translate-y-[10%]',
+            '!duration-300'
+          );
+          observer.observe(section);
         });
-      },
-      { rootMargin: '-15%' }
-    );
-
-    sections.forEach((section) => {
-      section.classList.add(
-        'motion-safe:opacity-0',
-        'motion-safe:transition',
-        'motion-safe:translate-y-[10%]',
-        '!duration-300'
-      );
-      observer.observe(section);
-    });
-  }
-</script>
+      }
+    </script>

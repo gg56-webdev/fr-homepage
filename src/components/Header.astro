@@ -1,15 +1,19 @@
 ---
 import { NAV_LINKS, type Link } from '../constants';
+import i18next,{t} from 'i18next'
+import { localizePath  } from "astro-i18next";
+
 type Dropdown = { name: string; href?: string; links: Link[] };
+
 const navLinks: Array<Link | Dropdown> = [
-  NAV_LINKS.HOME,
+  {...NAV_LINKS.HOME, href: localizePath(NAV_LINKS.HOME.href)},
   {
     name: 'Ecosystem',
-    links: [NAV_LINKS.BOT, NAV_LINKS.TOKEN],
+    links: [{...NAV_LINKS.BOT, href: localizePath(NAV_LINKS.BOT.href)}, {...NAV_LINKS.TOKEN, href: localizePath(NAV_LINKS.TOKEN.href)}],
   },
   {
     name: 'About',
-    links: [NAV_LINKS.TEAM, NAV_LINKS.WHITEPAPER, NAV_LINKS.CONTACT],
+    links: [{...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)}, {...NAV_LINKS.WHITEPAPER}, {...NAV_LINKS.CONTACT, href: localizePath(NAV_LINKS.CONTACT.href)}],
   },
 ];
 
@@ -114,6 +118,12 @@ const currentUrl = import.meta.env.DEV
             </li>
           ))
         }
+        <li>
+          <div>
+            {['en','ko'].map(lang =>  <a class:list={['text-sm px-2 rounded uppercase py-1 font-medium hover:underline', {'bg-intelligentBlue': lang === i18next.language}]} href={localizePath(Astro.url.pathname, lang)}>{lang}</a>)}
+          </div>
+     
+        </li>
       </ul>
     </div>
   </nav>

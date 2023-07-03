@@ -1,0 +1,54 @@
+{
+  "name": "FingeRate",
+  "site": {
+    "title": "FingeRate | Survey to Earn Platform",
+    "description": "Earn rewards with ease using FingeRate! Complete surveys anywhere, anytime. Convenient and user-friendly. Download now on Play Store and iOS for extra rewards!"
+  },
+  "common": {
+    "new": "New"
+  },
+  "home": {
+    "hero": {
+      "first-word": "Metaverse",
+      "h1": "Survey × <0><1>$t(home.hero.first-word)</1><2>Avatar</2><3>Business</3><4>Rewards</4><5>Satisfaction</5><6>LBS</6><7>Simplicity</7><8>$t(home.hero.first-word)</8></0> = $t(name)",
+      "p": "Take surveys and earn rewards instantly! Share your opinions effortlessly and be rewarded for it! It is safe, secure, and global!",
+      "app-ui": {
+        "discount": "Discount",
+        "coupon": "Coupon",
+        "coupon-title": "Friends Group Set Coffee x5"
+      }
+    },
+    "features": [
+      [
+        "Earn Rewards Effortlessly",
+        "Select from a wide range of surveys, share your opinions, and enjoy instant rewards. Say goodbye to waiting and hello to instant gratification!",
+        "FingeRate App Screenshot of getting rewarded for survey participation"
+      ],
+      [
+        "Safe & Secure",
+        "Our app prioritizes security and privacy. We have carefully developed it using the latest technology to ensure an unmatched level of protection for your data.",
+        "FingeRate App Screenshot of My Profile page"
+      ],
+      [
+        "Easy & Fast",
+        "FingeRate app presents a swift and straightforward method to earn rewards! Bid farewell to never-ending surveys and say hello to a platform that values your time and effort.",
+        "FingeRate App Screenshot of My Wallet page, showing amount of SoM points and coupons"
+      ]
+    ],
+    "steps": [
+      "Download the app, create an account, and take you first survey!",
+      "Using SoM, get coupons and other benefits directly from FingeRate App!",
+      "Empower your curiosity and engage your audience with our easy-to-use survey creation feature. Customize your questions."
+    ],
+    "cta": {
+      "h2": "Why FingeRate App?",
+      "points": [
+        "Fun and Easy Way to Earn Rewards",
+        "Safe and Secure",
+        "Customize Your Experience",
+        "Your Avatar, Your Rewards, Your Own World",
+        "Free!"
+      ]
+    }
+  }
+}

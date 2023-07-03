@@ -7,10 +7,10 @@ import { Image, getImage } from "astro:assets";
 import Person from "@components/Person.astro";
 import { getLangFromUrl } from "@i18n/utils";
 
-changeLanguage("en");
+changeLanguage("ko");
 
 const lang = getLangFromUrl(Astro.url);
-const photos: ImageMetadata[] = await Astro.glob("../assets/team/photos/**/*.{png,webp}").then((files) => files.map((f) => f.default));
+const photos: ImageMetadata[] = await Astro.glob("../../assets/team/photos/**/*.{png,webp}").then((files) => files.map((f) => f.default));
 const optimizedPhotos = await Promise.all(photos.map((p) => getImage({ src: p, format: "webp", quality: "high" })));
 type PersonJSON = {
     name: {
