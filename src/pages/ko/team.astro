@@ -4,7 +4,7 @@ import { founders, mainTeam } from "@data/team/exports";
 import ceoSpeech from "@assets/team/ceo-speech.webp";
 import { Image, getImage } from "astro:assets";
 import Person from "@components/Person.astro";
-import i18next, { changeLanguage } from "i18next";
+import i18next, { changeLanguage, t } from "i18next";
 
 changeLanguage("ko");
 
@@ -69,12 +69,9 @@ const delays: Record<number, string> = {
           class='block max-h-[350px] -scale-x-100 rounded-lg object-cover sm:order-2'
         />
         <div>
-          <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>Our Team</h1>
-          <p class='max-w-[60ch]'>
-            Welcome to the FingeRate team page, where you can get to know the dedicated and passionate individuals
-            behind our revolutionary survey platform. Our team consists of experts from diverse fields, including
-            blockchain technology and software development, among others. We are united in our commitment to leveraging
-            the power of the metaverse to provide our users with an engaging and rewarding survey experience.
+          <h1 class='text-4xl font-bold '>{t('team.hero.h1')}</h1>
+          <p class='max-w-[60ch] mt-4'>
+            {t('team.hero.p')}
           </p>
         </div>
       </div>
