@@ -10,6 +10,8 @@ import { HeadHrefLangs } from 'astro-i18next/components';
 
 const optimizedBg = await getImage({ src: bg, format: 'avif', quality: 'mid' });
 
+const lang = i18next.language
+
 export interface Props {
   title?: string;
   description?: string;
@@ -18,7 +20,7 @@ const { title = t('site.title'), description = t('site.description') } = Astro.p
 ---
 
 <!DOCTYPE html>
-<html lang={i18next.language} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep">
+<html {lang} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep">
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -29,6 +31,7 @@ const { title = t('site.title'), description = t('site.description') } = Astro.p
     <link rel='preload' as='image' href={optimizedBg.src} />
   </head>
   <body class='grid min-h-screen grid-rows-[auto_1fr_auto] bg-deepSpace'>
+    {lang === 'ko' && <div class="bg-intelligentBlue text-center  p-1 font-medium">🚧 개발중인. 곧 다시 찾아 뵙겠습니다. 🚧</div>}
     <Header />
     <main class='bg-cover bg-center bg-no-repeat' style={`background-image: url(${optimizedBg.src});`}>
       <slot />
