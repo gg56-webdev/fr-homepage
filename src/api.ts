@@ -1,17 +1,22 @@
 import type { WP_REST_API_Post } from 'wp-types';
 
-const WP_POSTS_API_URL = 'https://gg56.com/wp-json/wp/v2/posts';
+const WP_URL = 'https://gg56.com';
+const WP_POSTS_API_ENDPOINT = 'wp-json/wp/v2/posts'
 const FINGERATE_CATEGORY_ID = '7';
+const ENGLISH_TAG = '107'
+const KOREAN_TAG = '108'
 
-export const getPosts = async (minimal = false) => {
-  const wpUrl = new URL(`${WP_POSTS_API_URL}`);
+export const getPosts = async (lang: 'en' | 'ko' = 'en', minimal = false) => {
+  const wpUrl = new URL(`${WP_URL}/${lang}/${WP_POSTS_API_ENDPOINT}`);
   wpUrl.searchParams.set('categories', FINGERATE_CATEGORY_ID);
+  wpUrl.searchParams.set('tags', lang === 'en' ? ENGLISH_TAG : KOREAN_TAG);
   if (minimal) {
     wpUrl.searchParams.set('_fields', 'id,slug');
   } else {
     wpUrl.searchParams.set('_fields', 'id,sticky,title,date,slug,_links.wp:featuredmedia,_links.wp:term');
     wpUrl.searchParams.set('_embed', 'wp:term,wp:featuredmedia');
   }
+
 
   const res = await fetch(wpUrl);
   const posts = (await res.json()) as Pick<
@@ -21,8 +26,8 @@ export const getPosts = async (minimal = false) => {
   return posts;
 };
 
-export const getPost = async (id: WP_REST_API_Post['id']) => {
-  const wpUrl = new URL(`${WP_POSTS_API_URL}/${id}`);
+export const getPost = async (id: WP_REST_API_Post['id'], lang: 'en' | 'ko' = 'en') => {
+  const wpUrl = new URL(`${WP_URL}/${lang}/${WP_POSTS_API_ENDPOINT}/${id}`);
   wpUrl.searchParams.set('_fields', 'content,title,date,_links.wp:featuredmedia,_links.wp:term');
   wpUrl.searchParams.set('_embed', 'wp:term,wp:featuredmedia');
 

@@ -7,7 +7,7 @@ import type { GetStaticPaths } from "astro";
 import type { WP_REST_API_Post } from "wp-types";
 import { NAV_LINKS } from "@/constants";
 
-changeLanguage("en");
+changeLanguage("ko");
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPosts(i18next.language as "en" | "ko", true);

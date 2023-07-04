@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import { localizePath } from "astro-i18next";
 import { NAV_LINKS } from "@/constants";
 
-changeLanguage("en");
+changeLanguage("ko");
 
 const posts = await getPosts(i18next.language as "en" | "ko");
 ---

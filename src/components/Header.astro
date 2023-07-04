@@ -3,6 +3,8 @@ import { NAV_LINKS, type Link } from '../constants';
 import i18next,{t} from 'i18next'
 import { localizePath  } from "astro-i18next";
 
+// TODO: responsive divide between links and language
+
 type Dropdown = { name: string; href?: string; links: Link[] };
 
 const navLinks: Array<Link | Dropdown> = [
@@ -14,7 +16,7 @@ const navLinks: Array<Link | Dropdown> = [
   {
     name: 'About',
     links: [
-      // {...NAV_LINKS.NEWS, href: localizePath(NAV_LINKS.NEWS.href)},
+      {...NAV_LINKS.NEWS, href: localizePath(NAV_LINKS.NEWS.href)},
       {...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)},],
   },
   {
