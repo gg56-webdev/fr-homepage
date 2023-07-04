@@ -1,9 +1,5 @@
 ---
-const cells = [
-  'Download the app, create an account, and take you first survey!',
-  'Using SoM, get coupons and other benefits directly from FingeRate App!',
-  'Empower your curiosity and engage your audience with our easy-to-use survey creation feature. Customize your questions.',
-];
+import {t} from 'i18next'
 ---
 
 <section data-scroll-animation class='mx-auto max-w-[850px] break-words px-2'>
@@ -34,7 +30,7 @@ const cells = [
       <div class='grid h-12 w-12 place-items-center rounded-full bg-slate-950/90 text-2xl font-bold leading-none'>
         1
       </div>
-      {cells[0]}
+      {t('home.steps.0')}
     </div>
     <div
       class='relative grid place-items-center overflow-hidden rounded-lg p-2 before:absolute before:h-full before:w-full before:opacity-0 before:transition before:[background-image:var(--brand-gradient)] odd:hidden odd:aspect-square odd:bg-slate-950/90 hover:shadow-lg before:hover:opacity-100 sm:[grid-area:c3] sm:odd:grid'
@@ -72,7 +68,7 @@ const cells = [
       <div class='grid h-12 w-12 place-items-center rounded-full bg-slate-950/90 text-2xl font-bold leading-none'>
         2
       </div>
-      {cells[1]}
+      {t('home.steps.1')}
     </div>
     <div
       class='relative grid place-items-center overflow-hidden rounded-lg p-2 before:absolute before:h-full before:w-full before:opacity-0 before:transition before:[background-image:var(--brand-gradient)] odd:hidden odd:aspect-square odd:bg-slate-950/90 hover:shadow-lg before:hover:opacity-100 sm:[grid-area:c5] sm:odd:grid'
@@ -98,7 +94,7 @@ const cells = [
       <div class='grid h-12 w-12 place-items-center rounded-full bg-slate-950/90 text-2xl font-bold leading-none'>
         3
       </div>
-      {cells[2]}
+      {t('home.steps.2')}
     </div>
   </div>
 </section>

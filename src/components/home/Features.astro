@@ -3,32 +3,18 @@ import phoneScreen1 from '@assets/home/phone-screen-1.webp';
 import phoneScreen2 from '@assets/home/phone-screen-2.webp';
 import phoneScreen3 from '@assets/home/phone-screen-3.webp';
 import { Image } from 'astro:assets';
+import { t } from 'i18next';
 
 const content = [
-  [
-    'Earn Rewards Effortlessly',
-    'Select from a wide range of surveys, share your opinions, and enjoy instant rewards. Say goodbye to waiting and hello to instant gratification!',
-    phoneScreen1,
-    'FingeRate App Screenshot of getting rewarded for survey participation',
-  ],
-  [
-    'Safe & Secure',
-    'Our app prioritizes security and privacy. We have carefully developed it using the latest technology to ensure an unmatched level of protection for your data.',
-    phoneScreen2,
-    'FingeRate App Screenshot of My Profile page',
-  ],
-  [
-    'Easy & Fast',
-    'The FingeRate app makes earning rewards quick and easy! No more long surveys - this platform respects your time and effort.',
-    phoneScreen3,
-    'FingeRate App Screenshot of My Wallet page, showing amount of SoM points and coupons',
-  ],
+  [t('home.features.0.0'), t('home.features.0.1'), t('home.features.0.2'), phoneScreen1],
+  [t('home.features.1.0'), t('home.features.1.1'), t('home.features.1.2'), phoneScreen2],
+  [t('home.features.2.0'), t('home.features.2.1'), t('home.features.2.2'), phoneScreen3],
 ] as const;
 ---
 
 <section class='mx-auto max-w-screen-lg space-y-36 px-2 py-24'>
   {
-    content.map(([h2, p, src, alt], i) => (
+    content.map(([h2, p, alt, src], i) => (
       <div
         class:list={[
           'flex flex-col items-center gap-6 md:justify-between',

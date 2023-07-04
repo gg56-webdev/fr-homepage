@@ -6,10 +6,10 @@ import { Image, getImage } from "astro:assets";
 import Person from "@components/Person.astro";
 import i18next, { changeLanguage, t } from "i18next";
 
-changeLanguage("en");
+changeLanguage("ko");
 
 const lang = i18next.language as "en" | "ko";
-const photos: ImageMetadata[] = await Astro.glob("../assets/team/photos/**/*.{png,webp}").then((files) => files.map((f) => f.default));
+const photos: ImageMetadata[] = await Astro.glob("../../assets/team/photos/**/*.{png,webp}").then((files) => files.map((f) => f.default));
 const optimizedPhotos = await Promise.all(photos.map((p) => getImage({ src: p, format: "webp", quality: "high" })));
 type PersonJSON = {
     name: {

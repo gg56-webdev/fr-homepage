@@ -24,9 +24,15 @@
 
   if (scrollToTopBtn) {
     const toggleBtnOpacity = () => {
-      document.documentElement.scrollTop > window.innerHeight * 0.75
-        ? scrollToTopBtn.classList.remove('opacity-0')
-        : scrollToTopBtn.classList.add('opacity-0');
+
+      if (document.documentElement.scrollTop > window.innerHeight * 0.75) {
+        scrollToTopBtn.classList.remove('opacity-0')
+        scrollToTopBtn.removeAttribute('inert')
+      } else {
+        scrollToTopBtn.classList.add('opacity-0');
+        scrollToTopBtn.setAttribute('inert', "true")
+      }
+      
     };
 
     toggleBtnOpacity();
