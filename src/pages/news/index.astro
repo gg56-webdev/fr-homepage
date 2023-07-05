@@ -32,11 +32,11 @@ const posts = await getPosts(i18next.language as "en" | "ko");
             const [categories, tags] = post._embedded?.['wp:term'];
             return (
               <li data-scroll-animation class='overflow-hidden rounded bg-slate-950/80 '>
-                <article class='flex h-full flex-col'>
+                <article class='flex h-full flex-col group'>
                   <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} tabindex='-1'>
                     <span class='sr-only'>Read Post</span>
                     <Image
-                      class='aspect-[2/1] w-full object-cover'
+                      class='aspect-[2/1] w-full object-cover group-hover:bg-[length:105%_105%]'
                       width={width}
                       height={height}
                       src={source_url}
@@ -44,7 +44,7 @@ const posts = await getPosts(i18next.language as "en" | "ko");
                     />
                   </a>
                   <div class='flex grow flex-col p-4 '>
-                    <h2 class='mb-4 font-bold' set:html={post.title.rendered} />
+                    <h2 class='mb-4 font-bold  line-clamp-2' set:html={post.title.rendered} />
                    
                     <div class='mt-auto flex items-center justify-between'>
                       <time class=' text-cyberLilac' datetime={post.date}>
