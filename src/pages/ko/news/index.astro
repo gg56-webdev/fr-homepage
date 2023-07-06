@@ -14,9 +14,7 @@ const posts = await getPosts(i18next.language as "en" | "ko");
 <Layout title='News'>
   <div class='py-8 md:pb-24'>
     <section class='mx-auto max-w-screen-lg p-2'>
-      <div class='mb-8 text-center'>
-        <h1 class='brand-text text-4xl font-bold drop-shadow-[0_0_8px_#000]'>News</h1>
-      </div>
+        <h1 class=' mb-8 text-center text-4xl font-bold '>News</h1>
       <ul class='grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4'>
         {
           posts.map((post) => {
@@ -31,20 +29,22 @@ const posts = await getPosts(i18next.language as "en" | "ko");
             } = post._embedded?.['wp:featuredmedia']?.at(0);
             const [categories, tags] = post._embedded?.['wp:term'];
             return (
-              <li data-scroll-animation class='overflow-hidden rounded bg-slate-950/80 '>
-                <article class='flex h-full flex-col'>
+              <li data-scroll-animation >
+                <article class='flex h-full flex-col overflow-hidden rounded bg-slate-950/80 hover:bg-slate-900 group focus-within:ring-2 hover:ring-2 transition ring-neonBlue'>
+                  <div class="overflow-hidden">
                   <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} tabindex='-1'>
                     <span class='sr-only'>Read Post</span>
                     <Image
-                      class='aspect-[2/1] w-full object-cover'
+                      class='aspect-[2/1] w-full object-cover group-hover:scale-105 transition'
                       width={width}
                       height={height}
                       src={source_url}
                       alt={alt_text || ''}
                     />
                   </a>
+                  </div>
                   <div class='flex grow flex-col p-4 '>
-                    <h2 class='mb-4 font-bold' set:html={post.title.rendered} />
+                    <h2 class='mb-4 font-bold  line-clamp-2' set:html={post.title.rendered} />
                    
                     <div class='mt-auto flex items-center justify-between'>
                       <time class=' text-cyberLilac' datetime={post.date}>
