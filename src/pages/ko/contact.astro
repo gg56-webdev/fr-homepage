@@ -2,23 +2,155 @@
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Form from "@components/Form.astro";
+import Social from "@/components/Social.astro";
+import App from "@/components/home/App.astro";
+import { Image } from "astro:assets";
+import metaverse from "@assets/home/metaverse-sot.webp";
+import Google from "@/components/DownloadBtn/Google.astro";
+import Apple from "@/components/DownloadBtn/Apple.astro";
+import QR from "@/components/DownloadBtn/QR.astro";
+import { SOCIAL_LINKS } from "@/constants";
 
 changeLanguage("ko");
 ---
 
 <Layout title='Contact'>
-  <section class='mx-auto grid h-full max-w-screen-sm items-center p-2'>
-    <div class='space-y-4'>
-      <div class='text-center'>
-        <h1 class='brand-text text-3xl font-bold leading-loose drop-shadow-[0_0_8px_#000]'>Contact Us</h1>
-        <p>
-          We're always happy to help with any questions or requests you may have! If you need a more personalized
-          response, we'll do our best to get back to you as quickly as possible.
-        </p>
-      </div>
-      <div class='rounded-xl bg-slate-950/80 p-4'>
-        <Form />
-      </div>
+  <div class='mx-auto max-w-screen-lg px-2 py-12'>
+    <div class='grid gap-8 lg:grid-cols-[1.75fr_1fr]  lg:grid-rows-[1fr_auto] lg:[grid-template-areas:"info_form"_"social_form"]'>
+      <section class="rounded-xl bg-slate-950/80  p-6  lg:[grid-area:info]">
+        <h1 class="text-5xl brand-text font-bold ">How Can We Help You?</h1>
+        <p class="text-lg mt-4 tracking-wide">Whether you are curious about our solutions or simply want to reach out, this page serves as a portal to connect with FingeRate.</p>
+      </section>
+      <section class="rounded-xl bg-slate-950/80 p-6 lg:[grid-area:form]">
+          <Form />
+      </section>
+      <section class="rounded-xl bg-slate-950/80 p-6  lg:[grid-area:social] space-y-4">
+        <h2 class='text-3xl brand-text font-bold '>Follow us on social media</h2>
+        <Social />
+      </section>
+      <section class="rounded-xl bg-slate-950/80 p-6 lg:col-span-2 grid lg:grid-cols-2 gap-6">
+        <div class="space-y-8">
+          <h2 class='text-2xl font-bold [text-wrap:balance;]'>Send us message now and get support from the FingeRate team! We will get back to you soon.</h2>
+          <a href={SOCIAL_LINKS.TELEGRAM.href} target="_blank" rel="noopener noreferrer"
+      class='rounded-lg bg-intelligentBlue inline-block px-5 py-2.5 text-center text-sm font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300'
+      >Get in Touch on Telegram ↗</a>
+        </div>
+        <div>
+          <ul class="space-y-10">
+            <li data-scroll-animation class='flex gap-4'>
+              <div class='bg-brandGradient rounded-lg h-full p-2'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+  </svg>
+
+              </div>
+              <div>
+                <h3 class=" font-bold">Business Inquiries</h3>
+                <p class='text-sm text-cyberLilac'>For information about the services, partnership, or requesting information.</p>
+              </div>
+          </li>
+          <li data-scroll-animation class='flex gap-4 '>
+              <div class='bg-brandGradient rounded-lg h-full p-2'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+              </div>
+              <div>
+                <h3 class=" font-bold">Technical Support</h3>
+                <p class='text-sm text-cyberLilac'>For everything related to the FingeRate ecosystem, including FingeRate App and FingeRate Bot.</p>
+              </div>
+          </li>
+          <li data-scroll-animation class='flex gap-4'>
+              <div class='bg-brandGradient rounded-lg h-full p-2'>
+              <svg class=' h-12 w-12' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <g fill='currentColor'>
+            <path
+              d='M46.4012 50.8648C46.4012 53.2617 48.3447 55.203 50.7393 55.203C53.1362 55.203 55.0774 53.2594 55.0774 50.8648V28.3373C55.0774 25.9404 53.1362 23.9992 50.7393 23.9992C48.3424 23.9992 46.4012 25.9404 46.4012 28.3373V50.8648Z'
+            ></path>
+            <path
+              d='M33.1148 55.9353C33.1148 58.3322 35.0584 60.2734 37.4529 60.2734C39.8498 60.2734 41.791 58.3298 41.791 55.9353V36.3928C41.791 33.9959 39.8498 32.0547 37.4529 32.0547C35.056 32.0547 33.1148 33.9982 33.1148 36.3928V55.9353Z'
+            ></path>
+            <path
+              d='M64.028 60.2734C61.6334 60.2734 59.6899 58.3322 59.6899 55.9353V34.7631C59.6899 32.3685 61.6311 30.425 64.028 30.425C66.4249 30.425 68.3661 32.3662 68.3661 34.7631V55.9353C68.3661 58.3298 66.4249 60.2734 64.028 60.2734Z'
+            ></path>
+            <path
+              d='M72.9762 60.7337C72.9762 63.1306 74.9198 65.0718 77.3144 65.0718C79.7113 65.0718 81.6525 63.1283 81.6525 60.7337V46.4849C81.6525 44.088 79.7113 42.1467 77.3144 42.1467C74.9175 42.1467 72.9762 44.0903 72.9762 46.4849V60.7337Z'
+            ></path>
+            <path
+              d='M27.2958 71.2512C25.7963 71.2512 24.3386 70.4724 23.5342 69.0822L18.9287 61.1057C17.7314 59.0319 18.4428 56.3793 20.5166 55.1797C22.5926 53.9847 25.2429 54.6938 26.4426 56.7676L31.048 64.744C32.2453 66.8178 31.5339 69.4704 29.4602 70.67C28.7767 71.0629 28.0304 71.2512 27.2958 71.2512Z'
+            ></path>
+            <path
+              fill-rule='evenodd'
+              clip-rule='evenodd'
+              stroke-width='1.5'
+              stroke='currentColor'
+              d='M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM96 50C96 75.4051 75.4051 96 50 96C24.5949 96 4 75.4051 4 50C4 24.5949 24.5949 4 50 4C75.4051 4 96 24.5949 96 50Z'
+            ></path>
+          </g>
+        </svg>
+
+              </div>
+              <div>
+                <h3 class=" font-bold">MSOT Token</h3>
+                <p class='text-sm text-cyberLilac'>For MSOT token and its specificities.</p>
+              </div>
+          </li>
+          <li data-scroll-animation class='flex gap-4'>
+              <div class='bg-brandGradient rounded-lg h-full p-2'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+  </svg>
+
+
+              </div>
+              <div>
+                <h3 class=" font-bold">Media & Press</h3>
+                <p class='text-sm text-cyberLilac'>For media and press.</p>
+              </div>
+          </li>
+          <li data-scroll-animation class='flex gap-4'>
+              <div class='bg-brandGradient rounded-lg h-full p-2'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+  </svg>
+
+              </div>
+              <div>
+                <h3 class=" font-bold">General</h3>
+                <p class='text-sm text-cyberLilac'>For everything else.</p>
+              </div>
+          </li>
+          </ul>
+        </div>
+      </section>
+      <section id='app' class=' grid  lg:col-span-2 sm:grid-cols-2 lg:grid-cols-none '>
+        <div data-scroll-animation class='lg:h-[calc(100%-4rem)] lg:w-[calc(100%-4rem)] lg:[grid-area:1/1/1/1]'>
+          <Image
+            src={metaverse}
+            alt='FingeRate Bot device inside Metaverse'
+            class='h-full w-full object-cover lg:rounded-lg'
+          />
+        </div>
+        <div
+          data-scroll-animation
+          class='bg-slate-950/90 space-y-12 text-center p-12 lg:self-end lg:justify-self-end lg:rounded-lg lg:[grid-area:1/1/1/1]'
+        >
+          
+            <h2 class='brand-text text-3xl font-bold '>Try FingeRate App Now</h2>
+           
+          
+          <div class='flex w-full flex-wrap items-center justify-center gap-4'>
+            <Google />
+            <Apple />
+            <QR />
+          </div>
+        </div>
+      </section>
+
     </div>
-  </section>
+  </div>
+  
+ 
+</div>
 </Layout>
