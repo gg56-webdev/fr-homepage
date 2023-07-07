@@ -14,25 +14,26 @@
       "p": "Take surveys and earn rewards instantly! Share your opinions effortlessly and be rewarded for it! It is safe, secure, and global!",
       "app-ui": {
         "discount": "Discount",
+        "wallet": "My Wallet",
         "coupon": "Coupon",
         "coupon-title": "Friends Group Set Coffee x5"
       }
     },
     "features": [
       [
-        "Earn Rewards Effortlessly",
+        "Survey To Earn (S2E)",
         "Select from a wide range of surveys, share your opinions, and enjoy instant rewards. Say goodbye to waiting and hello to instant gratification!",
         "FingeRate App Screenshot of getting rewarded for survey participation"
+      ],
+      [
+        "SOM = Rewards",
+        "Easiest way to earn by participating in Surveys! Earned mileage can be used to buy coupons, accessories for your avatar. Moreover, brace yourself for the epic SoM to MSOT trading journey!",
+        "FingeRate App Screenshot of My Wallet page, showing amount of SoM points and coupons"
       ],
       [
         "Safe & Secure",
         "Our app prioritizes security and privacy. We have carefully developed it using the latest technology to ensure an unmatched level of protection for your data.",
         "FingeRate App Screenshot of My Profile page"
-      ],
-      [
-        "Easy & Fast",
-        "FingeRate app presents a swift and straightforward method to earn rewards! Bid farewell to never-ending surveys and say hello to a platform that values your time and effort.",
-        "FingeRate App Screenshot of My Wallet page, showing amount of SoM points and coupons"
       ]
     ],
     "steps": [
@@ -46,6 +47,7 @@
         "Fun and Easy Way to Earn Rewards",
         "Safe and Secure",
         "Customize Your Experience",
+        "Challenge your friends!",
         "Your Avatar, Your Rewards, Your Own World",
         "Free!"
       ]
@@ -54,7 +56,33 @@
   "bot": {
     "hero": {
       "h1": "Introducing FingeRate&nbsp;Bot!",
-      "p": "Introducing FingeRate Bot - the cutting-edge touchless survey solution revolutionizing feedback collection and customer satisfaction measurement. Our advanced AI technology ensures a seamless and safe experience for your visitors, eliminating the need for physical contact or paper-based surveys. With real-time data and a user-friendly dashboard, FingeRate Bot empowers you to gather invaluable insights and make informed business decisions. Join the touchless revolution and optimize your operations with FingeRate Bot today!"
+      "p1": "It is a contactless survey solution that transforms feedback collection and customer satisfaction measurement.",
+      "p2": "Our AI technology enables a safe and seamless experience for your visitors, eliminating physical contact and tedious paper surveys while gathering real-time data with real-time emotions!"
+    },
+    "keywords": [
+      "Contactless Survey Solution",
+      "Real Time-data",
+      "AI Technology"
+    ],
+    "benefits": {
+      "h2": "Why Work With FingeRate Bot?",
+      "cards": [
+        [
+          "Capture Visitors' Emotions in Real-Time",
+          "FingeRate Bot empowers you to elevate your customer experience and drive business growth. By capturing feedback directly through touchless surveys, you can gather accurate and timely insights, enabling you to make data-driven decisions and implement targeted improvements. Stay ahead of the competition by putting your customers' opinions at the heart of your business strategy.",
+          "Person showing gesture to the FingeRate Bot"
+        ],
+        [
+          "Access to Data in Real-Time",
+          "FingeRate Bot provides you with real-time access of the data from the survey location, allowing you to monitor and analyze visitor feedback instantly. Our intuitive dashboard presents the information in a visually appealing and easy-to-understand format, empowering you to make proactive adjustments and improvements based on real-time insights.",
+          "Screenshot of FingeRate Dashboard showing graph of visitors and participants in survey"
+        ],
+        [
+          "Secure and Reliable",
+          "Our platform is built with robust encryption protocols and follows industry best practices to ensure that your information remains confidential. You can trust us to handle your data with the utmost care and protect it from unauthorized access.",
+          "Illustration of FingeRate Security feature"
+        ]
+      ]
     }
   },
   "token": {

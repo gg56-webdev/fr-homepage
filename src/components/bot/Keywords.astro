@@ -1,0 +1,6 @@
+---
+import {t} from 'i18next'
+---
+<section class="mx-auto relative z-10 flex-wrap gap-6 text-center  max-w-screen-xl flex justify-around p-6 rounded-lg bg-slate-950/80">
+  {(t('bot.keywords', {returnObjects: true})as string[]).map(w => <h2 class="text-3xl brand-text font-bold">{w}</h2>)}
+</section>

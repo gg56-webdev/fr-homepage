@@ -1,33 +1,22 @@
 ---
-import { changeLanguage, t } from "i18next";
-import vid from "@assets/bot/bot_intro.mp4";
 import Benefits from "@/components/bot/Benefits.astro";
 import Contact from "@/components/bot/Contact.astro";
 import Dashboard from "@/components/bot/Dashboard.astro";
+import Hero from "@/components/bot/Hero.astro";
 import How from "@/components/bot/How.astro";
+import Keywords from "@/components/bot/Keywords.astro";
 import Layout from "@layouts/Layout.astro";
+import { changeLanguage } from "i18next";
 
 changeLanguage("en");
 ---
 
 <Layout title='FingeRate Bot'>
-  <div class='space-y-12 pb-12 md:space-y-24 md:pb-24'>
-    <section class='mx-auto grid min-h-[70vh] max-w-screen-xl place-items-center py-6 lg:px-2' id='app'>
-      <div class='grid h-full lg:grid-cols-[1fr_0.75fr] lg:place-items-center lg:gap-12'>
-        <div class='h-fit w-fit overflow-hidden lg:rounded-lg'>
-          <video src={vid} width='1280' height='720' controls muted autoplay loop></video>
-        </div>
-        <div class='p-4'>
-          <h1 class=' text-4xl font-bold' set:html={t('bot.hero.h1')} />
-          </h1>
-          <p class='mt-4'>
-           {t('bot.hero.p')}
-          </p>
-        </div>
-      </div>
-    </section>
-    <Benefits />
+  <div class='space-y-12 pb-12 md:space-y-24 md:pb-24 overflow-hidden'>
+    <Hero />
+    <Keywords />
     <How />
+    <Benefits />
     <Dashboard />
     <Contact />
   </div>
