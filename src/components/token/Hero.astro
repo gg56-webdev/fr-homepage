@@ -3,12 +3,13 @@ import token from '@assets/token/msot.webp';
 import { Image } from 'astro:assets';
 
 const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
-  new Intl.NumberFormat('en-us', { notation: 'compact', maximumFractionDigits: 2, ...options }).format(num);
+  new Intl.NumberFormat('en-us', { notation: 'compact', maximumFractionDigits: 4, ...options }).format(num);
 ---
 
 <section class='mx-auto grid min-h-[70vh] max-w-screen-lg content-center items-center gap-8 px-2 md:grid-cols-2'>
   <div class='text-center md:text-left'>
-    <h1 class='brand-text text-4xl font-bold drop-shadow-[0_0_8px_#000] md:text-6xl/[1.3]'>
+    <h1 class=' text-4xl font-bold md:text-6xl/[1.3]'>
+      <!-- Navigate <span class="brand-text">FingeRate</span> Ecosystem with <span class='brand-text'>MSOT</span> -->
       Navigate FingeRate Ecosystem with MSOT
     </h1>
   </div>
@@ -23,7 +24,7 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
         <div class='flex flex-col-reverse gap-2'>
           <dt>Price</dt>
           <dd id='token-price' class='animate-pulse text-4xl font-bold'>
-            {formatNumber(0, { currency: 'USD', style: 'currency' })}
+            {formatNumber(0.0000, { currency: 'USD', style: 'currency' })}
           </dd>
         </div>
       </dl>
@@ -50,15 +51,22 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
   const BINANCE_API_URL = 'https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT';
 
   const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
-    new Intl.NumberFormat('en-us', { notation: 'compact', maximumFractionDigits: 2, ...options }).format(num);
+    new Intl.NumberFormat('en-us', { notation: 'compact', currency: 'USD',style: 'currency', maximumFractionDigits: 4, ...options }).format(num);
+
+    const setHtml = (num: number) => {
+      const formattedNum = formatNumber(num)
+      const first = formattedNum.slice(0,5)
+      const second = formattedNum.slice(5)
+      tokenPrice.innerHTML = `${first}<span class='text-slate-600'>${second}</span>`
+    }
 
   const updateNumber = (num: number) => {
     if (document?.startViewTransition) {
       document.startViewTransition(() => {
-        tokenPrice.textContent = formatNumber(num, { currency: 'USD', style: 'currency' });
+        setHtml(num)
       });
     } else {
-      tokenPrice.textContent = formatNumber(num, { currency: 'USD', style: 'currency' });
+      setHtml(num)
     }
   };
 
