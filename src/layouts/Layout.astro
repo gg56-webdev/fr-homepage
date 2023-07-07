@@ -21,7 +21,7 @@ const { title = t('site.title'), description = t('site.description') } = Astro.p
 ---
 
 <!DOCTYPE html>
-<html {lang} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep">
+<html {lang} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark]">
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -47,7 +47,7 @@ const { title = t('site.title'), description = t('site.description') } = Astro.p
 
     <style is:global>
       :root {
-        color-scheme: dark;
+        /* color-scheme: dark; */
         --intelligent-blue: 80 47 198;
         --soft-fire: 202 68 80;
         --neon-blue: 38 151 194;

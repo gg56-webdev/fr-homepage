@@ -43,7 +43,7 @@ import { Trans } from 'astro-i18next/components';
       >
       <div class="absolute  bg-intelligentBlue flex gap-2 items-center px-2 py-2 shadow-md rounded-full top-0 left-0 -translate-x-1/4 -translate-y-1/2 group-hover:ring-4 ring-white transition">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
-        <span class="text-sm font-medium">{t('home.hero.app-ui.wallet')}</span>
+        <span class="hidden md:inline text-sm font-medium">{t('home.hero.app-ui.wallet')}</span>
       </div>
         <div class='grid place-items-center font-bold'>4500 SoM</div>
         <p class='justify-self-end text-xs'>1 SoM = $0.1</p>
@@ -113,7 +113,7 @@ import { Trans } from 'astro-i18next/components';
       <h1 class='text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]'>
         <Trans i18nKey='home.hero.h1'>
         Survey ×
-        <span id='anim' class='inline-grid text-center'>
+        <span  class='inline-grid text-center animate-stack'>
           <span>Metaverse</span>
           <span>Avatar</span>
           <span>Business</span>
@@ -136,47 +136,7 @@ import { Trans } from 'astro-i18next/components';
   </div>
 </section>
 
-<style>
-  #anim {
-    animation-name: stack;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-  }
 
-  @keyframes stack {
-    6.25% {
-      translate: 0 0%;
-    }
-    12.5%,
-    18.75% {
-      translate: 0 -12.5%;
-    }
-    25%,
-    31.25% {
-      translate: 0 -25%;
-    }
-    37.5%,
-    43.75% {
-      translate: 0 -37.5%;
-    }
-    50%,
-    56.25% {
-      translate: 0 -50%;
-    }
-    62.5%,
-    68.75% {
-      translate: 0 -62.5%;
-    }
-    75%,
-    81.25% {
-      translate: 0 -75%;
-    }
-    87.5%,
-    100% {
-      translate: 0 -87.5%;
-    }
-  }
-</style>
 
 <script>
   const $tiltEl = document.querySelector('[data-tilt-animation]') as HTMLDivElement;

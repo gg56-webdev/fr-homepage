@@ -20,6 +20,7 @@ module.exports = {
         fadeIn: 'fadeIn 0.5s ease',
         bob: 'bob 2s ease-in-out infinite',
         blob: 'blob 8s ease-in-out infinite',
+        stack: 'stack 15s infinite',
       },
       keyframes: {
         fadeIn: {
@@ -27,14 +28,40 @@ module.exports = {
           to: { opacity: 1 },
         },
         bob: {
-          '50%': {transform: 'translateY(-5%)'}
+          '50%': { transform: 'translateY(-5%)' },
         },
         blob: {
-          '33%': {scale: '1.1', translate: '30px -50px'},
-          '66%': {scale: '0.85', translate: '-20px 20px'},
-        }
+          '33%': { scale: '1.1', translate: '30px -50px' },
+          '66%': { scale: '0.85', translate: '-20px 20px' },
+        },
+        stack: {
+          '6.25%': {
+            translate: '0 0%',
+          },
+          '12.5%,18.75%': {
+            translate: '0 -12.5%',
+          },
+          '25%,31.25%': {
+            translate: '0 -25%',
+          },
+          '37.5%,43.75%': {
+            translate: '0 -37.5%',
+          },
+          '50%,56.25%': {
+            translate: '0 -50%',
+          },
+          '62.5%,68.75%': {
+            translate: '0 -62.5%',
+          },
+          '75%,81.25%': {
+            translate: '0 -75%',
+          },
+          '87.5%,100%': {
+            translate: '0 -87.5%',
+          },
+        },
       },
     },
   },
-  plugins: [require('flowbite/plugin'),  require('@tailwindcss/typography')],
+  plugins: [require('flowbite/plugin'), require('@tailwindcss/typography')],
 };
