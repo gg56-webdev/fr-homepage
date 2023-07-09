@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+// TODO: faq answers
+const faqs = [
+  [
+    'What are SoM? How does it work?',
+    `Blockchain is a decentralized digital ledger that records transactions across multiple computers. It provides a secure and transparent way to track and verify transactions without the need for intermediaries, offering the potential to revolutionize industries by enhancing trust, security, and efficiency.`,
+  ],
+  // ['How do you protect my data? ', 'test'],
+  // ['Why is MSOT based on Polygon?', 'test'],
+  // ['Who is behind FingeRate?', 'test'],
+  // ['What airdrops do you have coming and how do I get involved?', 'test'],
+  // ['How can I join the community?', 'test'],
+];
+---
+
+<Layout title='FAQ'>
+<section class='mx-auto max-w-screen-lg py-12'>
+    <h2 class=' text-4xl font-bold text-center mb-8'>FAQ</h2>
+  <div class='mx-auto max-w-screen-md space-y-4 p-2'>
+    {
+      faqs.map(([q, a]) => (
+        <details data-scroll-animation  class='border-neonBlue ring-intelligentBlue marker:text-neonBlue rounded-lg  bg-slate-950/80  transition open:border-2 [&:has(summary:hover)]:ring'>
+          <summary class='p-4 font-medium hover:cursor-pointer'>{q}</summary>
+          <article set:html={a} class='prose prose-invert p-4'>{a}</a>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+</Layout>

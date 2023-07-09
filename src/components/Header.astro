@@ -13,8 +13,12 @@ const navLinks: Array<Link | Dropdown> = [
   },
   {
     name: 'About',
-    links: [{...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)}, {...NAV_LINKS.WHITEPAPER}, {...NAV_LINKS.CONTACT, href: localizePath(NAV_LINKS.CONTACT.href)}],
+    links: [{...NAV_LINKS.NEWS, href: localizePath(NAV_LINKS.NEWS.href)},{...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)}, NAV_LINKS.WHITEPAPER, ],
   },
+  {
+    name: 'Support',
+    links: [{...NAV_LINKS.FAQ, href: localizePath(NAV_LINKS.FAQ.href)}, {...NAV_LINKS.CONTACT, href: localizePath(NAV_LINKS.CONTACT.href)}]
+  }
 ];
 
 const currentUrl = import.meta.env.DEV

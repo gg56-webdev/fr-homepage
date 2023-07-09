@@ -8,6 +8,7 @@ export const NAV_LINKS = {
   APP: { name: 'FingeRate App', href: '/app', isExternal: false, isImportant: false },
   TOKEN: { name: 'MSOT Token', href: '/token', isExternal: false, isImportant: false },
   BOT: { name: 'FingeRate Bot', href: '/bot', isExternal: false, isImportant: false },
+  NEWS: { name: 'News', href: '/news', isExternal: false, isImportant: false },
   TEAM: { name: 'Team', href: '/team', isExternal: false, isImportant: false },
   WHITEPAPER: {
     name: 'Whitepaper',
@@ -24,6 +25,7 @@ export const NAV_LINKS = {
     isImportant: false,
   },
   TERMS: { name: 'Terms of Use', href: '/terms-of-use', isExternal: false, isImportant: false },
+  FAQ: { name: 'FAQ', href: '/faq', isExternal: false, isImportant: false },
 } as const;
 
 export const SOCIAL_LINKS = {
