@@ -3,19 +3,25 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
-      backgroundImage: {
-        brandGradient: 'var(--brand-gradient)',
-      },
+      backgroundImage: ({ theme }) => ({
+        brandGradient: `linear-gradient(
+          -5deg,
+          ${theme('colors.intelligentBlue/50')},
+          ${theme('colors.intelligentBlue/0')} 50%
+        ),
+        linear-gradient(225deg,${theme('colors.neonBlue')}, ${theme('colors.neonBlue/0')} 50%),
+        linear-gradient(100deg, ${theme('colors.softFire')} 35%, ${theme('colors.intelligentBlue')});`,
+      }),
       colors: {
-        intelligentBlue: `rgb(var(--intelligent-blue) / <alpha-value>)`,
-        softFire: `rgb(var(--soft-fire) / <alpha-value>)`,
-        neonBlue: `rgb(var(--neon-blue) / <alpha-value>)`,
-        deepSpace: `rgb(var(--deep-space) / <alpha-value>)`,
-        cyberLilac: `rgb(var(--cyber-lilac) / <alpha-value>)`,
+        intelligentBlue: '#502FC6',
+        softFire: '#CA4450',
+        neonBlue: '#2697C2',
+        deepSpace: '#222134',
+        cyberLilac: '#D8C9D5',
       },
-      boxShadow: {
-        center: `0 0 32px 2px rgb(var(--neon-blue) / <alpha-value>)`,
-      },
+      boxShadow: ({ theme }) => ({
+        center: `0 0 32px 2px ${theme('colors.neonBlue')}`,
+      }),
       animation: {
         fadeIn: 'fadeIn 0.5s ease',
         bob: 'bob 2s ease-in-out infinite',
@@ -63,5 +69,19 @@ module.exports = {
       },
     },
   },
-  plugins: [require('flowbite/plugin'), require('@tailwindcss/typography')],
+  plugins: [
+    require('flowbite/plugin'),
+    require('@tailwindcss/typography'),
+    function ({ addComponents, theme }) {
+      addComponents({
+        '.brand-text': {
+          display: ' inline',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          'background-image': theme('backgroundImage.brandGradient'),
+          color: ' transparent',
+        },
+      });
+    },
+  ],
 };
