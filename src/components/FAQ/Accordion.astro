@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string
+}
+
+const {title} = Astro.props
+---
+
+<details  data-scroll-animation  class='border-neonBlue ring-intelligentBlue marker:text-neonBlue rounded-lg  bg-slate-950/80  transition open:border-2 [&:has(summary:hover)]:ring'>
+  <summary class='p-4 font-medium hover:cursor-pointer'>{title}</summary>
+  <div class="p-4 prose prose-invert">
+    <slot />
+  </div>
+</details>
