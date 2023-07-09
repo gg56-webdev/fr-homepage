@@ -45,31 +45,7 @@ const { title = t('site.title'), description = t('site.description') } = Astro.p
   </body>
 </html>
 
-    <style is:global>
-      :root {
-        /* color-scheme: dark; */
-        --intelligent-blue: 80 47 198;
-        --soft-fire: 202 68 80;
-        --neon-blue: 38 151 194;
-        --deep-space: 34 33 52;
-        --cyber-lilac: 216 201 213;
-        --brand-gradient: linear-gradient(
-            -5deg,
-            rgb(var(--intelligent-blue) / 0.5),
-            rgb(var(--intelligent-blue) / 0) 50%
-          ),
-          linear-gradient(225deg, rgb(var(--neon-blue) / 1), rgb(var(--neon-blue) / 0) 50%),
-          linear-gradient(100deg, rgb(var(--soft-fire) / 1) 35%, rgb(var(--intelligent-blue) / 1));
-      }
-
-      .brand-text {
-        display: inline;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: var(--brand-gradient);
-        color: transparent;
-      }
-    </style>
+  
 
     <script>
       const sections = document.querySelectorAll('[data-scroll-animation]');
