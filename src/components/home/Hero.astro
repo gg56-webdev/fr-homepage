@@ -13,6 +13,7 @@ import { Image } from 'astro:assets';
 
 import {t} from 'i18next'
 import { Trans } from 'astro-i18next/components';
+import Share from '../DownloadBtn/Share.astro';
 ---
 
 <section
@@ -63,7 +64,7 @@ import { Trans } from 'astro-i18next/components';
         <li
           class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
         >
-          <Image src={coupon2} loading={'eager'} alt='' class='aspect-video w-full object-cover' />
+          <Image src={coupon2}  quality='high' loading={'eager'} alt='' class='aspect-video w-full object-cover' />
           <div class='flex grow flex-col px-2 py-1'>
             <b class='grow text-[80%]'>{t('home.hero.app-ui.coupon-title')}</b>
           </div>
@@ -132,6 +133,7 @@ import { Trans } from 'astro-i18next/components';
       <Google />
       <Apple />
       <QR isOpen={true} />
+      <Share />
     </div>
   </div>
 </section>
