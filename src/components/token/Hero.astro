@@ -1,4 +1,5 @@
 ---
+import { DOWNLOAD_LINK } from '@/constants';
 import token from '@assets/token/msot.webp';
 import { Image } from 'astro:assets';
 
@@ -6,10 +7,9 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
   new Intl.NumberFormat('en-us', { notation: 'compact', maximumFractionDigits: 4, ...options }).format(num);
 ---
 
-<section class='mx-auto grid min-h-[70vh] max-w-screen-lg content-center items-center gap-8 px-2 md:grid-cols-2'>
+<section class='mx-auto grid min-h-[70vh] max-w-screen-lg content-center items-center gap-8 px-2 py-12 md:grid-cols-2'>
   <div class='text-center md:text-left'>
     <h1 class=' text-4xl font-bold md:text-6xl/[1.3]'>
-      <!-- Navigate <span class="brand-text">FingeRate</span> Ecosystem with <span class='brand-text'>MSOT</span> -->
       Navigate FingeRate Ecosystem with MSOT
     </h1>
   </div>
@@ -19,18 +19,19 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
       <dl class='flex flex-1 items-center justify-around gap-8 pr-8'>
         <div class='flex flex-col-reverse flex-wrap gap-2'>
           <dt>Quantity</dt>
-          <dd class='text-4xl font-bold'>{formatNumber(1_800_000_000)}</dd>
+          <dd class='md:text-4xl text-3xl font-bold'>{formatNumber(1_800_000_000)}</dd>
         </div>
         <div class='flex flex-col-reverse gap-2'>
           <dt>Price</dt>
-          <dd id='token-price' class='animate-pulse text-4xl font-bold'>
+          <dd id='token-price' class='animate-pulse md:text-4xl text-3xl font-bold'>
             {formatNumber(0.0000, { currency: 'USD', style: 'currency' })}
           </dd>
         </div>
       </dl>
     </div>
     <p class='text-center text-lg'>
-      Take full advantage of the FingeRate ecosystem! Download the <a href='/' class='text-neonBlue underline'>App</a>,
+      
+      Take full advantage of the FingeRate ecosystem! Download the <a  href={DOWNLOAD_LINK} class='text-neonBlue underline' target="_blank" rel="noopener noreferrer">App</a>,
       earn rewards, and trade MSOT on Latoken
     </p>
     <a
@@ -43,21 +44,26 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
       ></a
     >
   </div>
+  <section class="md:col-span-2 rounded-lg overflow-hidden">
+    <div id='chart' class='aspect-[0.75/1] sm:aspect-[1.5/1] md:aspect-[3/1]'></div>
+  </section>
 </section>
 
 <script>
-  const TICKER = 'MSOT';
-  const LATOKEN_API_URL = `https://api.latoken.com/v2/ticker/${TICKER}/BTC`;
-  const BINANCE_API_URL = 'https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT';
+    import * as echarts from 'echarts'
+  const $chart = echarts.init(document.querySelector('#chart') as HTMLDivElement, 'dark', {renderer: 'svg'})
+  const $tokenPrice = document.querySelector('#token-price') as HTMLElement;
 
-  const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
+
+   const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
     new Intl.NumberFormat('en-us', { notation: 'compact', currency: 'USD',style: 'currency', maximumFractionDigits: 4, ...options }).format(num);
 
     const setHtml = (num: number) => {
       const formattedNum = formatNumber(num)
       const first = formattedNum.slice(0,5)
       const second = formattedNum.slice(5)
-      tokenPrice.innerHTML = `${first}<span class='text-slate-600'>${second}</span>`
+      $tokenPrice.innerHTML = `${first}<span class='text-slate-600'>${second}</span>`
+      $tokenPrice.classList.remove('animate-pulse')
     }
 
   const updateNumber = (num: number) => {
@@ -70,17 +76,66 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
     }
   };
 
-  const tokenPrice = document.querySelector('#token-price') as HTMLElement;
+  const getData = async () => {
+    try {
+      const res = await fetch('https://api.coingecko.com/api/v3/coins/btour-chain/market_chart?vs_currency=usd&days=30&interval=daily')
+      const {prices} = await res.json() as {prices: [number,number][]}
 
-  Promise.all([fetch(LATOKEN_API_URL).then((res) => res.json()), fetch(BINANCE_API_URL).then((res) => res.json())])
-    .then(([{ lastPrice }, { price: btcPrice }]) => {
-      const price = +lastPrice * +btcPrice;
-      updateNumber(price);
-    })
-    .catch((err) => {
-      updateNumber(0.06);
-    })
-    .finally(() => {
-      tokenPrice.classList.remove('animate-pulse');
-    });
+      updateNumber(prices.at(-1)?.[1] ?? 0.06)
+
+      if (!prices) return
+
+      let timePoints = []
+      let pricePoints = []
+      let minPrice = prices[0][1]
+      let maxPrice = prices[0][1]
+
+      for (const [time,price] of prices) {
+        timePoints.push(new Date(time).toLocaleDateString())
+        pricePoints.push(price.toFixed(4))
+        minPrice = Math.min(minPrice, price)
+        maxPrice = Math.max(maxPrice, price)
+      }
+        $chart.setOption({
+           tooltip: {
+    trigger: 'axis'
+  },
+    xAxis: {
+      type: 'category',
+      data: timePoints,
+      axisLabel: {
+      align: 'center'}
+    },
+    yAxis: {
+      type: 'value',
+      min: (minPrice * 0.875).toFixed(2),
+      max: (maxPrice * 1.125).toFixed(2),
+       axisLabel: {
+      formatter: '${value}',
+      align: 'right'}
+    },
+    series: [
+      {
+        data: pricePoints,
+        type: 'line',
+      }
+    ],
+    grid: {
+      top: '40',
+      right: '40',
+      bottom: '50',
+    left: '80',
+  }
+  })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  getData()
+
+   window.addEventListener('resize', function() {
+    $chart.resize();
+  });
+  
 </script>
