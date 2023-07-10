@@ -2,6 +2,7 @@ export type Link = { name: string; href: string; isExternal: boolean; isImportan
 
 export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.frs.fingerate';
 export const APP_STORE_URL = 'https://apps.apple.com/app/fingerate/id6444853546';
+export const DOWNLOAD_LINK = 'qrco.de/bdrZNx';
 
 export const NAV_LINKS = {
   HOME: { name: 'Home', href: '/', isExternal: false, isImportant: false },
