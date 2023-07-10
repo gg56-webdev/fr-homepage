@@ -13,12 +13,13 @@ const navLinks: Array<Link | Dropdown> = [
   },
   {
     name: 'About',
-    links: [{...NAV_LINKS.NEWS, href: localizePath(NAV_LINKS.NEWS.href)},{...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)}, NAV_LINKS.WHITEPAPER, ],
+    links: [{...NAV_LINKS.NEWS, href: localizePath(NAV_LINKS.NEWS.href)},{...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)},],
   },
   {
     name: 'Support',
     links: [{...NAV_LINKS.FAQ, href: localizePath(NAV_LINKS.FAQ.href)}, {...NAV_LINKS.CONTACT, href: localizePath(NAV_LINKS.CONTACT.href)}]
-  }
+  },
+  NAV_LINKS.WHITEPAPER,
 ];
 
 const currentUrl = import.meta.env.DEV
@@ -29,13 +30,13 @@ const currentUrl = import.meta.env.DEV
 ---
 
 <header class='sticky top-0 z-20 bg-slate-950/90'>
-  <nav class='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-2 py-1 sm:py-0'>
+  <nav class='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-2 py-1 md:py-0'>
     <a href={navLinks[0].href} class='brand-text text-2xl font-bold'>FingeRate</a>
     <button
       id='hamburger'
       data-collapse-toggle='navbar-dropdown'
       type='button'
-      class='inline-flex items-center rounded-lg p-2 text-sm text-neonBlue focus:outline-none focus:ring-2 focus:ring-blue-200 sm:hidden'
+      class='inline-flex items-center rounded-lg p-2 text-sm text-neonBlue focus:outline-none focus:ring-2 focus:ring-blue-200 md:hidden'
       aria-controls='navbar-dropdown'
       aria-expanded='false'
     >
@@ -47,8 +48,8 @@ const currentUrl = import.meta.env.DEV
           clip-rule='evenodd'></path></svg
       >
     </button>
-    <div class='hidden w-full sm:block sm:w-auto' id='navbar-dropdown'>
-      <ul class='mt-4 flex flex-col items-center gap-2 sm:m-0 sm:flex-row md:items-baseline'>
+    <div class='hidden w-full md:block md:w-auto' id='navbar-dropdown'>
+      <ul class='mt-4 flex flex-col items-center gap-2 md:m-0 md:flex-row md:items-baseline'>
         {
           navLinks.map((i) => (
             <li>
@@ -61,7 +62,7 @@ const currentUrl = import.meta.env.DEV
                     class:list={[
                       'hover:text-neonBlue flex w-full items-center gap-1  p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200',
                       {
-                        'text-cyberLilac  border-cyberLilac sm:border-b-2 ': i.links.some(
+                        'text-cyberLilac  border-cyberLilac md:border-b-2 ': i.links.some(
                           ({ href }) => href === currentUrl
                         ),
                       },
@@ -112,18 +113,21 @@ const currentUrl = import.meta.env.DEV
                   aria-current={currentUrl === i.href ? 'page' : null}
                   rel='noopener noreferrer'
                   class:list={[
-                    'hover:text-neonBlue inline-block  p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200',
-                    { 'text-cyberLilac border-cyberLilac sm:border-b-2': i.href === currentUrl },
+                    'hover:text-neonBlue   p-3 transition focus:outline-none focus:ring-2 flex items-center gap-1 focus:ring-blue-200',
+                    { 'text-cyberLilac border-cyberLilac md:border-b-2': i.href === currentUrl },
                   ]}
                 >
-                  {i.name} {i.isExternal && '↗'}
+                  {i.name} {i.isExternal && <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-4 h-4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+</svg>
+}
                 </a>
               )}
             </li>
           ))
         }
         <li>
-          <div>
+          <div class="md:pl-4 md:border-l">
             {['en','ko'].map(lang =>  <a class:list={['text-sm px-2 rounded uppercase py-1 font-medium hover:underline', {'bg-intelligentBlue': lang === i18next.language}]} href={localizePath(Astro.url.pathname, lang)}>{lang}</a>)}
           </div>
      
