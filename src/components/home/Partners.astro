@@ -10,12 +10,12 @@ import { Image } from 'astro:assets';
 
 const partners = [
   // [gl, 'Genesis Lab', 'https://www.genesislab.com/'],
-  [kim, 'Kim & Chang', 'https://www.kimchang.com/'],
-  [uppsala, 'Uppsala Security', 'https://uppsalasecurity.com/'],
-  [efkba, 'European Federation of Korean Business Association', ''],
-  [ybm, 'YBM', 'https://www.ybm.co.kr/'],
-  [iff, 'International Finance Forum', 'http://www.iff.org.cn/'],
-  [imecc, 'International Medical Exchange & Cooperation Committee', ''],
+  [kim, 'Kim & Chang', 'https://www.kimchang.com/', false],
+  [uppsala, 'Uppsala Security', 'https://uppsalasecurity.com/', false],
+  [efkba, 'European Federation of Korean Business Association', '', false],
+  [ybm, 'YBM', 'https://www.ybm.co.kr/', true],
+  [iff, 'International Finance Forum', 'http://www.iff.org.cn/', true],
+  [imecc, 'International Medical Exchange & Cooperation Committee', '', true],
 ] as const;
 
 const order = `
@@ -29,13 +29,13 @@ md:[&>*:nth-child(7)]:order-6
 `;
 ---
 
-<section id='partners' class='mx-auto max-w-screen-md px-2'>
+<section id='partners' class='mx-auto max-w-screen-lg px-2'>
   <ul class={`flex flex-wrap items-center justify-center gap-x-4 gap-y-2 ${order}`}>
     {
-      partners.map(([file, name, href]) => {
+      partners.map(([file, name, href, isShowName]) => {
         return (
           <li
-            class={` h-[40px] w-[calc(25%-0.75rem)] transition sm:h-[60px]  md:flex-1 ${
+            class={`text-center h-[40px] w-[calc(25%-0.75rem)] transition sm:h-[60px]  md:flex-1 ${
               href ? 'hover:scale-105' : ''
             } hover:opacity-100 md:opacity-75`}
           >
@@ -49,8 +49,9 @@ md:[&>*:nth-child(7)]:order-6
                 <Image src={file} alt={`logo of ${name}`} class='mx-auto h-full object-contain' />
               </a>
             ) : (
-              <Image src={file} alt={`logo of ${name}`} class='mx-auto h-full object-contain' />
+              <Image title={name} src={file} alt={`logo of ${name}`} class='mx-auto h-full object-contain' />
             )}
+            {false && <p class="text-xs text-cyberLilac mt-2">{name}</p>}
           </li>
         );
       })
