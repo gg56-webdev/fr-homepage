@@ -17,7 +17,9 @@ const navLinks: Array<Link | Dropdown> = [
   },
   {
     name: 'Support',
-    links: [{...NAV_LINKS.GUIDE, href: localizePath(NAV_LINKS.GUIDE.href)},{...NAV_LINKS.FAQ, href: localizePath(NAV_LINKS.FAQ.href)}, {...NAV_LINKS.CONTACT, href: localizePath(NAV_LINKS.CONTACT.href)}]
+    links: [
+      // {...NAV_LINKS.GUIDE, href: localizePath(NAV_LINKS.GUIDE.href)},
+      {...NAV_LINKS.FAQ, href: localizePath(NAV_LINKS.FAQ.href)}, {...NAV_LINKS.CONTACT, href: localizePath(NAV_LINKS.CONTACT.href)}]
   },
   NAV_LINKS.WHITEPAPER,
 ];
