@@ -14,12 +14,16 @@ import { Image } from 'astro:assets';
 import {t} from 'i18next'
 import { Trans } from 'astro-i18next/components';
 import Share from '../DownloadBtn/Share.astro';
+import Price from './Price.astro';
 ---
 
 <section
-  class='mx-auto grid min-h-[70vh] max-w-screen-xl items-center justify-items-center gap-4 px-2 md:grid-cols-2'
+  class='mx-auto grid min-h-[75vh] md:min-h-[70vh] max-w-screen-xl items-center relative justify-items-center gap-4 px-2 md:grid-cols-2'
   id='hero'
 >
+    <div class='absolute -top-10 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0'>
+      <Price />
+      </div>
   <div class='relative isolate animate-fadeIn md:order-2'>
     <div
       data-tilt-animation
@@ -55,7 +59,7 @@ import Share from '../DownloadBtn/Share.astro';
         <li
           class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
         >
-          <Image src={coupon1} alt='' class='aspect-video w-full object-cover' />
+          <Image src={coupon1} quality='high' alt='' class='aspect-video w-full object-cover' />
           <div class='flex grow flex-col px-2 py-1'>
             <b class='grow text-[80%]'>CRÈME concentree de AURORA -50%</b>
           </div>
@@ -86,7 +90,7 @@ import Share from '../DownloadBtn/Share.astro';
       <div
         class='absolute bottom-0 left-[-35%] rounded-lg bg-white p-2 shadow-lg [transform:translateZ(20px)] md:bottom-[15%]'
       >
-        <Image src={avatarClothes1} loading={'eager'} alt='' class='w-[80px] md:w-[100px]' />
+        <Image src={avatarClothes1}  quality='max' loading={'eager'} alt='' class='w-[80px] md:w-[100px]' />
         <div class='mt-2 flex items-center justify-between gap-2'>
           <div class='rounded-full bg-intelligentBlue px-2 py-0.5 text-xs font-medium uppercase'>{t('common.new')}</div>
           <div class=''>
