@@ -27,7 +27,12 @@ export const NAV_LINKS = {
   },
   TERMS: { name: 'Terms of Use', href: '/terms-of-use', isExternal: false, isImportant: false },
   FAQ: { name: 'FAQ', href: '/faq', isExternal: false, isImportant: false },
-  GUIDE: { name: 'User Guide', href: '/', isExternal: true, isImportant: false },
+  GUIDE: {
+    name: 'User Guide',
+    href: 'https://fingerate.gitbook.io/fingerate-app-user-guide/',
+    isExternal: true,
+    isImportant: false,
+  },
 } as const;
 
 export const SOCIAL_LINKS = {
