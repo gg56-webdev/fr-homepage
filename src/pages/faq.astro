@@ -1,15 +1,17 @@
 ---
-import Layout from "@/layouts/Layout.astro";
 import Accordion from "@/components/FAQ/Accordion.astro";
-import { SOCIAL_LINKS, APP_STORE_URL, GOOGLE_PLAY_URL, NAV_LINKS } from "@/constants";
-import { t, changeLanguage } from "i18next";
+import { APP_STORE_URL, GOOGLE_PLAY_URL, NAV_LINKS, SOCIAL_LINKS } from "@/constants";
+import Layout from "@/layouts/Layout.astro";
+import Ecosystem from '@components/FAQ/Ecosystem.astro';
+import { changeLanguage } from "i18next";
 
 changeLanguage("en");
 ---
 
 <Layout title='FAQ'>
-<section class='mx-auto max-w-screen-sm py-12'>
-  <h2 class=' text-4xl font-bold text-center mb-8'>FAQ</h2>
+    <div class=' mx-auto max-w-screen-lg grid md:grid-cols-[2fr_1fr] gap-4 py-12'>
+<section class="">
+  <h1 class=' text-4xl font-bold text-center mb-8'>FAQ</h1>
   <div class='space-y-4 p-2 '>
     <Accordion title='What are SoM? How does it work?'>
       
@@ -83,7 +85,7 @@ changeLanguage("en");
     </Accordion>
     <Accordion title='Can I create my own survey?'>
       
-        <p>Users cam create and manage their own surveys directly from FingeRate app!</p>
+        <p>Users can create and manage their own surveys directly from FingeRate app!</p>
         <ol>
 <li>On the Survey tab, select the type of survey you want to create</li>
  <li>Choose the number of SoTs and determine the duration of the survey</li>
@@ -112,5 +114,9 @@ changeLanguage("en");
     </Accordion>
  
 </section>
+<section class="relative">
+    <Ecosystem />
+</section>
+</div>
 
 </Layout>

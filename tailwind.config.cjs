@@ -27,6 +27,7 @@ module.exports = {
         bob: 'bob 2s ease-in-out infinite',
         blob: 'blob 8s ease-in-out infinite',
         stack: 'stack 15s infinite',
+        orbit: 'orbit linear 20s infinite',
       },
       keyframes: {
         fadeIn: {
@@ -66,6 +67,9 @@ module.exports = {
             translate: '0 -87.5%',
           },
         },
+        orbit: {
+          to: { '--a': '360deg' },
+        },
       },
     },
   },
@@ -80,6 +84,11 @@ module.exports = {
           '-webkit-background-clip': 'text',
           'background-image': theme('backgroundImage.brandGradient'),
           color: ' transparent',
+        },
+        '@property --a': {
+          syntax: '<angle>',
+          'initial-value': '0deg',
+          inherits: 'true',
         },
       });
     },
