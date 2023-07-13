@@ -1,32 +1,52 @@
 ---
 import { Image } from "astro:assets";
 import { localizePath } from "astro-i18next";
+import type { WP_REST_API_Post } from "wp-types";
+import { NAV_LINKS } from "@/constants";
 
 interface Props {
-  post: any
+  post: Partial<WP_REST_API_Post>
 }
 const {post} = Astro.props
+ const {
+   media_details: {
+     sizes: {
+medium,
+large,
+thumbnail,
+medium_large,
+full,
+     },
+   },
+   alt_text,
+ } = post._embedded?.["wp:featuredmedia"]?.at(0);
 ---
 
-<article
-  class='flex h-full flex-col overflow-hidden rounded-lg bg-slate-950/80 hover:bg-slate-900 group focus-within:ring-2 hover:ring-2 transition ring-neonBlue'>
-  <div class="overflow-hidden">
-    <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} tabindex='-1'>
-      <span class='sr-only'>Read Post</span>
-      <Image class='aspect-[2/1] w-full object-cover group-hover:scale-105 transition' width={width} height={height}
-        src={source_url} alt={alt_text || '' } />
-    </a>
-  </div>
-  <div class='flex grow flex-col p-4 '>
-    <h2 class='mb-4 font-bold  line-clamp-2' set:html={post.title.rendered} />
-
-    <div class='mt-auto flex items-center justify-between'>
-      <time class=' text-cyberLilac' datetime={post.date}>
-        {new Date(post.date).toLocaleDateString('ko')}
+<article class="@container h-full rounded-lg overflow-hidden bg-slate-950/80 hover:bg-slate-900 group focus-within:ring-2 hover:ring-2 transition ring-neonBlue">
+  <div class="grid grid-rows-[auto_1fr] h-full @xl:grid-cols-[0.75fr_1fr]">
+      <a class='overflow-hidden' href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} tabindex='-1'>
+        <span class='sr-only'>Read Post</span>
+        <Image class='aspect-[2/1] @md:aspect-[2.5/1] @xl:aspect-[3/2.25] w-full h-full object-cover group-hover:scale-105 transition' 
+        srcset={`${thumbnail.source_url} 150w, ${medium.source_url} 300w, ${medium_large.source_url} 768w, ${large.source_url} 1024w`}
+        width={full.width} height={full.height}
+          src={full.source_url} alt={alt_text ?? 'Post thumbnail' } />
+      </a>
+    <div class="flex flex-col gap-1 h-full p-2 @md:p-4 @md:gap-4">
+      <div class="space-y-2">
+        <h1 set:html={post.title?.rendered} class="font-bold line-clamp-2 text-sm @xs:[text-wrap:balance] @md:text-xl @md:line-clamp-2 @lg:line-clamp-none  @lg:text-2xl"/>
+        {post.excerpt?.rendered && <div class="hidden text-cyberLilac text-sm @xs:block @xs:[&>*]:line-clamp-3 @lg:text-base @lg:[&>*]:line-clamp-none">
+          <Fragment  set:html={post.excerpt?.rendered} />
+        </div>}
+      </div>
+      <div class='mt-auto flex items-center justify-between'>
+      <time class='text-neonBlue text-sm sr-only @[12rem]:not-sr-only' datetime={post.date}>
+        {new Date(post.date!).toLocaleDateString('en')}
       </time>
       <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} class='hover:underline'>
-        Read Post →
+        Read <span class="sr-only @[7rem]:not-sr-only">Post</span>&nbsp;<span class="sr-only @[4rem]:not-sr-only">→</span>
       </a>
+    </div>
     </div>
   </div>
 </article>
+

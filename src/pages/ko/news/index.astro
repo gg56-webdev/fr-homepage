@@ -2,9 +2,7 @@
 import i18next, { changeLanguage } from "i18next";
 import { getPosts } from "@/api";
 import Layout from "@layouts/Layout.astro";
-import { Image } from "astro:assets";
-import { localizePath } from "astro-i18next";
-import { NAV_LINKS } from "@/constants";
+import NewsCard from "@/components/NewsCard.astro";
 
 changeLanguage("ko");
 
@@ -15,52 +13,12 @@ const posts = await getPosts(i18next.language as "en" | "ko");
   <div class='py-8 md:pb-24'>
     <section class='mx-auto max-w-screen-lg p-2'>
         <h1 class=' mb-8 text-center text-4xl font-bold '>News</h1>
-      <ul class='grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4'>
-        {
-          posts.map((post) => {
-            // TODO: types for _embedded
-            const {
-              media_details: {
-                sizes: {
-                  medium: { width, height, source_url },
-                },
-              },
-              alt_text,
-            } = post._embedded?.['wp:featuredmedia']?.at(0);
-            const [categories, tags] = post._embedded?.['wp:term'];
-            return (
-              <li data-scroll-animation >
-                <article class='flex h-full flex-col overflow-hidden rounded bg-slate-950/80 hover:bg-slate-900 group focus-within:ring-2 hover:ring-2 transition ring-neonBlue'>
-                  <div class="overflow-hidden">
-                  <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} tabindex='-1'>
-                    <span class='sr-only'>Read Post</span>
-                    <Image
-                      class='aspect-[2/1] w-full object-cover group-hover:scale-105 transition'
-                      width={width}
-                      height={height}
-                      src={source_url}
-                      alt={alt_text || ''}
-                    />
-                  </a>
-                  </div>
-                  <div class='flex grow flex-col p-4 '>
-                    <h2 class='mb-4 font-bold  line-clamp-2' set:html={post.title.rendered} />
-                   
-                    <div class='mt-auto flex items-center justify-between'>
-                      <time class=' text-cyberLilac' datetime={post.date}>
-                        {new Date(post.date).toLocaleDateString('ko')}
-                      </time>
-                      <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} class='hover:underline'>
-                        Read Post →
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              </li>
-            );
-          })
-        }
-      </ul>
+      {posts.length > 0 ? (<ul class='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6'>
+         {posts.map((post) => {
+          return (<li data-scroll-animation class="first:col-span-2 sm:first:col-span-4 md:first:col-span-6 sm:[&:nth-of-type(n+2):nth-of-type(-n+5)]:col-span-2 md:col-span-2 md:[&:nth-of-type(n+2):nth-of-type(-n+5)]:col-span-3">
+          <NewsCard {post}/>
+        </li>)})} 
+      </ul>) : <p class="text-cyberLilac text-center">No posts yet...</p>}
     </section>
   </div>
 </Layout>
