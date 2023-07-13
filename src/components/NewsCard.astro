@@ -31,7 +31,7 @@ full,
         width={full.width} height={full.height}
           src={full.source_url} alt={alt_text ?? 'Post thumbnail' } />
       </a>
-    <div class="flex flex-col gap-1 h-full p-2 @md:p-4 @md:gap-4">
+    <div class="flex flex-col gap-2 h-full p-2 @md:p-4 @md:gap-4">
       <div class="space-y-2">
         <h1 set:html={post.title?.rendered} class="font-bold line-clamp-2 text-sm @xs:[text-wrap:balance] @md:text-xl @md:line-clamp-2 @lg:line-clamp-none  @lg:text-2xl"/>
         {post.excerpt?.rendered && <div class="hidden text-cyberLilac text-sm @xs:block @xs:[&>*]:line-clamp-3 @lg:text-base @lg:[&>*]:line-clamp-none">
