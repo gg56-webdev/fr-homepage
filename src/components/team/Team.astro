@@ -1,0 +1,41 @@
+---
+import {team } from "@data/team/exports";
+import i18next from 'i18next'
+const lang = i18next.language as 'ko' | 'en'
+const people = team.map((p) => {
+  const name = p.name[lang]
+  const subtitles = p.subtitles[lang]
+  const socials = p.socials
+  const titles = p.titles?.en
+  const bio = p.bio?.[lang]
+  const categories = p.categories
+  return {name, subtitles, socials, titles, bio, categories}
+})
+const categories = new Set(team.map(p => p.categories).flat())
+---
+<section class='mx-auto max-w-screen-lg p-2 '>
+  <h2>Team</h2>
+  <ul class="flex gap-2">{[...categories.values()].map(c => <li data-category={c}>{c}</li>)}</ul>
+  <ul id='parent'>
+    {people.map(p => (<li data-categories={p.categories} data-person={JSON.stringify(p)}>
+      {p.name}
+      </li>))}
+  </ul>
+
+</section>
+
+<script>
+  const $filters = document.querySelectorAll<HTMLLIElement>('[data-category]')
+  const $people = document.querySelectorAll<HTMLLIElement>('[data-person]')
+  
+
+  $filters.forEach(f => f.addEventListener('click', (e)=> {
+   const category = e.target.dataset.category!
+  $people.forEach(p => {
+    const categories = p.dataset.categories! 
+    p.style.display = ''
+    if (!categories.includes(category)) p.style.display = 'none' 
+  })
+
+  }))
+</script>
