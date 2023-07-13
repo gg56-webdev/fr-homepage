@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import { localizePath } from "astro-i18next";
+
+interface Props {
+  post: any
+}
+const {post} = Astro.props
+---
+
+<article
+  class='flex h-full flex-col overflow-hidden rounded-lg bg-slate-950/80 hover:bg-slate-900 group focus-within:ring-2 hover:ring-2 transition ring-neonBlue'>
+  <div class="overflow-hidden">
+    <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} tabindex='-1'>
+      <span class='sr-only'>Read Post</span>
+      <Image class='aspect-[2/1] w-full object-cover group-hover:scale-105 transition' width={width} height={height}
+        src={source_url} alt={alt_text || '' } />
+    </a>
+  </div>
+  <div class='flex grow flex-col p-4 '>
+    <h2 class='mb-4 font-bold  line-clamp-2' set:html={post.title.rendered} />
+
+    <div class='mt-auto flex items-center justify-between'>
+      <time class=' text-cyberLilac' datetime={post.date}>
+        {new Date(post.date).toLocaleDateString('ko')}
+      </time>
+      <a href={localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)} class='hover:underline'>
+        Read Post →
+      </a>
+    </div>
+  </div>
+</article>
