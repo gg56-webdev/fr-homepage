@@ -26,7 +26,7 @@ const post = await getPost(id, i18next.language as "en" | "ko");
 <Layout title={post.title.rendered}>
   <article class='prose prose-invert mx-auto max-w-screen-md bg-slate-900 px-2 py-12 md:px-12'>
     <h1 class='[text-wrap:balance;]' set:html={post.title.rendered} />
-    <time datetime={post.date} class="text-neonBlue">{new Date(post.date).toLocaleDateString('en')}</time>
+    <time datetime={post.date} class="text-neonBlue">{new Date(post.date).toLocaleDateString(i18next.language)}</time>
     <Fragment set:html={post.content.rendered} />
     <a href={localizePath(NAV_LINKS.NEWS.href)} class="not-prose">← Go back to News</a>
   </article>
