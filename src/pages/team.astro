@@ -2,12 +2,16 @@
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Team from "@/components/team/Team.astro";
+import Hero from "@/components/team/Hero.astro";
+import History from "@/components/team/History.astro";
 
 changeLanguage("en");
 ---
 
 <Layout title='Team'>
-  <div class='pb-12 md:pb-24'>
+  <div class='py-12 space-y-24 md:pb-24'>
+    <Hero />
     <Team />
+    <History />
   </div>
 </Layout>

@@ -1,0 +1,40 @@
+---
+import img1 from '@assets/team/hero/1.jpeg'
+import img2 from '@assets/team/hero/2.jpg'
+import img3 from '@assets/team/hero/3.jpg'
+import img4 from '@assets/team/hero/4.jpg'
+import img5 from '@assets/team/hero/5.jpg'
+import img6 from '@assets/team/hero/6.jpeg'
+import img7 from '@assets/team/hero/7.jpeg'
+import {Image}  from 'astro:assets'
+// TODO: add alt to photos
+---
+<section class="mx-auto max-w-screen-xl px-2">
+  <div class="text-center mb-8">
+<h1 class="text-5xl font-bold mb-2">Our People</h1>
+<p class="tracking-wide text-cyberLilac text-lg">Meet the people behind FingeRate and its unique ecosystem! </p>
+</div>
+  <ul class="grid gap-4 md:grid-cols-[350px_1fr_1fr_auto] md:grid-rows-[175px_175px_250px] grid-flow-dense">
+    <li class="bg-slate-700 overflow-hidden rounded-lg row-span-2">
+      <Image class='object-cover w-full h-full' src={img1} alt=''/>
+    </li>
+    <li class="bg-slate-700 overflow-hidden rounded-lg">
+      <Image class='object-cover w-full h-full' src={img2} alt=''/>
+    </li>
+    <li class="bg-slate-700 overflow-hidden rounded-lg row-span-2 col-span-2">
+      <Image class='object-cover w-full h-full' src={img3} alt=''/>
+    </li>
+    <li class="bg-slate-700 overflow-hidden rounded-lg">
+      <Image class='object-cover w-full h-full' src={img4} alt=''/>
+    </li>
+    <li class="bg-slate-700 overflow-hidden rounded-lg">
+      <Image class='object-cover w-full h-full' src={img5} alt=''/>
+    </li>
+    <li class="bg-slate-700 overflow-hidden rounded-lg col-span-2">
+      <Image class='object-cover  md:object-[0_63%] h-full w-full' src={img6} alt=''/>
+    </li>
+    <li class="bg-slate-700 overflow-hidden rounded-lg">
+      <Image class='object-cover w-full h-full' src={img7} alt=''/>
+    </li>
+  </ul>
+</section>

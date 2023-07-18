@@ -52,7 +52,7 @@
     "bio": {
       "en": "Choi Myung-ju currently serves as CEO of MEA & Co. which provides financial and business development consulting for Korean companies in middle east and Arab companies in Korea. He has served as CEO of PECSA and served as CEO at POSCO Capital. He transformed a brokerage house into small cap specialized investment bank as CEO at Kyobo Securities. He is the president of UAE & Middle East region of GG56 limited's blockchain project FingeRate."
     },
-    "categories": ["Leadership"]
+    "categories": ["Leadership", "Strategy"]
   },
   {
     "name": {
@@ -67,7 +67,7 @@
     "bio": {
       "en": "Tabassum received her masters in Computer Engineering degree from South Korea as a Korean Govt. Scholarship Grantee (KGSP). She started her career as a developer in blockchain and later moved to strategy and business for blockchain ecosystem. She has technological as well as strategic knowledge of Blockchain and is fluent in English, Bengali (native), Korean and Hindi language."
     },
-    "categories": ["Strategy", "Business"]
+    "categories": ["Strategy", "Business", "Leadership"]
   },
   {
     "name": {
@@ -84,7 +84,7 @@
     "bio": {
       "en": "Lee Seung-hong has worked as the head of sales support department in GN corporation and also worked for establishing big data for Gangwon tourism as a general team leader. In FingeRate, he is working as a project manager in the department of SoT development."
     },
-    "categories": ["Sales"]
+    "categories": ["Sales", "Leadership"]
   },
   {
     "name": {
@@ -96,7 +96,7 @@
       "en": ["Business Team Lead"],
       "ko": ["팀장", "사업관리"]
     },
-    "categories": ["Business"]
+    "categories": ["Business", "Sales"]
   },
   {
     "name": {
@@ -114,6 +114,21 @@
       "ko": "경희대학교 경영대학 회계세무학과"
     },
     "categories": ["HR"]
+  },
+  {
+    "name": {
+      "en": "Marc",
+      "ko": "마크"
+    },
+    "subtitles": {
+      "en": ["Marketing Manager"],
+      "ko": ["마케팅 마나저"]
+    },
+    "socials": ["https://www.linkedin.com/in/marc-breynart"],
+    "bio": {
+      "en": "Equipped with an MBA from Hanyang University and fueled by a genuine passion for strategic growth, Marc is a friendly and dynamic professional with a solid background in business development. His expertise lies in the realms of international business and digital marketing, where he thrives on navigating the ever-changing landscape with passion. Fluent in French, English, and Dutch, Marc possesses a unique specialization in Asian countries, allowing him to foster successful connections and collaborations across cultural boundaries."
+    },
+    "categories": ["Marketing", "Business"]
   },
   {
     "name": {
