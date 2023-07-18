@@ -1,7 +1,7 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
-import Team from "@/components/team/Team.astro";
+import CoreTeam from "@/components/team/CoreTeam.astro";
 import Hero from "@/components/team/Hero.astro";
 import History from "@/components/team/History.astro";
 import Partners from "@/components/Partners.astro";
@@ -12,7 +12,7 @@ changeLanguage("en");
 <Layout title='Team'>
   <div class='py-12 space-y-24 md:pb-24'>
     <Hero />
-    <Team />
+    <CoreTeam />
     <History />
     <section data-scroll-animation class='mx-auto max-w-screen-xl px-2'>
       <h2 class="text-center font-bold text-3xl mb-8">They Work With Us</h2>
