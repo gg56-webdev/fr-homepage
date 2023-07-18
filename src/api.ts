@@ -5,11 +5,13 @@ const WP_POSTS_API_ENDPOINT = "wp-json/wp/v2/posts";
 const FINGERATE_CATEGORY_ID = "7";
 const ENGLISH_TAG = "107";
 const KOREAN_TAG = "108";
+const LIMIT = "11";
 
 export const getPosts = async (lang: "en" | "ko" = "en", minimal = false) => {
   const wpUrl = new URL(`${WP_URL}/${lang}/${WP_POSTS_API_ENDPOINT}`);
   wpUrl.searchParams.set("categories", FINGERATE_CATEGORY_ID);
   wpUrl.searchParams.set("tags", lang === "en" ? ENGLISH_TAG : KOREAN_TAG);
+  wpUrl.searchParams.set("per_page", LIMIT);
   if (minimal) {
     wpUrl.searchParams.set("_fields", "id,slug");
   } else {
