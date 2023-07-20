@@ -16,8 +16,9 @@ const navLinks: Array<Link | Dropdown> = [
   {
     name: 'About',
     links: [
+      {...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)},
       {...NAV_LINKS.NEWS, href: localizePath(NAV_LINKS.NEWS.href)},
-      {...NAV_LINKS.TEAM, href: localizePath(NAV_LINKS.TEAM.href)},],
+    ],
   },
   {
     name: 'Support',
