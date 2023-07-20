@@ -2,6 +2,7 @@
 import { NAV_LINKS, type Link } from '../constants';
 import i18next,{t} from 'i18next'
 import { localizePath  } from "astro-i18next";
+import Price from '@/components/Price.astro';
 
 // TODO: responsive divide between links and language
 
@@ -39,7 +40,9 @@ const currentUrl = import.meta.env.DEV
 
 <header class='sticky top-0 z-20 bg-slate-950/90'>
   <nav class='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-2 py-1 md:py-0'>
-    <a href={navLinks[0].href} class='brand-text text-2xl font-bold'>FingeRate</a>
+    <div class="flex items-center gap-6"><a href={navLinks[0].href} class='brand-text text-2xl font-bold'>FingeRate</a>
+      <Price />
+    </div>
     <button
       id='hamburger'
       data-collapse-toggle='navbar-dropdown'
@@ -56,7 +59,7 @@ const currentUrl = import.meta.env.DEV
           clip-rule='evenodd'></path></svg
       >
     </button>
-    <div class='hidden w-full md:block md:w-auto' id='navbar-dropdown'>
+    <div class='hidden w-full pb-4 md:pb-0 md:block md:w-auto' id='navbar-dropdown'>
       <ul class='mt-4 flex flex-col items-center gap-2 md:m-0 md:flex-row md:items-baseline'>
         {
           navLinks.map((i) => (
