@@ -52,7 +52,7 @@
     "bio": {
       "en": "Choi Myung-ju currently serves as CEO of MEA & Co. which provides financial and business development consulting for Korean companies in middle east and Arab companies in Korea. He has served as CEO of PECSA and served as CEO at POSCO Capital. He transformed a brokerage house into small cap specialized investment bank as CEO at Kyobo Securities. He is the president of UAE & Middle East region of GG56 limited's blockchain project FingeRate."
     },
-    "categories": ["Leadership", "Strategy"]
+    "categories": ["Leadership"]
   },
   {
     "name": {
@@ -67,7 +67,7 @@
     "bio": {
       "en": "Tabassum received her masters in Computer Engineering degree from South Korea as a Korean Govt. Scholarship Grantee (KGSP). She started her career as a developer in blockchain and later moved to strategy and business for blockchain ecosystem. She has technological as well as strategic knowledge of Blockchain and is fluent in English, Bengali (native), Korean and Hindi language."
     },
-    "categories": ["Strategy", "Business", "Leadership"]
+    "categories": ["Strategy", "Leadership", "Development"]
   },
   {
     "name": {
@@ -121,7 +121,7 @@
       "ko": "마크"
     },
     "subtitles": {
-      "en": ["Marketing Manager"],
+      "en": ["Global Marketing Manager"],
       "ko": ["마케팅 마나저"]
     },
     "socials": ["https://www.linkedin.com/in/marc-breynart"],
