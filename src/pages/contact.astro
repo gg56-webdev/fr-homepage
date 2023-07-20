@@ -1,15 +1,14 @@
 ---
-import { changeLanguage } from "i18next";
-import Layout from "@layouts/Layout.astro";
-import Form from "@components/Form.astro";
-import Social from "@/components/Social.astro";
-import App from "@/components/home/App.astro";
-import { Image } from "astro:assets";
-import metaverse from "@assets/home/metaverse-sot.webp";
-import Google from "@/components/DownloadBtn/Google.astro";
 import Apple from "@/components/DownloadBtn/Apple.astro";
+import Google from "@/components/DownloadBtn/Google.astro";
 import QR from "@/components/DownloadBtn/QR.astro";
+import Social from "@/components/Social.astro";
 import { SOCIAL_LINKS } from "@/constants";
+import metaverse from "@assets/home/metaverse-sot.webp";
+import Form from "@components/Form.astro";
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { changeLanguage } from "i18next";
 
 changeLanguage("en");
 ---

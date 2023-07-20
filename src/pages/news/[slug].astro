@@ -9,6 +9,9 @@ import { NAV_LINKS } from "@/constants";
 
 changeLanguage("en");
 
+interface Props {
+    id: WP_REST_API_Post["id"];
+}
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPosts(i18next.language as "en" | "ko", true);
     return posts.map(({ slug, id }) => ({
@@ -16,9 +19,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         props: { id },
     }));
 };
-interface Props {
-    id: WP_REST_API_Post["id"];
-}
 const { id } = Astro.props;
 const post = await getPost(id, i18next.language as "en" | "ko");
 ---
