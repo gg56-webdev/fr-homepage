@@ -17,7 +17,7 @@ export const getPosts = async (lang: "en" | "ko" = "en", minimal = false) => {
   } else {
     wpUrl.searchParams.set(
       "_fields",
-      "id,sticky,title,excerpt,date,slug,_links.wp:featuredmedia,_links.wp:term"
+      "link,id,sticky,title,excerpt,date,slug,_links.wp:featuredmedia,_links.wp:term"
     );
     wpUrl.searchParams.set("_embed", "wp:term,wp:featuredmedia");
   }
@@ -25,7 +25,7 @@ export const getPosts = async (lang: "en" | "ko" = "en", minimal = false) => {
   const res = await fetch(wpUrl);
   const posts = (await res.json()) as Pick<
     WP_REST_API_Post,
-    "id" | "sticky" | "title" | "date" | "slug" | "_embedded" | "excerpt"
+    "id" | "sticky" | "title" | "date" | "slug" | "_embedded" | "excerpt" | "link"
   >[];
   return posts;
 };
