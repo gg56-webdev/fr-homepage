@@ -19,7 +19,7 @@ const icons: ImageMetadata[] = await Astro.glob('../../assets/social/*.svg').the
 
 const getIcon = (href: string) => {
   if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!;
-  if (href.includes('youtu.be')) return icons.find(({ src }) => src.includes('YT'))!;
+  if (href.includes('youtube.com')) return icons.find(({ src }) => src.includes('YT'))!;
   if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'))!;
   return icons.find(({ src }) => src.includes('LI'))!;
 };
@@ -28,7 +28,7 @@ const getIcon = (href: string) => {
 <section data-scroll-animation class='mx-auto max-w-screen-lg p-2 '>
   <div class="text-center mb-6" >
   <h2 class=" text-4xl font-bold mb-2">Our Core Team</h2>
-  <p class="tracking-wide text-cyberLilac text-lg">Our team brings a wealth of experience, all sprinkled with passion</p>
+  <p class="tracking-wide text-cyberLilac text-lg">We bring a wealth of experience, all sprinkled with passion</p>
   </div>
   <ul class="flex gap-2 flex-wrap justify-center">{['All',...categories.values()].map((c,i) => <li>
     {i === 0 ? 
@@ -45,10 +45,10 @@ const getIcon = (href: string) => {
                 <div class="bg-slate-950/80 aspect-square w-full absolute rounded-lg overflow-hidden group-hover:after:opacity-100 after:opacity-0 after:w-full after:h-full after:absolute after:bg-brandGradient after:transition"></div>
                 <Image  src={src1} alt={`photo of ${p.name}`} class='absolute bottom-0  justify-self-center grayscale group-hover:opacity-0 transition'/>
                 <Image  src={src2} alt={`photo of ${p.name}`} class='absolute bottom-0  justify-self-center opacity-0 group-hover:opacity-100 transition'/>
-                <ul class="absolute inset-[auto_0.5rem_0.5rem_auto] grid bg-slate-950/80 p-2 gap-2 opacity-0 transition group-hover:opacity-100 rounded-full focus-within:opacity-100">
-                 {p.socials.map(s => <li><a href={s} target="_blank" rel="noopener noreferrer">
+                <ul class="absolute inset-[auto_0.5rem_0.5rem_auto] grid bg-slate-950/80 p-2 gap-2 md:opacity-0 transition group-hover:opacity-100 rounded-full focus-within:opacity-100">
+                 {p.socials.map(s => <li class="rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1"><a href={s} class="rounded-full"   target="_blank" rel="noopener noreferrer">
                   <span class="sr-only">Go to {p.name}'s social page</span>
-                  <img src={getIcon(s)!.src} alt='Social network logo' class='w-6 h-6'/>
+                  <img src={getIcon(s)!.src} alt='Social network logo' class='w-7 h-7'/>
                   </a></li>)}
                 </ul>
               </div>
@@ -57,7 +57,6 @@ const getIcon = (href: string) => {
               <ul class="text-cyberLilac flex flex-col">
                 {p.subtitles.map(s => <li>{s}</li>)}
                 </ul>
-              
               </div>
               </li>)})}
   </ul>

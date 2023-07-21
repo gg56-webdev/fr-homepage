@@ -63,7 +63,10 @@
       "en": ["CSO", "Strategic Planning"],
       "ko": ["이사", "전략기획"]
     },
-    "socials": ["https://www.linkedin.com/in/tabassum-n-haque-11077871"],
+    "socials": [
+      "https://www.linkedin.com/in/tabassum-n-haque-11077871",
+      "https://www.youtube.com/live/t807V-irnzQ?feature=share&t=18389"
+    ],
     "bio": {
       "en": "Tabassum received her masters in Computer Engineering degree from South Korea as a Korean Govt. Scholarship Grantee (KGSP). She started her career as a developer in blockchain and later moved to strategy and business for blockchain ecosystem. She has technological as well as strategic knowledge of Blockchain and is fluent in English, Bengali (native), Korean and Hindi language."
     },
