@@ -4,8 +4,8 @@ const WP_URL = "https://gg56.com";
 const WP_POSTS_API_ENDPOINT = "wp-json/wp/v2/posts";
 const FINGERATE_CATEGORY_ID = "7";
 const ENGLISH_TAG = "107";
-const KOREAN_TAG = "108";
-const LIMIT = "11";
+const KOREAN_TAG = "110";
+const LIMIT = "100";
 
 export const getPosts = async (lang: "en" | "ko" = "en", minimal = false) => {
   const wpUrl = new URL(`${WP_URL}/${lang}/${WP_POSTS_API_ENDPOINT}`);
