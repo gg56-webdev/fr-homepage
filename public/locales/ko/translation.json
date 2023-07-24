@@ -133,5 +133,19 @@
       "h2": "지금 FingeRate 봇을 시작하세요!",
       "p": "고객 피드백 전략을 한 단계 더 업그레이드 시켜 보세요. 저희에게 연락하셔서 FingeRate 봇에 대해 자세히 알아보시고 데모도 요청해 보시고, 당사의 솔루션이 귀하의 사업을 어떻게 변화시킬 수 있는지 살펴 보세요. 고객과의 교감을 최적화하는 기회를 놓치지 마세요."
     }
+  },
+
+  "token": {
+    "hero": {
+      "h1": "MSOT 토큰과 FingeRate 에코시스템을 알아가 보세요",
+      "quantity": "수량",
+      "price": "가격",
+      "p": "FingeRate 에코시스템의 장점을 모두 최대한 활용하세요! <0>앱을</0> 다운로드하여 보상을 받으시고, Latoken 거래소에서 MSOT을 거래하세요.",
+      "link": "MSOT 거래를 위해 마켓플레이스로 이동하세요"
+    },
+    "about": {
+      "h2": "FingeRate: One&nbsp;App, One&nbsp;Token, One&nbsp;Ecosystem",
+      "p": "MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units."
+    }
   }
 }

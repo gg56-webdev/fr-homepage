@@ -145,12 +145,21 @@
       "p": "Take your customer feedback strategy to the next level. Contact us now to learn more about FingeRate Bot, request a demo, and discover how our solution can transform your business. Don't miss out on the opportunity to unlock the true potential of your customer interactions."
     }
   },
+
   "token": {
+    "hero": {
+      "h1": "Navigate FingeRate Ecosystem with MSOT",
+      "quantity": "Quantity",
+      "price": "Price",
+      "p": "Take full advantage of the FingeRate ecosystem! Download the <0>App</0>, earn rewards, and trade MSOT on Latoken",
+      "link": "Go to the marketplace to trade MSOT"
+    },
     "about": {
       "h2": "FingeRate: One&nbsp;App, One&nbsp;Token, One&nbsp;Ecosystem",
       "p": "MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units."
     }
   },
+
   "team": {
     "hero": {
       "h1": "Our Team",
