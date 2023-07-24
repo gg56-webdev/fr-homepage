@@ -1,76 +1,115 @@
 ---
-import phone from '@assets/home/phone-screen-main.png';
-import sotModal from '@assets/home/sot-modal.webp';
-import avatarClothes1 from '@assets/home/avatar-clothes-1.webp';
-import Apple from '@components/DownloadBtn/Apple.astro';
-import Google from '@components/DownloadBtn/Google.astro';
-import QR from '@components/DownloadBtn/QR.astro';
-import coupon1 from '@assets/home/coupon-1.webp';
-import coupon2 from '@assets/home/coupon-2.webp';
-import { Image } from 'astro:assets';
+import phone from "@/assets/home/phone-screen-main.png";
+import sotModal from "@/assets/home/sot-modal.webp";
+import avatarClothes1 from "@/assets/home/avatar-clothes-1.webp";
+import Apple from "@/components/DownloadBtn/Apple.astro";
+import Google from "@/components/DownloadBtn/Google.astro";
+import QR from "@/components/DownloadBtn/QR.astro";
+import coupon1 from "@/assets/home/coupon-1.webp";
+import coupon2 from "@/assets/home/coupon-2.webp";
+import { Image } from "astro:assets";
 
 // TODO: optimize image
 
-import {t} from 'i18next'
-import { Trans } from 'astro-i18next/components';
-import Share from '../DownloadBtn/Share.astro';
+import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
+import Share from "../DownloadBtn/Share.astro";
 ---
 
 <section
-  class='mx-auto grid min-h-[75vh] md:min-h-[70vh] max-w-screen-xl items-center relative justify-items-center gap-4 px-2 md:grid-cols-2'
-  id='hero'
+  class="mx-auto grid min-h-[75vh] md:min-h-[70vh] max-w-screen-xl items-center relative justify-items-center gap-4 px-2 md:grid-cols-2"
+  id="hero"
 >
-    <div class='absolute -top-10 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0'>
-      </div>
-  <div class='relative isolate animate-fadeIn md:order-2'>
+  <div
+    class="absolute -top-10 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0"
+  >
+  </div>
+  <div class="relative isolate animate-fadeIn md:order-2">
     <div
       data-tilt-animation
-      class='relative [transform-style:preserve-3d] [transform:perspective(5000px)_rotateY(var(--rotateY))_rotateX(var(--rotateX))]'
+      class="relative [transform-style:preserve-3d] [transform:perspective(5000px)_rotateY(var(--rotateY))_rotateX(var(--rotateX))]"
     >
-      <div class='relative [transform-style:preserve-3d]'>
+      <div class="relative [transform-style:preserve-3d]">
         <Image
           src={phone}
-          alt='Phone/s with a FingeRate App demo'
-          class='block h-[350px] w-fit object-contain drop-shadow-md md:order-2 md:h-[500px]'
-          loading={'eager'}
+          alt="Phone/s with a FingeRate App demo"
+          class="block h-[350px] w-fit object-contain drop-shadow-md md:order-2 md:h-[500px]"
+          loading={"eager"}
         />
         <Image
           src={sotModal}
-          alt=''
-          class='absolute left-1/2 top-[43%] h-[100px] object-contain drop-shadow-md [translate:-50%_-50%_20px] motion-safe:animate-bob motion-safe:[animation-duration:3s] md:order-2 md:h-[150px] md:w-fit'
-          loading={'eager'}
+          alt=""
+          class="absolute left-1/2 top-[43%] h-[100px] object-contain drop-shadow-md [translate:-50%_-50%_20px] motion-safe:animate-bob motion-safe:[animation-duration:3s] md:order-2 md:h-[150px] md:w-fit"
+          loading={"eager"}
         />
       </div>
       <div
-        class='absolute left-[-50%] top-[4%] grid aspect-[3.375/2.125] w-[65%] grid-rows-[1fr_auto] gap-2 rounded-lg bg-blue-400 bg-brandGradient p-4 text-center shadow-lg ring-white transition [transform:translateZ(30px)] hover:ring-4 md:left-[-25%] group'
+        class="absolute left-[-50%] top-[4%] grid aspect-[3.375/2.125] w-[65%] grid-rows-[1fr_auto] gap-2 rounded-lg bg-blue-400 bg-brandGradient p-4 text-center shadow-lg ring-white transition [transform:translateZ(30px)] hover:ring-4 md:left-[-25%] group"
       >
-      <div class="absolute  bg-intelligentBlue flex gap-2 items-center px-2 py-2 shadow-md rounded-full top-0 left-0 -translate-x-1/4 -translate-y-1/2 group-hover:ring-4 ring-white transition">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
-        <span class="hidden md:inline text-sm font-medium">{t('home.hero.app-ui.wallet')}</span>
-      </div>
-        <div class='grid place-items-center font-bold'>4500 SoM</div>
-        <p class='justify-self-end text-xs'>1 SoM = $0.1</p>
+        <div
+          class="absolute bg-intelligentBlue flex gap-2 items-center px-2 py-2 shadow-md rounded-full top-0 left-0 -translate-x-1/4 -translate-y-1/2 group-hover:ring-4 ring-white transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-5 h-5"
+            ><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path
+              d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path
+              d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg
+          >
+          <span class="hidden md:inline text-sm font-medium"
+            >{t("home.hero.app-ui.wallet")}</span
+          >
+        </div>
+        <div class="grid place-items-center font-bold">4500 SoM</div>
+        <p class="justify-self-end text-xs">1 SoM = $0.1</p>
       </div>
       <ul
-        class='absolute -right-[50%] top-[30%] flex gap-2 text-sm/[1.5] transition-all [transform:translateZ(-30px)] hover:[translate:0] md:-right-[85%] md:[translate:-42%]'
+        class="absolute -right-[50%] top-[30%] flex gap-2 text-sm/[1.5] transition-all [transform:translateZ(-30px)] hover:[translate:0] md:-right-[85%] md:[translate:-42%]"
       >
         <li
-          class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
+          class="flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2"
         >
-          <Image src={coupon1} quality='high' alt='' class='aspect-video w-full object-cover' />
-          <div class='flex grow flex-col px-2 py-1'>
-            <b class='grow text-[80%]'>CRÈME concentree de AURORA -50%</b>
+          <Image
+            src={coupon1}
+            quality="high"
+            alt=""
+            class="aspect-video w-full object-cover"
+          />
+          <div class="flex grow flex-col px-2 py-1">
+            <b class="grow text-[80%]">CRÈME concentree de AURORA -50%</b>
           </div>
-          <footer class='m-1 rounded-full bg-yellow-200 p-0.5 text-center text-[80%] text-yellow-950'>{t('home.hero.app-ui.discount')}</footer>
+          <footer
+            class="m-1 rounded-full bg-yellow-200 p-0.5 text-center text-[80%] text-yellow-950"
+          >
+            {t("home.hero.app-ui.discount")}
+          </footer>
         </li>
         <li
-          class='flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2'
+          class="flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2"
         >
-          <Image src={coupon2}  quality='high' loading={'eager'} alt='' class='aspect-video w-full object-cover' />
-          <div class='flex grow flex-col px-2 py-1'>
-            <b class='grow text-[80%]'>{t('home.hero.app-ui.coupon-title')}</b>
+          <Image
+            src={coupon2}
+            quality="high"
+            loading={"eager"}
+            alt=""
+            class="aspect-video w-full object-cover"
+          />
+          <div class="flex grow flex-col px-2 py-1">
+            <b class="grow text-[80%]">{t("home.hero.app-ui.coupon-title")}</b>
           </div>
-          <footer class='m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-blue-900'>{t('home.hero.app-ui.coupon')}</footer>
+          <footer
+            class="m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-blue-900"
+          >
+            {t("home.hero.app-ui.coupon")}
+          </footer>
         </li>
       </ul>
       <!-- <div class='hidden md:block shadow-lg text-deepSpace space-y-4 absolute bottom-0  right-0 [transform-style:preserve-3d] [transform:translateZ(20px)] [translate:50%] p-2 bg-white rounded-lg '>
@@ -86,24 +125,37 @@ import Share from '../DownloadBtn/Share.astro';
         </ul>
       </div> -->
       <div
-        class='absolute bottom-0 left-[-35%] rounded-lg bg-white p-2 shadow-lg [transform:translateZ(20px)] md:bottom-[15%]'
+        class="absolute bottom-0 left-[-35%] rounded-lg bg-white p-2 shadow-lg [transform:translateZ(20px)] md:bottom-[15%]"
       >
-        <Image src={avatarClothes1}  quality='max' loading={'eager'} alt='' class='w-[80px] md:w-[100px]' />
-        <div class='mt-2 flex items-center justify-between gap-2'>
-          <div class='rounded-full bg-intelligentBlue px-2 py-0.5 text-xs font-medium uppercase'>{t('common.new')}</div>
-          <div class=''>
-            <input type='checkbox' name='like' id='like' class='peer hidden' />
-            <label for='like' class='fill-transparent hover:cursor-pointer peer-checked:fill-red-600'>
+        <Image
+          src={avatarClothes1}
+          quality="max"
+          loading={"eager"}
+          alt=""
+          class="w-[80px] md:w-[100px]"
+        />
+        <div class="mt-2 flex items-center justify-between gap-2">
+          <div
+            class="rounded-full bg-intelligentBlue px-2 py-0.5 text-xs font-medium uppercase"
+          >
+            {t("common.new")}
+          </div>
+          <div class="">
+            <input type="checkbox" name="like" id="like" class="peer hidden" />
+            <label
+              for="like"
+              class="fill-transparent hover:cursor-pointer peer-checked:fill-red-600"
+            >
               <svg
-                viewBox='0 0 25 25'
-                class='h-6 w-6 fill-inherit stroke-red-600 transition-all'
-                xmlns='http://www.w3.org/2000/svg'
+                viewBox="0 0 25 25"
+                class="h-6 w-6 fill-inherit stroke-red-600 transition-all"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d='M21.3311 8.41992C21.3311 5.93492 19.2321 3.91992 16.6431 3.91992C14.7081 3.91992 13.0461 5.04592 12.3311 6.65292C11.6161 5.04592 9.95405 3.91992 8.01805 3.91992C5.43105 3.91992 3.33105 5.93492 3.33105 8.41992C3.33105 15.6399 12.3311 20.4199 12.3311 20.4199C12.3311 20.4199 21.3311 15.6399 21.3311 8.41992Z'
-                  stroke-width='1.5'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'></path>
+                  d="M21.3311 8.41992C21.3311 5.93492 19.2321 3.91992 16.6431 3.91992C14.7081 3.91992 13.0461 5.04592 12.3311 6.65292C11.6161 5.04592 9.95405 3.91992 8.01805 3.91992C5.43105 3.91992 3.33105 5.93492 3.33105 8.41992C3.33105 15.6399 12.3311 20.4199 12.3311 20.4199C12.3311 20.4199 21.3311 15.6399 21.3311 8.41992Z"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
               </svg>
             </label>
           </div>
@@ -111,27 +163,37 @@ import Share from '../DownloadBtn/Share.astro';
       </div>
     </div>
   </div>
-  <div class='relative z-10 text-center md:text-left'>
-    <div class='h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]'>
-      <h1 class='text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]'>
-        <Trans i18nKey='home.hero.h1'>
-        Survey ×
-        <span  class='inline-grid text-center animate-stack'>
-          <span>Metaverse</span>
-          <span>Avatar</span>
-          <span>Business</span>
-          <span>Rewards</span>
-          <span>Satisfaction</span>
-          <span>LBS</span>
-          <span>Simplicity</span>
-          <span>Metaverse</span>
-        </span>
-        = FingeRate
+  <div class="relative z-10 text-center md:text-left">
+    <div
+      class="h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]"
+    >
+      <h1
+        class="text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]"
+      >
+        <Trans i18nKey="home.hero.h1">
+          Survey ×
+          <span class="inline-grid text-center animate-stack">
+            <span>Metaverse</span>
+            <span>Avatar</span>
+            <span>Business</span>
+            <span>Rewards</span>
+            <span>Satisfaction</span>
+            <span>LBS</span>
+            <span>Simplicity</span>
+            <span>Metaverse</span>
+          </span>
+          = FingeRate
         </Trans>
       </h1>
     </div>
-    <p class='mx-auto mt-4 max-w-[70ch] tracking-wide sm:text-xl md:mx-0 md:mt-8'>{t('home.hero.p')}</p>
-    <div class='mt-8 flex mx-auto max-w-screen-sm w-full items-center flex-wrap justify-center gap-2 md:gap-4 md:mt-12 md:justify-start'>
+    <p
+      class="mx-auto mt-4 max-w-[70ch] tracking-wide sm:text-xl md:mx-0 md:mt-8"
+    >
+      {t("home.hero.p")}
+    </p>
+    <div
+      class="mt-8 flex mx-auto max-w-screen-sm w-full items-center flex-wrap justify-center gap-2 md:gap-4 md:mt-12 md:justify-start"
+    >
       <Google />
       <Apple />
       <QR isOpen={true} />
@@ -140,21 +202,25 @@ import Share from '../DownloadBtn/Share.astro';
   </div>
 </section>
 
-
-
 <script>
-  const $tiltEl = document.querySelector('[data-tilt-animation]') as HTMLDivElement;
+  const $tiltEl = document.querySelector(
+    "[data-tilt-animation]"
+  ) as HTMLDivElement;
 
-  document.addEventListener('mousemove', ({ clientX, clientY }) => {
-    const { x, y, width, height } = $tiltEl.parentElement!.getBoundingClientRect();
+  document.addEventListener("mousemove", ({ clientX, clientY }) => {
+    const { x, y, width, height } =
+      $tiltEl.parentElement!.getBoundingClientRect();
 
     const imgMiddleX = x + width / 2;
     const imgMiddleY = y + height / 2;
 
     const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25;
-    const offsetY = Math.min(((clientY - imgMiddleY) / window.innerHeight) * 15, 15);
+    const offsetY = Math.min(
+      ((clientY - imgMiddleY) / window.innerHeight) * 15,
+      15
+    );
 
-    $tiltEl.style.setProperty('--rotateX', `${-1 * offsetY + 5}deg`);
-    $tiltEl.style.setProperty('--rotateY', `${offsetX - 5}deg`);
+    $tiltEl.style.setProperty("--rotateX", `${-1 * offsetY + 5}deg`);
+    $tiltEl.style.setProperty("--rotateY", `${offsetX - 5}deg`);
   });
 </script>

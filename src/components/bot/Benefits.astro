@@ -1,40 +1,58 @@
 ---
-import bot from '@assets/bot/bot.webp';
-import stats from '@assets/bot/stats.webp';
-import shield from '@assets/bot/shield.webp';
-import {t} from 'i18next'
-import { Image } from 'astro:assets';
-
-
+import bot from "@/assets/bot/bot.webp";
+import stats from "@/assets/bot/stats.webp";
+import shield from "@/assets/bot/shield.webp";
+import { t } from "i18next";
+import { Image } from "astro:assets";
 
 const cards = [
-  [t('bot.benefits.cards.0.0'), t('bot.benefits.cards.0.1'), t('bot.benefits.cards.0.2'), bot],
-  [t('bot.benefits.cards.1.0'), t('bot.benefits.cards.1.1'), t('bot.benefits.cards.1.2'), stats],
-  [t('bot.benefits.cards.2.0'), t('bot.benefits.cards.2.1'), t('bot.benefits.cards.2.2'), shield],
+  [
+    t("bot.benefits.cards.0.0"),
+    t("bot.benefits.cards.0.1"),
+    t("bot.benefits.cards.0.2"),
+    bot,
+  ],
+  [
+    t("bot.benefits.cards.1.0"),
+    t("bot.benefits.cards.1.1"),
+    t("bot.benefits.cards.1.2"),
+    stats,
+  ],
+  [
+    t("bot.benefits.cards.2.0"),
+    t("bot.benefits.cards.2.1"),
+    t("bot.benefits.cards.2.2"),
+    shield,
+  ],
 ] as const;
 
 const delays: Record<number, string> = {
-  0: 'lg:delay-0',
-  1: 'lg:delay-200',
-  2: 'lg:delay-[400ms]',
+  0: "lg:delay-0",
+  1: "lg:delay-200",
+  2: "lg:delay-[400ms]",
 };
 ---
 
-<section class='mx-auto max-w-screen-xl px-4'>
-  <div class='mx-auto mb-8 w-fit text-center'>
-    <h2  data-scroll-animation class='text-3xl font-bold '>
-      {t('bot.benefits.h2')}
+<section class="mx-auto max-w-screen-xl px-4">
+  <div class="mx-auto mb-8 w-fit text-center">
+    <h2 data-scroll-animation class="text-3xl font-bold">
+      {t("bot.benefits.h2")}
     </h2>
   </div>
-  <div class='grid grid-cols-[repeat(auto-fit,minmax(min(100%,40ch),1fr))] gap-4'>
+  <div
+    class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,40ch),1fr))] gap-4"
+  >
     {
-      cards.map(([h3, p,  alt, img], i) => {
+      cards.map(([h3, p, alt, img], i) => {
         return (
-          <div data-scroll-animation class={`${delays[i]} flex  flex-col overflow-hidden rounded-lg bg-slate-950/80`}>
-            <Image src={img} alt={alt} class='aspect-video h-52 object-cover' />
-            <div class='p-4'>
-              <h3 class='mb-2 text-lg font-bold'>{h3}</h3>
-              <p class='text-sm'>{p}</p>
+          <div
+            data-scroll-animation
+            class={`${delays[i]} flex  flex-col overflow-hidden rounded-lg bg-slate-950/80`}
+          >
+            <Image src={img} alt={alt} class="aspect-video h-52 object-cover" />
+            <div class="p-4">
+              <h3 class="mb-2 text-lg font-bold">{h3}</h3>
+              <p class="text-sm">{p}</p>
             </div>
           </div>
         );

@@ -5,14 +5,16 @@ import Dashboard from "@/components/bot/Dashboard.astro";
 import Hero from "@/components/bot/Hero.astro";
 import How from "@/components/bot/How.astro";
 import Keywords from "@/components/bot/Keywords.astro";
-import Layout from "@layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 
 changeLanguage("en");
 ---
 
-<Layout title='FingeRate Bot'>
-  <div class='space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden'>
+<Layout title="FingeRate Bot">
+  <div
+    class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden"
+  >
     <Hero />
     <Keywords />
     <How />

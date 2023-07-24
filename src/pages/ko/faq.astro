@@ -1,127 +1,227 @@
 ---
 import Accordion from "@/components/FAQ/Accordion.astro";
-import { APP_STORE_URL, GOOGLE_PLAY_URL, NAV_LINKS, SOCIAL_LINKS } from "@/constants";
+import {
+  APP_STORE_URL,
+  GOOGLE_PLAY_URL,
+  NAV_LINKS,
+  SOCIAL_LINKS,
+} from "@/constants";
 import Layout from "@/layouts/Layout.astro";
-import Ecosystem from "@components/FAQ/Ecosystem.astro";
+import Ecosystem from "@/components/FAQ/Ecosystem.astro";
 import { changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 
 changeLanguage("ko");
 ---
 
-<Layout title='FAQ'>
-    <div class='px-2 mx-auto max-w-screen-lg grid md:grid-cols-[2fr_1fr] gap-8  py-12'>
-<section class="">
-  <h1 class=' text-4xl font-bold text-center mb-8'>FAQ</h1>
-  <div class='space-y-4 '>
-    <Accordion title='What are SoM? How does it work?'>
-      
-        <p>SoM is the in app mileage which can be used as currency in the app to purchase items from Marketplace, pay for survey registration and eventually convert it to MSOT tokens to withdraw as money.</p>
-        <em>1SoM= $0.1</em>
-        <p>Earning SoM is very easy.</p>
-        <ol>
-          <li>By entering your additional information (one time)</li>
-          <li>By inviting your friends (use your referral code to invite friends)</li>
-          <li>By participating in surveys</li>
-          <li>Daily attendance check</li>
-          <li>Daily survey participation check</li>
-        </ol>
-        <small>NB: Earned SoMs expire in 6 months</small>
-     
-    </Accordion>
-    <Accordion title='How do I get started? How to Sign up?'>
-      
-        <p>Signing up for FingeRate is incredibly easy! You can begin your journey by directly registering on the app using your email, Kakao account, or Naver Account.</p>
-     
-    </Accordion>
-    <Accordion title='What do you do with my survey responses?'>
-      
-        <p>With the responses provided by the participants, we analyze it and provide the result to the survey requester. The analyzed result can also be seen from FingeRate app.</p>
-     
-    </Accordion>
-    <Accordion title='Why does is it call Survey to Earn (S2E)?'>
-      
-        <p>Survey to Earn (S2E)  allows users to earn rewards by participating in surveys. It provides an opportunity for individuals to share their opinions and insights on various topics and receive compensation in return.</p>
-     
-    </Accordion>
-    <Accordion title='How to earn SoM?'>
-      
-        <p>Earning SoM is very easy.</p>
-        <ol>
-          <li>By entering your additional information (one time)</li>
-          <li>By inviting your friends (use your referral code to invite friends)</li>
-          <li>By participating in surveys </li>
-          <li>Daily attendance check</li>
-          <li>Daily survey participation check</li>
-        </ol>
-        <small>NB: Earned SoMs expire in 6 months</small>
-     
-    </Accordion>
-    <Accordion title='What can I do with the SoMs I have?'>
-      
-        <p>User can use their earned SoMs for the following purposes:</p>
-        <ul>
-          <li>Purchasing avatar accessories from Marketplace</li>
-          <li>Purchasing reward/coupons from Marketplace (to be implemented)</li>
-          <li>Pay for survey registration</li>
-          <li>Swapping SoM with MSOT tokens</li>
-        </ul>
-        <small>NB: 1SoM=$0.1 Earned SoMs expire in 6 months </small>
-     
-    </Accordion>
-    <Accordion title='How do I purchase additional SoM?'>
-      
-        <p>Users can purchase SoM using their credit cards from FingeRate app. Please go to &apos;Wallet&apos; click <em>Recharge</em> and follow the steps.</p>
-     
-    </Accordion>
-    <Accordion title='What can I get by answering your surveys?'>
-      
-        <p>Users can earn SoM, an in-app mileage which can be used as currency in the app to purchase items from Marketplace, pay for survey registration and eventually convert it to MSOT tokens to withdraw as money.</p>
-     
-    </Accordion>
-    <Accordion title='Who is behind FingeRate?'>
-      
-        <p>GG56 is the driving force behind the development and management of FingeRate and its associated ecosystem. You can read more about the company on the <a href="https://gg56.com/" target="_blank" rel="noopener noreferrer">official website</a></p>
-     
-    </Accordion>
-    <Accordion title='Can I create my own survey?'>
-      
-        <p>Users can create and manage their own surveys directly from FingeRate app!</p>
-        <ol>
-<li>On the Survey tab, select the type of survey you want to create</li>
- <li>Choose the number of SoTs and determine the duration of the survey</li>
- <li>Decide on the number of participants you want for your survey. You can set a specific limit or leave it open-ended</li>
-<li>Add your survey questions and pay using SoM!</li>
-        </ol>
-     
-    </Accordion>
-    <Accordion title='How can I join the community?'>
-      
-        <p>Users can follow us on social media, including <a href={SOCIAL_LINKS.INSTAGRAM.href} target="_blank" rel="noopener noreferrer">Instagram</a>, <a href={SOCIAL_LINKS.FACEBOOK.href} target="_blank" rel="noopener noreferrer">Facebook</a>, <a href={SOCIAL_LINKS.TWITTER.href} target="_blank" rel="noopener noreferrer">Twitter</a>, <a href={SOCIAL_LINKS.TELEGRAM.href} target="_blank" rel="noopener noreferrer">Telegram</a>, and <a href={SOCIAL_LINKS.LINKEDIN.href} target="_blank" rel="noopener noreferrer">LinkedIn</a>!</p>
-     
-    </Accordion>
-    <Accordion title='What platform is FingeRate available on?'>
-      
-        <p>FingeRate App is available on <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">iOS</a> and <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">Android</a>!</p>
-     
-    </Accordion>
-    <Accordion title='Who can I contact regarding a press inquiry?'>
-        <p>For press inquiries regarding FingeRate, users can reach out to us directly at <a href="mailto:shokun51@gg56.world">shokun51@gg56.world</a> or by using the <a href={NAV_LINKS.CONTACT.href}>contact form</a> available on our website.</p>
-    </Accordion>
-    <Accordion title='How do you handle security?'>
-        <p>We have implemented robust measures to ensure the security of your information. We maintain a secure infrastructure with industry-standard security protocols and utilize encryption techniques to safeguard your data during transmission and storage. Our access controls are designed to restrict unauthorized access, and we regularly monitor access logs. Whenever possible, we anonymize and aggregate data to protect individual identities. We are committed to complying with applicable data protection and privacy regulations, such as GDPR, and strive to meet legal requirements for data processing, storage, and sharing.</p>
-          <p>For more detailed information about how we handle your data, please refer to our Privacy Policy. It provides comprehensive insights into our data collection, use, and protection practices. Additionally, our Terms of Use outline the terms and conditions governing your use of the FingeRate platform. You can access both the <a href={NAV_LINKS.PRIVACY.href}>Privacy Policy</a> and <a href={NAV_LINKS.TERMS.href}>Terms of Use</a> on our website.</p>
-          <p>For further inquiries or concerns about data protection, please don't hesitate to contact us.</p></p>
-    </Accordion>
- 
-</section>
-<section class="relative">
-    <Ecosystem />
-</section>
-<section data-scroll-animation class="md:col-span-2 rounded-lg bg-brandGradient text-center p-8">
-    <h2 class='font-bold text-3xl mb-4'>Ask Us Your Questions!</h2>
-    <a class='hover:underline text-lg' href={localizePath(NAV_LINKS.CONTACT.href)}>Contact page</a>
-</section>
-</div>
-
+<Layout title="FAQ">
+  <div
+    class="px-2 mx-auto max-w-screen-lg grid md:grid-cols-[2fr_1fr] gap-8 py-12"
+  >
+    <section class="">
+      <h1 class="text-4xl font-bold text-center mb-8">FAQ</h1>
+      <div class="space-y-4">
+        <Accordion title="What are SoM? How does it work?">
+          <p>
+            SoM is the in app mileage which can be used as currency in the app
+            to purchase items from Marketplace, pay for survey registration and
+            eventually convert it to MSOT tokens to withdraw as money.
+          </p>
+          <em>1SoM= $0.1</em>
+          <p>Earning SoM is very easy.</p>
+          <ol>
+            <li>By entering your additional information (one time)</li>
+            <li>
+              By inviting your friends (use your referral code to invite
+              friends)
+            </li>
+            <li>By participating in surveys</li>
+            <li>Daily attendance check</li>
+            <li>Daily survey participation check</li>
+          </ol>
+          <small>NB: Earned SoMs expire in 6 months</small>
+        </Accordion>
+        <Accordion title="How do I get started? How to Sign up?">
+          <p>
+            Signing up for FingeRate is incredibly easy! You can begin your
+            journey by directly registering on the app using your email, Kakao
+            account, or Naver Account.
+          </p>
+        </Accordion>
+        <Accordion title="What do you do with my survey responses?">
+          <p>
+            With the responses provided by the participants, we analyze it and
+            provide the result to the survey requester. The analyzed result can
+            also be seen from FingeRate app.
+          </p>
+        </Accordion>
+        <Accordion title="Why does is it call Survey to Earn (S2E)?">
+          <p>
+            Survey to Earn (S2E) allows users to earn rewards by participating
+            in surveys. It provides an opportunity for individuals to share
+            their opinions and insights on various topics and receive
+            compensation in return.
+          </p>
+        </Accordion>
+        <Accordion title="How to earn SoM?">
+          <p>Earning SoM is very easy.</p>
+          <ol>
+            <li>By entering your additional information (one time)</li>
+            <li>
+              By inviting your friends (use your referral code to invite
+              friends)
+            </li>
+            <li>By participating in surveys</li>
+            <li>Daily attendance check</li>
+            <li>Daily survey participation check</li>
+          </ol>
+          <small>NB: Earned SoMs expire in 6 months</small>
+        </Accordion>
+        <Accordion title="What can I do with the SoMs I have?">
+          <p>User can use their earned SoMs for the following purposes:</p>
+          <ul>
+            <li>Purchasing avatar accessories from Marketplace</li>
+            <li>
+              Purchasing reward/coupons from Marketplace (to be implemented)
+            </li>
+            <li>Pay for survey registration</li>
+            <li>Swapping SoM with MSOT tokens</li>
+          </ul>
+          <small>NB: 1SoM=$0.1 Earned SoMs expire in 6 months</small>
+        </Accordion>
+        <Accordion title="How do I purchase additional SoM?">
+          <p>
+            Users can purchase SoM using their credit cards from FingeRate app.
+            Please go to &apos;Wallet&apos; click <em>Recharge</em> and follow the
+            steps.
+          </p>
+        </Accordion>
+        <Accordion title="What can I get by answering your surveys?">
+          <p>
+            Users can earn SoM, an in-app mileage which can be used as currency
+            in the app to purchase items from Marketplace, pay for survey
+            registration and eventually convert it to MSOT tokens to withdraw as
+            money.
+          </p>
+        </Accordion>
+        <Accordion title="Who is behind FingeRate?">
+          <p>
+            GG56 is the driving force behind the development and management of
+            FingeRate and its associated ecosystem. You can read more about the
+            company on the <a
+              href="https://gg56.com/"
+              target="_blank"
+              rel="noopener noreferrer">official website</a
+            >
+          </p>
+        </Accordion>
+        <Accordion title="Can I create my own survey?">
+          <p>
+            Users can create and manage their own surveys directly from
+            FingeRate app!
+          </p>
+          <ol>
+            <li>
+              On the Survey tab, select the type of survey you want to create
+            </li>
+            <li>
+              Choose the number of SoTs and determine the duration of the survey
+            </li>
+            <li>
+              Decide on the number of participants you want for your survey. You
+              can set a specific limit or leave it open-ended
+            </li>
+            <li>Add your survey questions and pay using SoM!</li>
+          </ol>
+        </Accordion>
+        <Accordion title="How can I join the community?">
+          <p>
+            Users can follow us on social media, including <a
+              href={SOCIAL_LINKS.INSTAGRAM.href}
+              target="_blank"
+              rel="noopener noreferrer">Instagram</a
+            >, <a
+              href={SOCIAL_LINKS.FACEBOOK.href}
+              target="_blank"
+              rel="noopener noreferrer">Facebook</a
+            >, <a
+              href={SOCIAL_LINKS.TWITTER.href}
+              target="_blank"
+              rel="noopener noreferrer">Twitter</a
+            >, <a
+              href={SOCIAL_LINKS.TELEGRAM.href}
+              target="_blank"
+              rel="noopener noreferrer">Telegram</a
+            >, and <a
+              href={SOCIAL_LINKS.LINKEDIN.href}
+              target="_blank"
+              rel="noopener noreferrer">LinkedIn</a
+            >!
+          </p>
+        </Accordion>
+        <Accordion title="What platform is FingeRate available on?">
+          <p>
+            FingeRate App is available on <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer">iOS</a
+            > and <a
+              href={GOOGLE_PLAY_URL}
+              target="_blank"
+              rel="noopener noreferrer">Android</a
+            >!
+          </p>
+        </Accordion>
+        <Accordion title="Who can I contact regarding a press inquiry?">
+          <p>
+            For press inquiries regarding FingeRate, users can reach out to us
+            directly at <a href="mailto:shokun51@gg56.world"
+              >shokun51@gg56.world</a
+            > or by using the <a href={NAV_LINKS.CONTACT.href}>contact form</a> available
+            on our website.
+          </p>
+        </Accordion>
+        <Accordion title="How do you handle security?">
+          <p>
+            We have implemented robust measures to ensure the security of your
+            information. We maintain a secure infrastructure with
+            industry-standard security protocols and utilize encryption
+            techniques to safeguard your data during transmission and storage.
+            Our access controls are designed to restrict unauthorized access,
+            and we regularly monitor access logs. Whenever possible, we
+            anonymize and aggregate data to protect individual identities. We
+            are committed to complying with applicable data protection and
+            privacy regulations, such as GDPR, and strive to meet legal
+            requirements for data processing, storage, and sharing.
+          </p>
+          <p>
+            For more detailed information about how we handle your data, please
+            refer to our Privacy Policy. It provides comprehensive insights into
+            our data collection, use, and protection practices. Additionally,
+            our Terms of Use outline the terms and conditions governing your use
+            of the FingeRate platform. You can access both the <a
+              href={NAV_LINKS.PRIVACY.href}>Privacy Policy</a
+            > and <a href={NAV_LINKS.TERMS.href}>Terms of Use</a> on our website.
+          </p>
+          <p>
+            For further inquiries or concerns about data protection, please
+            don't hesitate to contact us.
+          </p>
+        </Accordion>
+      </div>
+    </section>
+    <section class="relative">
+      <Ecosystem />
+    </section>
+    <section
+      data-scroll-animation
+      class="md:col-span-2 rounded-lg bg-brandGradient text-center p-8"
+    >
+      <h2 class="font-bold text-3xl mb-4">Ask Us Your Questions!</h2>
+      <a
+        class="hover:underline text-lg"
+        href={localizePath(NAV_LINKS.CONTACT.href)}>Contact page</a
+      >
+    </section>
+  </div>
 </Layout>

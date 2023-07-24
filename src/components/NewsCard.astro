@@ -6,46 +6,91 @@ import type { WP_REST_API_Post } from "wp-types";
 import { NAV_LINKS } from "@/constants";
 
 interface Props {
-  post: Partial<WP_REST_API_Post>
+  post: Partial<WP_REST_API_Post>;
 }
-const {post} = Astro.props
+const { post } = Astro.props;
 //  const {
 //    media_details: { sizes: { medium, large, thumbnail, medium_large, full } },
 //    alt_text,
 //  } = post._embedded?.["wp:featuredmedia"]?.at(0);
- const img = post._embedded?.["wp:featuredmedia"]?.at(0)
- const isExternal = post.link?.startsWith('https://gg56.com/') ? false : true
-const href = isExternal ? post.link :  localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`) 
+const img = post._embedded?.["wp:featuredmedia"]?.at(0);
+const isExternal = post.link?.startsWith("https://gg56.com/") ? false : true;
+const href = isExternal
+  ? post.link
+  : localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`);
 ---
 
-<article class="@container h-full rounded-lg overflow-hidden bg-slate-950/80 hover:bg-slate-900 group focus-within:ring-2 hover:ring-2 transition ring-neonBlue">
+<article
+  class="@/container h-full rounded-lg overflow-hidden bg-slate-950/80 hover:bg-slate-900 group focus-within:ring-2 hover:ring-2 transition ring-neonBlue"
+>
   <div class="grid grid-rows-[auto_1fr] h-full @xl:grid-cols-[0.75fr_1fr]">
-      <a class='overflow-hidden' {href} target={isExternal ? '_blank' : '_self'}  tabindex='-1'>
-        <span class='sr-only'>Read Post</span>
-        <div class="aspect-[2/1] @md:aspect-[2.5/1] @xl:aspect-[3/2.25] w-full h-full">
-        {img && (
-          <Image class=' object-cover group-hover:scale-105 w-full h-full transition' 
-          width={img.media_details.sizes?.medium_large?.width || img.media_details.sizes.full.width} height={img.media_details.sizes?.medium_large?.height || img.media_details.sizes.full.height }
-            src={img.media_details.sizes?.medium_large?.source_url || img.media_details.sizes.full.source_url } alt={img.alt_text ?? 'Post thumbnail' } />
-        ) }
-           </div>
-      </a>
+    <a
+      class="overflow-hidden"
+      {href}
+      target={isExternal ? "_blank" : "_self"}
+      tabindex="-1"
+    >
+      <span class="sr-only">Read Post</span>
+      <div
+        class="aspect-[2/1] @md:aspect-[2.5/1] @xl:aspect-[3/2.25] w-full h-full"
+      >
+        {
+          img && (
+            <Image
+              class=" object-cover group-hover:scale-105 w-full h-full transition"
+              width={
+                img.media_details.sizes?.medium_large?.width ||
+                img.media_details.sizes.full.width
+              }
+              height={
+                img.media_details.sizes?.medium_large?.height ||
+                img.media_details.sizes.full.height
+              }
+              src={
+                img.media_details.sizes?.medium_large?.source_url ||
+                img.media_details.sizes.full.source_url
+              }
+              alt={img.alt_text ?? "Post thumbnail"}
+            />
+          )
+        }
+      </div>
+    </a>
     <div class="flex flex-col gap-2 h-full p-2 @md:p-4 @md:gap-4">
       <div class="space-y-2">
-        <h1 set:html={post.title?.rendered} class="font-bold line-clamp-2 text-sm @xs:[text-wrap:balance] @md:text-xl @md:line-clamp-2 @lg:line-clamp-none  @lg:text-2xl"/>
-        {post.excerpt?.rendered && <div class="hidden text-cyberLilac text-sm @xs:block @xs:[&>*]:line-clamp-3 @lg:text-base @lg:[&>*]:line-clamp-none">
-          <Fragment  set:html={post.excerpt?.rendered} />
-        </div>}
+        <h1
+          set:html={post.title?.rendered}
+          class="font-bold line-clamp-2 text-sm @xs:[text-wrap:balance] @md:text-xl @md:line-clamp-2 @lg:line-clamp-none @lg:text-2xl"
+        />
+        {
+          post.excerpt?.rendered && (
+            <div class="hidden text-cyberLilac text-sm @xs:block @xs:[&>*]:line-clamp-3 @lg:text-base @lg:[&>*]:line-clamp-none">
+              <Fragment set:html={post.excerpt?.rendered} />
+            </div>
+          )
+        }
       </div>
-      <div class='mt-auto flex items-center justify-between'>
-      {post.date && <time class='text-neonBlue text-sm sr-only @[12rem]:not-sr-only' datetime={post.date}>
-        {new Date(post.date).toLocaleDateString(i18next.language)}
-      </time>}
-      <a {href} target={isExternal ? '_blank' : '_self'} class='hover:underline'>
-        Read <span class="sr-only @[7rem]:not-sr-only">Post</span>&nbsp;<span class="sr-only @[4rem]:not-sr-only">→</span>
-      </a>
-    </div>
+      <div class="mt-auto flex items-center justify-between">
+        {
+          post.date && (
+            <time
+              class="text-neonBlue text-sm sr-only @[12rem]:not-sr-only"
+              datetime={post.date}
+            >
+              {new Date(post.date).toLocaleDateString(i18next.language)}
+            </time>
+          )
+        }
+        <a
+          {href}
+          target={isExternal ? "_blank" : "_self"}
+          class="hover:underline"
+        >
+          Read <span class="sr-only @[7rem]:not-sr-only">Post</span>&nbsp;<span
+            class="sr-only @[4rem]:not-sr-only">→</span
+          >
+        </a>
+      </div>
     </div>
   </div>
 </article>
-

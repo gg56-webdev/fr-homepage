@@ -1,10 +1,10 @@
 ---
-import { SOCIAL_LINKS as S_L } from '@/constants';
-import ig from '@assets/social/IG.svg';
-import lin from '@assets/social/IN.svg';
-import tw from '@assets/social/TW.svg';
-import fb from '@assets/social/FB.svg';
-import tg from '@assets/social/TG.svg';
+import { SOCIAL_LINKS as S_L } from "@/constants";
+import ig from "@/assets/social/IG.svg";
+import lin from "@/assets/social/IN.svg";
+import tw from "@/assets/social/TW.svg";
+import fb from "@/assets/social/FB.svg";
+import tg from "@/assets/social/TG.svg";
 
 const links = [
   [S_L.INSTAGRAM.href, S_L.INSTAGRAM.name, ig],
@@ -15,21 +15,26 @@ const links = [
 ] as const;
 ---
 
-<ul class='flex gap-4 sm:ml-auto'>
+<ul class="flex gap-4 sm:ml-auto">
   {
     Object.values(links).map(([href, name, file]) => (
-      <li class='rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1'>
-        <a class='rounded-full' href={href} target='_blank' rel='noopener noreferrer'>
+      <li class="rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1">
+        <a
+          class="rounded-full"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
-            class='w-8'
-            loading='lazy'
-            decoding='async'
+            class="w-8"
+            loading="lazy"
+            decoding="async"
             src={file.src}
             width={file.width}
             height={file.height}
             alt={`${name} logo`}
           />
-          <span class='sr-only'>{`link to FingeRate's ${name}`}</span>
+          <span class="sr-only">{`link to FingeRate's ${name}`}</span>
         </a>
       </li>
     ))

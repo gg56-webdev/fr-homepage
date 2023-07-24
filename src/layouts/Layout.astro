@@ -1,79 +1,93 @@
 ---
-import './style.css'
-import bg from '@assets/bg-main.webp';
-import CookieBanner from '@components/CookieBanner.astro';
-import Footer from '@components/Footer.astro';
-import Header from '@components/Header.astro';
-import ScrollToTop from '@components/ScrollToTop.astro';
-import { getImage } from 'astro:assets';
-import i18next, { t } from 'i18next';
-import { HeadHrefLangs } from 'astro-i18next/components';
-import GA from '@/scripts/GA.astro';
+import GA from "@/scripts/GA.astro";
+import bg from "@/assets/bg-main.webp";
+import CookieBanner from "@/components/CookieBanner.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import ScrollToTop from "@/components/ScrollToTop.astro";
+import { HeadHrefLangs } from "astro-i18next/components";
+import { getImage } from "astro:assets";
+import i18next, { t } from "i18next";
+import "./style.css";
 
-const optimizedBg = await getImage({ src: bg, format: 'avif', quality: 'mid' });
+const optimizedBg = await getImage({ src: bg, format: "avif", quality: "mid" });
 
-const lang = i18next.language
+const lang = i18next.language;
 
 export interface Props {
   title?: string;
   description?: string;
 }
-const { title = t('site.title'), description = t('site.description') } = Astro.props;
+const { title = t("site.title"), description = t("site.description") } =
+  Astro.props;
 ---
 
 <!DOCTYPE html>
-<html {lang} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark]">
+<html
+  {lang}
+  class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark]"
+>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='shortcut icon' href='/favicon.jpg' type='image/x-icon' />
-    <meta name='description' content={description} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="/favicon.jpg" type="image/x-icon" />
+    <meta name="description" content={description} />
     <title>{title}</title>
     <HeadHrefLangs />
-    <link rel='preload' as='image' href={optimizedBg.src} />
-    {!import.meta.env.DEV  && <GA />}
+    <link rel="preload" as="image" href={optimizedBg.src} />
+    {!import.meta.env.DEV && <GA />}
   </head>
-  <body class='flex min-h-screen flex-col bg-deepSpace'>
-    {lang === 'ko' && <div class="bg-intelligentBlue text-center  p-1 font-medium">🚧 개발중인. 곧 다시 찾아 뵙겠습니다. 🚧</div>}
+  <body class="flex min-h-screen flex-col bg-deepSpace">
+    {
+      lang === "ko" && (
+        <div class="bg-intelligentBlue text-center  p-1 font-medium">
+          🚧 개발중인. 곧 다시 찾아 뵙겠습니다. 🚧
+        </div>
+      )
+    }
     <Header />
-    <main class='bg-cover bg-center grow bg-no-repeat' style={`background-image: url(${optimizedBg.src});`}>
+    <main
+      class="bg-cover bg-center grow bg-no-repeat"
+      style={`background-image: url(${optimizedBg.src});`}
+    >
       <slot />
     </main>
     <ScrollToTop />
     <CookieBanner />
     <Footer />
-
-  </body>
-</html>
-
-  
-
     <script>
-      const sections = document.querySelectorAll('[data-scroll-animation]');
+      const sections = document.querySelectorAll("[data-scroll-animation]");
 
-      const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true;
+      const isMotionSafe =
+        window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches ===
+        true;
 
       if (sections.length > 0 && isMotionSafe) {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                entry.target.classList.remove('motion-safe:opacity-0', 'motion-safe:translate-y-[10%]');
+                entry.target.classList.remove(
+                  "motion-safe:opacity-0",
+                  "motion-safe:translate-y-[10%]"
+                );
                 observer.unobserve(entry.target);
               }
             });
           },
-          { rootMargin: '-5%' }
+          { rootMargin: "-5%" }
         );
 
         sections.forEach((section) => {
           section.classList.add(
-            'motion-safe:opacity-0',
-            'motion-safe:transition',
-            'motion-safe:translate-y-[10%]',
-            '!duration-300'
+            "motion-safe:opacity-0",
+            "motion-safe:transition",
+            "motion-safe:translate-y-[10%]",
+            "!duration-300"
           );
           observer.observe(section);
         });
       }
     </script>
+  </body>
+</html>

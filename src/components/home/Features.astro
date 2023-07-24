@@ -1,60 +1,89 @@
 ---
-import phoneScreen1 from '@assets/home/phone-screen-1.png';
-import phoneScreen2 from '@assets/home/phone-screen-2.png';
-import phoneScreen3 from '@assets/home/phone-screen-3.png';
-import { Image } from 'astro:assets';
-import { t } from 'i18next';
+import phoneScreen1 from "@/assets/home/phone-screen-1.png";
+import phoneScreen2 from "@/assets/home/phone-screen-2.png";
+import phoneScreen3 from "@/assets/home/phone-screen-3.png";
+import { Image } from "astro:assets";
+import { t } from "i18next";
 
 // TODO: optimize images
 
 const content = [
-  [t('home.features.0.0'), t('home.features.0.1'), t('home.features.0.2'), phoneScreen1, 's2e'],
-  [t('home.features.1.0'), t('home.features.1.1'), t('home.features.1.2'), phoneScreen2, 'som'],
-  [t('home.features.2.0'), t('home.features.2.1'), t('home.features.2.2'), phoneScreen3, 'safety'],
+  [
+    t("home.features.0.0"),
+    t("home.features.0.1"),
+    t("home.features.0.2"),
+    phoneScreen1,
+    "s2e",
+  ],
+  [
+    t("home.features.1.0"),
+    t("home.features.1.1"),
+    t("home.features.1.2"),
+    phoneScreen2,
+    "som",
+  ],
+  [
+    t("home.features.2.0"),
+    t("home.features.2.1"),
+    t("home.features.2.2"),
+    phoneScreen3,
+    "safety",
+  ],
 ] as const;
 ---
 
-<section class='mx-auto max-w-screen-lg space-y-36 px-2 py-24'>
+<section class="mx-auto max-w-screen-lg space-y-36 px-2 py-24">
   {
     content.map(([h2, p, alt, src, id], i) => (
       <div
-      {id}
+        {id}
         class:list={[
-          'flex flex-col items-center gap-6 md:justify-between',
-          i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
+          "flex flex-col items-center gap-6 md:justify-between",
+          i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse",
         ]}
       >
         <div
           data-scroll-animation
-          class=' relative w-[200px] motion-safe:animate-bob motion-safe:[animation-duration:8s] md:w-[300px]'
+          class=" relative w-[200px] motion-safe:animate-bob motion-safe:[animation-duration:8s] md:w-[300px]"
         >
           <div
             class:list={[
-              i % 2 === 0 ? '[animation-delay:0s]' : '[animation-delay:2s]',
-              'animate-blob  mix-blend-overlay blur-2xl absolute top-1/4 -left-1/4 w-full aspect-square rounded-full bg-softFire/50',
+              i % 2 === 0 ? "[animation-delay:0s]" : "[animation-delay:2s]",
+              "animate-blob  mix-blend-overlay blur-2xl absolute top-1/4 -left-1/4 w-full aspect-square rounded-full bg-softFire/50",
             ]}
           />
           <div
             class:list={[
-              i % 2 === 0 ? '[animation-delay:2s]' : '[animation-delay:0s]',
-              'animate-blob  mix-blend-overlay blur-2xl absolute top-0 -right-1/4 w-full aspect-square rounded-full bg-neonBlue/50',
+              i % 2 === 0 ? "[animation-delay:2s]" : "[animation-delay:0s]",
+              "animate-blob  mix-blend-overlay blur-2xl absolute top-0 -right-1/4 w-full aspect-square rounded-full bg-neonBlue/50",
             ]}
           />
           <div
             class:list={[
-              i % 2 === 0 ? '[animation-delay:4s]' : '[animation-delay:2s]',
-              'animate-blob  mix-blend-overlay blur-2xl absolute bottom-0 -right-1/4 w-full aspect-square rounded-full bg-intelligentBlue/50',
+              i % 2 === 0 ? "[animation-delay:4s]" : "[animation-delay:2s]",
+              "animate-blob  mix-blend-overlay blur-2xl absolute bottom-0 -right-1/4 w-full aspect-square rounded-full bg-intelligentBlue/50",
             ]}
           />
-          <Image {src} {alt} class:list={[' object-contain', i % 2 === 0 ? '[rotate:12deg]' : '[rotate:-12deg]']} />
+          <Image
+            {src}
+            {alt}
+            class:list={[
+              " object-contain",
+              i % 2 === 0 ? "[rotate:12deg]" : "[rotate:-12deg]",
+            ]}
+          />
         </div>
-        <div class:list={['text-center space-y-4 md:text-left relative z-10 md:w-1/2']}>
-          <h2 data-scroll-animation class='text-3xl font-bold md:text-5xl'>
+        <div
+          class:list={[
+            "text-center space-y-4 md:text-left relative z-10 md:w-1/2",
+          ]}
+        >
+          <h2 data-scroll-animation class="text-3xl font-bold md:text-5xl">
             {h2}
           </h2>
           <p
             data-scroll-animation
-            class='tracking-wide text-cyberLilac [text-wrap:balance] md:text-xl md:[text-wrap:initial]'
+            class="tracking-wide text-cyberLilac [text-wrap:balance] md:text-xl md:[text-wrap:initial]"
           >
             {p}
           </p>

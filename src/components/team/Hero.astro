@@ -1,39 +1,72 @@
 ---
-import img1 from '@assets/team/hero/1.webp'
-import img2 from '@assets/team/hero/2.jpg'
-import img3 from '@assets/team/hero/3.webp'
-import img4 from '@assets/team/hero/4.webp'
-import img5 from '@assets/team/hero/5.webp'
-import img6 from '@assets/team/hero/6.jpeg'
-import img7 from '@assets/team/hero/7.webp'
-import {Image}  from 'astro:assets'
+import img1 from "@/assets/team/hero/1.webp";
+import img2 from "@/assets/team/hero/2.jpg";
+import img3 from "@/assets/team/hero/3.webp";
+import img4 from "@/assets/team/hero/4.webp";
+import img5 from "@/assets/team/hero/5.webp";
+import img6 from "@/assets/team/hero/6.jpeg";
+import img7 from "@/assets/team/hero/7.webp";
+import { Image } from "astro:assets";
 ---
+
 <section class="mx-auto max-w-screen-xl px-2">
   <div class="text-center mb-8">
-<h1 class="text-5xl font-bold mb-2">Our People</h1>
-<p class="tracking-wide text-cyberLilac text-lg">Meet the people behind FingeRate and its unique ecosystem! </p>
-</div>
-  <ul class="grid gap-4 md:grid-cols-4 md:grid-rows-[175px_200px_250px] grid-flow-dense">
+    <h1 class="text-5xl font-bold mb-2">Our People</h1>
+    <p class="tracking-wide text-cyberLilac text-lg">
+      Meet the people behind FingeRate and its unique ecosystem!
+    </p>
+  </div>
+  <ul
+    class="grid gap-4 md:grid-cols-4 md:grid-rows-[175px_200px_250px] grid-flow-dense"
+  >
     <li class="bg-slate-700 overflow-hidden rounded-lg row-span-2">
-      <Image class='object-cover object-left w-full h-full' src={img1} alt='People interacting with FingeRate Bot during event'/>
+      <Image
+        class="object-cover object-left w-full h-full"
+        src={img1}
+        alt="People interacting with FingeRate Bot during event"
+      />
     </li>
     <li class="bg-slate-700 overflow-hidden rounded-lg">
-      <Image class='object-cover w-full h-full' src={img2} alt='GG56/FingeRate CEO showing app demo'/>
+      <Image
+        class="object-cover w-full h-full"
+        src={img2}
+        alt="GG56/FingeRate CEO showing app demo"
+      />
     </li>
     <li class="bg-slate-700 overflow-hidden rounded-lg row-span-2 col-span-2">
-      <Image class='object-cover w-full h-full' src={img3} alt='Group photo of FingeRate X exhibition visitors and staff'/>
+      <Image
+        class="object-cover w-full h-full"
+        src={img3}
+        alt="Group photo of FingeRate X exhibition visitors and staff"
+      />
     </li>
     <li class="bg-slate-700 overflow-hidden rounded-lg">
-      <Image class='object-cover w-full h-full' src={img4} alt='FingeRate team doing group activity'/>
+      <Image
+        class="object-cover w-full h-full"
+        src={img4}
+        alt="FingeRate team doing group activity"
+      />
     </li>
     <li class="bg-slate-700 overflow-hidden rounded-lg">
-      <Image class='object-cover object-left w-full h-full' src={img5} alt='CSO of FingeRate giving speech'/>
+      <Image
+        class="object-cover object-left w-full h-full"
+        src={img5}
+        alt="CSO of FingeRate giving speech"
+      />
     </li>
     <li class="bg-slate-700 overflow-hidden rounded-lg col-span-2">
-      <Image class='object-cover  md:object-[0_63%] h-full w-full' src={img6} alt='Group photo of FingeRate team members, partners and investors on a hiking trip'/>
+      <Image
+        class="object-cover md:object-[0_63%] h-full w-full"
+        src={img6}
+        alt="Group photo of FingeRate team members, partners and investors on a hiking trip"
+      />
     </li>
     <li class="bg-slate-700 overflow-hidden rounded-lg">
-      <Image class='object-cover w-full h-full' src={img7} alt='FingeRate team members on SIGNIS world congress 2022'/>
+      <Image
+        class="object-cover w-full h-full"
+        src={img7}
+        alt="FingeRate team members on SIGNIS world congress 2022"
+      />
     </li>
   </ul>
 </section>
