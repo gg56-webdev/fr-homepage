@@ -1,23 +1,21 @@
 ---
 import Form from "@/components/Form.astro";
+import { t } from "i18next";
 ---
 
 <section data-scroll-animation class="mx-auto max-w-screen-lg space-y-4 p-2">
   <div class="text-center">
     <h2 class="text-3xl font-bold">
-      Get Started with FingeRate&nbsp;Bot Today!
+      {t("bot.contact.h2")}
     </h2>
   </div>
   <p class="text-center">
-    Take your customer feedback strategy to the next level. Contact us now to
-    learn more about FingeRate Bot, request a demo, and discover how our
-    solution can transform your business. Don't miss out on the opportunity to
-    unlock the true potential of your customer interactions.
+    {t("bot.contact.p")}
   </p>
   <div class="grid gap-4 rounded-xl bg-slate-950/80 p-4 md:grid-cols-[1fr_2fr]">
     <div class="grid content-between gap-8 rounded-lg bg-brandGradient p-4">
       <div>
-        <h3 class="text-2xl font-bold">Contact Information</h3>
+        <h3 class="text-2xl font-bold">{t("common.contact-information")}</h3>
       </div>
       <address class="space-y-4">
         <div class="flex gap-2">
@@ -75,7 +73,7 @@ import Form from "@/components/Form.astro";
               d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
             ></path>
           </svg>
-          4F, 408, Gangnam-daero, Gangnam-gu, Seoul, Republic of Korea
+          {t("company.address")}
         </div>
       </address>
     </div>

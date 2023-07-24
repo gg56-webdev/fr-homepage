@@ -6,8 +6,20 @@
     "description": "Earn rewards with ease using FingeRate! Complete surveys anywhere, anytime. Convenient and user-friendly. Download now on Play Store and iOS for extra rewards!"
   },
 
+  "company": {
+    "address": "4F, 408, Gangnam-daero, Gangnam-gu, Seoul, Republic of Korea"
+  },
+
   "common": {
-    "new": "New"
+    "new": "New",
+    "contact-information": "Contact Information"
+  },
+
+  "contact-form": {
+    "name": "Your Name",
+    "email": "Your Email",
+    "text": "Message <0>(max 225 characters)</0>",
+    "submit": "Submit"
   },
 
   "links": {
@@ -127,6 +139,10 @@
       "question": "How was our opening event?",
       "options": ["Loved it!", "Great", "OK", "Boring", "Bad"],
       "thanks": "Thank you for participating!"
+    },
+    "contact": {
+      "h2": "Get Started with FingeRate Bot Today!",
+      "p": "Take your customer feedback strategy to the next level. Contact us now to learn more about FingeRate Bot, request a demo, and discover how our solution can transform your business. Don't miss out on the opportunity to unlock the true potential of your customer interactions."
     }
   },
   "token": {
