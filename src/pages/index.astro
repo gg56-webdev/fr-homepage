@@ -31,3 +31,32 @@ changeLanguage("en");
     <App />
   </div>
 </Layout>
+
+<!-- <script>
+  const isSaveData =
+    window.matchMedia(`(prefers-reduced-data: reduce)`).matches === true;
+  const isMotionSafe =
+    window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches ===
+    true;
+
+  const removeVantaContainer = () => document.querySelector("#vanta")?.remove();
+
+  if (!isSaveData && isMotionSafe) {
+    Promise.all([import("three"), import("vanta/dist/vanta.halo.min")])
+      .then(([THREE, { default: HALO }]) => {
+        HALO({
+          el: "#vanta",
+          mouseControls: true,
+          xOffset: 0.2,
+          THREE,
+          baseColor: 0x0000ff,
+          backgroundColor: 0x191e3c,
+          size: 0.9,
+          amplitudeFactor: 0,
+        });
+      })
+      .catch(() => removeVantaContainer());
+  } else {
+    removeVantaContainer();
+  }
+</script> -->
