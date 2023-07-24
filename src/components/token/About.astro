@@ -7,12 +7,13 @@ import { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Image } from "astro:assets";
 import { NAV_LINKS } from "@/constants";
+// TODO: i18n tooltips
 
 const images = [
   [
     ethLogo,
     "ethereum logo",
-    "ERC-20 Standard",
+    t("token.about.tooltips.0"),
     "https://etherscan.io/token/0xe5ef42d0e5e4aa6b36c613d00db8dad303d505f3",
   ],
   [
@@ -30,7 +31,7 @@ const images = [
   [
     ecosystemLogo,
     "fingerate ecosystem logo",
-    "FingeRate Ecosystem",
+    t("token.about.tooltips.1"),
     localizePath(NAV_LINKS.HOME.href),
   ],
 ] as const;
