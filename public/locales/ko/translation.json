@@ -39,11 +39,11 @@
 
   "home": {
     "hero": {
-      "first-word": "메타버스",
-      "h1": "설문조사 × <0><1>$t(home.hero.first-word)</1><2>아바타</2><3>비지니스</3><4>보상</4><5>만족도</5><6>위치기반</6><7>Simplicity</7><8>$t(home.hero.first-word)</8></0> = $t(name)",
+      "p": "FingeRate를 사용하고 보상을 받으세요! 언제 어디서나 설문 조사를 진행하세요. 앱이 간편하고 사용이 편리합니다. 지금 Play 스토어와 iOS에서 다운로드하시고 추가 보상을 받으세요!",
       "app-ui": {
         "discount": "할인",
-        "coupon": "쿠폰"
+        "coupon": "쿠폰",
+        "coupon-title": "그룹(친구) 커피 5잔 쿠폰 설정"
       }
     },
     "features": [["편하게 보상을 얻으세요"]],
