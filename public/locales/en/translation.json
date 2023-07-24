@@ -121,6 +121,12 @@
           "Illustration of FingeRate Security feature"
         ]
       ]
+    },
+    "dashboard": {
+      "h2": "Give Bot a Try!",
+      "question": "How was our opening event?",
+      "options": ["Loved it!", "Great", "OK", "Boring", "Bad"],
+      "thanks": "Thank you for participating!"
     }
   },
   "token": {
