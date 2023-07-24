@@ -221,5 +221,35 @@
         "<0>We have implemented robust measures to ensure the security of your information. We maintain a secure infrastructure with industry-standard security protocols and utilize encryption techniques to safeguard your data during transmission and storage. Our access controls are designed to restrict unauthorized access, and we regularly monitor access logs. Whenever possible, we anonymize and aggregate data to protect individual identities. We are committed to complying with applicable data protection and privacy regulations, such as GDPR, and strive to meet legal requirements for data processing, storage, and sharing.</0><1>For more detailed information about how we handle your data, please refer to our Privacy Policy. It provides comprehensive insights into our data collection, use, and protection practices. Additionally, our Terms of Use outline the terms and conditions governing your use of the FingeRate platform. You can access both the <2>Privacy Policy</2> and <3>Terms of Use</3> on our website.</1><4>For further inquiries or concerns about data protection, please don't hesitate to contact us.</4>"
       ]
     ]
+  },
+
+  "contact": {
+    "hero": {
+      "h1": "How Can We Help You?",
+      "p": "Whether you are curious about our solutions or simply want to reach out, this page serves as a portal to connect with FingeRate."
+    },
+    "social": {
+      "h2": "Follow Us On Social Media"
+    },
+    "details": {
+      "h2": "Send us message now and get support from the FingeRate team! We will get back to you soon.",
+      "btn": "Get in Touch on Telegram ↗",
+      "points": [
+        [
+          "Business Inquiries",
+          "For information about the services, partnership, or requesting information."
+        ],
+        [
+          "Technical Support",
+          "For everything related to the FingeRate ecosystem, including FingeRate App and FingeRate Bot."
+        ],
+        ["MSOT Token", "For MSOT token and its specificities."],
+        ["Media & Press", "For media and press."],
+        ["General", "For everything else."]
+      ]
+    },
+    "cta": {
+      "h2": "Try FingeRate App Now"
+    }
   }
 }

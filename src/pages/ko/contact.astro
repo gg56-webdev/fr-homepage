@@ -8,7 +8,7 @@ import metaverse from "@/assets/home/metaverse-sot.webp";
 import Form from "@/components/Form.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 
 changeLanguage("ko");
 ---
@@ -19,10 +19,9 @@ changeLanguage("ko");
       class='grid gap-8 lg:grid-cols-[1.75fr_1fr] lg:grid-rows-[1fr_auto] lg:[grid-template-areas:"info_form"_"social_form"]'
     >
       <section class="rounded-xl bg-slate-950/80 p-6 lg:[grid-area:info]">
-        <h1 class="text-5xl brand-text font-bold">How Can We Help You?</h1>
+        <h1 class="text-5xl brand-text font-bold">{t("contact.hero.h1")}</h1>
         <p class="text-lg mt-4 tracking-wide">
-          Whether you are curious about our solutions or simply want to reach
-          out, this page serves as a portal to connect with FingeRate.
+          {t("contact.hero.p")}
         </p>
       </section>
       <section class="rounded-xl bg-slate-950/80 p-6 lg:[grid-area:form]">
@@ -31,7 +30,7 @@ changeLanguage("ko");
       <section
         class="rounded-xl bg-slate-950/80 p-6 lg:[grid-area:social] space-y-4"
       >
-        <h2 class="text-3xl brand-text font-bold">Follow Us On Social Media</h2>
+        <h2 class="text-3xl brand-text font-bold">{t("contact.social.h2")}</h2>
         <Social />
       </section>
       <section
@@ -39,15 +38,14 @@ changeLanguage("ko");
       >
         <div class="space-y-8">
           <h2 class="text-2xl font-bold [text-wrap:balance;]">
-            Send us message now and get support from the FingeRate team! We will
-            get back to you soon.
+            {t("contact.details.h2")}
           </h2>
           <a
             href={SOCIAL_LINKS.TELEGRAM.href}
             target="_blank"
             rel="noopener noreferrer"
             class="rounded-lg bg-intelligentBlue inline-block px-5 py-2.5 text-center text-sm font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
-            >Get in Touch on Telegram ↗</a
+            >{t("contact.details.btn")}</a
           >
         </div>
         <div>
@@ -70,10 +68,9 @@ changeLanguage("ko");
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold">Business Inquiries</h3>
+                <h3 class="font-bold">{t("contact.details.points.0.0")}</h3>
                 <p class="text-sm text-cyberLilac">
-                  For information about the services, partnership, or requesting
-                  information.
+                  {t("contact.details.points.0.1")}
                 </p>
               </div>
             </li>
@@ -99,10 +96,9 @@ changeLanguage("ko");
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold">Technical Support</h3>
+                <h3 class="font-bold">{t("contact.details.points.1.0")}</h3>
                 <p class="text-sm text-cyberLilac">
-                  For everything related to the FingeRate ecosystem, including
-                  FingeRate App and FingeRate Bot.
+                  {t("contact.details.points.1.1")}
                 </p>
               </div>
             </li>
@@ -141,9 +137,9 @@ changeLanguage("ko");
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold">MSOT Token</h3>
+                <h3 class="font-bold">{t("contact.details.points.2.0")}</h3>
                 <p class="text-sm text-cyberLilac">
-                  For MSOT token and its specificities.
+                  {t("contact.details.points.2.1")}
                 </p>
               </div>
             </li>
@@ -165,8 +161,10 @@ changeLanguage("ko");
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold">Media & Press</h3>
-                <p class="text-sm text-cyberLilac">For media and press.</p>
+                <h3 class="font-bold">{t("contact.details.points.3.0")}</h3>
+                <p class="text-sm text-cyberLilac">
+                  {t("contact.details.points.3.1")}
+                </p>
               </div>
             </li>
             <li data-scroll-animation class="flex gap-4">
@@ -187,8 +185,10 @@ changeLanguage("ko");
                 </svg>
               </div>
               <div>
-                <h3 class="font-bold">General</h3>
-                <p class="text-sm text-cyberLilac">For everything else.</p>
+                <h3 class="font-bold">{t("contact.details.points.4.0")}</h3>
+                <p class="text-sm text-cyberLilac">
+                  {t("contact.details.points.4.1")}
+                </p>
               </div>
             </li>
           </ul>
@@ -212,7 +212,7 @@ changeLanguage("ko");
           data-scroll-animation
           class="bg-slate-950/90 space-y-12 text-center p-12 lg:self-end lg:justify-self-end lg:rounded-lg lg:[grid-area:1/1/1/1]"
         >
-          <h2 class="brand-text text-3xl font-bold">Try FingeRate App Now</h2>
+          <h2 class="brand-text text-3xl font-bold">{t("contact.cta.h2")}</h2>
 
           <div class="flex w-full flex-wrap items-center justify-center gap-4">
             <Google />
