@@ -6,6 +6,20 @@
   "common": {
     "new": "최신"
   },
+
+  "links": {
+    "home": "홈",
+    "ecosystem": "에코시스템",
+    "bot": "FingeRate 봇",
+    "token": "MSOT 토큰",
+    "about": "소개",
+    "team": "팀",
+    "contact": "연락처",
+    "whitepaper": "백서",
+    "privacy-policy": "개인정보 보호정책",
+    "terms-of-use": "이용 약관"
+  },
+
   "home": {
     "hero": {
       "first-word": "메타버스",

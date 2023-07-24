@@ -1,12 +1,32 @@
 {
   "name": "FingeRate",
+
   "site": {
     "title": "$t(name) | Survey to Earn Platform",
     "description": "Earn rewards with ease using FingeRate! Complete surveys anywhere, anytime. Convenient and user-friendly. Download now on Play Store and iOS for extra rewards!"
   },
+
   "common": {
     "new": "New"
   },
+
+  "links": {
+    "home": "Home",
+    "ecosystem": "Ecosystem",
+    "bot": "FingeRate Bot",
+    "token": "MSOT Token",
+    "about": "About",
+    "team": "Team",
+    "news": "News",
+    "support": "Support",
+    "user-guide": "User Guide",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "whitepaper": "Whitepaper",
+    "privacy-policy": "Privacy Policy",
+    "terms-of-use": "Terms of Use"
+  },
+
   "home": {
     "hero": {
       "first-word": "Metaverse",
