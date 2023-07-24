@@ -1,6 +1,6 @@
 ---
-layout: '@layouts/DocumentLayout.astro'
-title: 'Terms of Use'
+layout: "@/layouts/DocumentLayout.astro"
+title: "Terms of Use"
 ---
 
 # Terms of Use
