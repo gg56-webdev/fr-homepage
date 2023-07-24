@@ -1,31 +1,46 @@
 ---
-import { NAV_LINKS } from '@/constants';
+import { NAV_LINKS } from "@/constants";
+import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
 const privacyLink = NAV_LINKS.PRIVACY;
+const href = privacyLink.isExternal
+  ? privacyLink.href
+  : localizePath(privacyLink.href);
 ---
 
-<div id='cookie-banner' class='fixed bottom-0 z-20 hidden w-full p-2'>
+<div id="cookie-banner" class="fixed bottom-0 z-20 hidden w-full p-2">
   <div
-    class='mx-auto flex max-w-screen-md flex-col justify-between gap-2 rounded-lg bg-blue-900 p-4 sm:flex-row sm:items-center'
+    class="mx-auto flex max-w-screen-md flex-col justify-between gap-2 rounded-lg bg-blue-900 p-4 sm:flex-row sm:items-center"
   >
-    <div class='max-w-[70ch]'>
-      <b>Cookie Notice</b>
-      <small class='block'>
-        To provide the best experiences, we use technologies like cookies to store and/or access device information.
-        Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this
-        site. <a
-          href={privacyLink.href}
-          target={privacyLink.isExternal ? '_blank' : '_self'}
-          rel={privacyLink.isExternal ? 'noopener noreferrer' : ''}
-          class='underline'>Privacy&nbsp;Policy</a
-        >
+    <div class="max-w-[70ch]">
+      <b>{t("cookie.title")}</b>
+      <small class="block">
+        <Trans i18nKey="cookie.description">
+          To provide the best experiences, we use technologies like cookies to
+          store and/or access device information. Consenting to these
+          technologies will allow us to process data such as browsing behavior
+          or unique IDs on this site. <a
+            {href}
+            target={privacyLink.isExternal ? "_blank" : "_self"}
+            rel={privacyLink.isExternal ? "noopener noreferrer" : ""}
+            class="underline">Privacy&nbsp;Policy</a
+          >
+        </Trans>
       </small>
     </div>
-    <div class='grid grow grid-flow-col gap-2 sm:max-w-[25%]'>
-      <button type='button' id='close' class='rounded-md border-2 border-cyberLilac px-2 py-1 font-medium'>Deny</button>
+    <div class="grid grow grid-flow-col gap-2 sm:max-w-[25%]">
       <button
-        id='agree'
-        type='button'
-        class='rounded-md border-2 border-cyberLilac bg-cyberLilac px-2 py-1 font-medium text-deepSpace'>Accept</button
+        type="button"
+        id="close"
+        class="rounded-md border-2 border-cyberLilac px-2 py-1 font-medium"
+        >{t("cookie.deny")}</button
+      >
+      <button
+        id="agree"
+        type="button"
+        class="rounded-md border-2 border-cyberLilac bg-cyberLilac px-2 py-1 font-medium text-deepSpace"
+        >{t("cookie.accept")}</button
       >
     </div>
   </div>
@@ -33,9 +48,9 @@ const privacyLink = NAV_LINKS.PRIVACY;
 
 <script>
   const getCookie = (name: string) => {
-    const value = ' ' + document.cookie;
-    const parts = value.split(' ' + name + '=');
-    return parts.length < 2 ? undefined : parts.pop()!.split(';').shift();
+    const value = " " + document.cookie;
+    const parts = value.split(" " + name + "=");
+    return parts.length < 2 ? undefined : parts.pop()!.split(";").shift();
   };
 
   const setCookie = function (
@@ -50,33 +65,39 @@ const privacyLink = NAV_LINKS.PRIVACY;
     exdate.setHours(exdate.getHours() + (expiryDays ? expiryDays : 365) * 24);
     document.cookie =
       name +
-      '=' +
+      "=" +
       value +
-      ';expires=' +
+      ";expires=" +
       exdate.toUTCString() +
-      ';path=' +
-      (path || '/') +
-      (domain ? ';domain=' + domain : '') +
-      (secure ? ';secure' : '');
+      ";path=" +
+      (path || "/") +
+      (domain ? ";domain=" + domain : "") +
+      (secure ? ";secure" : "");
   };
 
   (() => {
-    const $cookiesBanner = document.querySelector('#cookie-banner') as HTMLDivElement;
-    const $cookiesBannerAgreeBtn = $cookiesBanner.querySelector('#agree') as HTMLButtonElement;
-    const $cookiesBannerCloseBtn = $cookiesBanner.querySelector('#close') as HTMLButtonElement;
-    const cookieName = 'agreeToCookies';
+    const $cookiesBanner = document.querySelector(
+      "#cookie-banner"
+    ) as HTMLDivElement;
+    const $cookiesBannerAgreeBtn = $cookiesBanner.querySelector(
+      "#agree"
+    ) as HTMLButtonElement;
+    const $cookiesBannerCloseBtn = $cookiesBanner.querySelector(
+      "#close"
+    ) as HTMLButtonElement;
+    const cookieName = "agreeToCookies";
     const hasCookie = getCookie(cookieName);
 
     if (!hasCookie) {
-      $cookiesBanner.classList.remove('hidden');
+      $cookiesBanner.classList.remove("hidden");
     }
 
-    $cookiesBannerAgreeBtn.addEventListener('click', () => {
-      setCookie(cookieName, 'agreed', 30);
+    $cookiesBannerAgreeBtn.addEventListener("click", () => {
+      setCookie(cookieName, "agreed", 30);
       $cookiesBanner.remove();
     });
-    $cookiesBannerCloseBtn.addEventListener('click', () => {
-      setCookie(cookieName, 'closed', 30);
+    $cookiesBannerCloseBtn.addEventListener("click", () => {
+      setCookie(cookieName, "closed", 30);
       $cookiesBanner.remove();
     });
   })();
