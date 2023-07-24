@@ -161,10 +161,65 @@
     }
   },
 
-  "team": {
-    "hero": {
-      "h1": "Our Team",
-      "p": "FingeRate began with a group of dedicated and driven individuals who share a common passion for technology and believe in its immense potential. With backgrounds spanning various fields, we bring together our determination, perseverance, and unwavering conviction to make a difference."
-    }
+  "faq": {
+    "h1": "FAQ",
+    "q&a": [
+      [
+        "What are SoM? How does it work?",
+        "<0>SoM is the in app mileage which can be used as currency in the app to purchase items from Marketplace, pay for survey registration and eventually convert it to MSOT tokens to withdraw as money.</0><1>1SoM= $0.1</1><2>Earning SoM is very easy.</2><3><4>By entering your additional information (one time)</4><5>By inviting your friends (use your referral code to invite friends)</5><6>By participating in surveys</6><7>Daily attendance check</7><8>Daily survey participation check</8></3><9>NB: Earned SoMs expire in 6 months</9>"
+      ],
+      [
+        "How do I get started? / How to Sign up?",
+        "<0>Signing up for FingeRate is incredibly easy! You can begin your journey by directly registering on the app using your email, Kakao account, or Naver Account.</0>"
+      ],
+      [
+        "What do you do with my survey responses?",
+        "<0>With the responses provided by the participants, we analyze it and provide the result to the survey requester. The analyzed result can also be seen from FingeRate app.</0>"
+      ],
+      [
+        "Why does is it call Survey to Earn (S2E)?",
+        "<0>Survey to Earn (S2E)  allows users to earn rewards by participating in surveys. It provides an opportunity for individuals to share their opinions and insights on various topics and receive compensation in return.</0>"
+      ],
+      [
+        "How to earn SoM?",
+        "<0>Earning SoM is very easy.</0><1><2>By entering your additional information (one time)</2><3>By inviting your friends (use your referral code to invite friends)</3><4>By participating in surveys</4><5>Daily attendance check</5><6>Daily survey participation check</6></1><7>NB: Earned SoMs expire in 6 months</7>"
+      ],
+      [
+        "What can I do with the SoMs I have?",
+        "<0>User can use their earned SoMs for the following purposes:</0><1><2>Purchasing avatar accessories from Marketplace<2/><3> Purchasing reward/coupons from Marketplace (to be implemented)</3><4>Pay for survey registration</4><5>Swapping SoM with MSOT tokens</5></1><6>NB: 1SoM=$0.1 Earned SoMs expire in 6 months</6>"
+      ],
+      [
+        "How do I purchase additional SoM?",
+        "<0>Users can purchase SoM using their credit cards from FingeRate app. Please go to 'Wallet' click Recharge and follow the steps.</0>"
+      ],
+      [
+        "What can I get by answering your surveys?",
+        "<0>Users can earn SoM, an in-app mileage which can be used as currency in the app to purchase items from Marketplace, pay for survey registration and eventually convert it to MSOT tokens to withdraw as money.</0>"
+      ],
+      [
+        "Who is behind FingeRate?",
+        "<0>GG56 is the driving force behind the development and management of FingeRate and its associated ecosystem. You can read more about the company on the <1>official website</1></0>"
+      ],
+      [
+        "Can I create my own survey?",
+        "<0>Users can create and manage their own surveys directly from FingeRate app!</0><1><2>On the Survey tab, select the type of survey you want to create</2><3>Choose the number of SoTs and determine the duration of the survey</3><4>Decide on the number of participants you want for your survey. You can set a specific limit or leave it open-ended</4><5>Add your survey questions and pay using SoM!</5></1>"
+      ],
+      [
+        "How can I join the community?",
+        "<0>Users can follow us on social media, including <1>Instagram</1>, <2>Facebook</2>, <3>Twitter</3>, <4>Telegram</4>, and <5>LinkedIn</5>!</0>"
+      ],
+      [
+        "What platform is FingeRate available on?",
+        "<0>FingeRate App is available on <1>iOS</1> and <2>Android</2>!</0>"
+      ],
+      [
+        "Who can I contact regarding a press inquiry?",
+        "<0>For press inquiries regarding FingeRate, users can reach out to us directly at <1>shokun51@gg56.world</1> or by using the <2>contact form</2> available on our website.</0>"
+      ],
+      [
+        "How do you handle security?",
+        "<0>We have implemented robust measures to ensure the security of your information. We maintain a secure infrastructure with industry-standard security protocols and utilize encryption techniques to safeguard your data during transmission and storage. Our access controls are designed to restrict unauthorized access, and we regularly monitor access logs. Whenever possible, we anonymize and aggregate data to protect individual identities. We are committed to complying with applicable data protection and privacy regulations, such as GDPR, and strive to meet legal requirements for data processing, storage, and sharing.</0><1>For more detailed information about how we handle your data, please refer to our Privacy Policy. It provides comprehensive insights into our data collection, use, and protection practices. Additionally, our Terms of Use outline the terms and conditions governing your use of the FingeRate platform. You can access both the <2>Privacy Policy</2> and <3>Terms of Use</3> on our website.</1><4>For further inquiries or concerns about data protection, please don't hesitate to contact us.</4>"
+      ]
+    ]
   }
 }
