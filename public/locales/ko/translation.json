@@ -3,6 +3,7 @@
     "title": "$t(name) | 설문 조사 수익 창출 플랫폼",
     "description": "$t(name)를 사용하고 보상을 받으세요! 앱이 간편하고 사용이 편리하니 언젠나 어디서나 설문조사를 진행해 보세요. 지금 바로 Play 스토어와 iOS에서 다운로드받고 다양한 보상을 즐기세요!"
   },
+
   "common": {
     "new": "최신"
   },
@@ -73,6 +74,39 @@
         "여러분의 경험을 맞춤 설정하세요",
         "당신의 아바타, 당신을 위한 보상, 당신만의 세계",
         "무료입니다!"
+      ]
+    }
+  },
+
+  "bot": {
+    "hero": {
+      "h1": "FingeRate 봇을 소개합니다!",
+      "p1": "FingeRate 봇을 소개합니다: 비접촉 설문 조사 솔루션으로, 피드백 수집과 고객 만족도 측정 방법을 혁신하였습니다.",
+      "p2": "당사의 인공지능 기술을 통해, 방문객 여러분들에게 안전하고 원활한 경험을 제공하며, 물리적 접촉과 번거로운 설문 조사지를 없애고 감정이 담긴 실시간 데이터를 수집합니다!"
+    },
+    "keywords": [
+      "Real Time-data",
+      "Contactless Survey Solution",
+      "AI Technology"
+    ],
+    "benefits": {
+      "h2": "Why Work With FingeRate Bot?",
+      "cards": [
+        [
+          "Capture Visitors' Emotions in Real-Time",
+          "FingeRate Bot empowers you to elevate your customer experience and drive business growth. By capturing feedback directly through touchless surveys, you can gather accurate and timely insights, enabling you to make data-driven decisions and implement targeted improvements. Stay ahead of the competition by putting your customers' opinions at the heart of your business strategy.",
+          "Person showing gesture to the FingeRate Bot"
+        ],
+        [
+          "Access to Data in Real-Time",
+          "FingeRate Bot provides you with real-time access of the data from the survey location, allowing you to monitor and analyze visitor feedback instantly. Our intuitive dashboard presents the information in a visually appealing and easy-to-understand format, empowering you to make proactive adjustments and improvements based on real-time insights.",
+          "Screenshot of FingeRate Dashboard showing graph of visitors and participants in survey"
+        ],
+        [
+          "Secure and Reliable",
+          "Our platform is built with robust encryption protocols and follows industry best practices to ensure that your information remains confidential. You can trust us to handle your data with the utmost care and protect it from unauthorized access.",
+          "Illustration of FingeRate Security feature"
+        ]
       ]
     }
   }
