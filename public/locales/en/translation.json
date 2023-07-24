@@ -19,7 +19,11 @@
     "name": "Your Name",
     "email": "Your Email",
     "text": "Message <0>(max 225 characters)</0>",
-    "submit": "Submit"
+    "submit": "Submit",
+    "success": {
+      "h1": "Thank you!",
+      "p": "We will get back to you as soon as possible!"
+    }
   },
 
   "links": {
