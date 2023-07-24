@@ -27,6 +27,16 @@
     "terms-of-use": "Terms of Use"
   },
 
+  "pages": {
+    "bot": "$t(links.bot)",
+    "token": "$t(links.token)",
+    "team": "$t(links.team)",
+    "news": "$t(links.news)",
+    "faq": "$t(links.faq)",
+    "contact": "$t(links.contact)",
+    "terms-of-use": "$t(links.terms-of-use)"
+  },
+
   "cookie": {
     "title": "Cookie Notice",
     "description": "To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. <0>$t(links.privacy-policy)</0>",
