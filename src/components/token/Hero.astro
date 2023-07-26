@@ -37,7 +37,13 @@ const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
             id="token-price"
             class="animate-pulse md:text-4xl text-3xl font-bold"
           >
-            {formatNumber(0.0, { currency: "USD", style: "currency" })}
+            {
+              formatNumber(0.0, {
+                currency: "USD",
+                style: "currency",
+                maximumFractionDigits: 4,
+              })
+            }
           </dd>
         </div>
       </dl>
