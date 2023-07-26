@@ -228,13 +228,12 @@ const currentUrl = import.meta.env.DEV
               ["en", "ko"].map((lang) => (
                 <a
                   class:list={[
-                    "text-sm px-2 rounded uppercase py-1 font-medium hover:underline",
+                    "text-sm  px-2 rounded uppercase py-1 font-medium hover:underline",
                     { "bg-intelligentBlue": lang === i18next.language },
                   ]}
                   href={localizePath(Astro.url.pathname, lang)}
-                >
-                  {lang}
-                </a>
+                  set:text={lang}
+                />
               ))
             }
           </div>
