@@ -22,6 +22,31 @@ import Share from "../DownloadBtn/Share.astro";
 >
   <div class="relative isolate animate-fadeIn md:order-2">
     <div
+      class="absolute w-full h-full motion-safe:animate-bob motion-safe:[animation-duration:8s]"
+    >
+      <div
+        class:list={[
+          "[animation-delay:0s]",
+          "animate-blob  mix-blend-overlay blur-2xl absolute top-1/4 -left-1/4 w-full aspect-square rounded-full bg-softFire/50",
+        ]}
+      >
+      </div>
+      <div
+        class:list={[
+          "[animation-delay:4s]",
+          "animate-blob  mix-blend-overlay blur-2xl absolute top-0 -right-1/4 w-full aspect-square rounded-full bg-neonBlue/50",
+        ]}
+      >
+      </div>
+      <div
+        class:list={[
+          "[animation-delay:2s]",
+          "animate-blob  mix-blend-overlay blur-2xl absolute bottom-0 -right-1/4 w-full aspect-square rounded-full bg-intelligentBlue/50",
+        ]}
+      >
+      </div>
+    </div>
+    <div
       data-tilt-animation
       class="relative [transform-style:preserve-3d] [transform:perspective(5000px)_rotateY(var(--rotateY))_rotateX(var(--rotateX))]"
     >
