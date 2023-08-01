@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config'
 import astroI18next from 'astro-i18next'
 import tailwind from '@astrojs/tailwind'
-
 import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
