@@ -9,8 +9,7 @@ import { HeadHrefLangs } from 'astro-i18next/components'
 import { getImage } from 'astro:assets'
 import i18next, { t } from 'i18next'
 import './style.css'
-
-// TODO: og images https://github.com/withastro/astro/blob/latest/examples/blog/src/components/BaseHead.astro
+import HeadMeta from '@/components/HeadMeta.astro'
 
 const optimizedBg = await getImage({ src: bg, format: 'avif', quality: 'mid' })
 
@@ -19,18 +18,14 @@ const lang = i18next.language
 export interface Props {
   title?: string
   description?: string
+  image?: string
 }
-const { title = t('site.title'), description = t('site.description') } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html {lang} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark]">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" href="/favicon.jpg" type="image/x-icon" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
+    <HeadMeta {...Astro.props} />
     <HeadHrefLangs />
     <link rel="preload" as="image" href={optimizedBg.src} />
     {!import.meta.env.DEV && <GA />}
