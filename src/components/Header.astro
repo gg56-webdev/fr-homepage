@@ -1,67 +1,67 @@
 ---
-import Price from "@/components/Price.astro";
-import { localizePath } from "astro-i18next";
-import i18next, { t } from "i18next";
-import { NAV_LINKS, type Link } from "../constants";
+import Price from '@/components/Price.astro'
+import { localizePath } from 'astro-i18next'
+import i18next, { t } from 'i18next'
+import { NAV_LINKS, type Link } from '../constants'
 
 // TODO: responsive divide between links and language
 
-type Dropdown = { name: string; href?: string; links: Link[] };
+type Dropdown = { name: string; href?: string; links: Link[] }
 
 const navLinks: Array<Link | Dropdown> = [
   {
     ...NAV_LINKS.HOME,
-    name: t("links.home"),
+    name: t('links.home'),
     href: localizePath(NAV_LINKS.HOME.href),
   },
   {
-    name: t("links.ecosystem"),
+    name: t('links.ecosystem'),
     links: [
       {
         ...NAV_LINKS.BOT,
-        name: t("links.bot"),
+        name: t('links.bot'),
         href: localizePath(NAV_LINKS.BOT.href),
       },
       {
         ...NAV_LINKS.TOKEN,
-        name: t("links.token"),
+        name: t('links.token'),
         href: localizePath(NAV_LINKS.TOKEN.href),
       },
     ],
   },
   {
-    name: t("links.about"),
+    name: t('links.about'),
     links: [
       {
         ...NAV_LINKS.TEAM,
-        name: t("links.team"),
+        name: t('links.team'),
         href: localizePath(NAV_LINKS.TEAM.href),
       },
       {
         ...NAV_LINKS.NEWS,
-        name: t("links.news"),
+        name: t('links.news'),
         href: localizePath(NAV_LINKS.NEWS.href),
       },
     ],
   },
   {
-    name: t("links.support"),
+    name: t('links.support'),
     links: [
-      { ...NAV_LINKS.GUIDE, name: t("links.user-guide") },
+      { ...NAV_LINKS.GUIDE, name: t('links.user-guide') },
       {
         ...NAV_LINKS.FAQ,
-        name: t("links.faq"),
+        name: t('links.faq'),
         href: localizePath(NAV_LINKS.FAQ.href),
       },
       {
         ...NAV_LINKS.CONTACT,
-        name: t("links.contact"),
+        name: t('links.contact'),
         href: localizePath(NAV_LINKS.CONTACT.href),
       },
     ],
   },
-  { ...NAV_LINKS.WHITEPAPER, name: t("links.whitepaper") },
-];
+  { ...NAV_LINKS.WHITEPAPER, name: t('links.whitepaper') },
+]
 
 // const localizeNavItem = (item: Link | Dropdown): Link | Dropdown => {
 //   if ('links' in item) {
@@ -74,19 +74,15 @@ const navLinks: Array<Link | Dropdown> = [
 
 const currentUrl = import.meta.env.DEV
   ? Astro.url.pathname
-  : Astro.url.pathname === "/"
-  ? "/"
-  : Astro.url.pathname.slice(0, -1);
+  : Astro.url.pathname === '/'
+  ? '/'
+  : Astro.url.pathname.slice(0, -1)
 ---
 
 <header class="sticky top-0 z-20 bg-slate-950/90">
-  <nav
-    class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-2 py-1 md:py-0"
-  >
+  <nav class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-2 py-1 md:py-0">
     <div class="flex items-center gap-6">
-      <a href={navLinks[0].href} class="brand-text text-2xl font-bold"
-        >FingeRate</a
-      >
+      <a href={navLinks[0].href} class="brand-text text-2xl font-bold">FingeRate</a>
       <Price />
     </div>
     <button
@@ -98,44 +94,34 @@ const currentUrl = import.meta.env.DEV
       aria-expanded="false"
     >
       <span class="sr-only">Toggle navigation menu</span>
-      <svg
-        class="h-6 w-6"
-        aria-hidden="true"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
+      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
         ><path
           fill-rule="evenodd"
           d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
           clip-rule="evenodd"></path></svg
       >
     </button>
-    <div
-      class="hidden w-full pb-4 md:pb-0 md:block md:w-auto"
-      id="navbar-dropdown"
-    >
-      <ul
-        class="mt-4 flex flex-col items-center gap-2 md:m-0 md:flex-row md:items-baseline"
-      >
+    <div class="hidden w-full pb-4 md:pb-0 md:block md:w-auto" id="navbar-dropdown">
+      <ul class="mt-4 flex flex-col items-center gap-2 md:m-0 md:flex-row md:items-baseline">
         {
           navLinks.map((i) => (
             <li>
-              {"links" in i ? (
+              {'links' in i ? (
                 <>
                   <button
                     type="button"
                     id={`${i.name}-dropdownNavbarLink`}
                     data-dropdown-toggle={`${i.name}-dropdownNavbar`}
                     class:list={[
-                      "hover:text-neonBlue flex w-full items-center gap-1  p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200",
+                      'hover:text-neonBlue flex w-full items-center gap-1  p-3 transition focus:outline-none focus:ring-2 focus:ring-blue-200',
                       {
-                        "text-cyberLilac  border-cyberLilac md:border-b-2 ":
-                          i.links.some(({ href }) => href === currentUrl),
+                        'text-cyberLilac  border-cyberLilac md:border-b-2 ': i.links.some(
+                          ({ href }) => href === currentUrl
+                        ),
                       },
                     ]}
-                    data-dropdown-trigger="hover"
                   >
-                    {i.name}{" "}
+                    {i.name}{' '}
                     <svg
                       class="h-5 w-5"
                       fill="currentColor"
@@ -151,35 +137,27 @@ const currentUrl = import.meta.env.DEV
                     </svg>
                   </button>
 
-                  <div
-                    id={`${i.name}-dropdownNavbar`}
-                    class="z-10 hidden w-44  rounded-lg bg-slate-900 shadow"
-                  >
-                    <ul
-                      class="py-2 text-sm "
-                      aria-labelledby={`${i.name}-dropdownNavbarLink`}
-                    >
+                  <div id={`${i.name}-dropdownNavbar`} class="z-10 hidden w-44  rounded-lg bg-slate-900 shadow">
+                    <ul class="py-2 text-sm " aria-labelledby={`${i.name}-dropdownNavbarLink`}>
                       {i.links.map((l) => (
                         <li
                           class:list={{
-                            "border-cyberLilac border-l-2":
-                              currentUrl === l.href,
+                            'border-cyberLilac border-l-2': currentUrl === l.href,
                           }}
                         >
                           <a
                             href={l.href}
-                            aria-current={currentUrl === l.href ? "page" : null}
-                            target={l.isExternal ? "_blank" : "_self"}
+                            aria-current={currentUrl === l.href ? 'page' : null}
+                            target={l.isExternal ? '_blank' : '_self'}
                             rel="noopener noreferrer"
                             class:list={[
-                              "hover:text-neonBlue block px-4 py-2 transition",
+                              'hover:text-neonBlue block px-4 py-2 transition',
                               {
-                                "text-bold text-cyberLilac":
-                                  currentUrl === l.href,
+                                'text-bold text-cyberLilac': currentUrl === l.href,
                               },
                             ]}
                           >
-                            {l.name} {l.isExternal && "↗"}
+                            {l.name} {l.isExternal && '↗'}
                           </a>
                         </li>
                       ))}
@@ -189,18 +167,17 @@ const currentUrl = import.meta.env.DEV
               ) : (
                 <a
                   href={i.href}
-                  target={i.isExternal ? "_blank" : ""}
-                  aria-current={currentUrl === i.href ? "page" : null}
+                  target={i.isExternal ? '_blank' : ''}
+                  aria-current={currentUrl === i.href ? 'page' : null}
                   rel="noopener noreferrer"
                   class:list={[
-                    "hover:text-neonBlue   p-3 transition focus:outline-none focus:ring-2 flex items-center gap-1 focus:ring-blue-200",
+                    'hover:text-neonBlue   p-3 transition focus:outline-none focus:ring-2 flex items-center gap-1 focus:ring-blue-200',
                     {
-                      "text-cyberLilac border-cyberLilac md:border-b-2":
-                        i.href === currentUrl,
+                      'text-cyberLilac border-cyberLilac md:border-b-2': i.href === currentUrl,
                     },
                   ]}
                 >
-                  {i.name}{" "}
+                  {i.name}{' '}
                   {i.isExternal && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -225,11 +202,11 @@ const currentUrl = import.meta.env.DEV
         <li>
           <div class="md:pl-4 md:border-l">
             {
-              ["en", "ko"].map((lang) => (
+              ['en', 'ko'].map((lang) => (
                 <a
                   class:list={[
-                    "text-sm  px-2 rounded uppercase py-1 font-medium hover:underline",
-                    { "bg-intelligentBlue": lang === i18next.language },
+                    'text-sm  px-2 rounded uppercase py-1 font-medium hover:underline',
+                    { 'bg-intelligentBlue': lang === i18next.language },
                   ]}
                   href={localizePath(Astro.url.pathname, lang)}
                   set:text={lang}
@@ -244,10 +221,10 @@ const currentUrl = import.meta.env.DEV
 </header>
 
 <script>
-  import { Collapse } from "flowbite";
+  import { Collapse } from 'flowbite'
 
-  const $targetEl = document.querySelector<HTMLDivElement>("#navbar-dropdown");
-  const $triggerEl = document.querySelector<HTMLButtonElement>("#hamburger");
+  const $targetEl = document.querySelector<HTMLDivElement>('#navbar-dropdown')
+  const $triggerEl = document.querySelector<HTMLButtonElement>('#hamburger')
 
-  new Collapse($targetEl, $triggerEl);
+  new Collapse($targetEl, $triggerEl)
 </script>
