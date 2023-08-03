@@ -1,2 +1,3 @@
 User-Agent: *
 Allow: /
+Sitemap: https://www.fingerate.world/sitemap-index.xml
