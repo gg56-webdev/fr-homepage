@@ -43,7 +43,12 @@ export interface Props {
     <ScrollToTop />
     <CookieBanner />
     <Footer />
-    <script>
+   
+  </body>
+</html>
+
+<!-- prettier-ignore -->
+ <script>
       const sections = document.querySelectorAll('[data-scroll-animation]')
 
       const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true
@@ -72,5 +77,3 @@ export interface Props {
         })
       }
     </script>
-  </body>
-</html>
