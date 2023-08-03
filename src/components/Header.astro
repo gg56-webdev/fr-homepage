@@ -4,8 +4,6 @@ import { localizePath } from 'astro-i18next'
 import i18next, { t } from 'i18next'
 import { NAV_LINKS, type Link } from '../constants'
 
-// TODO: responsive divide between links and language
-
 type Dropdown = { name: string; href?: string; links: Link[] }
 
 const navLinks: Array<Link | Dropdown> = [
