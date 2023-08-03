@@ -1,47 +1,42 @@
 ---
-import team from "@/data/team/team.json";
-import { Image, getImage } from "astro:assets";
-import i18next from "i18next";
-const lang = i18next.language as "ko" | "en";
+import team from '@/data/team/team.json'
+import { Image } from 'astro:assets'
+import i18next from 'i18next'
+const lang = i18next.language as 'ko' | 'en'
 const people = team.map((p) => {
-  const nameEn = p.name.en;
-  const name = p.name[lang];
-  const subtitles = p.subtitles[lang];
-  const socials = p.socials;
-  const titles = p.titles?.en;
-  const bio = p.bio?.[lang];
-  const categories = p.categories;
-  return { name, subtitles, socials, titles, bio, categories, nameEn };
-});
-const categories = new Set(team.map((p) => p.categories).flat());
-const photos: ImageMetadata[] = await Astro.glob(
-  "../../assets/team/team/**/*.{png,webp}"
-).then((files) => files.map((f) => f.default));
-const icons: ImageMetadata[] = await Astro.glob(
-  "../../assets/social/*.svg"
-).then((files) => files.map((f) => f.default));
+  const nameEn = p.name.en
+  const name = p.name[lang]
+  const subtitles = p.subtitles[lang]
+  const socials = p.socials
+  const titles = p.titles?.en
+  const bio = p.bio?.[lang]
+  const categories = p.categories
+  return { name, subtitles, socials, titles, bio, categories, nameEn }
+})
+const categories = new Set(team.map((p) => p.categories).flat())
+const photos: ImageMetadata[] = await Astro.glob('../../assets/team/team/**/*.{png,webp}').then((files) =>
+  files.map((f) => f.default)
+)
+const icons: ImageMetadata[] = await Astro.glob('../../assets/social/*.svg').then((files) =>
+  files.map((f) => f.default)
+)
 
 const getIcon = (href: string) => {
-  if (href.includes("linkedin.com"))
-    return icons.find(({ src }) => src.includes("IN"))!;
-  if (href.includes("youtube.com"))
-    return icons.find(({ src }) => src.includes("YT"))!;
-  if (href.includes("wikipedia.org"))
-    return icons.find(({ src }) => src.includes("WI"))!;
-  return icons.find(({ src }) => src.includes("LI"))!;
-};
+  if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!
+  if (href.includes('youtube.com')) return icons.find(({ src }) => src.includes('YT'))!
+  if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'))!
+  return icons.find(({ src }) => src.includes('LI'))!
+}
 ---
 
 <section data-scroll-animation class="mx-auto max-w-screen-lg p-2">
   <div class="text-center mb-6">
     <h2 class="text-4xl font-bold mb-2">Our Core Team</h2>
-    <p class="tracking-wide text-cyberLilac text-lg">
-      We bring a wealth of experience, all sprinkled with passion
-    </p>
+    <p class="tracking-wide text-cyberLilac text-lg">We bring a wealth of experience, all sprinkled with passion</p>
   </div>
   <ul class="flex gap-2 flex-wrap justify-center">
     {
-      ["All", ...categories.values()].map((c, i) => (
+      ['All', ...categories.values()].map((c, i) => (
         <li>
           {i === 0 ? (
             <button
@@ -66,13 +61,9 @@ const getIcon = (href: string) => {
   <ul id="parent" class="flex justify-center flex-wrap mt-12">
     {
       people.map((p, i) => {
-        const src1 = photos.find((photo) =>
-          photo.src.includes(p.nameEn + "-1")
-        );
-        const src2 = photos.find((photo) =>
-          photo.src.includes(p.nameEn + "-2")
-        );
-        if (!src1 || !src2) return null;
+        const src1 = photos.find((photo) => photo.src.includes(p.nameEn + '-1'))
+        const src2 = photos.find((photo) => photo.src.includes(p.nameEn + '-2'))
+        if (!src1 || !src2) return null
         return (
           <li
             style={`view-transition-name: person-${i + 1}`}
@@ -95,18 +86,9 @@ const getIcon = (href: string) => {
               <ul class="absolute inset-[auto_0.5rem_0.5rem_auto] grid bg-slate-950/80 p-2 gap-2 md:opacity-0 transition group-hover:opacity-100 rounded-full focus-within:opacity-100">
                 {p.socials.map((s) => (
                   <li class="rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1">
-                    <a
-                      href={s}
-                      class="rounded-full"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={s} class="rounded-full" target="_blank" rel="noopener noreferrer">
                       <span class="sr-only">Go to {p.name}'s social page</span>
-                      <img
-                        src={getIcon(s)!.src}
-                        alt="Social network logo"
-                        class="w-7 h-7"
-                      />
+                      <img src={getIcon(s)!.src} alt="Social network logo" class="w-7 h-7" />
                     </a>
                   </li>
                 ))}
@@ -121,46 +103,44 @@ const getIcon = (href: string) => {
               </ul>
             </div>
           </li>
-        );
+        )
       })
     }
   </ul>
 </section>
 
 <script>
-  const $filters = document.querySelectorAll<HTMLLIElement>("[data-category]");
-  const $people = document.querySelectorAll<HTMLLIElement>("[data-person]");
+  const $filters = document.querySelectorAll<HTMLLIElement>('[data-category]')
+  const $people = document.querySelectorAll<HTMLLIElement>('[data-person]')
 
   const filter = (category: string) => {
-    if (category === "All") {
+    if (category === 'All') {
       $people.forEach((person) => {
-        person.classList.remove("hidden");
-      });
-      return;
+        person.classList.remove('hidden')
+      })
+      return
     }
     $people.forEach((person) => {
-      const categories = person.dataset.categories!;
-      categories.includes(category)
-        ? person.classList.remove("hidden")
-        : person.classList.add("hidden");
-    });
-  };
+      const categories = person.dataset.categories!
+      categories.includes(category) ? person.classList.remove('hidden') : person.classList.add('hidden')
+    })
+  }
 
   const resetSelected = () => {
-    $filters.forEach((f) => f.removeAttribute("data-selected"));
-  };
+    $filters.forEach((f) => f.removeAttribute('data-selected'))
+  }
 
   $filters.forEach((f) =>
-    f.addEventListener("click", ({ target }) => {
-      if (!target) return;
-      const category = (target as HTMLElement).dataset.category as string;
-      resetSelected();
-      (target as HTMLElement).dataset.selected = "true";
+    f.addEventListener('click', ({ target }) => {
+      if (!target) return
+      const category = (target as HTMLElement).dataset.category as string
+      resetSelected()
+      ;(target as HTMLElement).dataset.selected = 'true'
       if (document?.startViewTransition) {
-        document.startViewTransition(() => filter(category));
+        document.startViewTransition(() => filter(category))
       } else {
-        filter(category);
+        filter(category)
       }
     })
-  );
+  )
 </script>
