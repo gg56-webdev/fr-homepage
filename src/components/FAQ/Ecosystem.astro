@@ -1,31 +1,28 @@
 ---
-import { localizePath } from "astro-i18next";
-import { t } from "i18next";
-import { NAV_LINKS, COINGECKO_LINK } from "@/constants";
-import { Image } from "astro:assets";
-import logo from "@/assets/logo.webp";
-import Apple from "../DownloadBtn/Apple.astro";
-import Google from "../DownloadBtn/Google.astro";
+import { localizePath } from 'astro-i18next'
+import { t } from 'i18next'
+import { NAV_LINKS, COINGECKO_LINK } from '@/constants'
+import { Image } from 'astro:assets'
+import logo from '@/assets/logo.webp'
+import Apple from '../DownloadBtn/Apple.astro'
+import Google from '../DownloadBtn/Google.astro'
+
+// TODO: optimize tailwind classes
 
 const products = [
-  ["App", localizePath(NAV_LINKS.HOME.href), "bg-indigo-600"],
-  ["Bot", localizePath(NAV_LINKS.BOT.href), "bg-rose-700"],
-  ["Token", localizePath(NAV_LINKS.TOKEN.href), "bg-sky-700"],
-  ["Millage", localizePath(NAV_LINKS.HOME.href) + "#som", "bg-purple-700"],
-] as const;
+  ['App', localizePath(NAV_LINKS.HOME.href), 'bg-indigo-600'],
+  ['Bot', localizePath(NAV_LINKS.BOT.href), 'bg-rose-700'],
+  ['Token', localizePath(NAV_LINKS.TOKEN.href), 'bg-sky-700'],
+  ['Millage', localizePath(NAV_LINKS.HOME.href) + '#som', 'bg-purple-700'],
+] as const
 ---
 
 <div class="flex flex-col gap-16 sticky top-20">
-  <h2 class="text-2xl font-bold text-center">{t("links.ecosystem")}</h2>
+  <h2 class="text-2xl font-bold text-center">{t('links.ecosystem')}</h2>
   <div
     class="self-center [--r:100px] [--a:0deg] w-[calc(var(--r)*2)] rounded-full grid [&:has(>a:is(:hover,:focus))_a:not(:hover,:focus)]:opacity-75 transition-shadow hover:ring-0 aspect-square ring-cyberLilac ring-2 relative text-center hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] animate-orbit"
   >
-    <Image
-      src={logo}
-      loading="eager"
-      alt="FingeRate logo"
-      class="w-20 rounded-full absolute place-self-center"
-    />
+    <Image src={logo} loading="eager" alt="FingeRate logo" class="w-20 rounded-full absolute place-self-center" />
 
     {
       products.map(([text, href, bg]) => (
@@ -53,7 +50,7 @@ const products = [
       target="_blank"
       rel="noopener noreferrer"
       class="hover:text-neonBlue p-3 transition focus:outline-none focus:ring-2 flex items-center gap-1 focus:ring-blue-200"
-      >{t("links.whitepaper")}
+      >{t('links.whitepaper')}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

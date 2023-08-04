@@ -1,19 +1,17 @@
 ---
-import phone from "@/assets/home/phone-screen-main.png";
-import sotModal from "@/assets/home/sot-modal.webp";
-import avatarClothes1 from "@/assets/home/avatar-clothes-1.webp";
-import Apple from "@/components/DownloadBtn/Apple.astro";
-import Google from "@/components/DownloadBtn/Google.astro";
-import QR from "@/components/DownloadBtn/QR.astro";
-import coupon1 from "@/assets/home/coupon-1.webp";
-import coupon2 from "@/assets/home/coupon-2.webp";
-import { Image } from "astro:assets";
+import phone from '@/assets/home/phone-screen-main.png'
+import sotModal from '@/assets/home/sot-modal.webp'
+import avatarClothes1 from '@/assets/home/avatar-clothes-1.webp'
+import Apple from '@/components/DownloadBtn/Apple.astro'
+import Google from '@/components/DownloadBtn/Google.astro'
+import QR from '@/components/DownloadBtn/QR.astro'
+import coupon1 from '@/assets/home/coupon-1.webp'
+import coupon2 from '@/assets/home/coupon-2.webp'
+import { Image } from 'astro:assets'
 
-// TODO: optimize image
-
-import { t } from "i18next";
-import { Trans } from "astro-i18next/components";
-import Share from "../DownloadBtn/Share.astro";
+import { t } from 'i18next'
+import { Trans } from 'astro-i18next/components'
+import Share from '../DownloadBtn/Share.astro'
 ---
 
 <section
@@ -21,27 +19,25 @@ import Share from "../DownloadBtn/Share.astro";
   id="hero"
 >
   <div class="relative isolate animate-fadeIn md:order-2">
-    <div
-      class="absolute w-full h-full motion-safe:animate-bob motion-safe:[animation-duration:8s]"
-    >
+    <div class="absolute w-full h-full motion-safe:animate-bob motion-safe:[animation-duration:8s]">
       <div
         class:list={[
-          "[animation-delay:0s]",
-          "animate-blob  mix-blend-overlay blur-2xl absolute top-1/4 -left-1/4 w-full aspect-square rounded-full bg-softFire/50",
+          '[animation-delay:0s]',
+          'animate-blob  mix-blend-overlay blur-2xl absolute top-1/4 -left-1/4 w-full aspect-square rounded-full bg-softFire/50',
         ]}
       >
       </div>
       <div
         class:list={[
-          "[animation-delay:4s]",
-          "animate-blob  mix-blend-overlay blur-2xl absolute top-0 -right-1/4 w-full aspect-square rounded-full bg-neonBlue/50",
+          '[animation-delay:4s]',
+          'animate-blob  mix-blend-overlay blur-2xl absolute top-0 -right-1/4 w-full aspect-square rounded-full bg-neonBlue/50',
         ]}
       >
       </div>
       <div
         class:list={[
-          "[animation-delay:2s]",
-          "animate-blob  mix-blend-overlay blur-2xl absolute bottom-0 -right-1/4 w-full aspect-square rounded-full bg-intelligentBlue/50",
+          '[animation-delay:2s]',
+          'animate-blob  mix-blend-overlay blur-2xl absolute bottom-0 -right-1/4 w-full aspect-square rounded-full bg-intelligentBlue/50',
         ]}
       >
       </div>
@@ -55,13 +51,13 @@ import Share from "../DownloadBtn/Share.astro";
           src={phone}
           alt="Phone with a FingeRate App demo"
           class="block h-[350px] w-fit object-contain drop-shadow-md md:order-2 md:h-[500px]"
-          loading={"eager"}
+          loading={'eager'}
         />
         <Image
           src={sotModal}
           alt="Virtual FingeRate Bot"
           class="absolute left-1/2 top-[43%] h-[100px] object-contain drop-shadow-md [translate:-50%_-50%_20px] motion-safe:animate-bob motion-safe:[animation-duration:3s] md:order-2 md:h-[150px] md:w-fit"
-          loading={"eager"}
+          loading={'eager'}
         />
       </div>
       <div
@@ -81,36 +77,26 @@ import Share from "../DownloadBtn/Share.astro";
             stroke-linecap="round"
             stroke-linejoin="round"
             class="w-5 h-5"
-            ><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path
-              d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path
+            ><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path
               d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg
           >
-          <span class="hidden md:inline text-sm font-medium"
-            >{t("home.hero.app-ui.wallet")}</span
-          >
+          <span class="hidden md:inline text-sm font-medium">{t('home.hero.app-ui.wallet')}</span>
         </div>
-        <div class="grid place-items-center font-bold">4500 SoM</div>
+        <div class="grid place-items-center font-bold text-sm md:text-base">4500 SoM</div>
         <p class="justify-self-end text-xs">1 SoM = $0.1</p>
       </div>
       <ul
         class="absolute -right-[50%] top-[30%] flex gap-2 text-sm/[1.5] transition-all [transform:translateZ(-30px)] hover:[translate:0] md:-right-[85%] md:[translate:-42%]"
       >
         <li
-          class="flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2"
+          class="hidden md:flex w-[120px] flex-col overflow-hidden rounded-xl bg-white text-deepSpace transition hover:-translate-y-2"
         >
-          <Image
-            src={coupon1}
-            quality="high"
-            alt="Olive Young logo"
-            class="aspect-video w-full object-cover"
-          />
+          <Image src={coupon1} quality="high" alt="Olive Young logo" class="aspect-video w-full object-cover" />
           <div class="flex grow flex-col px-2 py-1">
             <b class="grow text-[80%]">CRÈME concentree de AURORA -50%</b>
           </div>
-          <footer
-            class="m-1 rounded-full bg-yellow-200 p-0.5 text-center text-[80%] text-yellow-950"
-          >
-            {t("home.hero.app-ui.discount")}
+          <footer class="m-1 rounded-full bg-yellow-200 p-0.5 text-center text-[80%] text-yellow-950">
+            {t('home.hero.app-ui.discount')}
           </footer>
         </li>
         <li
@@ -119,17 +105,15 @@ import Share from "../DownloadBtn/Share.astro";
           <Image
             src={coupon2}
             quality="high"
-            loading={"eager"}
+            loading={'eager'}
             alt="Starbucks logo"
             class="aspect-video w-full object-cover"
           />
           <div class="flex grow flex-col px-2 py-1">
-            <b class="grow text-[80%]">{t("home.hero.app-ui.coupon-title")}</b>
+            <b class="grow text-[80%]">{t('home.hero.app-ui.coupon-title')}</b>
           </div>
-          <footer
-            class="m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-blue-900"
-          >
-            {t("home.hero.app-ui.coupon")}
+          <footer class="m-1 rounded-full bg-blue-200 p-0.5 text-center text-[80%] text-blue-900">
+            {t('home.hero.app-ui.coupon')}
           </footer>
         </li>
       </ul>
@@ -151,22 +135,17 @@ import Share from "../DownloadBtn/Share.astro";
         <Image
           src={avatarClothes1}
           quality="max"
-          loading={"eager"}
+          loading={'eager'}
           alt="Top avatar clothes"
           class="w-[80px] md:w-[100px]"
         />
         <div class="mt-2 flex items-center justify-between gap-2">
-          <div
-            class="rounded-full bg-intelligentBlue px-2 py-0.5 text-xs font-medium uppercase"
-          >
-            {t("common.new")}
+          <div class="rounded-full bg-intelligentBlue px-2 py-0.5 text-xs font-medium uppercase">
+            {t('common.new')}
           </div>
           <div class="">
             <input type="checkbox" name="like" id="like" class="peer hidden" />
-            <label
-              for="like"
-              class="fill-transparent hover:cursor-pointer peer-checked:fill-red-600"
-            >
+            <label for="like" class="fill-transparent hover:cursor-pointer peer-checked:fill-red-600">
               <svg
                 viewBox="0 0 25 25"
                 class="h-6 w-6 fill-inherit stroke-red-600 transition-all"
@@ -185,12 +164,8 @@ import Share from "../DownloadBtn/Share.astro";
     </div>
   </div>
   <div class="relative z-10 text-center md:text-left">
-    <div
-      class="h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]"
-    >
-      <h1
-        class="text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]"
-      >
+    <div class="h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]">
+      <h1 class="text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]">
         <Trans i18nKey="home.hero.h1">
           Survey ×
           <span class="inline-grid text-center animate-stack">
@@ -207,10 +182,8 @@ import Share from "../DownloadBtn/Share.astro";
         </Trans>
       </h1>
     </div>
-    <p
-      class="mx-auto mt-4 max-w-[70ch] tracking-wide sm:text-xl md:mx-0 md:mt-8"
-    >
-      {t("home.hero.p")}
+    <p class="mx-auto mt-4 max-w-[70ch] tracking-wide sm:text-xl md:mx-0 md:mt-8">
+      {t('home.hero.p')}
     </p>
     <div
       class="mt-8 flex mx-auto max-w-screen-sm w-full items-center flex-wrap justify-center gap-2 md:gap-4 md:mt-12 md:justify-start"
@@ -224,24 +197,18 @@ import Share from "../DownloadBtn/Share.astro";
 </section>
 
 <script>
-  const $tiltEl = document.querySelector(
-    "[data-tilt-animation]"
-  ) as HTMLDivElement;
+  const $tiltEl = document.querySelector('[data-tilt-animation]') as HTMLDivElement
 
-  document.addEventListener("mousemove", ({ clientX, clientY }) => {
-    const { x, y, width, height } =
-      $tiltEl.parentElement!.getBoundingClientRect();
+  document.addEventListener('mousemove', ({ clientX, clientY }) => {
+    const { x, y, width, height } = $tiltEl.parentElement!.getBoundingClientRect()
 
-    const imgMiddleX = x + width / 2;
-    const imgMiddleY = y + height / 2;
+    const imgMiddleX = x + width / 2
+    const imgMiddleY = y + height / 2
 
-    const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25;
-    const offsetY = Math.min(
-      ((clientY - imgMiddleY) / window.innerHeight) * 15,
-      15
-    );
+    const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25
+    const offsetY = Math.min(((clientY - imgMiddleY) / window.innerHeight) * 15, 15)
 
-    $tiltEl.style.setProperty("--rotateX", `${-1 * offsetY + 5}deg`);
-    $tiltEl.style.setProperty("--rotateY", `${offsetX - 5}deg`);
-  });
+    $tiltEl.style.setProperty('--rotateX', `${-1 * offsetY + 5}deg`)
+    $tiltEl.style.setProperty('--rotateY', `${offsetX - 5}deg`)
+  })
 </script>
