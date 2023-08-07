@@ -1,5 +1,6 @@
 ---
-import phone from '@/assets/home/phone-screen-main.png'
+import phoneEn from '@/assets/home/phone-screen-main-en.png'
+import phoneKo from '@/assets/home/phone-screen-main-ko.png'
 import sotModal from '@/assets/home/sot-modal.webp'
 import avatarClothes1 from '@/assets/home/avatar-clothes-1.webp'
 import Apple from '@/components/DownloadBtn/Apple.astro'
@@ -9,7 +10,7 @@ import coupon1 from '@/assets/home/coupon-1.webp'
 import coupon2 from '@/assets/home/coupon-2.webp'
 import { Image } from 'astro:assets'
 
-import { t } from 'i18next'
+import i18next, { t } from 'i18next'
 import { Trans } from 'astro-i18next/components'
 import Share from '../DownloadBtn/Share.astro'
 ---
@@ -48,7 +49,7 @@ import Share from '../DownloadBtn/Share.astro'
     >
       <div class="relative [transform-style:preserve-3d]">
         <Image
-          src={phone}
+          src={i18next.language === 'ko' ? phoneKo : phoneEn}
           alt="Phone with a FingeRate App demo"
           class="block h-[350px] w-fit object-contain drop-shadow-md md:order-2 md:h-[500px]"
           loading={'eager'}
