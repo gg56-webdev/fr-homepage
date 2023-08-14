@@ -55,7 +55,8 @@
 
   "common": {
     "new": "New",
-    "contact-information": "Contact Information"
+    "contact-information": "Contact Information",
+    "go-home": "Go to homepage"
   },
 
   "contact-form": {

@@ -50,7 +50,8 @@
 
   "common": {
     "new": "최신",
-    "contact-information": "연락처"
+    "contact-information": "연락처",
+    "go-home": "홈페이지로 이동"
   },
 
   "contact-form": {
