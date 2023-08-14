@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import { localizePath } from 'astro-i18next'
-import i18next from 'i18next'
+import i18next, { t } from 'i18next'
 import type { WP_REST_API_Post } from 'wp-types'
 import { NAV_LINKS } from '@/constants'
 
@@ -70,9 +70,7 @@ const href = isExternal ? post.link : localizePath(`${NAV_LINKS.NEWS.href}/${pos
           )
         }
         <a {href} target={isExternal ? '_blank' : '_self'} class="hover:underline">
-          Read <span class="sr-only @[7rem]:not-sr-only">Post</span>&nbsp;<span class="sr-only @[4rem]:not-sr-only"
-            >→</span
-          >
+          {t('news.read')}&nbsp;<span class="sr-only @[4rem]:not-sr-only">→</span>
         </a>
       </div>
     </div>

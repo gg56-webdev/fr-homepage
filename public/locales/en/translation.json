@@ -271,6 +271,12 @@
     }
   },
 
+  "news": {
+    "h1": "News",
+    "read": "Read post",
+    "go-news": "Go back to News"
+  },
+
   "faq": {
     "h1": "FAQ",
     "q&a": [
