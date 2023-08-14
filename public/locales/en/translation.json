@@ -239,6 +239,13 @@
     }
   },
 
+  "team": {
+    "hero": {
+      "h1": "Our People",
+      "p": "Meet the people behind FingeRate and its unique ecosystem!"
+    }
+  },
+
   "faq": {
     "h1": "FAQ",
     "q&a": [
