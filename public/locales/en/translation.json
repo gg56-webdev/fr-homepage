@@ -131,6 +131,16 @@
       "p2": "Our AI technology enables a safe and seamless experience for your visitors, eliminating physical contact and tedious paper surveys while gathering real-time data with real-time emotions!"
     },
     "keywords": ["Real Time-data", "Contactless Survey Solution", "AI Technology"],
+    "how": {
+      "h2": "How Does It Work?",
+      "survey": "Survey",
+      "survey-item-1": "Survey location information",
+      "survey-item-2": "<0>Using AI, identify additional information</0><1>(age, sex etc.)</1>",
+      "survey-item-3": "Using hand gesture, respond to survey",
+      "ai": "AI Data<br/>Analysis",
+      "external": "<0>External data</0><1>(Weather, Economic/ Political Condition, etc.)</1>",
+      "data": "Actionable data and insights"
+    },
     "benefits": {
       "h2": "Why Work With FingeRate Bot?",
       "cards": [
