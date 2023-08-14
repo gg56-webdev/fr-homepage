@@ -1,6 +1,6 @@
 ---
-layout: "@/layouts/DocumentLayout.astro"
-title: "이용 약관"
+layout: '@/layouts/DocumentLayout.astro'
+title: '이용 약관'
 ---
 
 # 이용 약관
@@ -53,36 +53,36 @@ FingeRate 모바일 애플리케이션("앱")은 GG56 Ltd ("회사")에서 제�
 
 2. 제한 사항: 회사의 사전 서면 동의 없이 앱이나 그 콘텐츠를 복사, 2차 저작물 생산, 수정, 배포, 전시, 실행 또는 파생 작품을 제작하는 것은 금지됩니다.
 
-## 5. Privacy
+## 5. 개인정보 보호
 
-1. Privacy Policy: Your use of the App is subject to the Company's Privacy Policy, which can be accessed at [Privacy Policy](/privacy-policy)
+1. 개인정보 보호정책: 앱 사용은 회사의 개인정보 보호정책의 적용을 받습니다. 해당 정책은 개인정보 보호정책 링크에서 확인하실 수 있습니다.
 
-2. Data Collection and Use: By using the App, you consent to the collection and use of your personal information as outlined in the Privacy Policy.
+2. 데이터 수집 및 이용: 앱 사용에 따른 개인 정보의 수집 및 이용에 동의합니다. 이에 대한 상세 내용은 [개인정보 보호정책에](/privacy-policy) 설명되어 있습니다.
 
-## 6. Termination
+## 6. 종료
 
-1. Termination by the Company: The Company may, in its sole discretion, terminate or suspend your access to the App at any time and for any reason without prior notice.
+1. 회사에 의한 종료: 회사는 자체 판단에 따라 언제든지 어떠한 이유로든 사전 통지 없이 앱 접근을 종료하거나 중단할 수 있습니다.
 
-2. Termination by User: You may discontinue your use of the App at any time. You can directly delete your App profile on the app, under your profile information.
+2. 사용자의 종료: 언제든지 앱 사용을 중단할 수 있습니다. 앱 프로필 정보 아래에서 직접 앱 프로필을 삭제할 수 있습니다.
 
-## 7. Disclaimer of Warranties
+## 7. 보증의 부인
 
-GG56 is not responsible for the content, products, or services offered on third-party websites or resources that may be linked within the App or Website. These links are provided solely for convenience, and GG56 does not endorse or have control over the content or availability of such websites or resources. Your use of any third-party websites or resources is at your own risk, and you acknowledge sole responsibility for any consequences or risks that may arise from such use.
+GG56은 타사 웹 사이트 또는 앱 또는 웹 사이트 내에서 링크될 수 있는 제3자 웹사이트나 리소스에서 제공되는 콘텐츠, 제품 또는 서비스에 대한 책임을 지지 않습니다. 이러한 링크는 오로지 편의를 위해 제공되며, GG56은 이러한 웹 사이트 또는 리소스의 콘텐츠나 가용성을 보증하거나 통제하지 않습니다. 제3자 웹사이트나 리소스를 사용함으로써 발생할 수 있는 어떠한 결과나 위험에 대해서도 사용자 본인이 독립적으로 책임을 지며 사용한다는 것을 귀하는 인정합니다.
 
-GG56 is also not responsible for the availability or quality of third-party services, including but not limited to cell phone networks, hotspots, wireless internet, and other services. The use of such third-party services may impact your ability to utilize the Services or participate in any events. By using the Services, you waive and release GG56 and any other parties involved in providing the Services from any claims, demands, damages, losses, expenses, or liability arising from or related to such third-party services.
+GG56은 또한 휴대폰 네트워크, 핫스팟, 무선 인터넷 및 기타 서비스를 포함한 제3자 서비스의 가용성 또는 품질에 대해 책임을 지지 않습니다. 이러한 제3자 서비스의 사용은 서비스 이용 또는 이벤트에 참여할 수 있는 능력에 영향을 줄 수 있습니다. 본 서비스를 사용함으로써 귀하는 이러한 제3자 서비스와 관련하여 발생하거나 관련된 모든 클레임, 요구, 손해, 손실, 비용 또는 책임으로부터 GG56 및 서비스 제공에 관여하는 하는 모든 당사자를 면책하고 해제합니다.
 
-## 8. Limitations of Liability
+## 8. 책임의 한계
 
-TO THE FULLEST EXTENT PERMITTED UNDER APPLICABLE LAW, GG56 and any other parties involved in creating, producing, or delivering the App or Content shall not be liable to you for any indirect, incidental, special, punitive, exemplary, or consequential damages. This includes but is not limited to lost profits, loss of data or goodwill, service interruption, computer damage or system failure, or the cost of substitute services.
+적용되는 법의 최대 허용 범위 내에서, GG56 및 앱 또는 콘텐츠의 생성, 제작 또는 제공에 참여한 기타 당사자 들은 간접적, 우발적, 특별, 징벌적, 예시적 또는 결과적 손해에 대해 사용자에게 책임을 지지 않습니다. 이는 이익 손실, 데이터나 영업권의 손실, 서비스 중단, 컴퓨터 손상 또는 시스템 장애, 대체 서비스 비용을 포함하지만 이에 국한되지 않습니다.
 
-GG56 shall not be liable for any damages arising from or in connection with these Terms, the use of or inability to use the App or Content, or any communications, interactions, or meetings with other users or third parties resulting from your use of the Services. This applies whether such damages are based on warranty, contract, tort (including negligence), product liability, or any other legal theory, and regardless of whether GG56 has been advised of the possibility of such damages.
+GG56은 이용약관, 앱 또는 콘텐츠의 사용 또는 사용 불능, 서비스 이용으로 인한 기타 사용자나 제3자와의 의사소통, 상호작용 또는 만남과 관련된 어떠한 손해에 대해서도 책임을 지지 않습니다. 이는 보증, 계약, 불법행위(과실 포함), 제품 책임 또는 기타 법률적 근거를 기반으로 하며, GG56이 해당 손해 가능성에 대해 사전 경고를 받았는지 여부에 관계없이 적용됩니다.
 
-## 9. Changes To The Terms and Automatic Updates
+## 9. 약관 변경과 자동 업데이트
 
-1. We reserve the right to modify these Terms to comply with legal requirements, industry standards, or establish collaborations with third parties. We may also introduce new features that necessitate changes to the Terms.
+1. 우리는 법적 요구 사항과 업계 기준 반영 또는 제3자와의 협력을 위해 이 약관을 수정할 권리를 보유합니다. 또한 새로운 기능 도입으로 약관을 변경해야 할 수도 있습니다.
 
-2. The App may be updated automatically to improve performance, add new functionality, adapt to operating system updates, or address security concerns. In some cases, you may be prompted to manually update the App. Failure to install updates or opting out of automatic updates may result in the inability to continue using the App and its services.
+2. 앱은 성능 개선, 새로운 기능 추가, 운영 체제 업데이트에 적응 또는, 보안 문제 해결을 위해 자동으로 업데이트될 수 있습니다. 경우에 따라 수동으로 앱 업데이트를 설치하도록 요청받을 수 있습니다. 업데이트를 설치하지 않거나 자동 업데이트를 거부하는 경우, 앱 및 해당 서비스의 계속적인 사용이 불가능 할 수 있습니다
 
-3. If you do not agree to the proposed changes, you will no longer be able to use the App and its services.
+3. 제안된 변경 사항에 동의하지 않으면 더 이상 앱과 해당 서비스를 사용할 수 없습니다.
 
-By using the Website and/or App, you consent to the Terms of Use. If you have any questions about these Terms or the App, please contact us at [info@gg56.world](mailto:info@gg56.world).
+웹사이트와/또는 앱을 사용함으로써 귀하는 이용약관에 동의합니다. 이 약관이나 앱에 대한 질문이 있으면 [info@gg56.world로](mailto:info@gg56.world) 문의하십시오
