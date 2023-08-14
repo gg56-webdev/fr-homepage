@@ -11,23 +11,17 @@ import { formatNumber } from './Hero.astro'
     <Image src={network} alt="MSOT network illustration" />
     <div class="text-xl text-cyberLilac">
       <div class="space-y-4">
-        <h2 class="text-4xl font-bold text-white" set:html={t('token.about.h2')} />
-        <p>
-          MSOT Token is directly used to navigate the FingeRate Ecosystem. It provides users with various rewards, while
-          creating a world of opportunities.
-        </p>
-        <p>
-          It is built on a secure and transparent blockchain network, ensuring that the best functionalities are
-          available to users while maintaining a high level of security and trust.
-        </p>
+        <h2 class="text-4xl font-bold text-white" set:html={t('token.about.section-1.h2')} />
+        <p>{t('token.about.section-1.p-1')}</p>
+        <p>{t('token.about.section-1.p-2')}</p>
       </div>
       <dl class="flex gap-12 mt-12">
         <div class="flex flex-col-reverse gap-2">
-          <dt class="text-sm">Quantity</dt>
+          <dt class="text-sm">{t('token.hero.quantity')}</dt>
           <dd class="font-bold text-4xl text-white">{formatNumber(1_800_000_000)}</dd>
         </div>
         <div class="flex flex-col-reverse gap-2">
-          <dt class="text-sm">Members on Telegram</dt>
+          <dt class="text-sm">{t('token.about.section-1.stat')}</dt>
           <dd class="font-bold text-4xl text-white">+{formatNumber(7000, { notation: 'standard' })}</dd>
         </div>
       </dl>
@@ -36,14 +30,12 @@ import { formatNumber } from './Hero.astro'
   <div data-scroll-animation class="grid items-center gap-8 md:grid-cols-2">
     <Image class="md:order-2" src={socials} alt="Social medias illustration" />
     <div class="space-y-4 text-xl text-cyberLilac">
-      <h2 class="text-4xl font-bold text-white" set:text="Join Our Community" />
+      <h2 class="text-4xl font-bold text-white" set:text={t('token.about.section-2.h2')} />
       <p>
-        Are you ready to be a part of something big? Join our vibrant community on Twitter and Telegram (but not only!)
-        and become a driving force behind the success of FingeRate!
+        {t('token.about.section-2.p-1')}
       </p>
       <p>
-        Stay updated with the latest developments, share your ideas, and connect with like-minded individuals who share
-        your passion for innovation and new technologies!
+        {t('token.about.section-2.p-2')}
       </p>
     </div>
   </div>

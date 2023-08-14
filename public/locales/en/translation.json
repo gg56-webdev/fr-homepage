@@ -178,8 +178,17 @@
       "caption": "MSOT, last 30 days"
     },
     "about": {
-      "h2": "FingeRate: One&nbsp;App, One&nbsp;Token, One&nbsp;Ecosystem",
-      "p": "MSOT is the main token used in the FingeRate ecosystem, facilitating transactions, incentivizing users, and enabling them to personalize their experience. The token is built on the Ethereum blockchain and adheres to the ERC-20 standard. The total supply of MSOT is limited to 1.8 billion units."
+      "section-1": {
+        "h2": "FingeRate: One&nbsp;App, One&nbsp;Token, One&nbsp;Ecosystem",
+        "p-1": "MSOT Token is directly used to navigate the FingeRate Ecosystem. It provides users with various rewards, while creating a world of opportunities.",
+        "p-2": "It is built on a secure and transparent blockchain network, ensuring that the best functionalities are available to users while maintaining a high level of security and trust.",
+        "stat": "Members on Telegram"
+      },
+      "section-2": {
+        "h2": "Join Our Community",
+        "p-1": "Are you ready to be a part of something big? Join our vibrant community on Twitter and Telegram (but not only!) and become a driving force behind the success of FingeRate!",
+        "p-2": "Stay updated with the latest developments, share your ideas, and connect with like-minded individuals who share your passion for innovation and new technologies!"
+      }
     }
   },
 
