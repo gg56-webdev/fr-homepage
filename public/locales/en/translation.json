@@ -371,5 +371,7 @@
     "cta": {
       "h2": "Try FingeRate App Now"
     }
-  }
+  },
+
+  "404": "Page not Found..."
 }

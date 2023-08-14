@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import { NAV_LINKS } from "@/constants";
 import Layout from "@/layouts/Layout.astro";
 
@@ -7,10 +7,8 @@ changeLanguage("ko");
 ---
 
 <Layout>
-  <div class="mx-auto grid h-full max-w-screen-lg place-items-center p-2 text-center">
-    <div>
-      <h1 class="mb-4 text-4xl font-bold">Page not Found...</h1>
-      <a href={NAV_LINKS.HOME.href} class="hover:underline">Go to homepage ↗</a>
-    </div>
-  </div>
+  <section class="grid pt-36 place-items-center content-center gap-4 text-center">
+    <h1 class="mb-4 text-4xl font-bold">{t('404')}</h1>
+    <a href={NAV_LINKS.HOME.href} class="hover:underline">{t('common.go-home')} ↗</a>
+  </section>
 </Layout>
