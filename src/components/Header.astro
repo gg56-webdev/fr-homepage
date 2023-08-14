@@ -9,56 +9,56 @@ type Dropdown = { name: string; href?: string; links: Link[] }
 const navLinks: Array<Link | Dropdown> = [
   {
     ...NAV_LINKS.HOME,
-    name: t('links.home'),
+    name: t('links.home', { lng: 'en' }),
     href: localizePath(NAV_LINKS.HOME.href),
   },
   {
-    name: t('links.ecosystem'),
+    name: t('links.ecosystem', { lng: 'en' }),
     links: [
       {
         ...NAV_LINKS.BOT,
-        name: t('links.bot'),
+        name: t('links.bot', { lng: 'en' }),
         href: localizePath(NAV_LINKS.BOT.href),
       },
       {
         ...NAV_LINKS.TOKEN,
-        name: t('links.token'),
+        name: t('links.token', { lng: 'en' }),
         href: localizePath(NAV_LINKS.TOKEN.href),
       },
     ],
   },
   {
-    name: t('links.about'),
+    name: t('links.about', { lng: 'en' }),
     links: [
       {
         ...NAV_LINKS.TEAM,
-        name: t('links.team'),
+        name: t('links.team', { lng: 'en' }),
         href: localizePath(NAV_LINKS.TEAM.href),
       },
       {
         ...NAV_LINKS.NEWS,
-        name: t('links.news'),
+        name: t('links.news', { lng: 'en' }),
         href: localizePath(NAV_LINKS.NEWS.href),
       },
     ],
   },
   {
-    name: t('links.support'),
+    name: t('links.support', { lng: 'en' }),
     links: [
-      { ...NAV_LINKS.GUIDE, name: t('links.user-guide') },
+      { ...NAV_LINKS.GUIDE, name: t('links.user-guide', { lng: 'en' }) },
       {
         ...NAV_LINKS.FAQ,
-        name: t('links.faq'),
+        name: t('links.faq', { lng: 'en' }),
         href: localizePath(NAV_LINKS.FAQ.href),
       },
       {
         ...NAV_LINKS.CONTACT,
-        name: t('links.contact'),
+        name: t('links.contact', { lng: 'en' }),
         href: localizePath(NAV_LINKS.CONTACT.href),
       },
     ],
   },
-  { ...NAV_LINKS.WHITEPAPER, name: t('links.whitepaper') },
+  { ...NAV_LINKS.WHITEPAPER, name: t('links.whitepaper', { lng: 'en' }) },
 ]
 
 // const localizeNavItem = (item: Link | Dropdown): Link | Dropdown => {
