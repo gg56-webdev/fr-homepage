@@ -189,6 +189,40 @@
         "p-1": "Are you ready to be a part of something big? Join our vibrant community on Twitter and Telegram (but not only!) and become a driving force behind the success of FingeRate!",
         "p-2": "Stay updated with the latest developments, share your ideas, and connect with like-minded individuals who share your passion for innovation and new technologies!"
       }
+    },
+    "roadmap": {
+      "h2": "FingeRate Ecosystem Roadmap",
+      "p": "  Witness the evolution of our ecosystem through game-changing upgrades and tailored functionalities, as we push the boundaries to deliver an unparalleled experience for our users.",
+      "2021": [
+        "Designed the web and Metaverse platform",
+        "Blueprint for 10,000 virtual bots",
+        "Mined 1,000 virtual bots and uploaded them on OpenSea MarketPlace",
+        "Token Swap from BTour to MSOT"
+      ],
+      "2022": [
+        "FingeRate app 2.0 development design and planning",
+        "FingeRate app marketplace planning",
+        "Planning for FingeRate Bot advanced version development"
+      ],
+      "2023": [
+        "Official rebranding of FingeRate from BTour Chain",
+        "FingeRate app official launch in South Korea targeting local market",
+        "Upgraded version of FingeRate Bot with improved AI and data accuracy",
+        "FingeRate app reward system implantation",
+        "Listing on Korean exchanges"
+      ],
+      "2024": [
+        "Wallet, block explorer, and dApp functionalities to strengthen the blockchain ecosystem",
+        "Mainnet development",
+        "Development of AI Deep research services For FR Bot",
+        "FingeRate app official launch on the global market",
+        "FingeRate Bot compatibility with all kinds of kiosks / digital displays"
+      ],
+      "2025": [
+        "AI capabilities for deep research services",
+        "Sales/licensing of FingeRate Bot API",
+        "Fully automated generation of reports that analyze survey data"
+      ]
     }
   },
 

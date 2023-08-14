@@ -1,8 +1,11 @@
+---
+import { t } from 'i18next'
+---
+
 <section data-scroll-animation class="max-w-screen-xl mx-auto p-2" id="roadmap">
-  <h2 class="text-center font-bold text-4xl mb-4">FingeRate Ecosystem Roadmap</h2>
+  <h2 class="text-center font-bold text-4xl mb-4">{t('token.roadmap.h2')}</h2>
   <p class="text-center mx-auto max-w-[80ch]">
-    Witness the evolution of our ecosystem through game-changing upgrades and tailored functionalities, as we push the
-    boundaries to deliver an unparalleled experience for our users.
+    {t('token.roadmap.p')}
   </p>
   <div
     class="mt-12 grid grid-cols-[auto_1fr] grid-rows-[repeat(5,auto)] lg:grid-rows-[auto_auto] lg:grid-cols-5 items-start gap-4 before:row-span-full before:bg-brandGradient before:h-full before:w-2 before:rounded-full lg:before:row-span-1 lg:before:col-span-full lg:before:w-full lg:before:h-2"
@@ -14,10 +17,7 @@
         <h3 class="font-bold text-2xl brand-text">2021</h3>
       </div>
       <ul class="list-disc mt-2 space-y-2 text-sm text-cyberLilac">
-        <li>Designed the web and Metaverse platform</li>
-        <li>Blueprint for 10,000 virtual bots</li>
-        <li>Mined 1,000 virtual bots and uploaded them on OpenSea MarketPlace</li>
-        <li>Token Swap from BTour to MSOT</li>
+        {(t('token.roadmap.2021', { returnObjects: true }) as string[]).map((i) => <li>{i}</li>)}
       </ul>
     </div>
     <div
@@ -27,9 +27,7 @@
         <h3 class="font-bold text-2xl brand-text">2022</h3>
       </div>
       <ul class="list-disc mt-2 space-y-2 text-sm text-cyberLilac">
-        <li>FingeRate app 2.0 development design and planning</li>
-        <li>FingeRate app marketplace planning</li>
-        <li>Planning for FingeRate Bot advanced version development</li>
+        {(t('token.roadmap.2022', { returnObjects: true }) as string[]).map((i) => <li>{i}</li>)}
       </ul>
     </div>
     <div
@@ -39,11 +37,7 @@
         <h3 class="font-bold text-2xl brand-text">2023</h3>
       </div>
       <ul class="list-disc mt-2 space-y-2 text-sm text-cyberLilac">
-        <li>Official rebranding of FingeRate from BTour Chain</li>
-        <li>FingeRate app official launch in South Korea targeting local market</li>
-        <li>Upgraded version of FingeRate Bot with improved AI and data accuracy</li>
-        <li>FingeRate app reward system implantation</li>
-        <li>Listing on Korean exchanges</li>
+        {(t('token.roadmap.2023', { returnObjects: true }) as string[]).map((i) => <li>{i}</li>)}
       </ul>
     </div>
     <div
@@ -53,11 +47,7 @@
         <h3 class="font-bold text-2xl brand-text">2024</h3>
       </div>
       <ul class="list-disc mt-2 space-y-2 text-sm text-cyberLilac">
-        <li>Wallet, block explorer, and dApp functionalities to strengthen the blockchain ecosystem</li>
-        <li>Mainnet development</li>
-        <li>Development of AI Deep research services For FR Bot</li>
-        <li>FingeRate app official launch on the global market</li>
-        <li>FingeRate Bot compatibility with all kinds of kiosks / digital displays</li>
+        {(t('token.roadmap.2024', { returnObjects: true }) as string[]).map((i) => <li>{i}</li>)}
       </ul>
     </div>
     <div
@@ -67,9 +57,7 @@
         <h3 class="font-bold text-2xl brand-text">2025</h3>
       </div>
       <ul class="list-disc mt-2 space-y-2 text-sm text-cyberLilac">
-        <li>AI capabilities for deep research services</li>
-        <li>Sales/licensing of FingeRate Bot API</li>
-        <li>Fully automated generation of reports that analyze survey data</li>
+        {(t('token.roadmap.2025', { returnObjects: true }) as string[]).map((i) => <li>{i}</li>)}
       </ul>
     </div>
   </div>
