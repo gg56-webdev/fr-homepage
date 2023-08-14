@@ -11,25 +11,40 @@ const images = [
   [
     ethLogo,
     'ethereum logo',
-    t('token.about.tooltips.0'),
+    t('token.platforms.tooltips.0'),
     'https://etherscan.io/token/0xe5ef42d0e5e4aa6b36c613d00db8dad303d505f3',
+    true,
   ],
   [
     polygonLogo,
     'polygon logo',
-    'Polygon Technology',
+    t('token.platforms.tooltips.1'),
+
     'https://polygonscan.com/token/0xc3844570fce37ce5edc0f83c8ebe71d69e1bf92f',
+    true,
   ],
-  [coinGeckoLogo, 'Coin Gecko logo', 'Latest stats on Coin Gecko', 'https://www.coingecko.com/en/coins/btour-chain'],
-  [ecosystemLogo, 'fingerate ecosystem logo', t('token.about.tooltips.1'), localizePath(NAV_LINKS.HOME.href)],
+  [
+    coinGeckoLogo,
+    'Coin Gecko logo',
+    t('token.platforms.tooltips.2'),
+    'https://www.coingecko.com/en/coins/btour-chain',
+    true,
+  ],
+  [
+    ecosystemLogo,
+    'fingerate ecosystem logo',
+    t('token.platforms.tooltips.3'),
+    localizePath(NAV_LINKS.HOME.href),
+    false,
+  ],
 ] as const
 ---
 
 <section class="mx-auto max-w-screen-lg p-2">
   <div class="flex justify-around gap-4">
     {
-      images.map(([src, alt, tooltip, href], i) => (
-        <a {href} target="_blank" rel="noopener noreferrer" class="group ">
+      images.map(([src, alt, tooltip, href, isExternal], i) => (
+        <a {href} target={isExternal ? '_blank' : '_self'} rel={isExternal ? 'noopener noreferrer' : ''} class="group ">
           <div class="before:opacity-0 hover:before:opacity-100 hover:before:animate-ping before:w-full before:h-full relative before:absolute before:rounded-full before:border-2">
             <Image class="group-hover:scale-95 transition" data-tooltip-trigger={i} src={src} alt={alt} />
           </div>
