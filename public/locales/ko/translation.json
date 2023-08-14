@@ -163,6 +163,9 @@
     "platforms": {
       "tooltips": ["ERC-20 기반", "Polygon 기술", "CoinGecko의 최신 통계", "FingeRate 에코시스템"]
     },
+    "chart": {
+      "caption": "MSOT, 최근 30일"
+    },
     "about": {
       "h2": "FingeRate: 한가지&nbsp;앱, 하나의&nbsp;토큰, 하나의&nbsp;에코시스템",
       "p": "MSOT은 FingeRate 에코시스템에서 사용되는 메인 토큰으로, 거래를 용이하게 하고 사용자에게 인센티브를 부여하며 개인화된 경험을 가능하게 합니다. 이 토큰은 이더리움 블록체인 기반 위에 구축되며 ERC-20 표준을 준수합니다. MSOT의 총 공급량은 18억 개로 제한됩니다."
