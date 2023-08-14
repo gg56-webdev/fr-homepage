@@ -328,6 +328,10 @@
     ],
     "ecosystem": {
       "link": "CoinGecko에서 MSOT 확인"
+    },
+    "contact": {
+      "h2": "질문이 있으신가요?",
+      "link": "문의 페이지로 이동"
     }
   },
 
