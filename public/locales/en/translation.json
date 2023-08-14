@@ -243,6 +243,22 @@
     "hero": {
       "h1": "Our People",
       "p": "Meet the people behind FingeRate and its unique ecosystem!"
+    },
+    "core": {
+      "h2": "Our Core Team",
+      "p": "We bring a wealth of experience, all sprinkled with passion",
+      "categories": {
+        "All": "All",
+        "Founders": "Founders",
+        "Leadership": "Leadership",
+        "Strategy": "Strategy",
+        "Development": "Development",
+        "Sales": "Sales",
+        "Business": "Business",
+        "HR": "HR",
+        "Marketing": "Marketing",
+        "Design": "Design"
+      }
     }
   },
 

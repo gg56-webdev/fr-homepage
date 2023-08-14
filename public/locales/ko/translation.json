@@ -232,6 +232,22 @@
     "hero": {
       "h1": "우리 사람들",
       "p": "FingeRate와 독특한 에코시스템을 지원하고있는 사람들을 만나보세요!"
+    },
+    "core": {
+      "h2": "핵심 팀",
+      "p": "우리는 경험이 풍부하며, 모든 면에서 열정으로 가득합니다.",
+      "categories": {
+        "All": "모든 것",
+        "Founders": "창립자",
+        "Leadership": "리더십",
+        "Strategy": "전략",
+        "Development": "개발",
+        "Sales": "영업",
+        "Business": "비즈니스",
+        "HR": "인사",
+        "Marketing": "마케팅",
+        "Design": "디자인"
+      }
     }
   },
 

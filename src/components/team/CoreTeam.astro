@@ -1,7 +1,7 @@
 ---
 import team from '@/data/team/team.json'
 import { Image } from 'astro:assets'
-import i18next from 'i18next'
+import i18next, { t } from 'i18next'
 const lang = i18next.language as 'ko' | 'en'
 const people = team.map((p) => {
   const nameEn = p.name.en
@@ -31,8 +31,8 @@ const getIcon = (href: string) => {
 
 <section data-scroll-animation class="mx-auto max-w-screen-lg p-2">
   <div class="text-center mb-6">
-    <h2 class="text-4xl font-bold mb-2">Our Core Team</h2>
-    <p class="tracking-wide text-cyberLilac text-lg">We bring a wealth of experience, all sprinkled with passion</p>
+    <h2 class="text-4xl font-bold mb-2">{t('team.core.h2')}</h2>
+    <p class="tracking-wide text-cyberLilac text-lg">{t('team.core.p')}</p>
   </div>
   <ul class="flex gap-2 flex-wrap justify-center">
     {
@@ -44,14 +44,14 @@ const getIcon = (href: string) => {
               data-category={c}
               data-selected
             >
-              {c}
+              {t(`team.core.categories.${c}`)}
             </button>
           ) : (
             <button
               class="border-cyberLilac rounded-full border py-0.5 px-3 data-[selected]:border-intelligentBlue data-[selected]:bg-intelligentBlue transition"
               data-category={c}
             >
-              {c}
+              {t(`team.core.categories.${c}`)}
             </button>
           )}
         </li>
