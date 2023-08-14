@@ -163,6 +163,9 @@
     },
     "dashboard": {
       "h2": "Give Bot a Try!",
+      "question-label": "Question",
+      "option-label": "Option",
+      "question-placeholder": "Please type your question here!",
       "question": "How was our opening event?",
       "options": ["Loved it!", "Great", "OK", "Boring", "Bad"],
       "thanks": "Thank you for participating!"

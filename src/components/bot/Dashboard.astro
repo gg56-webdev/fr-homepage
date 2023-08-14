@@ -78,12 +78,12 @@ const themes: Array<keyof typeof colors> = ['dark', 'light', 'blue', 'purple', '
       </div>
       <div class="space-y-8 bg-slate-950/80 p-4 md:mt-[5%] md:rounded-lg">
         <div class="grid gap-2">
-          <label for="q" class="mb-1 block text-sm font-medium">Question</label>
+          <label for="q" class="mb-1 block text-sm font-medium">{t('bot.dashboard.question-label')}</label>
           <input
             type="text"
             id="q"
             maxlength="50"
-            placeholder="Please type your question here!"
+            placeholder={t('bot.dashboard.question-placeholder')}
             class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue"
           />
         </div>
@@ -94,7 +94,7 @@ const themes: Array<keyof typeof colors> = ['dark', 'light', 'blue', 'purple', '
               return (
                 <div class="grid gap-2">
                   <label for={`o${id}`} class="mb-1 block text-sm font-medium  ">
-                    Option {id}
+                    {t('bot.dashboard.option-label')} {id}
                   </label>
                   <input
                     type="text"
