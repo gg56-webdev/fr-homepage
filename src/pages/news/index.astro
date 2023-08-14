@@ -1,5 +1,5 @@
 ---
-import i18next, { changeLanguage } from "i18next";
+import i18next, { changeLanguage, t } from "i18next";
 import { getPosts } from "@/api";
 import Layout from "@/layouts/Layout.astro";
 import NewsCard from "@/components/NewsCard.astro";
@@ -9,7 +9,7 @@ changeLanguage("en");
 const posts = await getPosts(i18next.language as "en" | "ko");
 ---
 
-<Layout image="/og/news.jpg" title='FingeRate | News' description="Stay updated with the latest news and happenings related to FingeRate and its ecosystem. Explore our news page for exciting updates, insights, and events.">
+<Layout image="/og/news.jpg"  title={t('seo.news.title')!} description={t('seo.news.description')!}>
   <div class='py-8 md:pb-24'>
     <section class='mx-auto max-w-screen-lg p-2'>
         <h1 class=' mb-8 text-center text-4xl font-bold '>News</h1>

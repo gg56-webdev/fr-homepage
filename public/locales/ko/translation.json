@@ -1,7 +1,47 @@
 {
-  "site": {
-    "title": "$t(name) | 설문 조사 수익 창출 플랫폼",
-    "description": "$t(name)를 사용하고 보상을 받으세요! 앱이 간편하고 사용이 편리하니 언젠나 어디서나 설문조사를 진행해 보세요. 지금 바로 Play 스토어와 iOS에서 다운로드받고 다양한 보상을 즐기세요!"
+  "links": {
+    "home": "홈",
+    "ecosystem": "에코시스템",
+    "bot": "FingeRate 봇",
+    "token": "MSOT 토큰",
+    "about": "소개",
+    "team": "팀",
+    "news": "뉴스",
+    "contact": "연락처",
+    "whitepaper": "백서",
+    "privacy-policy": "개인정보 보호정책",
+    "terms-of-use": "이용 약관"
+  },
+
+  "seo": {
+    "default": {
+      "title": "$t(name) | 설문 조사 수익 창출 플랫폼",
+      "description": "$t(name)를 사용하고 보상을 받으세요! 앱이 간편하고 사용이 편리하니 언젠나 어디서나 설문조사를 진행해 보세요. 지금 바로 Play 스토어와 iOS에서 다운로드받고 다양한 보상을 즐기세요!"
+    },
+    "token": {
+      "title": "$t(name) | MSOT 토큰 거래하기",
+      "description": "MSOT 토큰으로 FingeRate 에코시스템을 안전하게 알아보세요. ERC-20 및 Polygon 기반의 암호화폐로 많은 혜택과 장점을 누릴 수 있습니다. 지금 MSOT 토큰 거래를 시작하세요!"
+    },
+    "team": {
+      "title": "$t(name) | $t(links.team)",
+      "description": "FingeRate와 혁신적인 솔루션을 지원하고있는 헌신적인 사람들에 대해 알아보세요. 오늘 저희와 연락하셔서 미래에 대한 흥미로운 비전을 알아보고 발견하세요"
+    },
+    "faq": {
+      "title": "$t(name) | $t(links.faq)",
+      "description": "앱의 포괄적인 FAQ 섹션에서 가장 많이 하는 질문에 대한 답을 찾아보세요. FingeRate 앱, 봇 및 MSOT 토큰에 대해 명확하게 이해하실 수 있습니다. 지금 FAQ 페이지를 살펴보세요!"
+    },
+    "contact": {
+      "title": "$t(name) | $t(links.contact)",
+      "description": "저희 솔루션이나 협력 기회에 대한 문의 사항은 무엇이든 언제든지 저희에게 문의하세요. 저희 팀은 언제나 지원해 드릴 준비가 되어 있습니다. 지금 연락하여 연결해 보세요!"
+    },
+    "bot": {
+      "title": "$t(name) | $t(links.bot)",
+      "description": "FingeRate 봇을 만나보세요 - 비접촉 설문 조사 솔루션! 이제 서면 설문 조사는 그만 하시고 AI 기술로 원활하고 안전하게 진행하세요. 실시간 데이터와 인사이트를 얻으세요. 지금 바로 해보세요!"
+    },
+    "news": {
+      "title": "$t(name) | $t(links.news)",
+      "description": "FingeRate 및 그 에코시스템에 대해 업데이트된  최신 뉴스와 정보 동향을 받으세요. 저희 뉴스 페이지에 오셔서 업데이트된 흥미진진한 내용들과 그 인사이트 그리고 이벤트 들에 대해 알아보세요."
+    }
   },
 
   "company": {
@@ -22,29 +62,6 @@
       "h1": "감사합니다!",
       "p": "가능한 빨리 회신드리겠습니다!"
     }
-  },
-
-  "links": {
-    "home": "홈",
-    "ecosystem": "에코시스템",
-    "bot": "FingeRate 봇",
-    "token": "MSOT 토큰",
-    "about": "소개",
-    "team": "팀",
-    "contact": "연락처",
-    "whitepaper": "백서",
-    "privacy-policy": "개인정보 보호정책",
-    "terms-of-use": "이용 약관"
-  },
-
-  "pages": {
-    "bot": "$t(links.bot)",
-    "token": "$t(links.token)",
-    "team": "$t(links.team)",
-    "news": "$t(links.news)",
-    "faq": "$t(links.faq)",
-    "contact": "$t(links.contact)",
-    "terms-of-use": "$t(links.terms-of-use)"
   },
 
   "cookie": {
@@ -124,13 +141,7 @@
     "dashboard": {
       "h2": "봇을 사용해 보세요!",
       "question": "저희 개막 행사가 어떠셨나요?",
-      "options": [
-        "너무 좋았어요!",
-        "훌륭했어요",
-        "좋았어요",
-        "지루했어요",
-        "별로 였어요"
-      ],
+      "options": ["너무 좋았어요!", "훌륭했어요", "좋았어요", "지루했어요", "별로 였어요"],
       "thanks": "참여해 주셔서 감사합니다!"
     },
     "contact": {
@@ -228,14 +239,8 @@
       "h2": "이메일을 보내시고 FingeRate 팀의 지원을 받아보세요! 곧 회신 드리겠습니다.",
       "btn": "텔레그램에서 연락하기 ↗",
       "points": [
-        [
-          "비즈니스 문의",
-          "서비스, 파트너십에 대한 정보나, 필요하신 정보에 대해 문의주시기 바랍니다."
-        ],
-        [
-          "기술 지원",
-          "FingeRate 앱 및 FingeRate 봇을 포함, FingeRate 에코시스템과 관련된 제반 사항 문의."
-        ],
+        ["비즈니스 문의", "서비스, 파트너십에 대한 정보나, 필요하신 정보에 대해 문의주시기 바랍니다."],
+        ["기술 지원", "FingeRate 앱 및 FingeRate 봇을 포함, FingeRate 에코시스템과 관련된 제반 사항 문의."],
         ["MSOT 토큰", "MOST 토큰 관련 질문과 MOST토큰의 스펙에 대한 문의"],
         ["미디어와 보도", "미디어 및 보도에 대한 문의"],
         ["일반 문의", "기타 사항에 대한 문의"]

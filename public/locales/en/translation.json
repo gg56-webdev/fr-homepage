@@ -1,9 +1,52 @@
 {
   "name": "FingeRate",
 
-  "site": {
-    "title": "$t(name) | Survey to Earn Platform",
-    "description": "Earn rewards easily using FingeRate! Download the app and start answering surveys that match your interests. Available now for free on Play Store and App Store!"
+  "links": {
+    "home": "Home",
+    "ecosystem": "Ecosystem",
+    "bot": "FingeRate Bot",
+    "token": "MSOT Token",
+    "about": "About",
+    "team": "Team",
+    "news": "News",
+    "support": "Support",
+    "user-guide": "User Guide",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "whitepaper": "Whitepaper",
+    "privacy-policy": "Privacy Policy",
+    "terms-of-use": "Terms of Use"
+  },
+
+  "seo": {
+    "default": {
+      "title": "$t(name) | Survey to Earn Platform",
+      "description": "Earn rewards easily using FingeRate! Download the app and start answering surveys that match your interests. Available now for free on Play Store and App Store!"
+    },
+    "token": {
+      "title": "$t(name) | Trade $t(links.token)",
+      "description": "Navigate FingeRate ecosystem safely with MSOT token; an ERC-20 & Polygon based cryptocurrency that unlocks benefits and advantages. Start trading MSOT now!"
+    },
+    "team": {
+      "title": "$t(name) | Our Team",
+      "description": "Get to know dedicated people behind FingeRate and its innovative solutions. Connect with us today to explore and discover our exciting vision for future."
+    },
+    "faq": {
+      "title": "$t(name) | $t(links.faq)",
+      "description": "Find answers to the most common questions in our comprehensive FAQ section. Get clarity about FingeRate App, Bot and MSOT token. Browse our FAQ page now!"
+    },
+    "contact": {
+      "title": "$t(name) | Contact Us",
+      "description": "Reach out to us for any inquiries about our solutions or collaboration opportunities. Our team is ready to assist you. Contact us now and let's connect!"
+    },
+    "bot": {
+      "title": "$t(name) | $t(links.bot)",
+      "description": "Meet FingeRate Bot - contactless survey solution! Say goodbye to paper surveys, go seamless & safe with AI tech. Get real-time data & insights. Try it now!"
+    },
+    "news": {
+      "title": "$t(name) | $t(links.news)",
+      "description": "Stay updated with the latest news and happenings related to FingeRate and its ecosystem. Explore our news page for exciting updates, insights, and events."
+    }
   },
 
   "company": {
@@ -24,33 +67,6 @@
       "h1": "Thank you!",
       "p": "We will get back to you as soon as possible!"
     }
-  },
-
-  "links": {
-    "home": "Home",
-    "ecosystem": "Ecosystem",
-    "bot": "FingeRate Bot",
-    "token": "MSOT Token",
-    "about": "About",
-    "team": "Team",
-    "news": "News",
-    "support": "Support",
-    "user-guide": "User Guide",
-    "faq": "FAQ",
-    "contact": "Contact",
-    "whitepaper": "Whitepaper",
-    "privacy-policy": "Privacy Policy",
-    "terms-of-use": "Terms of Use"
-  },
-
-  "pages": {
-    "bot": "$t(links.bot)",
-    "token": "$t(links.token)",
-    "team": "$t(links.team)",
-    "news": "$t(links.news)",
-    "faq": "$t(links.faq)",
-    "contact": "$t(links.contact)",
-    "terms-of-use": "$t(links.terms-of-use)"
   },
 
   "cookie": {
@@ -113,11 +129,7 @@
       "p1": "It is a contactless survey solution that transforms feedback collection and customer satisfaction measurement.",
       "p2": "Our AI technology enables a safe and seamless experience for your visitors, eliminating physical contact and tedious paper surveys while gathering real-time data with real-time emotions!"
     },
-    "keywords": [
-      "Real Time-data",
-      "Contactless Survey Solution",
-      "AI Technology"
-    ],
+    "keywords": ["Real Time-data", "Contactless Survey Solution", "AI Technology"],
     "benefits": {
       "h2": "Why Work With FingeRate Bot?",
       "cards": [
@@ -239,10 +251,7 @@
       "h2": "Send us message now and get support from the FingeRate team! We will get back to you soon.",
       "btn": "Get in Touch on Telegram ↗",
       "points": [
-        [
-          "Business Inquiries",
-          "For information about the services, partnership, or requesting information."
-        ],
+        ["Business Inquiries", "For information about the services, partnership, or requesting information."],
         [
           "Technical Support",
           "For everything related to the FingeRate ecosystem, including FingeRate App and FingeRate Bot."

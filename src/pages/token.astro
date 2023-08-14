@@ -5,16 +5,12 @@ import Hero from "@/components/token/Hero.astro";
 import Platforms from "@/components/token/Platforms.astro";
 import Roadmap from "@/components/token/Roadmap.astro";
 import Layout from "@/layouts/Layout.astro";
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 
 changeLanguage("en");
 ---
 
-<Layout
-  image="/og/token.jpg"
-  title="FingeRate | Trade MSOT Token"
-  description="Navigate FingeRate ecosystem safely with MSOT token; an ERC-20 & Polygon based cryptocurrency that unlocks benefits and advantages. Start trading MSOT now!"
->
+<Layout image="/og/token.jpg" title={t('seo.token.title')!} description={t('seo.token.description')!}>
   <div class="space-y-12 pb-12 md:space-y-28 md:pb-24">
     <Hero />
     <Platforms />

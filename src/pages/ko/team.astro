@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import Layout from "@/layouts/Layout.astro";
 import CoreTeam from "@/components/team/CoreTeam.astro";
 import Hero from "@/components/team/Hero.astro";
@@ -9,11 +9,7 @@ import Partners from "@/components/Partners.astro";
 changeLanguage("ko");
 ---
 
-<Layout
-  image="/og/team.jpg"
-  title="FingeRate | Our Team"
-  description="Get to know dedicated people behind FingeRate and its innovative solutions. Connect with us today to explore and discover our exciting vision for future."
->
+<Layout image="/og/team.jpg" title={t('seo.team.title')!} description={t('seo.team.description')!}>
   <div class="py-12 space-y-24 md:pb-24">
     <Hero />
     <CoreTeam />

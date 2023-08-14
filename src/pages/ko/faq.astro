@@ -4,16 +4,12 @@ import QnA from "@/components/FAQ/QnA.astro";
 import { NAV_LINKS } from "@/constants";
 import Layout from "@/layouts/Layout.astro";
 import { localizePath } from "astro-i18next";
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 
 changeLanguage("ko");
 ---
 
-<Layout
-  image="/og/faq.jpg"
-  title="FingeRate | FAQ"
-  description="Find answers to the most common questions in our comprehensive FAQ section. Get clarity about FingeRate App, Bot and MSOT token. Browse our FAQ page now!"
->
+<Layout image="/og/faq.jpg" title={t('seo.faq.title')!} description={t('seo.faq.description')!}>
   <div class="px-2 mx-auto max-w-screen-lg grid md:grid-cols-[2fr_1fr] gap-8 py-12">
     <QnA />
     <section class="relative">

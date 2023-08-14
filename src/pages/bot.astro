@@ -6,16 +6,12 @@ import Hero from "@/components/bot/Hero.astro";
 import How from "@/components/bot/How.astro";
 import Keywords from "@/components/bot/Keywords.astro";
 import Layout from "@/layouts/Layout.astro";
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 
 changeLanguage("en");
 ---
 
-<Layout
-  image="/og/bot.jpg"
-  title="FingeRate | FingeRate Bot"
-  description="Meet FingeRate Bot - contactless survey solution! Say goodbye to paper surveys, go seamless & safe with AI tech. Get real-time data & insights. Try it now!"
->
+<Layout image="/og/bot.jpg" title={t('seo.bot.title')!} description={t('seo.bot.description')!}>
   <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
     <Hero />
     <Keywords />
