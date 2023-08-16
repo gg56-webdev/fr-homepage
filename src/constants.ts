@@ -1,9 +1,9 @@
-export type Link = { name: string; href: string; isExternal: boolean; isImportant: boolean };
+export type Link = { name: string; href: string; isExternal: boolean; isImportant: boolean }
 
-export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.frs.fingerate';
-export const APP_STORE_URL = 'https://apps.apple.com/app/fingerate/id6444853546';
-export const DOWNLOAD_LINK = 'http://qrco.de/bdrZNx';
-export const COINGECKO_LINK = 'https://www.coingecko.com/en/coins/btour-chain';
+export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.frs.fingerate'
+export const APP_STORE_URL = 'https://apps.apple.com/app/fingerate/id6444853546'
+export const DOWNLOAD_LINK = 'http://qrco.de/bdrZNx'
+export const COINGECKO_LINK = 'https://www.coingecko.com/en/coins/btour-chain'
 
 export const NAV_LINKS = {
   HOME: { name: 'Home', href: '/', isExternal: false, isImportant: false },
@@ -34,7 +34,7 @@ export const NAV_LINKS = {
     isExternal: true,
     isImportant: false,
   },
-} as const;
+} as const
 
 export const SOCIAL_LINKS = {
   INSTAGRAM: {
@@ -49,7 +49,7 @@ export const SOCIAL_LINKS = {
     isExternal: true,
     isImportant: false,
   },
-  TWITTER: { name: 'twitter', href: 'https://twitter.com/fingerate_kr', isExternal: true, isImportant: false },
+  X: { name: 'X', href: 'https://twitter.com/fingerate_kr', isExternal: true, isImportant: false },
   FACEBOOK: { name: 'facebook', href: 'https://www.facebook.com/FingeRate.kr', isExternal: true, isImportant: false },
   TELEGRAM: { name: 'telegram', href: 'https://t.me/fingerate_en', isExternal: true, isImportant: false },
-} as const;
+} as const

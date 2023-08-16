@@ -1,30 +1,25 @@
 ---
-import { SOCIAL_LINKS as S_L } from "@/constants";
-import ig from "@/assets/social/IG.svg";
-import lin from "@/assets/social/IN.svg";
-import tw from "@/assets/social/TW.svg";
-import fb from "@/assets/social/FB.svg";
-import tg from "@/assets/social/TG.svg";
+import { SOCIAL_LINKS as S_L } from '@/constants'
+import ig from '@/assets/social/IG.svg'
+import lin from '@/assets/social/IN.svg'
+import x from '@/assets/social/X.svg'
+import fb from '@/assets/social/FB.svg'
+import tg from '@/assets/social/TG.svg'
 
 const links = [
   [S_L.INSTAGRAM.href, S_L.INSTAGRAM.name, ig],
   [S_L.LINKEDIN.href, S_L.LINKEDIN.name, lin],
-  [S_L.TWITTER.href, S_L.TWITTER.name, tw],
+  [S_L.X.href, S_L.X.name, x],
   [S_L.FACEBOOK.href, S_L.FACEBOOK.name, fb],
   [S_L.TELEGRAM.href, S_L.TELEGRAM.name, tg],
-] as const;
+] as const
 ---
 
 <ul class="flex gap-4 sm:ml-auto">
   {
     Object.values(links).map(([href, name, file]) => (
       <li class="rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1">
-        <a
-          class="rounded-full"
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="rounded-full" href={href} target="_blank" rel="noopener noreferrer">
           <img
             class="w-8"
             loading="lazy"
