@@ -14,7 +14,9 @@ interface Props {
 }
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPosts(i18next.language as "en" | "ko", true);
-    return posts.map(({ slug, id }) => ({
+    return posts
+        .filter(({ link }) => link.startsWith("https://gg56.com/"))
+        .map(({ slug, id }) => ({
         params: { slug },
         props: { id },
     }));
