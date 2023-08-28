@@ -5,6 +5,7 @@ import Footer from '@/components/Footer.astro'
 import HeadMeta from '@/components/HeadMeta.astro'
 import Header from '@/components/Header.astro'
 import ScrollToTop from '@/components/ScrollToTop.astro'
+import Ripple from '@/components/Ripple.astro'
 import GA from '@/scripts/GA.astro'
 import { HeadHrefLangs } from 'astro-i18next/components'
 import { getImage } from 'astro:assets'
@@ -29,6 +30,7 @@ export interface Props {
     <HeadHrefLangs />
     <link rel="preload" as="image" href={optimizedBg.src} />
     {!import.meta.env.DEV && <GA />}
+    <script src="../scripts/reveal-animation.ts"></script>
   </head>
   <body class="flex min-h-screen flex-col bg-deepSpace">
     <Header />
@@ -36,36 +38,8 @@ export interface Props {
       <slot />
     </main>
     <ScrollToTop />
+    <Ripple />
     <CookieBanner />
     <Footer />
-  </body><!-- prettier-ignore -->
-  <script>
-    const sections = document.querySelectorAll('[data-scroll-animation]')
-
-    const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true
-
-    if (sections.length > 0 && isMotionSafe) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.remove('motion-safe:opacity-0', 'motion-safe:translate-y-[10%]')
-              observer.unobserve(entry.target)
-            }
-          })
-        },
-        { rootMargin: '-5%' }
-      )
-
-      sections.forEach((section) => {
-        section.classList.add(
-          'motion-safe:opacity-0',
-          'motion-safe:transition',
-          'motion-safe:translate-y-[10%]',
-          '!duration-300'
-        )
-        observer.observe(section)
-      })
-    }
-  </script>
+  </body>
 </html>
