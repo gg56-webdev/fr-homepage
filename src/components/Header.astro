@@ -166,7 +166,7 @@ const currentUrl = import.meta.env.DEV
               ) : (
                 <a
                   href={i.href}
-                  target={i.isExternal ? '_blank' : ''}
+                  target={i.isExternal ? '_blank' : '_self'}
                   aria-current={currentUrl === i.href ? 'page' : null}
                   rel="noopener noreferrer"
                   class:list={[
