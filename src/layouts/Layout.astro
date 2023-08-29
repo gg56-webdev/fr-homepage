@@ -5,7 +5,6 @@ import Footer from '@/components/Footer.astro'
 import HeadMeta from '@/components/HeadMeta.astro'
 import Header from '@/components/Header.astro'
 import ScrollToTop from '@/components/ScrollToTop.astro'
-import Ripple from '@/components/Ripple.astro'
 import GA from '@/scripts/GA.astro'
 import { HeadHrefLangs } from 'astro-i18next/components'
 import { getImage } from 'astro:assets'
@@ -13,8 +12,6 @@ import i18next from 'i18next'
 import './style.css'
 
 const optimizedBg = await getImage({ src: bg, format: 'avif', quality: 'mid' })
-
-const lang = i18next.language
 
 export interface Props {
   title?: string
@@ -24,22 +21,25 @@ export interface Props {
 ---
 
 <!DOCTYPE html>
-<html {lang} class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark]">
+<html
+  lang={i18next.language}
+  class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark]"
+>
   <head>
     <HeadMeta {...Astro.props} />
     <HeadHrefLangs />
     <link rel="preload" as="image" href={optimizedBg.src} />
     {!import.meta.env.DEV && <GA />}
     <script src="../scripts/reveal-animation.ts"></script>
+    <script src="../scripts/ripple-effect.ts"></script>
   </head>
   <body class="flex min-h-screen flex-col bg-deepSpace">
     <Header />
     <main class="bg-cover bg-center grow bg-no-repeat" style={`background-image: url(${optimizedBg.src});`}>
       <slot />
+      <ScrollToTop />
     </main>
-    <ScrollToTop />
-    <Ripple />
-    <CookieBanner />
     <Footer />
+    <CookieBanner />
   </body>
 </html>

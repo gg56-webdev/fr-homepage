@@ -1,8 +1,8 @@
-const sections = document.querySelectorAll('[data-scroll-animation]')
+export const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true
 
-const isMotionSafe = window.matchMedia(`(prefers-reduced-motion: no-preference)`).matches === true
+const $sections = document.querySelectorAll('[data-scroll-animation]')
 
-if (sections.length > 0 && isMotionSafe) {
+if ($sections.length > 0 && isMotionSafe) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -15,7 +15,7 @@ if (sections.length > 0 && isMotionSafe) {
     { rootMargin: '-5%' }
   )
 
-  sections.forEach((section) => {
+  $sections.forEach((section) => {
     section.classList.add(
       'motion-safe:opacity-0',
       'motion-safe:transition',

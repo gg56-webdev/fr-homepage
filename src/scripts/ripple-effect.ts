@@ -1,7 +1,11 @@
-<canvas id="ripple" class="fixed pointer-events-none blur z-50"></canvas>
+import { isMotionSafe } from './reveal-animation'
 
-<script>
-  const $canvas = document.querySelector('#ripple') as HTMLCanvasElement
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+
+if (isMotionSafe && !isTouchDevice) {
+  const $canvas = document.createElement('canvas')
+  $canvas.classList.add('fixed', 'pointer-events-none', 'blur', 'z-50')
+  document.body.append($canvas)
 
   const resizeCanvas = () => {
     $canvas.height = window.innerHeight
@@ -27,7 +31,7 @@
 
     draw() {
       this.opacity -= 0.025
-      this.radius += 5
+      this.radius += 3
 
       ctx.beginPath()
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
@@ -58,4 +62,4 @@
   }
 
   animate()
-</script>
+}
