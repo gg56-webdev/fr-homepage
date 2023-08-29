@@ -40,7 +40,7 @@ const images = [
 ] as const
 ---
 
-<section class="mx-auto max-w-screen-lg p-2">
+<div class="mx-auto max-w-screen-lg p-2">
   <div class="flex justify-around gap-4">
     {
       images.map(([src, alt, tooltip, href, isExternal], i) => (
@@ -50,7 +50,6 @@ const images = [
           </div>
           <div
             data-tooltip-content={i}
-            id="tooltipContent"
             role="tooltip"
             class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-950 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 "
           >
@@ -61,7 +60,7 @@ const images = [
       ))
     }
   </div>
-</section>
+</div>
 
 <script>
   import { Tooltip } from 'flowbite'
