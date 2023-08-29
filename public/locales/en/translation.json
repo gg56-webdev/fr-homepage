@@ -137,7 +137,7 @@
       "survey-item-1": "Survey location information",
       "survey-item-2": "<0>Using AI, identify additional information</0><1>(age, sex etc.)</1>",
       "survey-item-3": "Using hand gesture, respond to survey",
-      "ai": "AI Data<br/>Analysis",
+      "ai": "AI Data<br>Analysis",
       "external": "<0>External data</0><1>(Weather, Economic/ Political Condition, etc.)</1>",
       "data": "Actionable data and insights"
     },
