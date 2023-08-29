@@ -1,41 +1,46 @@
 ---
-import i18next,{ t } from "i18next";
-const vid = i18next.language === 'ko' ? ((await import('../../assets/bot/bot_intro_ko.mp4')).default) : ((await import('../../assets/bot/bot_intro_en.mp4')).default)
+import i18next, { t } from 'i18next'
+const src =
+  i18next.language === 'ko'
+    ? (await import('../../assets/bot/bot_intro_ko.mp4')).default
+    : (await import('../../assets/bot/bot_intro_en.mp4')).default
 ---
 
-<section class='mx-auto grid  max-w-screen-xl place-items-center py-6 lg:px-2 ' id='app'>
-  <div class='grid h-full lg:grid-cols-[1fr_0.75fr] lg:place-items-center lg:gap-12'>
-    <div class='relative' >
+<section class="mx-auto grid max-w-screen-xl place-items-center py-6 lg:px-2" id="app">
+  <div class="grid h-full lg:grid-cols-[1fr_0.75fr] lg:place-items-center lg:gap-12">
+    <div class="relative">
       <div
-      class:list={[
-        '[animation-delay:0s]' ,
-        'animate-blob  blur-2xl  absolute top-1/4 -left-1/4 w-1/2 aspect-square rounded-full  bg-softFire/30',
-      ]}
-    />
-    <div
-      class:list={[
-        '[animation-delay:2s]' ,
-        'animate-blob  blur-2xl  absolute top-0 -right-1/4 w-1/2 aspect-square rounded-full  bg-neonBlue/30',
-      ]}
-    />
-    <div
-      class:list={[
-        '[animation-delay:4s]' ,
-        'animate-blob  blur-2xl  absolute -bottom-1/2 right-1/4 w-1/2 aspect-square rounded-full  bg-intelligentBlue/30',
-      ]}
-    />
-      <div class='h-fit relative z-10 w-fit overflow-hidden lg:rounded-lg'>
-        <video src={vid} width='1280' height='720' controls muted autoplay loop></video>
+        class:list={[
+          '[animation-delay:0s]',
+          'animate-blob  blur-2xl  absolute top-1/4 -left-1/4 w-1/2 aspect-square rounded-full  bg-softFire/30',
+        ]}
+      >
+      </div>
+      <div
+        class:list={[
+          '[animation-delay:2s]',
+          'animate-blob  blur-2xl  absolute top-0 -right-1/4 w-1/2 aspect-square rounded-full  bg-neonBlue/30',
+        ]}
+      >
+      </div>
+      <div
+        class:list={[
+          '[animation-delay:4s]',
+          'animate-blob  blur-2xl  absolute -bottom-1/2 right-1/4 w-1/2 aspect-square rounded-full  bg-intelligentBlue/30',
+        ]}
+      >
+      </div>
+      <div class="relative z-10 overflow-hidden lg:rounded-lg">
+        <video {src} width="1280" height="720" controls loop></video>
       </div>
     </div>
-    <div class='p-4 relative'>
-      <h1 class=' text-4xl font-bold' set:html={t('bot.hero.h1')} />
-      </h1>
-      <p class='mt-4 '>
-       {t('bot.hero.p1')}
+    <div class="p-4 relative">
+      <h1 class="text-4xl font-bold" set:html={t('bot.hero.h1')} />
+      <p class="mt-4">
+        {t('bot.hero.p1')}
       </p>
-      <p class='mt-2 '>
-       {t('bot.hero.p2')}
+      <p class="mt-2">
+        {t('bot.hero.p2')}
       </p>
     </div>
   </div>
