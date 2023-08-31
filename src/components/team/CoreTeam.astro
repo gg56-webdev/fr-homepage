@@ -11,7 +11,7 @@ const people = team.map((p) => {
   const titles = p.titles?.en
   const bio = p.bio?.[lang]
   const categories = p.categories
-  return { name, subtitles, socials, titles, bio, categories, nameEn }
+  return { id: p.id , name, subtitles, socials, titles, bio, categories, nameEn }
 })
 const categories = new Set(team.map((p) => p.categories).flat())
 const photos: ImageMetadata[] = await Astro.glob('../../assets/team/team/**/*.{png,webp}').then((files) =>
@@ -61,8 +61,8 @@ const getIcon = (href: string) => {
   <ul id="parent" class="flex justify-center flex-wrap mt-12">
     {
       people.map((p, i) => {
-        const src1 = photos.find((photo) => photo.src.includes(p.nameEn + '-1'))
-        const src2 = photos.find((photo) => photo.src.includes(p.nameEn + '-2'))
+        const src1 = photos.find((photo) => photo.src.includes(p.id + '-1'))
+        const src2 = photos.find((photo) => photo.src.includes(p.id + '-2'))
         if (!src1 || !src2) return null
         return (
           <li
