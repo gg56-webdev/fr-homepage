@@ -1,6 +1,6 @@
 ---
 import i18next, { t } from 'i18next'
-const src =
+const videoSrc =
   i18next.language === 'ko'
     ? (await import('../../assets/bot/bot_intro_ko.mp4')).default
     : (await import('../../assets/bot/bot_intro_en.mp4')).default
@@ -31,7 +31,7 @@ const src =
       >
       </div>
       <div class="relative z-10 overflow-hidden lg:rounded-lg">
-        <video {src} width="1280" height="720" controls loop preload="metadata"></video>
+        <video src={`${videoSrc}#t=0.001`} width="1280" height="720" controls loop preload="metadata"></video>
       </div>
     </div>
     <div class="p-4 relative">
