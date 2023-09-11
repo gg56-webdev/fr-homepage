@@ -1,38 +1,34 @@
 ---
-import { Image } from "astro:assets";
-import token from "@/assets/token/msot.webp";
-import { NAV_LINKS } from "@/constants";
-import { localizePath } from "astro-i18next";
+import { Image } from 'astro:assets'
+import token from '@/assets/token/msot.webp'
+import { NAV_LINKS } from '@/constants'
+import { localizePath } from 'astro-i18next'
 ---
 
 <a
   href={localizePath(NAV_LINKS.TOKEN.href)}
   class="hover:ring-2 transition hover:ring-white hover:ring-offset-1 inline-flex gap-2 bg-slate-950/80 rounded-full items-center"
 >
-  <Image src={token} alt="MSOT token logo" class="h-6 w-6" />
+  <Image src={token} alt="MSOT token logo" class="h-6 w-6" loading={'eager'} />
   <p id="price" class="pr-3 animate-pulse font-mono">$0.00</p>
 </a>
 
 <script>
-  const $price = document.querySelector("#price") as HTMLElement;
+  const $price = document.querySelector('#price') as HTMLElement
 
-  const price = sessionStorage.getItem("price");
+  const price = sessionStorage.getItem('price')
 
   if (price) {
-    $price.textContent = price;
+    $price.textContent = price
   } else {
-    fetch(
-      "https://api.coingecko.com/api/v3/simple/price?ids=btour-chain&vs_currencies=usd"
-    )
+    fetch('https://api.coingecko.com/api/v3/simple/price?ids=btour-chain&vs_currencies=usd')
       .then((res) => res.json())
-      .then(
-        ({ "btour-chain": { usd } }: { "btour-chain": { usd: number } }) => {
-          const price = "$" + usd.toFixed(2);
-          sessionStorage.setItem("price", price);
-          $price.textContent = price;
-        }
-      )
-      .catch((err) => console.error(err));
+      .then(({ 'btour-chain': { usd } }: { 'btour-chain': { usd: number } }) => {
+        const price = usd.toFixed(2)
+        sessionStorage.setItem('price', price)
+        $price.textContent = '$' + price
+      })
+      .catch((err) => console.error(err))
   }
-  $price.classList.remove("animate-pulse");
+  $price.classList.remove('animate-pulse')
 </script>
