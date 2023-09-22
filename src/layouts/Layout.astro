@@ -20,7 +20,7 @@ export interface Props {
 }
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html
   lang={i18next.language}
   class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark]"
@@ -31,7 +31,6 @@ export interface Props {
     <link rel="preload" as="image" href={optimizedBg.src} />
     {!import.meta.env.DEV && <GA />}
     <script src="../scripts/reveal-animation.ts"></script>
-    <script src="../scripts/ripple-effect.ts"></script>
   </head>
   <body class="flex min-h-screen flex-col bg-deepSpace">
     <Header />
