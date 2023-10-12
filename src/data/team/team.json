@@ -56,25 +56,6 @@
     "categories": ["Leadership"]
   },
   {
-    "id": "tabassum",
-    "name": {
-      "en": "Tabassum",
-      "ko": "타바쑴 (하미소)"
-    },
-    "subtitles": {
-      "en": ["CSO", "Strategic Planning"],
-      "ko": ["이사", "전략기획"]
-    },
-    "socials": [
-      "https://www.linkedin.com/in/tabassum-n-haque-11077871",
-      "https://www.youtube.com/live/t807V-irnzQ?feature=share&t=18389"
-    ],
-    "bio": {
-      "en": "Tabassum received her masters in Computer Engineering degree from South Korea as a Korean Govt. Scholarship Grantee (KGSP). She started her career as a developer in blockchain and later moved to strategy and business for blockchain ecosystem. She has technological as well as strategic knowledge of Blockchain and is fluent in English, Bengali (native), Korean and Hindi language."
-    },
-    "categories": ["Strategy", "Leadership", "Development"]
-  },
-  {
     "id": "lee-seung-hong",
     "name": {
       "en": "Lee Seung-hong",
@@ -127,7 +108,7 @@
     },
     "subtitles": {
       "en": ["Global Marketing Manager"],
-      "ko": ["마케팅 마나저"]
+      "ko": ["마케팅 매니저"]
     },
     "socials": ["https://www.linkedin.com/in/marc-breynart"],
     "bio": {
