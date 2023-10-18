@@ -40,12 +40,6 @@ const navLinks: Array<Link | Dropdown> = [
         name: t('links.news', { lng: 'en' }),
         href: localizePath(NAV_LINKS.NEWS.href),
       },
-    ],
-  },
-  {
-    name: t('links.support', { lng: 'en' }),
-    links: [
-      { ...NAV_LINKS.GUIDE, name: t('links.user-guide', { lng: 'en' }) },
       {
         ...NAV_LINKS.FAQ,
         name: t('links.faq', { lng: 'en' }),
@@ -58,6 +52,7 @@ const navLinks: Array<Link | Dropdown> = [
       },
     ],
   },
+
   { ...NAV_LINKS.WHITEPAPER, name: t('links.whitepaper', { lng: 'en' }) },
 ]
 
