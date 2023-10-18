@@ -6,9 +6,9 @@ import logo from '../assets/logo.webp'
 import Social from './Social.astro'
 
 const footerLinks: Link[] = [
+  { ...NAV_LINKS.GUIDE, name: t('links.user-guide', { lng: 'en' }) },
   { ...NAV_LINKS.PRIVACY, name: t('links.privacy-policy', { lng: 'en' }) },
   { ...NAV_LINKS.TERMS, name: t('links.terms-of-use', { lng: 'en' }) },
-  { ...NAV_LINKS.WHITEPAPER, name: t('links.whitepaper', { lng: 'en' }) },
 ]
 ---
 
