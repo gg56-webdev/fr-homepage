@@ -81,7 +81,7 @@
     "hero": {
       "first-word": "Metaverse",
       "h1": "Survey × <0><1>$t(home.hero.first-word)</1><2>Avatar</2><3>Business</3><4>Rewards</4><5>Satisfaction</5><6>LBS</6><7>Simplicity</7><8>$t(home.hero.first-word)</8></0> = $t(name)",
-      "p": "Take surveys and earn rewards instantly! Share your opinions effortlessly and be rewarded for it! It is safe, secure, and global!",
+      "p": "Download FingeRate app now! Take quick surveys, share your thoughts, and start earning amazing rewards! Your opinions matter, and so do the rewards – it's that simple! Let your voice count and your earnings grow!",
       "app-ui": {
         "discount": "Discount",
         "wallet": "My Wallet",
@@ -92,12 +92,12 @@
     "features": [
       [
         "Survey To Earn (S2E)",
-        "Select from a wide range of surveys, share your opinions, and enjoy instant rewards. Say goodbye to waiting and hello to instant gratification!",
+        "Create an account, take surveys, and get rewards! Say goodbye to waiting and hello to instant gratification!",
         "FingeRate App Screenshot of getting rewarded for survey participation"
       ],
       [
-        "SoM = Rewards",
-        "Easiest way to earn by participating in Surveys! Earned mileage can be used to buy coupons and accessories for your avatar. Brace yourself for the epic SoM to MSOT trading journey!",
+        "More Rewards",
+        "Collect mileage, snag cool coupons, and deck out your avatar in style! Trade your SoM for amazing rewards and epic accessories - your opinion, your style, your rewards!",
         "FingeRate App Screenshot of My Wallet page, showing amount of SoM points and coupons"
       ],
       [
@@ -108,8 +108,8 @@
     ],
     "steps": [
       "Download the app, create an account, and take you first survey!",
-      "Using SoM, get coupons and other benefits directly from FingeRate App!",
-      "Empower your curiosity and engage your audience with our easy-to-use survey creation feature. Customize your questions."
+      "Trade SoM for coupons and other benefits directly on the app!",
+      "Curious about something? Create your own survey in only a few seconds! It is that simple."
     ],
     "cta": {
       "h2": "Why FingeRate App?",
