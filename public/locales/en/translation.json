@@ -127,16 +127,16 @@
   "bot": {
     "hero": {
       "h1": "Introducing FingeRate&nbsp;Bot!",
-      "p1": "It is a contactless survey solution that transforms feedback collection and customer satisfaction measurement.",
-      "p2": "Our AI technology enables a safe and seamless experience for your visitors, eliminating physical contact and tedious paper surveys while gathering real-time data with real-time emotions!"
+      "p1": "Everything you need to create actionable insights! FingeRate Bot is an AI-powered contactless survey solution that transforms feedback into meaningful actions.",
+      "p2": "Crafting a seamless experience for your visitors and collaborators is at the core of our solution! Powered by AI technology, it ensures a secure and effortless experience, eliminating the need for physical contact and cumbersome paper surveys. Instead, it helps you gather real-time data infused with authentic emotions, transforming the way you engage with your audience."
     },
     "keywords": ["Real Time-data", "Contactless Survey Solution", "AI Technology"],
     "how": {
       "h2": "How Does It Work?",
       "survey": "Survey",
       "survey-item-1": "Survey location information",
-      "survey-item-2": "<0>Using AI, identify additional information</0><1>(age, sex etc.)</1>",
-      "survey-item-3": "Using hand gesture, respond to survey",
+      "survey-item-2": "<0>Identify additional information</0><1>(age, sex etc.)</1>",
+      "survey-item-3": "Show your fingers to answer the survey",
       "ai": "AI Data<br>Analysis",
       "external": "<0>External data</0><1>(Weather, Economic/ Political Condition, etc.)</1>",
       "data": "Actionable data and insights"
@@ -146,12 +146,12 @@
       "cards": [
         [
           "Capture Visitors' Emotions in Real-Time",
-          "FingeRate Bot empowers you to elevate your customer experience and drive business growth. By capturing feedback directly through touchless surveys, you can gather accurate and timely insights, enabling you to make data-driven decisions and implement targeted improvements. Stay ahead of the competition by putting your customers' opinions at the heart of your business strategy.",
+          "Our contactless survey solution ensures you receive data precisely when and where you need it! Real-time responses translate to instant actionable insights, simplifying the path to improvement. Because what's simpler for your audience is better for your success.",
           "Person showing gesture to the FingeRate Bot"
         ],
         [
           "Access to Data in Real-Time",
-          "FingeRate Bot provides you with real-time access of the data from the survey location, allowing you to monitor and analyze visitor feedback instantly. Our intuitive dashboard presents the information in a visually appealing and easy-to-understand format, empowering you to make proactive adjustments and improvements based on real-time insights.",
+          "Explore the dashboard for quick, actionable insights that are easy to understand. Monitor your surveys in real-time and enjoy the added benefits of easy customization of your FingeRate Bot.",
           "Screenshot of FingeRate Dashboard showing graph of visitors and participants in survey"
         ],
         [
