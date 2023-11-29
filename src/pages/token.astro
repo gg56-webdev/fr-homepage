@@ -1,13 +1,13 @@
 ---
-import About from "@/components/token/About.astro";
-import Chart from "@/components/token/Chart.astro";
-import Hero from "@/components/token/Hero.astro";
-import Platforms from "@/components/token/Platforms.astro";
-import Roadmap from "@/components/token/Roadmap.astro";
-import Layout from "@/layouts/Layout.astro";
-import { changeLanguage, t } from "i18next";
+import About from '@/components/token/About.astro';
+import Chart from '@/components/token/Chart.astro';
+import Hero from '@/components/token/Hero.astro';
+import Platforms from '@/components/token/Platforms.astro';
+import Roadmap from '@/components/token/Roadmap.astro';
+import Layout from '@/layouts/Layout.astro';
+import { changeLanguage, t } from 'i18next';
 
-changeLanguage("en");
+changeLanguage('en');
 ---
 
 <Layout image="/og/token.jpg" title={t('seo.token.title')!} description={t('seo.token.description')!}>
@@ -21,13 +21,13 @@ changeLanguage("en");
 </Layout>
 
 <script>
-  import * as echarts from 'echarts/core'
-  import { LineChart } from 'echarts/charts'
-  import { SVGRenderer } from 'echarts/renderers'
-  import { TooltipComponent, GridComponent } from 'echarts/components'
-  echarts.use([LineChart, SVGRenderer, TooltipComponent, GridComponent])
-  const $chart = echarts.init(document.querySelector('#chart') as HTMLDivElement, 'dark', { renderer: 'svg' })
-  const $tokenPrice = document.querySelector('#token-price') as HTMLElement
+  import * as echarts from 'echarts/core';
+  import { LineChart } from 'echarts/charts';
+  import { SVGRenderer } from 'echarts/renderers';
+  import { TooltipComponent, GridComponent } from 'echarts/components';
+  echarts.use([LineChart, SVGRenderer, TooltipComponent, GridComponent]);
+  const $chart = echarts.init(document.querySelector('#chart') as HTMLDivElement, 'dark', { renderer: 'svg' });
+  const $tokenPrice = document.querySelector('#token-price') as HTMLElement;
 
   const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
     new Intl.NumberFormat('en-us', {
@@ -36,47 +36,47 @@ changeLanguage("en");
       style: 'currency',
       maximumFractionDigits: 4,
       ...options,
-    }).format(num)
+    }).format(num);
 
   const setHtml = (num: number) => {
-    const formattedNum = formatNumber(num)
-    const first = formattedNum.slice(0, 5)
-    const second = formattedNum.slice(5)
-    $tokenPrice.innerHTML = `${first}<span class='text-slate-600'>${second}</span>`
-    $tokenPrice.classList.remove('animate-pulse')
-  }
+    const formattedNum = formatNumber(num);
+    const first = formattedNum.slice(0, 5);
+    const second = formattedNum.slice(5);
+    $tokenPrice.innerHTML = `${first}<span class='text-slate-600'>${second}</span>`;
+    $tokenPrice.classList.remove('animate-pulse');
+  };
 
   const updateNumber = (num: number) => {
     if (document?.startViewTransition) {
       document.startViewTransition(() => {
-        setHtml(num)
-      })
+        setHtml(num);
+      });
     } else {
-      setHtml(num)
+      setHtml(num);
     }
-  }
+  };
 
   const getData = async () => {
     try {
       const res = await fetch(
-        'https://api.coingecko.com/api/v3/coins/btour-chain/market_chart?vs_currency=usd&days=30&interval=daily'
-      )
-      const { prices } = (await res.json()) as { prices: [number, number][] }
+        'https://api.coingecko.com/api/v3/coins/btour-chain/market_chart?vs_currency=usd&days=90&interval=daily'
+      );
+      const { prices } = (await res.json()) as { prices: [number, number][] };
 
-      updateNumber(prices.at(-1)?.[1] ?? 0.06)
+      updateNumber(prices.at(-1)?.[1] ?? 0.06);
 
-      if (!prices) return
+      if (!prices) return;
 
-      let timePoints = []
-      let pricePoints = []
-      let minPrice = prices[0][1]
-      let maxPrice = prices[0][1]
+      let timePoints = [];
+      let pricePoints = [];
+      let minPrice = prices[0][1];
+      let maxPrice = prices[0][1];
 
       for (const [time, price] of prices) {
-        timePoints.push(new Date(time).toLocaleDateString())
-        pricePoints.push(price.toFixed(4))
-        minPrice = Math.min(minPrice, price)
-        maxPrice = Math.max(maxPrice, price)
+        timePoints.push(new Date(time).toLocaleDateString());
+        pricePoints.push(price.toFixed(4));
+        minPrice = Math.min(minPrice, price);
+        maxPrice = Math.max(maxPrice, price);
       }
       $chart.setOption({
         tooltip: {
@@ -91,8 +91,8 @@ changeLanguage("en");
         },
         yAxis: {
           type: 'value',
-          min: (minPrice * 0.875).toFixed(2),
-          max: (maxPrice * 1.125).toFixed(2),
+          max: (maxPrice + 0.005).toFixed(2),
+          min: (minPrice - 0.005).toFixed(2),
           axisLabel: {
             formatter: '${value}',
             align: 'right',
@@ -110,15 +110,15 @@ changeLanguage("en");
           bottom: '50',
           left: '80',
         },
-      })
+      });
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
 
-  getData()
+  getData();
 
   window.addEventListener('resize', function () {
-    $chart.resize()
-  })
+    $chart.resize();
+  });
 </script>
