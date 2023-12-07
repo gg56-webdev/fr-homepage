@@ -20,31 +20,31 @@
 
   "seo": {
     "default": {
-      "title": "$t(name) | Survey to Earn Platform",
+      "title": "Survey to Earn Platform | $t(name)",
       "description": "Earn rewards easily using FingeRate! Download the app and start answering surveys that match your interests. Available now for free on Play Store and App Store!"
     },
     "token": {
-      "title": "$t(name) | Trade $t(links.token)",
+      "title": "Trade $t(links.token) | $t(name)",
       "description": "Navigate FingeRate ecosystem safely with MSOT token; an ERC-20 & Polygon based cryptocurrency that unlocks benefits and advantages. Start trading MSOT now!"
     },
     "team": {
-      "title": "$t(name) | Our Team",
+      "title": "Our Team | $t(name)",
       "description": "Get to know dedicated people behind FingeRate and its innovative solutions. Connect with us today to explore and discover our exciting vision for future."
     },
     "faq": {
-      "title": "$t(name) | $t(links.faq)",
+      "title": "$t(links.faq) | $t(name)",
       "description": "Find answers to the most common questions in our comprehensive FAQ section. Get clarity about FingeRate App, Bot and MSOT token. Browse our FAQ page now!"
     },
     "contact": {
-      "title": "$t(name) | Contact Us",
+      "title": "Contact Us | $t(name)",
       "description": "Reach out to us for any inquiries about our solutions or collaboration opportunities. Our team is ready to assist you. Contact us now and let's connect!"
     },
     "bot": {
-      "title": "$t(name) | $t(links.bot)",
+      "title": "$t(links.bot) | $t(name)",
       "description": "Meet FingeRate Bot - contactless survey solution! Say goodbye to paper surveys, go seamless & safe with AI tech. Get real-time data & insights. Try it now!"
     },
     "news": {
-      "title": "$t(name) | $t(links.news)",
+      "title": "$t(links.news) | $t(name)",
       "description": "Stay updated with the latest news and happenings related to FingeRate and its ecosystem. Explore our news page for exciting updates, insights, and events."
     }
   },

@@ -1,6 +1,6 @@
 ---
 layout: "@/layouts/DocumentLayout.astro"
-title: "Terms of Use"
+title: "Terms of Use | FingeRate"
 ---
 
 # Terms of Use
