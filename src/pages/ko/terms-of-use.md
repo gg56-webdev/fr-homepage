@@ -1,6 +1,6 @@
 ---
 layout: '@/layouts/DocumentLayout.astro'
-title: '이용 약관'
+title: '이용 약관 | FingeRate'
 ---
 
 # 이용 약관

@@ -15,31 +15,31 @@
 
   "seo": {
     "default": {
-      "title": "$t(name) | 설문 조사 수익 창출 플랫폼",
+      "title": "설문 조사 수익 창출 플랫폼 | $t(name)",
       "description": "$t(name)를 사용하고 보상을 받으세요! 앱이 간편하고 사용이 편리하니 언젠나 어디서나 설문조사를 진행해 보세요. 지금 바로 Play 스토어와 iOS에서 다운로드받고 다양한 보상을 즐기세요!"
     },
     "token": {
-      "title": "$t(name) | MSOT 토큰 거래하기",
+      "title": "MSOT 토큰 거래하기 | $t(name)",
       "description": "MSOT 토큰으로 FingeRate 에코시스템을 안전하게 알아보세요. ERC-20 및 Polygon 기반의 암호화폐로 많은 혜택과 장점을 누릴 수 있습니다. 지금 MSOT 토큰 거래를 시작하세요!"
     },
     "team": {
-      "title": "$t(name) | $t(links.team)",
+      "title": "$t(links.team) | $t(name)",
       "description": "FingeRate와 혁신적인 솔루션을 지원하고있는 헌신적인 사람들에 대해 알아보세요. 오늘 저희와 연락하셔서 미래에 대한 흥미로운 비전을 알아보고 발견하세요"
     },
     "faq": {
-      "title": "$t(name) | $t(links.faq)",
+      "title": "$t(links.faq) | $t(name)",
       "description": "앱의 포괄적인 FAQ 섹션에서 가장 많이 하는 질문에 대한 답을 찾아보세요. FingeRate 앱, 봇 및 MSOT 토큰에 대해 명확하게 이해하실 수 있습니다. 지금 FAQ 페이지를 살펴보세요!"
     },
     "contact": {
-      "title": "$t(name) | $t(links.contact)",
+      "title": "$t(links.contact) | $t(name)",
       "description": "저희 솔루션이나 협력 기회에 대한 문의 사항은 무엇이든 언제든지 저희에게 문의하세요. 저희 팀은 언제나 지원해 드릴 준비가 되어 있습니다. 지금 연락하여 연결해 보세요!"
     },
     "bot": {
-      "title": "$t(name) | $t(links.bot)",
+      "title": "$t(links.bot) | $t(name)",
       "description": "FingeRate 봇을 만나보세요 - 비접촉 설문 조사 솔루션! 이제 서면 설문 조사는 그만 하시고 AI 기술로 원활하고 안전하게 진행하세요. 실시간 데이터와 인사이트를 얻으세요. 지금 바로 해보세요!"
     },
     "news": {
-      "title": "$t(name) | $t(links.news)",
+      "title": "$t(links.news) | $t(name)",
       "description": "FingeRate 및 그 에코시스템에 대해 업데이트된  최신 뉴스와 정보 동향을 받으세요. 저희 뉴스 페이지에 오셔서 업데이트된 흥미진진한 내용들과 그 인사이트 그리고 이벤트 들에 대해 알아보세요."
     }
   },
