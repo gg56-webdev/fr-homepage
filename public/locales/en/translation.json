@@ -188,7 +188,7 @@
       "tooltips": ["ERC-20 Standard", "Polygon Technology", "Latest stats on Coin Gecko", "FingeRate Ecosystem"]
     },
     "chart": {
-      "caption": "MSOT, last 30 days"
+      "caption": "MSOT, last {{days}} days"
     },
     "about": {
       "section-1": {
