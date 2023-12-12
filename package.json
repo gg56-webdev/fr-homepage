@@ -25,6 +25,7 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@types/dom-view-transitions": "^1.0.4",
     "wp-types": "^3.62.4"
   }
 }
