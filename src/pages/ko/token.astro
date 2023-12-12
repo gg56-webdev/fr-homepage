@@ -1,13 +1,13 @@
 ---
-import About from "@/components/token/About.astro";
-import Chart from "@/components/token/Chart.astro";
-import Hero from "@/components/token/Hero.astro";
-import Platforms from "@/components/token/Platforms.astro";
-import Roadmap from "@/components/token/Roadmap.astro";
-import Layout from "@/layouts/Layout.astro";
-import { changeLanguage, t } from "i18next";
+import About from '@/components/token/About.astro';
+import Chart from '@/components/token/Chart.astro';
+import Hero from '@/components/token/Hero.astro';
+import Platforms from '@/components/token/Platforms.astro';
+import Roadmap from '@/components/token/Roadmap.astro';
+import Layout from '@/layouts/Layout.astro';
+import { changeLanguage, t } from 'i18next';
 
-changeLanguage("ko");
+changeLanguage('ko');
 ---
 
 <Layout image="/og/token.jpg" title={t('seo.token.title')!} description={t('seo.token.description')!}>
@@ -73,7 +73,7 @@ changeLanguage("ko");
       let maxPrice = prices[0][1];
 
       for (const [time, price] of prices) {
-        timePoints.push(new Date(time).toLocaleDateString());
+        timePoints.push(new Date(time).toLocaleDateString('ko'));
         pricePoints.push(price.toFixed(4));
         minPrice = Math.min(minPrice, price);
         maxPrice = Math.max(maxPrice, price);
