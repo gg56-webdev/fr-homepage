@@ -1,15 +1,15 @@
 ---
-import Accordion from '@/components/FAQ/Accordion.astro'
-import { APP_STORE_URL, GOOGLE_PLAY_URL, NAV_LINKS, SOCIAL_LINKS } from '@/constants'
-import { Trans } from 'astro-i18next/components'
-import { localizePath } from 'astro-i18next'
-import { t } from 'i18next'
+import Accordion from '@/components/FAQ/Accordion.astro';
+import { APP_STORE_URL, GOOGLE_PLAY_URL, NAV_LINKS, SOCIAL_LINKS } from '@/constants';
+import { Trans } from 'astro-i18next/components';
+import { localizePath } from 'astro-i18next';
+import { t } from 'i18next';
 ---
 
-<section class="">
+<section>
   <h1 class="text-4xl font-bold text-center mb-8">FAQ</h1>
   <div class="space-y-4">
-    <Accordion title={t('faq.q&a.0.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.0.0')}>
       <Trans i18nKey="faq.q&a.0.1">
         <p>
           SoM is the in app mileage which can be used as currency in the app to purchase items from Marketplace, pay for
@@ -27,7 +27,7 @@ import { t } from 'i18next'
         <small>NB: Earned SoMs expire in 6 months</small>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.1.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.1.0')}>
       <Trans i18nKey="faq.q&a.1.1">
         <p>
           Signing up for FingeRate is incredibly easy! You can begin your journey by directly registering on the app
@@ -35,7 +35,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.2.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.2.0')}>
       <Trans i18nKey="faq.q&a.2.1">
         <p>
           With the responses provided by the participants, we analyze it and provide the result to the survey requester.
@@ -43,7 +43,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.3.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.3.0')}>
       <Trans i18nKey="faq.q&a.3.1">
         <p>
           Survey to Earn (S2E) allows users to earn rewards by participating in surveys. It provides an opportunity for
@@ -51,7 +51,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.4.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.4.0')}>
       <Trans i18nKey="faq.q&a.4.1">
         <p>Earning SoM is very easy.</p>
         <ol>
@@ -64,7 +64,7 @@ import { t } from 'i18next'
         <small>NB: Earned SoMs expire in 6 months</small>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.5.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.5.0')}>
       <Trans i18nKey="faq.q&a.5.1">
         <p>User can use their earned SoMs for the following purposes:</p>
         <ul>
@@ -76,7 +76,7 @@ import { t } from 'i18next'
         <small>NB: 1SoM=$0.1 Earned SoMs expire in 6 months</small>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.6.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.6.0')}>
       <Trans i18nKey="faq.q&a.6.1">
         <p>
           Users can purchase SoM using their credit cards from FingeRate app. Please go to &apos;Wallet&apos; click <em
@@ -85,7 +85,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.7.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.7.0')}>
       <Trans i18nKey="faq.q&a.7.1">
         <p>
           Users can earn SoM, an in-app mileage which can be used as currency in the app to purchase items from
@@ -93,7 +93,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.8.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.8.0')}>
       <Trans i18nKey="faq.q&a.8.1">
         <p>
           GG56 is the driving force behind the development and management of FingeRate and its associated ecosystem. You
@@ -103,7 +103,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.9.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.9.0')}>
       <Trans i18nKey="faq.q&a.9.1">
         <p>Users can create and manage their own surveys directly from FingeRate app!</p>
         <ol>
@@ -117,7 +117,7 @@ import { t } from 'i18next'
         </ol>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.10.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.10.0')}>
       <Trans i18nKey="faq.q&a.10.1">
         <p>
           Users can follow us on social media, including <a
@@ -136,7 +136,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.11.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.11.0')}>
       <Trans i18nKey="faq.q&a.11.1">
         <p>
           FingeRate App is available on <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">iOS</a> and <a
@@ -147,7 +147,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.12.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.12.0')}>
       <Trans i18nKey="faq.q&a.12.1">
         <p>
           For press inquiries regarding FingeRate, users can reach out to us directly at <a
@@ -156,7 +156,7 @@ import { t } from 'i18next'
         </p>
       </Trans>
     </Accordion>
-    <Accordion title={t('faq.q&a.13.0')}>
+    <Accordion name="q&a" title={t('faq.q&a.13.0')}>
       <Trans i18nKey="faq.q&a.13.1">
         <p>
           We have implemented robust measures to ensure the security of your information. We maintain a secure
