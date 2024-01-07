@@ -72,19 +72,6 @@
     "categories": ["Sales", "Leadership"]
   },
   {
-    "id": "ko-young-seok",
-    "name": {
-      "en": "Ko Young-seok",
-      "ko": "고영석"
-    },
-    "socials": ["https://www.linkedin.com/in/shokun335/"],
-    "subtitles": {
-      "en": ["Business Team Lead"],
-      "ko": ["팀장", "사업관리"]
-    },
-    "categories": ["Business", "Sales"]
-  },
-  {
     "id": "jang-jae-hyouk",
     "name": {
       "en": "Jang Jae-hyouk",
@@ -136,8 +123,8 @@
       "ko": "니키타"
     },
     "subtitles": {
-      "en": [ "Web Developer", "UI UX"],
-      "ko": [ "웹 개발자", "UI UX"]
+      "en": ["Web Developer", "UI UX"],
+      "ko": ["웹 개발자", "UI UX"]
     },
     "socials": ["https://www.linkedin.com/in/nikita-liakhovka/"],
     "categories": ["Development", "Design"]
@@ -149,7 +136,7 @@
       "ko": "이종원"
     },
     "subtitles": {
-      "en": [ "Unity Developer"],
+      "en": ["Unity Developer"],
       "ko": ["Unity 개발자"]
     },
     "socials": ["https://www.linkedin.com/in/%EC%A2%85%EC%9B%90-%EC%9D%B4-8a59352a2/"],
@@ -162,7 +149,7 @@
       "ko": "이준하"
     },
     "subtitles": {
-      "en": [ "Unity Developer"],
+      "en": ["Unity Developer"],
       "ko": ["Unity 개발자"]
     },
     "socials": ["https://www.linkedin.com/in/준하-이-4859362a2"],
