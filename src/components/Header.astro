@@ -1,5 +1,4 @@
 ---
-import Price from '@/components/Price.astro';
 import { localizePath } from 'astro-i18next';
 import i18next, { t } from 'i18next';
 import { NAV_LINKS, type Link } from '../constants';
@@ -68,8 +67,8 @@ const navLinks: Array<Link | Dropdown> = [
 const currentUrl = import.meta.env.DEV
   ? Astro.url.pathname
   : Astro.url.pathname === '/'
-  ? '/'
-  : Astro.url.pathname.slice(0, -1);
+    ? '/'
+    : Astro.url.pathname.slice(0, -1);
 ---
 
 <header class="sticky top-0 z-20 bg-slate-950/90">
