@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = {
+  label: astroHTML.JSX.Element;
+  name: string;
+} & HTMLAttributes<'input'>;
+
+const { name, label, ...inputAttr } = Astro.props;
+---
+
+<div class="grid gap-2">
+  <label class="mb-1 block text-sm font-medium" for={inputAttr.id ?? name} set:html={label} />
+  <input
+    {...inputAttr}
+    {name}
+    id={inputAttr.id ?? name}
+    class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue"
+  />
+</div>
