@@ -1,45 +1,16 @@
 ---
-import { Trans } from "astro-i18next/components";
-import { t } from "i18next";
+import { Trans } from 'astro-i18next/components';
+import { t } from 'i18next';
+import FormField from './FormField.astro';
 ---
 
-<form
-  class="grid gap-6"
-  action="https://api.web3forms.com/submit"
-  method="POST"
->
-  <input
-    type="hidden"
-    name="access_key"
-    value={import.meta.env.PUBLIC_WEB3_FORM_ACCESS_KEY}
-  />
+<form class="grid gap-6" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_WEB3_FORM_ACCESS_KEY} />
   <input type="checkbox" name="botcheck" class="hidden" />
-  <div class="grid gap-2">
-    <label class="mb-1 block text-sm font-medium" for="name"
-      >{t("contact-form.name")}</label
-    >
-    <input
-      class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue"
-      type="text"
-      name="name"
-      id="name"
-      autocomplete="name"
-      required
-    />
-  </div>
-  <div class="grid gap-2">
-    <label class="mb-1 block text-sm font-medium" for="email"
-      >{t("contact-form.email")}</label
-    >
-    <input
-      class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 focus:border-neonBlue focus:ring-neonBlue"
-      type="email"
-      name="email"
-      autocomplete="email"
-      id="email"
-      required
-    />
-  </div>
+
+  <FormField label={t('contact-form.name')} name="name" required autocomplete="name" />
+  <FormField label={t('contact-form.email')} name="email" type="email" required autocomplete="email" />
+
   <div class="grid gap-2">
     <label class="mb-1 block text-sm font-medium" for="message"
       ><Trans i18nKey="contact-form.text">
@@ -53,20 +24,11 @@ import { t } from "i18next";
       id="message"
       required></textarea>
   </div>
-  <input
-    type="hidden"
-    name="subject"
-    value="Message from fingerate.world Contact Form"
-  />
-  <input
-    type="hidden"
-    name="redirect"
-    value="https://fingerate.world/success"
-  />
+  <input type="hidden" name="subject" value="Message from fingerate.world Contact Form" />
+  <input type="hidden" name="redirect" value="https://fingerate.world/success" />
 
   <button
-    type="submit"
     class="rounded-lg bg-intelligentBlue px-5 py-2.5 text-center text-sm font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
-    >{t("contact-form.submit")}</button
+    >{t('contact-form.submit')}</button
   >
 </form>
