@@ -1,23 +1,119 @@
 ---
-import Benefits from "@/components/bot/Benefits.astro";
-import Contact from "@/components/bot/Contact.astro";
-import Dashboard from "@/components/bot/Dashboard.astro";
-import Hero from "@/components/bot/Hero.astro";
-import How from "@/components/bot/How.astro";
-import Keywords from "@/components/bot/Keywords.astro";
-import Layout from "@/layouts/Layout.astro";
-import { changeLanguage, t } from "i18next";
+import FormField from '@/components/FormField.astro';
+import Layout from '@/layouts/Layout.astro';
+import { changeLanguage, t } from 'i18next';
 
-changeLanguage("en");
+changeLanguage('en');
 ---
 
 <Layout image="/og/bot.jpg" title={t('seo.bot.title')!} description={t('seo.bot.description')!}>
   <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
-    <Hero />
-    <Keywords />
-    <How />
-    <Benefits />
-    <Dashboard />
-    <Contact />
+    <section id="hero" class="grid md:grid-cols-2">
+      <img src="" class="md:order-2" alt="photo of Bot" />
+      <div class="md:order-1">
+        <h1></h1>
+        <p></p>
+        <form action="" class="grid gird gap-6">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <FormField label="Name" name="name" required autocomplete="name" />
+            <FormField label="Email" name="email" required autocomplete="email" />
+          </div>
+          <button>Get more information</button>
+          <small>We'll never share your information with anyone</small>
+        </form>
+      </div>
+    </section>
+
+    <section id="partners">
+      <ul class="flex">
+        <li><img src="" alt="logo" /></li>
+        <li><img src="" alt="logo" /></li>
+        <li><img src="" alt="logo" /></li>
+        <li><img src="" alt="logo" /></li>
+        <li><img src="" alt="logo" /></li>
+      </ul>
+    </section>
+
+    <section id="benefits">
+      <ul>
+        <li>
+          <img src="" alt="icon" />
+          <h2>Touchless</h2>
+          <p>FingeRate Bot is 100% touchless, making the whole survey-taking experience as seamless as it could be</p>
+        </li>
+        <li>
+          <img src="" alt="icon" />
+          <h2>Real you can directly access the data in real-time through the dashboard of from the FingeRate App</h2>
+          <p></p>
+        </li>
+        <li>
+          <img src="" alt="icon" />
+          <h2>Easy</h2>
+          <p>The process is not only fast but also simple and straight forward for both tour visitors and yourself</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      {
+        (
+          [
+            [
+              ['', 'photo'],
+              "Capture Your visitors' real emotions with AI technology",
+              'Find out what your visitors really think or want! Display your question at the right time; gather data, and watch your business grow!',
+            ],
+            [['', 'photo'], 'Make it as easy as possible for your visitors!', '...'],
+            [
+              ['', 'photo'],
+              'Access your data in real time',
+              'From your visitors; gender to their answers, get an overview of their profile through our intuitive dashboard or directly via the FingeRate App!',
+            ],
+          ] as const
+        ).map(([[src, alt], h2, p]) => (
+          <>
+            <img {src} {alt} />
+            <h2>{h2}</h2>
+            <p>{p}</p>
+          </>
+        ))
+      }
+    </section>
+
+    <section id="use-case">
+      <img src="" alt="use case photo" />
+      <div>
+        <h2>Use Case</h2>
+        <article>
+          <h1>How feedback can help sustain your</h1>
+          <p>...</p>
+          <a href="http://" target="_blank" rel="noopener noreferrer">Read full case</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="ecosystem">
+      <h2>An ecosystem driven by growth</h2>
+      <ul>
+        <li>
+          <img src="" alt="bot" />
+          <h3>FingeRate Bot</h3>
+          <p>...</p>
+          <a href=""></a>
+        </li>
+        <li>
+          <img src="" alt="app" />
+          <h3>FingeRate App</h3>
+          <p>...</p>
+          <a href=""></a>
+        </li>
+        <li>
+          <img src="" alt="MSOT" />
+          <h3>MSOT</h3>
+          <p>...</p>
+          <a href=""></a>
+        </li>
+      </ul>
+    </section>
   </div>
 </Layout>
