@@ -9,7 +9,7 @@ changeLanguage("en");
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const posts = await getPosts({ lang: i18next.language });
-    return paginate(posts, { pageSize: 14 });
+    return paginate(posts, { pageSize: 12 });
 }
 const { page } = Astro.props;
 ---
@@ -20,7 +20,7 @@ const { page } = Astro.props;
       <h1 class="mb-8 text-center text-4xl font-bold">{t('news.h1')}</h1>
       {
         page.data.length > 0 ? (
-          <ul class="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+          <ul class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6">
             {page.data.map((post) => {
               return (
                 <li
@@ -28,7 +28,7 @@ const { page } = Astro.props;
                   class:list={[
                     'sm:col-span-2',
                     {
-                      'sm:first:col-span-2 md:first:col-span-4 lg:first:col-span-6 md:[&:nth-of-type(n+2):nth-of-type(-n+5)]:col-span-2 lg:[&:nth-of-type(n+2):nth-of-type(-n+5)]:col-span-3':
+                      'sm:first:col-span-2 md:first:col-span-6 sm:[&:nth-of-type(n+2):nth-of-type(-n+9)]:col-span-2 md:[&:nth-of-type(n+2):nth-of-type(-n+9)]:col-span-3':
                         page.currentPage === 1,
                     },
                   ]}
@@ -42,7 +42,7 @@ const { page } = Astro.props;
           <p class="text-cyberLilac text-center">{t('news.no-news')}</p>
         )
       }
-      <div class="flex gap-2 mt-4">
+      <div class="flex gap-2 mt-6">
         {
           page.url.prev ? (
             <a
