@@ -276,7 +276,9 @@
     "read": "Read post",
     "go-news": "Go back to News",
     "recent": "Recent News:",
-    "no-news": "No Recent News"
+    "no-news": "No Recent News",
+    "next": "Next",
+    "prev": "Previous"
   },
 
   "faq": {
