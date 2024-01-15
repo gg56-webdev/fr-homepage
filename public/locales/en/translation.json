@@ -274,7 +274,9 @@
   "news": {
     "h1": "News",
     "read": "Read post",
-    "go-news": "Go back to News"
+    "go-news": "Go back to News",
+    "recent": "Recent News:",
+    "no-news": "No Recent News"
   },
 
   "faq": {

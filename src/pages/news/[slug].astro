@@ -6,6 +6,7 @@ import { getPost, getPosts } from "@/api";
 import type { GetStaticPaths } from "astro";
 import type { WP_REST_API_Post } from "wp-types";
 import { NAV_LINKS } from "@/constants";
+import NewsCard from "@/components/NewsCard.astro";
 
 changeLanguage("en");
 
@@ -13,7 +14,7 @@ interface Props {
     id: WP_REST_API_Post["id"];
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await getPosts(i18next.language as "en" | "ko", true);
+    const posts = await getPosts({ lang: i18next.language, minimal: true });
     return posts
         .filter(({ link }) => link.startsWith("https://gg56.com/"))
         .map(({ slug, id }) => ({
@@ -22,14 +23,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }));
 };
 const { id } = Astro.props;
-const post = await getPost(id, i18next.language as "en" | "ko");
+const post = await getPost({ id, lang: i18next.language });
+const recentPosts = (await getPosts({ lang: i18next.language, limit: 4 })).filter((post) => post.id !== id).slice(0, 3);
 ---
 
 <Layout title={post.title.rendered}>
-  <article class="prose prose-invert mx-auto max-w-screen-md bg-slate-900 px-2 py-12 md:px-12">
+  <article class="prose prose-invert mx-auto max-w-screen-md bg-slate-900 px-2 py-12 md:px-12 rounded-lg">
     <h1 class="[text-wrap:balance;]" set:html={post.title.rendered} />
     <time datetime={post.date} class="text-neonBlue">{new Date(post.date).toLocaleDateString(i18next.language)}</time>
     <Fragment set:html={post.content.rendered} />
+    <h2>{t('news.recent')}</h2>
+    <ul class="grid sm:grid-cols-3 w-full mt-8 gap-4 not-prose p-0">
+      {recentPosts.map((post) => <NewsCard {post} />)}
+    </ul>
     <a href={localizePath(NAV_LINKS.NEWS.href)} class="not-prose">← {t('news.go-news')}</a>
   </article>
 </Layout>
