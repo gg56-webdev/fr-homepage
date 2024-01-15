@@ -1,0 +1,69 @@
+---
+import i18next, { changeLanguage, t } from "i18next";
+import { getPosts } from "@/api";
+import Layout from "@/layouts/Layout.astro";
+import NewsCard from "@/components/NewsCard.astro";
+import { type GetStaticPathsOptions } from "astro";
+
+changeLanguage("ko");
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const posts = await getPosts({ lang: i18next.language });
+    return paginate(posts, { pageSize: 12 });
+}
+const { page } = Astro.props;
+---
+
+<Layout image="/og/news.jpg" title={t('seo.news.title')!} description={t('seo.news.description')!}>
+  <div class="py-8 md:pb-24">
+    <section class="mx-auto max-w-screen-lg p-2">
+      <h1 class="mb-8 text-center text-4xl font-bold">{t('news.h1')}</h1>
+      {
+        page.data.length > 0 ? (
+          <ul class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6">
+            {page.data.map((post) => {
+              return (
+                <li
+                  data-scroll-animation
+                  class:list={[
+                    'sm:col-span-2',
+                    {
+                      'sm:first:col-span-2 md:first:col-span-6 sm:[&:nth-of-type(n+2):nth-of-type(-n+9)]:col-span-2 md:[&:nth-of-type(n+2):nth-of-type(-n+9)]:col-span-3':
+                        page.currentPage === 1,
+                    },
+                  ]}
+                >
+                  <NewsCard {post} />
+                </li>
+              )
+            })}
+          </ul>
+        ) : (
+          <p class="text-cyberLilac text-center">{t('news.no-news')}</p>
+        )
+      }
+      <div class="flex gap-2 mt-6">
+        {
+          page.url.prev ? (
+            <a
+              class="rounded-lg px-5 py-2.5 text-center font-medium bg-slate-950/80 hover:bg-slate-900 text-white hover:ring-2 transition ring-neonBlue"
+              href={page.url.prev}
+            >
+              ← {t('news.prev')}
+            </a>
+          ) : null
+        }
+        {
+          page.url.next ? (
+            <a
+              class="rounded-lg px-5 py-2.5 text-center font-medium bg-slate-950/80 hover:bg-slate-900 text-white hover:ring-2 transition ring-neonBlue ml-auto"
+              href={page.url.next}
+            >
+              {t('news.next')} →
+            </a>
+          ) : null
+        }
+      </div>
+    </section>
+  </div>
+</Layout>
