@@ -124,7 +124,14 @@
     }
   },
 
-  "bot": {},
+  "bot": {
+    "hero": {
+      "h1": "Understand your visitors and customers in real time!",
+      "p": "With our FingeRate Bot, visitors can effortlessly complete your surveys in just a matter of seconds, ensuring a quick and seamless experience. Ready to revolutionize your feedback process?",
+      "get-in-touch": "Get in Touch",
+      "disclaimer": "We'll never share your information with anyone!"
+    }
+  },
 
   "token": {
     "hero": {

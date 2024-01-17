@@ -1,26 +1,69 @@
 ---
-import FormField from '@/components/FormField.astro';
-import Layout from '@/layouts/Layout.astro';
-import { changeLanguage, t } from 'i18next';
+import Layout from '@/layouts/Layout.astro'
+import Partners from '@/components/Partners.astro'
+import i18next, { changeLanguage, t } from 'i18next'
+import { localizePath } from 'astro-i18next'
+import Ecosystem from '@/components/bot/Ecosystem.astro'
+import Dashboard from '@/components/bot/Dashboard.astro'
+import { CALENDLY } from '@/constants'
+import Contact from '@/components/bot/Contact.astro'
+import botVid from '@/assets/bot/hero.mp4'
 
-changeLanguage('en');
+changeLanguage('en')
 ---
 
 <Layout image="/og/bot.jpg" title={t('seo.bot.title')!} description={t('seo.bot.description')!}>
   <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
-    <section id="hero" class="grid md:grid-cols-2">
-      <img src="" class="md:order-2" alt="photo of Bot" />
-      <div class="md:order-1">
-        <h1></h1>
-        <p></p>
-        <form action="" class="grid gird gap-6">
-          <div class="grid sm:grid-cols-2 gap-6">
-            <FormField label="Name" name="name" required autocomplete="name" />
-            <FormField label="Email" name="email" required autocomplete="email" />
-          </div>
-          <button>Get more information</button>
-          <small>We'll never share your information with anyone</small>
-        </form>
+    <section
+      id="hero"
+      class="grid min-h-[85vh] max-w-screen-xl mx-auto lg:grid-cols-2 items-center px-2 gap-6 md:grid-rows-[1fr_auto]"
+    >
+      <div class="grid gap-4 md:gap-8 z-10 relative">
+        <h1 class="text-3xl md:text-5xl/tight font-bold text-balance">
+          {t('bot.hero.h1')}
+        </h1>
+        <p class="md:text-2xl/tight text-pretty max-md:mb-4">{t('bot.hero.p')}</p>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={CALENDLY}
+          class="rounded-lg bg-intelligentBlue px-5 py-2.5 text-center md:text-lg max-md:justify-self-start font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >{t('bot.hero.get-in-touch')}</a
+        >
+      </div>
+      <div class="max-md:order-first relative">
+        <div class="rounded-lg z-10 relative overflow-clip">
+          <video src={botVid} width="1200" height="720" autoplay loop muted playsinline></video>
+        </div>
+
+        <div
+          class:list={[
+            '[animation-delay:0s]',
+            'animate-blob  blur-2xl  absolute top-1/4 -left-1/4 w-1/2 aspect-square rounded-full  bg-softFire/30',
+          ]}
+        >
+        </div>
+        <div
+          class:list={[
+            '[animation-delay:2s]',
+            'animate-blob  blur-2xl  absolute top-0 -right-1/4 w-1/2 aspect-square rounded-full  bg-neonBlue/30',
+          ]}
+        >
+        </div>
+        <div
+          class:list={[
+            '[animation-delay:4s]',
+            'animate-blob  blur-2xl  absolute -bottom-1/2 right-1/4 w-1/2 aspect-square rounded-full  bg-intelligentBlue/30',
+          ]}
+        >
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <p
+          class="text-center text-cyberLilac relative after:absolute after:left-1/2 after:-bottom-10 after:animate-bounce after:content-['↓'] after:[translate:-50%] after:text-3xl"
+        >
+          Scroll Down
+        </p>
       </div>
     </section>
 

@@ -56,3 +56,5 @@ export const SOCIAL_LINKS = {
 } as const
 
 export const TELEGRAM_KO = 'https://t.me/fingerate_kr'
+
+export const CALENDLY = 'https://calendly.com/gg56world/fingerate-solutions'
