@@ -3,16 +3,16 @@ import Form from "@/components/Form.astro";
 import { t } from "i18next";
 ---
 
-<section data-scroll-animation class="mx-auto max-w-screen-lg space-y-4 p-2">
-  <div class="text-center">
+<section id="contact" data-scroll-animation class="mx-auto max-w-screen-lg p-2">
+  <div class="md:text-center mb-4">
     <h2 class="text-3xl font-bold">
       {t("bot.contact.h2")}
     </h2>
   </div>
-  <p class="text-center">
-    {t("bot.contact.p")}
+  <p class="text-pretty md:text-lg/tight max-w-[60ch] mx-auto md:text-center">
+    {t('bot.contact.p')}
   </p>
-  <div class="grid gap-4 rounded-xl bg-slate-950/80 p-4 md:grid-cols-[1fr_2fr]">
+  <div class="grid mt-8 gap-4 rounded-xl bg-slate-950/80 p-4 md:grid-cols-[1fr_2fr]">
     <div class="grid content-between gap-8 rounded-lg bg-brandGradient p-4">
       <div>
         <h3 class="text-2xl font-bold">{t("common.contact-information")}</h3>
