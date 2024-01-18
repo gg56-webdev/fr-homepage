@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets'
+import botImg from '@/assets/bot/ecosystem/bot.png'
+import { t } from 'i18next'
+
+const botBtns = [
+  ['camera', t('bot.ecosystem.tab-panels.0.0')],
+  ['hand', t('bot.ecosystem.tab-panels.0.1')],
+  ['screen', t('bot.ecosystem.tab-panels.0.2')],
+  ['survey', t('bot.ecosystem.tab-panels.0.3')],
+  ['media', t('bot.ecosystem.tab-panels.0.4')],
+  ['outside', t('bot.ecosystem.tab-panels.0.5')],
+]
+---
+
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+  <div class="grid *:[grid-area:1/1/1/1] w-fit">
+    <Image alt="person showing gesture towards FingeRate Bot camera" src={botImg} class="w-[500px] max-w-full" />
+    <svg
+      class="w-[500px] max-w-full *:stroke-intelligentBlue"
+      viewBox="0 0 878 878"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        data-bot-svg="camera"
+        cx="624.5"
+        cy="251.5"
+        r="25.5"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-dasharray="10 10"></circle>
+      <path
+        data-bot-svg="screen"
+        d="M487.407 302.623C487.407 297.195 491.703 292.741 497.127 292.545L759.311 283.071C765.02 282.865 769.76 287.436 769.76 293.148V790.193C769.76 796.041 764.801 800.663 758.967 800.252L496.782 781.777C491.501 781.405 487.407 777.012 487.407 771.718V302.623Z"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-dasharray="10 10"></path>
+      <path
+        data-bot-svg="media"
+        d="M505 667.038C505 661.295 509.79 656.711 515.528 656.964L744.86 667.075C750.251 667.313 754.5 671.753 754.5 677.149V771.727C754.5 777.558 749.569 782.174 743.751 781.789L514.419 766.623C509.119 766.272 505 761.872 505 756.561V667.038Z"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-dasharray="10 10"></path>
+      <path
+        data-bot-svg="media"
+        d="M505 521.247C505 515.615 509.614 511.074 515.246 511.164L744.578 514.841C750.083 514.929 754.5 519.417 754.5 524.924V620.962C754.5 626.705 749.71 631.289 743.972 631.036L514.64 620.925C509.249 620.687 505 616.247 505 610.851V521.247Z"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-dasharray="10 10"></path>
+      <path
+        data-bot-svg="survey"
+        d="M505 374.549C505 369.004 509.477 364.499 515.022 364.465L744.854 363.062C750.448 363.028 755 367.552 755 373.146V468.792C755 474.409 750.41 478.944 744.793 478.875L514.961 476.069C509.44 476.002 505 471.507 505 465.986V374.549Z"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-dasharray="10 10"></path>
+      <path
+        data-bot-svg="hand"
+        d="M408 308.518C408 303.006 412.426 298.515 417.938 298.435L506.77 297.148C512.396 297.067 517 301.605 517 307.231V406.62C517 412.303 512.305 416.864 506.624 416.699L417.792 414.126C412.339 413.968 408 409.502 408 404.046V308.518Z"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-dasharray="10 10"></path>
+      <rect
+        data-bot-svg="outside"
+        x="3"
+        y="3"
+        width="872"
+        height="872"
+        rx="46"
+        stroke-width="5.00595"
+        stroke-linecap="round"
+        stroke-dasharray="10.01 10.01"></rect>
+    </svg>
+  </div>
+  <ul
+    class="flex flex-wrap md:flex-col gap-2 justify-center items-center md:items-stretch text-center [&>*:hover]:border-intelligentBlue [&>*:hover]:border-dashed *:shrink-0 *:border-2 *:px-4 *:py-1 *:rounded-full"
+  >
+    {botBtns.map(([data, text]) => <li data-bot-btn={data}>{text}</li>)}
+  </ul>
+</div>
+
+<style>
+  [data-bot-svg] {
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
+  @keyframes marchingAnts {
+    to {
+      stroke-dashoffset: 500;
+    }
+  }
+
+  [data-bot-svg] {
+    animation: marchingAnts 20s infinite linear;
+  }
+
+  :has([data-bot-btn='camera']:is(:hover, :focus)) [data-bot-svg='camera'] {
+    opacity: 1;
+  }
+  :has([data-bot-btn='screen']:is(:hover, :focus)) [data-bot-svg='screen'] {
+    opacity: 1;
+  }
+  :has([data-bot-btn='outside']:is(:hover, :focus)) [data-bot-svg='outside'] {
+    opacity: 1;
+  }
+  :has([data-bot-btn='survey']:is(:hover, :focus)) [data-bot-svg='survey'] {
+    opacity: 1;
+  }
+  :has([data-bot-btn='hand']:is(:hover, :focus)) [data-bot-svg='hand'] {
+    opacity: 1;
+  }
+  :has([data-bot-btn='media']:is(:hover, :focus)) [data-bot-svg='media'] {
+    opacity: 1;
+  }
+</style>

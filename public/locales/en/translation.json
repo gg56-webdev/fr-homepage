@@ -146,9 +146,40 @@
         ["Real-time", "Instant access to real time data for decision-making."],
         ["Easy & Fast", "Fast and easy process for both your team and visitors."]
       ]
+    },
+    "ecosystem": {
+      "h2": "An ecosystem made for you",
+      "p": "The FingeRate Bot is part of the FingeRate ecosystem, an ecosystem that empowers you to gather and access data about your visitors in real time from your computer or smartphone.",
+      "tabs": ["FingeRate Bot", "Dashboard", "FingeRate App"],
+      "tab-panels": [
+        ["AI-Powered Camera", "Contactless", "Display", "Question & Answers", "Ads & Media", "Outside/Inside Solution"]
+      ]
+    },
+    "industries": {
+      "h2": "How to Use FingeRate Bot?",
+      "list": [
+        "Retail",
+        "Hospitality",
+        "Healthcare",
+        "Restaurants and Food Service",
+        "Government / Public Services",
+        "And more!"
+      ]
+    },
+    "dashboard": {
+      "h2": "Give Bot a Try!",
+      "question-label": "Question",
+      "option-label": "Option",
+      "question-placeholder": "Please type your question here!",
+      "question": "How was our opening event?",
+      "options": ["Loved it!", "Great", "OK", "Boring", "Bad"],
+      "thanks": "Thank you for participating!"
+    },
+    "contact": {
+      "h2": "Get Started with FingeRate Bot Today!",
+      "p": "Take your customer feedback strategy to the next level. Contact us now to learn more about FingeRate Bot, request a demo, and discover how our solution can transform your business. Don't miss out on the opportunity to unlock the true potential of your customer interactions."
     }
   },
-
   "token": {
     "hero": {
       "h1": "Navigate FingeRate Ecosystem with MSOT",

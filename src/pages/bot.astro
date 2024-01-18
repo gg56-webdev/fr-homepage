@@ -3,11 +3,11 @@ import Layout from '@/layouts/Layout.astro'
 import Partners from '@/components/Partners.astro'
 import i18next, { changeLanguage, t } from 'i18next'
 import { localizePath } from 'astro-i18next'
-import Ecosystem from '@/components/bot/Ecosystem.astro'
 import Dashboard from '@/components/bot/Dashboard.astro'
 import { CALENDLY } from '@/constants'
 import Contact from '@/components/bot/Contact.astro'
 import botVid from '@/assets/bot/hero.mp4'
+import Ecosystem from '@/components/bot/Ecosystem.astro'
 const videoSrc =
   i18next.language === 'ko'
     ? (await import('@/assets/bot/bot_intro_ko.mp4')).default
@@ -120,41 +120,6 @@ const benefits = [
         }
       </dl>
     </section>
-
-    <section id="use-case">
-      <img src="" alt="use case photo" />
-      <div>
-        <h2>Use Case</h2>
-        <article>
-          <h1>How feedback can help sustain your</h1>
-          <p>...</p>
-          <a href="http://" target="_blank" rel="noopener noreferrer">Read full case</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="ecosystem">
-      <h2>An ecosystem driven by growth</h2>
-      <ul>
-        <li>
-          <img src="" alt="bot" />
-          <h3>FingeRate Bot</h3>
-          <p>...</p>
-          <a href=""></a>
-        </li>
-        <li>
-          <img src="" alt="app" />
-          <h3>FingeRate App</h3>
-          <p>...</p>
-          <a href=""></a>
-        </li>
-        <li>
-          <img src="" alt="MSOT" />
-          <h3>MSOT</h3>
-          <p>...</p>
-          <a href=""></a>
-        </li>
-      </ul>
-    </section>
+    <Ecosystem />
   </div>
 </Layout>
