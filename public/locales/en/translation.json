@@ -137,6 +137,15 @@
       "stat": {
         "p": "of buyers are willing to pay more for a great customer experience."
       }
+    },
+    "benefits": {
+      "h2": "FingeRate Bot was designed with your needs in mind",
+      "h2-sub": "A contactless survey solution levering the power of AI to generate real time data, directly accessible",
+      "points": [
+        ["Contactless", "Experience surveys with our 100% contactless solution."],
+        ["Real-time", "Instant access to real time data for decision-making."],
+        ["Easy & Fast", "Fast and easy process for both your team and visitors."]
+      ]
     }
   },
 

@@ -13,7 +13,11 @@ const videoSrc =
     ? (await import('@/assets/bot/bot_intro_ko.mp4')).default
     : (await import('@/assets/bot/bot_intro_en.mp4')).default
 
-changeLanguage('en')
+const benefits = [
+  [t('bot.benefits.points.0.0'), t('bot.benefits.points.0.1'), `bg-intelligentBlue`, 'order-0'],
+  [t('bot.benefits.points.1.0'), t('bot.benefits.points.1.1'), `bg-softFire`, 'order-2'],
+  [t('bot.benefits.points.2.0'), t('bot.benefits.points.2.1'), `bg-[#207DA2]`, 'order-4'],
+]
 ---
 
 <Layout image="/og/bot.jpg" title={t('seo.bot.title')!} description={t('seo.bot.description')!}>
@@ -92,30 +96,29 @@ changeLanguage('en')
       </div>
     </section>
 
-    <section>
-      {
-        (
-          [
-            [
-              ['', 'photo'],
-              "Capture Your visitors' real emotions with AI technology",
-              'Find out what your visitors really think or want! Display your question at the right time; gather data, and watch your business grow!',
-            ],
-            [['', 'photo'], 'Make it as easy as possible for your visitors!', '...'],
-            [
-              ['', 'photo'],
-              'Access your data in real time',
-              'From your visitors; gender to their answers, get an overview of their profile through our intuitive dashboard or directly via the FingeRate App!',
-            ],
-          ] as const
-        ).map(([[src, alt], h2, p]) => (
-          <>
-            <img {src} {alt} />
-            <h2>{h2}</h2>
-            <p>{p}</p>
-          </>
-        ))
-      }
+    <section id="benefits" class="mx-auto max-w-screen-lg px-2">
+      <div class="text-center space-y-4">
+        <h2 class="text-3xl text-balance font-bold">{t('bot.benefits.h2')}</h2>
+        <p class="text-pretty md:text-lg/tight max-w-[60ch] mx-auto">{t('bot.benefits.h2-sub')}</p>
+      </div>
+      <dl
+        class="flex items-center justify-evenly gap-4 flex-wrap mt-12 before:w-8 before:aspect-square before:border-cyberLilac before:border-2 before:hidden min-[850px]:before:block before:border-dashed before:animate-spin before:[animation-duration:10s] before:rounded-full before:order-1 after:w-8 after:aspect-square after:border-cyberLilac after:border-2 after:hidden min-[850px]:after:block after:border-dashed after:animate-spin after:[animation-duration:10s] after:rounded-full after:order-3"
+      >
+        {
+          benefits.map(([dt, dd, bg, order]) => (
+            <div
+              class:list={[
+                bg,
+                order,
+                'w-56 p-4 rounded-full aspect-square text-center h-full grid place-content-center',
+              ]}
+            >
+              <dt class="font-bold text-2xl mb-4">{dt}</dt>
+              <dd class="text-sm">{dd}</dd>
+            </div>
+          ))
+        }
+      </dl>
     </section>
 
     <section id="use-case">
