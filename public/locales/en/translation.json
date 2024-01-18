@@ -130,6 +130,13 @@
       "p": "With our FingeRate Bot, visitors can effortlessly complete your surveys in just a matter of seconds, ensuring a quick and seamless experience. Ready to revolutionize your feedback process?",
       "get-in-touch": "Get in Touch",
       "disclaimer": "We'll never share your information with anyone!"
+    },
+    "intro": {
+      "h2": "FingeRate Bot, the Power of AI at your service",
+      "p": "FingeRate Bot offers a new approach to visitors feedback. Unlock data to support your decision making to drive business growth.",
+      "stat": {
+        "p": "of buyers are willing to pay more for a great customer experience."
+      }
     }
   },
 

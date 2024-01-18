@@ -8,6 +8,10 @@ import Dashboard from '@/components/bot/Dashboard.astro'
 import { CALENDLY } from '@/constants'
 import Contact from '@/components/bot/Contact.astro'
 import botVid from '@/assets/bot/hero.mp4'
+const videoSrc =
+  i18next.language === 'ko'
+    ? (await import('@/assets/bot/bot_intro_ko.mp4')).default
+    : (await import('@/assets/bot/bot_intro_en.mp4')).default
 
 changeLanguage('en')
 ---
@@ -71,24 +75,21 @@ changeLanguage('en')
       <Partners />
     </section>
 
-    <section id="benefits">
-      <ul>
-        <li>
-          <img src="" alt="icon" />
-          <h2>Touchless</h2>
-          <p>FingeRate Bot is 100% touchless, making the whole survey-taking experience as seamless as it could be</p>
-        </li>
-        <li>
-          <img src="" alt="icon" />
-          <h2>Real you can directly access the data in real-time through the dashboard of from the FingeRate App</h2>
-          <p></p>
-        </li>
-        <li>
-          <img src="" alt="icon" />
-          <h2>Easy</h2>
-          <p>The process is not only fast but also simple and straight forward for both tour visitors and yourself</p>
-        </li>
-      </ul>
+    <section id="intro" class="bg-slate-950/80 py-32">
+      <div class="mx-auto max-w-screen-lg">
+        <div class="text-center space-y-4 px-2">
+          <h2 class="brand-text text-3xl font-bold">{t('bot.intro.h2')}</h2>
+          <p class="text-pretty md:text-lg/tight max-w-[60ch] mx-auto">{t('bot.intro.p')}</p>
+        </div>
+        <div class="grid md:grid-cols-[1fr_3fr] mx-auto max-w-[850px] md:gap-6 mt-12">
+          <div class="text-center p-4 md:rounded-lg bg-brandGradient grid h-full place-content-center">
+            <p class="leading-snug"><span class="block font-bold text-6xl mb-4">86%</span>{t('bot.intro.stat.p')}</p>
+          </div>
+          <div class="max-md:order-first overflow-hidden md:rounded-lg">
+            <video src={`${videoSrc}#t=0.001`} width="1280" height="720" controls loop preload="metadata"></video>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
