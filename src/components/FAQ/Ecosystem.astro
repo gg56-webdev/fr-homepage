@@ -7,13 +7,27 @@ import logo from '@/assets/logo.webp'
 import Apple from '../DownloadBtn/Apple.astro'
 import Google from '../DownloadBtn/Google.astro'
 
-// TODO: optimize tailwind classes
-
 const products = [
-  ['App', localizePath(NAV_LINKS.HOME.href), 'bg-indigo-600'],
-  ['Bot', localizePath(NAV_LINKS.BOT.href), 'bg-rose-700'],
-  ['Token', localizePath(NAV_LINKS.TOKEN.href), 'bg-sky-700'],
-  ['Millage', localizePath(NAV_LINKS.HOME.href) + '#som', 'bg-purple-700'],
+  [
+    'App',
+    localizePath(NAV_LINKS.HOME.href),
+    'bg-indigo-600 translate-x-[calc(cos(0deg+var(--a))*var(--r))] translate-y-[calc(sin(0deg+var(--a))*var(--r))]',
+  ],
+  [
+    'Bot',
+    localizePath(NAV_LINKS.BOT.href),
+    'bg-rose-700 translate-x-[calc(cos(90deg+var(--a))*var(--r))] translate-y-[calc(sin(90deg+var(--a))*var(--r))]',
+  ],
+  [
+    'Token',
+    localizePath(NAV_LINKS.TOKEN.href),
+    'bg-sky-700 translate-x-[calc(cos(180deg+var(--a))*var(--r))] translate-y-[calc(sin(180deg+var(--a))*var(--r))]',
+  ],
+  [
+    'Millage',
+    localizePath(NAV_LINKS.HOME.href) + '#som',
+    'bg-purple-700 translate-x-[calc(cos(270deg+var(--a))*var(--r))] translate-y-[calc(sin(270deg+var(--a))*var(--r))]',
+  ],
 ] as const
 ---
 
@@ -25,19 +39,10 @@ const products = [
     <Image src={logo} loading="eager" alt="FingeRate logo" class="w-20 rounded-full absolute place-self-center" />
 
     {
-      products.map(([text, href, bg]) => (
+      products.map(([text, href, classes]) => (
         <a
           {href}
-          class={`${bg} hover:ring-2 font-bold ring-white transition-[box-shadow,opacity]  [--s:75px] grid absolute w-[--s] rounded-full place-items-center aspect-square  left-[calc(var(--r)-(var(--s)/2))] top-[calc(var(--r)-(var(--s)/2))]
- [&:nth-of-type(1)]:translate-x-[calc(cos(0deg+var(--a))*var(--r))]
- [&:nth-of-type(1)]:translate-y-[calc(sin(0deg+var(--a))*var(--r))]
- [&:nth-of-type(2)]:translate-x-[calc(cos(90deg+var(--a))*var(--r))]
- [&:nth-of-type(2)]:translate-y-[calc(sin(90deg+var(--a))*var(--r))]
- [&:nth-of-type(3)]:translate-x-[calc(cos(180deg+var(--a))*var(--r))]
- [&:nth-of-type(3)]:translate-y-[calc(sin(180deg+var(--a))*var(--r))]
- [&:nth-of-type(4)]:translate-x-[calc(cos(270deg+var(--a))*var(--r))]
- [&:nth-of-type(4)]:translate-y-[calc(sin(270deg+var(--a))*var(--r))]
- `}
+          class={`${classes} hover:ring-2 font-bold ring-white transition-[box-shadow,opacity] [--s:75px] grid absolute w-[--s] rounded-full place-items-center aspect-square left-[calc(var(--r)-(var(--s)/2))] top-[calc(var(--r)-(var(--s)/2))]`}
         >
           {text}
         </a>
