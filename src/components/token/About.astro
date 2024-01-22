@@ -1,6 +1,8 @@
 ---
-import socials from '@/assets/token/socials.png'
+import tg from '@/assets/social/TG.svg'
 import network from '@/assets/token/network.png'
+import socials from '@/assets/token/socials.png'
+import { SOCIAL_LINKS } from '@/constants'
 import { Image } from 'astro:assets'
 import { t } from 'i18next'
 import { formatNumber } from './Hero.astro'
@@ -15,16 +17,36 @@ import { formatNumber } from './Hero.astro'
         <p>{t('token.about.section-1.p-1')}</p>
         <p>{t('token.about.section-1.p-2')}</p>
       </div>
-      <dl class="flex gap-12 mt-12">
-        <div class="flex flex-col-reverse gap-2">
-          <dt class="text-sm">{t('token.hero.quantity')}</dt>
-          <dd class="font-bold text-4xl text-white">{formatNumber(1_800_000_000)}</dd>
-        </div>
-        <div class="flex flex-col-reverse gap-2">
-          <dt class="text-sm">{t('token.about.section-1.stat')}</dt>
-          <dd class="font-bold text-4xl text-white">+{formatNumber(7000, { notation: 'standard' })}</dd>
-        </div>
-      </dl>
+      <div class="flex flex-wrap just gap-x-12 mt-12 items-center">
+        <dl class="flex gap-12">
+          <div class="flex flex-col-reverse gap-2">
+            <dt class="text-sm">{t('token.hero.quantity')}</dt>
+            <dd class="font-bold text-4xl text-white">{formatNumber(1_800_000_000)}</dd>
+          </div>
+          <div class="flex flex-col-reverse gap-2">
+            <dt class="text-sm">{t('token.about.section-1.stat')}</dt>
+            <dd class="font-bold text-4xl text-white">+{formatNumber(7000, { notation: 'standard' })}</dd>
+          </div>
+        </dl>
+        <a
+          class="rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1"
+          href={SOCIAL_LINKS.TELEGRAM.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Join Telegram group!"
+        >
+          <img
+            class="w-12"
+            loading="lazy"
+            decoding="async"
+            src={tg.src}
+            width={tg.width}
+            height={tg.height}
+            alt={`Telegram logo`}
+          />
+          <span class="sr-only">{`link to FingeRate's Telegram`}</span>
+        </a>
+      </div>
     </div>
   </div>
   <div data-scroll-animation class="grid items-center gap-8 md:grid-cols-2">
