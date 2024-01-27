@@ -198,18 +198,20 @@ import Share from '../DownloadBtn/Share.astro'
 </section>
 
 <script>
-  const $tiltEl = document.querySelector('[data-tilt-animation]') as HTMLDivElement
+  if (window.matchMedia('(any-hover: hover)').matches) {
+    const $tiltEl = document.querySelector('[data-tilt-animation]') as HTMLDivElement
 
-  document.addEventListener('mousemove', ({ clientX, clientY }) => {
-    const { x, y, width, height } = $tiltEl.parentElement!.getBoundingClientRect()
+    document.addEventListener('mousemove', ({ clientX, clientY }) => {
+      const { x, y, width, height } = $tiltEl.parentElement!.getBoundingClientRect()
 
-    const imgMiddleX = x + width / 2
-    const imgMiddleY = y + height / 2
+      const imgMiddleX = x + width / 2
+      const imgMiddleY = y + height / 2
 
-    const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25
-    const offsetY = Math.min(((clientY - imgMiddleY) / window.innerHeight) * 15, 15)
+      const offsetX = ((clientX - imgMiddleX) / window.innerWidth) * 25
+      const offsetY = Math.min(((clientY - imgMiddleY) / window.innerHeight) * 15, 15)
 
-    $tiltEl.style.setProperty('--rotateX', `${-1 * offsetY + 5}deg`)
-    $tiltEl.style.setProperty('--rotateY', `${offsetX - 5}deg`)
-  })
+      $tiltEl.style.setProperty('--rotateX', `${-1 * offsetY + 5}deg`)
+      $tiltEl.style.setProperty('--rotateY', `${offsetX - 5}deg`)
+    })
+  }
 </script>
