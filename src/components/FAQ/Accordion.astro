@@ -1,19 +1,19 @@
 ---
 interface Props {
-  title: string;
-  name?: string;
+  title: string
+  name?: string
 }
 
-const { title, name } = Astro.props;
+const { title, name } = Astro.props
 ---
 
 <details
   {name}
   data-scroll-animation
-  class="border-neonBlue ring-intelligentBlue marker:text-neonBlue rounded-lg bg-slate-950/80 transition open:border-2 [&:has(summary:hover)]:ring"
+  class="ring-neonBlue marker:text-neonBlue rounded-lg p-4 bg-slate-950/80 transition open:ring hover:ring"
 >
-  <summary class="p-4 font-medium hover:cursor-pointer">{title}</summary>
-  <div class="p-4 prose prose-invert">
+  <summary class="font-medium hover:cursor-pointer">{title}</summary>
+  <div class="mt-4 prose prose-invert">
     <slot />
   </div>
 </details>
