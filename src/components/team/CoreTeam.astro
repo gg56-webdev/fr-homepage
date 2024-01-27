@@ -1,31 +1,23 @@
 ---
-import team from '@/data/team/team.json';
-import { Image } from 'astro:assets';
-import i18next, { t } from 'i18next';
-const lang = i18next.language as 'ko' | 'en';
+import team from '@/data/team/team.json'
+import { Image } from 'astro:assets'
+import i18next, { t } from 'i18next'
 
-const people = team.map((p) => {
-  const nameEn = p.name.en;
-  const name = p.name[lang];
-  const subtitles = p.subtitles[lang];
-  const socials = p.socials;
-  const categories = p.categories;
-  return { id: p.id, name, subtitles, socials, categories, nameEn };
-});
-const categories = new Set(team.map((p) => p.categories).flat());
-const photos: ImageMetadata[] = await Astro.glob('../../assets/team/team/**/*.{png,webp}').then((files) =>
-  files.map((f) => f.default)
-);
+const lang = i18next.language as 'ko' | 'en'
+const people = team.map(({ name, subtitles, ...info }) => ({ name: name[lang], subtitles: subtitles[lang], ...info }))
+const categories = new Set(team.map((p) => p.categories).flat())
+const photos: ImageMetadata[] = await Astro.glob('../../assets/team/team/*.{png,webp}').then((files) =>
+  files.map((f) => f.default),
+)
 const icons: ImageMetadata[] = await Astro.glob('../../assets/social/*.svg').then((files) =>
-  files.map((f) => f.default)
-);
+  files.map((f) => f.default),
+)
 
 const getIcon = (href: string) => {
-  if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!;
-  if (href.includes('youtube.com')) return icons.find(({ src }) => src.includes('YT'))!;
-  if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'))!;
-  return icons.find(({ src }) => src.includes('LI'))!;
-};
+  if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!
+  if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'))!
+  return icons.find(({ src }) => src.includes('LI'))!
+}
 ---
 
 <section data-scroll-animation class="mx-auto max-w-screen-lg p-2">

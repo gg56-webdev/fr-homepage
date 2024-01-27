@@ -10,16 +10,6 @@
       "ko": ["전 국무총리", "창업자"]
     },
     "socials": ["https://en.wikipedia.org/wiki/Han_Seung-soo"],
-    "bio": {
-      "en": "He has had a distinguished academic, political and diplomatic career. He served as Professor of Economics at Seoul National University before entering politics in 1988, serving three terms as Member of the National Assembly. He was Minister of Trade and Industry, Korean Ambassador to the USA, Chief Secretary to the President, Deputy Prime Minister and Minister of Finance, Foreign Minister, and eventually Prime Minister. He was President of the 56th Session of the UN General Assembly (2001-02). He received the Nobel Peace Prize on behalf of the United Nations in 2001 and the honorary knighthood (KBE) from HM Queen Elizabeth II of the United Kingdom in 2004."
-    },
-    "titles": {
-      "en": [
-        "Former Prime Minister of the Republic of Korea",
-        "Chairman, Council of Presidents of UN General Assembly (UNCPGA)",
-        "Special Envoy of the UN Secretary-General for Climate Change (2007-08), DRR and Water(2013-18)"
-      ]
-    },
     "categories": ["Founders"]
   },
   {
@@ -33,27 +23,7 @@
       "ko": ["GN 코퍼레이션 회장", "공동 창업자 / CEO"]
     },
     "socials": ["https://www.linkedin.com/in/%EC%98%81%EA%B5%B0-%EA%B9%80-36349343/"],
-    "bio": {
-      "en": "Kim Young-kun has more than twenty years of experience in the IT area. His first company, GN corporation, was established almost twenty years ago, and has participated in about 100 national projects. Currently, he is the chairman of BNR Korea, GG56Ltd., and the CEO and Co-Founder of FingeRate."
-    },
     "categories": ["Founders", "Leadership"]
-  },
-
-  {
-    "id": "choi-myung-ju",
-    "name": {
-      "en": "Choi Myung-ju",
-      "ko": "최명주"
-    },
-    "subtitles": {
-      "en": ["President", "UAE & Middle East"],
-      "ko": ["대표님"]
-    },
-    "socials": ["https://www.linkedin.com/in/myungju-choi-13037a160"],
-    "bio": {
-      "en": "Choi Myung-ju currently serves as CEO of MEA & Co. which provides financial and business development consulting for Korean companies in middle east and Arab companies in Korea. He has served as CEO of PECSA and served as CEO at POSCO Capital. He transformed a brokerage house into small cap specialized investment bank as CEO at Kyobo Securities. He is the president of UAE & Middle East region of GG56 limited's blockchain project FingeRate."
-    },
-    "categories": ["Leadership"]
   },
   {
     "id": "lee-seung-hong",
@@ -66,9 +36,6 @@
       "ko": ["이사", "영업관리"]
     },
     "socials": ["https://www.linkedin.com/in/%EC%8A%B9%ED%99%8D-lee-seunghong-%EC%9D%B4-807718192"],
-    "bio": {
-      "en": "Lee Seung-hong has worked as the head of sales support department in GN corporation and also worked for establishing big data for Gangwon tourism as a general team leader. In FingeRate, he is working as a project manager in the department of SoT development."
-    },
     "categories": ["Sales", "Leadership"]
   },
   {
@@ -82,9 +49,6 @@
       "ko": ["팀장", "경영 지원팀"]
     },
     "socials": ["https://www.linkedin.com/in/%EC%9E%AC%ED%98%81-%EC%9E%A5-208283216/"],
-    "bio": {
-      "ko": "경희대학교 경영대학 회계세무학과"
-    },
     "categories": ["HR"]
   },
   {
@@ -98,9 +62,6 @@
       "ko": ["마케팅 매니저"]
     },
     "socials": ["https://www.linkedin.com/in/marc-breynart"],
-    "bio": {
-      "en": "Equipped with an MBA from Hanyang University and fueled by a genuine passion for strategic growth, Marc is a friendly and dynamic professional with a solid background in business development. His expertise lies in the realms of international business and digital marketing, where he thrives on navigating the ever-changing landscape with passion. Fluent in French, English, and Dutch, Marc possesses a unique specialization in Asian countries, allowing him to foster successful connections and collaborations across cultural boundaries."
-    },
     "categories": ["Marketing", "Business"]
   },
   {
