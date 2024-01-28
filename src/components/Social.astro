@@ -1,17 +1,18 @@
 ---
-import { SOCIAL_LINKS as S_L } from '@/constants'
+import { SOCIAL_LINKS as S_L, TELEGRAM_KO } from '@/constants'
 import ig from '@/assets/social/IG.svg'
 import lin from '@/assets/social/IN.svg'
 import x from '@/assets/social/X.svg'
 import fb from '@/assets/social/FB.svg'
 import tg from '@/assets/social/TG.svg'
+import i18next from 'i18next'
 
 const links = [
   [S_L.INSTAGRAM.href, S_L.INSTAGRAM.name, ig],
   [S_L.LINKEDIN.href, S_L.LINKEDIN.name, lin],
   [S_L.X.href, S_L.X.name, x],
   [S_L.FACEBOOK.href, S_L.FACEBOOK.name, fb],
-  [S_L.TELEGRAM.href, S_L.TELEGRAM.name, tg],
+  [i18next.language === 'ko' ? TELEGRAM_KO : S_L.TELEGRAM.href, S_L.TELEGRAM.name, tg],
 ] as const
 ---
 

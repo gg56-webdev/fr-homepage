@@ -53,3 +53,5 @@ export const SOCIAL_LINKS = {
   FACEBOOK: { name: 'facebook', href: 'https://www.facebook.com/FingeRate.kr', isExternal: true, isImportant: false },
   TELEGRAM: { name: 'telegram', href: 'https://t.me/fingerate_en', isExternal: true, isImportant: false },
 } as const
+
+export const TELEGRAM_KO = 'https://t.me/fingerate_kr'
