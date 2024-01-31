@@ -2,14 +2,11 @@
 import Layout from '@/layouts/Layout.astro'
 import Partners from '@/components/Partners.astro'
 import i18next, { changeLanguage, t } from 'i18next'
-import { localizePath } from 'astro-i18next'
 import { CALENDLY } from '@/constants'
 import Contact from '@/components/bot/Contact.astro'
 import botVid from '@/assets/bot/hero.mp4'
 import Ecosystem from '@/components/bot/Ecosystem.astro'
 import Dashboard from '@/components/bot/Dashboard.astro'
-import { NAV_LINKS } from '@/constants'
-import Contact from '@/components/bot/Contact.astro'
 
 const videoSrc =
   i18next.language === 'ko'
