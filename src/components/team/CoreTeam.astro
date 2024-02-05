@@ -88,7 +88,7 @@ const getIcon = (href: string) => {
               <h3 class="font-bold text-lg ">{p.name}</h3>
               <ul class="text-cyberLilac flex flex-col">
                 {p.subtitles.map((s) => (
-                  <li>{s}</li>
+                  <li set:html={s} />
                 ))}
               </ul>
             </div>
