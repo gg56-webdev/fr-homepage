@@ -126,39 +126,44 @@
 
   "bot": {
     "hero": {
-      "h1": "Introducing FingeRate&nbsp;Bot!",
-      "p1": "Everything you need to create actionable insights! FingeRate Bot is an AI-powered contactless survey solution that transforms feedback into meaningful actions.",
-      "p2": "Crafting a seamless experience for your visitors and collaborators is at the core of our solution! Powered by AI technology, it ensures a secure and effortless experience, eliminating the need for physical contact and cumbersome paper surveys. Instead, it helps you gather real-time data infused with authentic emotions, transforming the way you engage with your audience."
+      "h1": "Understand your visitors and customers in real time!",
+      "p": "With our FingeRate Bot, visitors can effortlessly complete your surveys in just a matter of seconds, ensuring a quick and seamless experience. Ready to revolutionize your feedback process?",
+      "get-in-touch": "Get in Touch",
+      "disclaimer": "We'll never share your information with anyone!"
     },
-    "keywords": ["Real Time-data", "Contactless Survey Solution", "AI Technology"],
-    "how": {
-      "h2": "How Does It Work?",
-      "survey": "Survey",
-      "survey-item-1": "Survey location information",
-      "survey-item-2": "<0>Identify additional information</0><1>(age, sex etc.)</1>",
-      "survey-item-3": "Show your fingers to answer the survey",
-      "ai": "AI Data<br>Analysis",
-      "external": "<0>External data</0><1>(Weather, Economic/ Political Condition, etc.)</1>",
-      "data": "Actionable data and insights"
+    "intro": {
+      "h2": "FingeRate Bot, the Power of AI at your service",
+      "p": "FingeRate Bot offers a new approach to visitors feedback. Unlock data to support your decision making to drive business growth.",
+      "stat": {
+        "p": "of buyers are willing to pay more for a great customer experience."
+      }
     },
     "benefits": {
-      "h2": "Why Work With FingeRate Bot?",
-      "cards": [
-        [
-          "Capture Visitors' Emotions in Real-Time",
-          "Our contactless survey solution ensures you receive data precisely when and where you need it! Real-time responses translate to instant actionable insights, simplifying the path to improvement. Because what's simpler for your audience is better for your success.",
-          "Person showing gesture to the FingeRate Bot"
-        ],
-        [
-          "Access to Data in Real-Time",
-          "Explore the dashboard for quick, actionable insights that are easy to understand. Monitor your surveys in real-time and enjoy the added benefits of easy customization of your FingeRate Bot.",
-          "Screenshot of FingeRate Dashboard showing graph of visitors and participants in survey"
-        ],
-        [
-          "Secure and Reliable",
-          "Our platform is built with robust encryption protocols and follows industry best practices to ensure that your information remains confidential. You can trust us to handle your data with the utmost care and protect it from unauthorized access.",
-          "Illustration of FingeRate Security feature"
-        ]
+      "h2": "FingeRate Bot was designed with your needs in mind",
+      "h2-sub": "A contactless survey solution levering the power of AI to generate real time data, directly accessible",
+      "points": [
+        ["Contactless", "Experience surveys with our 100% contactless solution."],
+        ["Real-time", "Instant access to real time data for decision-making."],
+        ["Easy & Fast", "Fast and easy process for both your team and visitors."]
+      ]
+    },
+    "ecosystem": {
+      "h2": "An ecosystem made for you",
+      "p": "The FingeRate Bot is part of the FingeRate ecosystem, an ecosystem that empowers you to gather and access data about your visitors in real time from your computer or smartphone.",
+      "tabs": ["FingeRate Bot", "Dashboard", "FingeRate App"],
+      "tab-panels": [
+        ["AI-Powered Camera", "Contactless", "Display", "Question & Answers", "Ads & Media", "Outside/Inside Solution"]
+      ]
+    },
+    "industries": {
+      "h2": "How to Use FingeRate Bot?",
+      "list": [
+        "Retail",
+        "Hospitality",
+        "Healthcare",
+        "Restaurants and Food Service",
+        "Government / Public Services",
+        "And more!"
       ]
     },
     "dashboard": {
@@ -172,10 +177,9 @@
     },
     "contact": {
       "h2": "Get Started with FingeRate Bot Today!",
-      "p": "Take your customer feedback strategy to the next level. Contact us now to learn more about FingeRate Bot, request a demo, and discover how our solution can transform your business. Don't miss out on the opportunity to unlock the true potential of your customer interactions."
+      "p": "Take your customer feedback strategy to the next level. Contact us now to learn more about FingeRate Bot. Don't miss out on the opportunity to unlock the true potential of your customer interactions."
     }
   },
-
   "token": {
     "hero": {
       "h1": "Navigate FingeRate Ecosystem with MSOT",

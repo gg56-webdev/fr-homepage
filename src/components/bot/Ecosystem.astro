@@ -1,0 +1,115 @@
+---
+import i18next, { t } from 'i18next'
+import EcosystemBot from './EcosystemBot.astro'
+import { Image } from 'astro:assets'
+
+const app =
+  i18next.language === 'ko'
+    ? (await import('@/assets/bot/ecosystem/app-ko.png')).default
+    : (await import('@/assets/bot/ecosystem/app.png')).default
+const dashboard =
+  i18next.language === 'ko'
+    ? (await import('@/assets/bot/ecosystem/dashboard-ko.png')).default
+    : (await import('@/assets/bot/ecosystem/dashboard.png')).default
+
+const tabs = [
+  ['bot', t('bot.ecosystem.tabs.0')],
+  ['dashboard', t('bot.ecosystem.tabs.1')],
+  ['app', t('bot.ecosystem.tabs.2')],
+]
+---
+
+<section id="ecosystem" data-scroll-animation class="py-32 bg-slate-950/80">
+  <div class="max-w-screen-lg mx-auto px-2">
+    <div class="text-center space-y-4 px-2">
+      <h2 class="text-3xl brand-text text-balance font-bold">{t('bot.ecosystem.h2')}</h2>
+      <p class="text-pretty md:text-lg/tight max-w-[60ch] mx-auto">{t('bot.ecosystem.p')}</p>
+    </div>
+    <div class="mt-16">
+      <ul id="ecosystem-tabs" class="flex gap-6 flex-col md:flex-row mx-auto max-w-screen-md" role="tablist">
+        {
+          tabs.map(([id, tab]) => (
+            <li class="contents" role="presentation">
+              <a
+                id={`ecosystem-tab-${id}`}
+                href={`#ecosystem-panel-${id}`}
+                role="tab"
+                class="py-2 px-4 flex-1 border rounded-full text-center transition-all aria-selected:bg-intelligentBlue aria-selected:border-transparent active:outline-none"
+              >
+                {tab}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div id="ecosystem-panels" class="mt-8">
+        <div
+          id={`ecosystem-panel-${tabs.at(0)?.at(0)}`}
+          aria-labelledby={`ecosystem-tab-${tabs.at(0)?.at(0)}`}
+          role="tabpanel"
+          class="aria-hidden:hidden"
+        >
+          <EcosystemBot />
+        </div>
+        <div
+          id={`ecosystem-panel-${tabs.at(1)?.at(0)}`}
+          aria-labelledby={`ecosystem-tab-${tabs.at(1)?.at(0)}`}
+          role="tabpanel"
+          class="aria-hidden:hidden"
+        >
+          <Image
+            alt="Laptop with FingeRate dashboard; Phone with FingeRate app; FingeRate Bot device"
+            src={dashboard}
+          />
+        </div>
+        <div
+          id={`ecosystem-panel-${tabs.at(2)?.at(0)}`}
+          aria-labelledby={`ecosystem-tab-${tabs.at(2)?.at(0)}`}
+          role="tabpanel"
+          class="aria-hidden:hidden"
+        >
+          <Image alt="3 phones with FingeRate App screenshots" src={app} />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const $tabsList = document.querySelector<HTMLUListElement>('#ecosystem-tabs')
+  const $tabs = $tabsList?.querySelectorAll<HTMLAnchorElement>('a')!
+  const $panels = document.querySelectorAll<HTMLDivElement>('#ecosystem-panels > div')
+
+  const showPanel = (panel: HTMLDivElement) => {
+    panel.ariaHidden = 'false'
+  }
+  const hidePanel = (panel: HTMLDivElement) => {
+    panel.ariaHidden = 'true'
+  }
+
+  const selectTab = (tab: HTMLAnchorElement) => {
+    tab.ariaSelected = 'true'
+  }
+
+  const deselectTab = (tab: HTMLAnchorElement) => {
+    tab.ariaSelected = 'false'
+  }
+
+  const DEFAULT_OPEN_INDEX = 1
+
+  $tabs.forEach((a, i) => (i === DEFAULT_OPEN_INDEX ? selectTab(a) : deselectTab(a)))
+
+  $panels.forEach((panel, i) => i !== DEFAULT_OPEN_INDEX && hidePanel(panel))
+
+  $tabsList?.addEventListener('click', (e) => {
+    if (e.target instanceof HTMLElement) {
+      const clickedTab = e.target.closest('a')
+      if (!clickedTab) return
+      e.preventDefault()
+      $panels.forEach(hidePanel)
+      $tabs.forEach(deselectTab)
+      showPanel(document.querySelector<HTMLDivElement>(clickedTab.getAttribute('href')!)!)
+      selectTab(clickedTab)
+    }
+  })
+</script>
