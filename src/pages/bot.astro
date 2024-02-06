@@ -8,6 +8,8 @@ import botVid from '@/assets/bot/hero.mp4'
 import Ecosystem from '@/components/bot/Ecosystem.astro'
 import Dashboard from '@/components/bot/Dashboard.astro'
 
+changeLanguage('en')
+
 const videoSrc =
   i18next.language === 'ko'
     ? (await import('@/assets/bot/bot_intro_ko.mp4')).default

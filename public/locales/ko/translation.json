@@ -115,6 +115,47 @@
   },
 
   "bot": {
+    "hero": {
+      "h1": "실시간으로 고객과 방문자의 마음을 알아보실 수 있습니다!",
+      "p": "방문자가 FingeRate Bot을 통해 단 몇 초 만에 서베이 참여를 쉽게 완료할 수 있고 빠르고 간편한 경험을 보장할 수 있습니다. 이 혁신적인 피드백 과정을 경험할 준비가 되셨나요?",
+      "get-in-touch": "1:1 문의",
+      "disclaimer": "We'll never share your information with anyone!"
+    },
+    "intro": {
+      "h2": "FingeRate Bot, 서비스에 AI의 힘을 더하다",
+      "p": "FingeRate 봇은 방문자 피드백에 대한 새로운 접근 방식을 제공합니다. FingeRate 봇을 통해, 비즈니스 성장을 촉진하는 결정에 도움이 되는 데이터를 확보해보세요.",
+      "stat": {
+        "p": "이상의 구매자는 더 나은 고객 경험을 위해 더 많은 비용을 지불할 의향이 있습니다."
+      }
+    },
+    "benefits": {
+      "h2": "FingerRate 봇은 당신의 니즈를 바탕으로 설계되었습니다",
+      "h2-sub": "AI의 힘을 활용하여, 직접 접근하고 실시간 데이터를 만드는 비접촉 서베이 솔루션",
+      "points": [
+        ["Contactless", "100% 비접촉 서베이를 경험할 수 있습니다."],
+        ["Real-time", "실시간 데이터에 바로 접근할 수 있습니다."],
+        ["Easy & Fast", "모두를 위한 빠르고 간편한 과정."]
+      ]
+    },
+    "ecosystem": {
+      "h2": "당신을 위한 하나의 에코시스템",
+      "p": "컴퓨터나 스마트폰을 통해, 실시간으로 방문자에 대한 데이터를 확인하고 수집하는 FingeRate 봇은, FingeRate 에코시스템의 일부입니다.",
+      "tabs": ["FingeRate Bot", "Dashboard", "FingeRate App"],
+      "tab-panels": [
+        ["AI-Powered Camera", "Contactless", "Display", "Question & Answers", "Ads & Media", "Outside/Inside Solution"]
+      ]
+    },
+    "industries": {
+      "h2": "FingeRate 봇의 사용 방법은?",
+      "list": [
+        "Retail",
+        "Hospitality",
+        "Healthcare",
+        "Restaurants and Food Service",
+        "Government / Public Services",
+        "And more!"
+      ]
+    },
     "dashboard": {
       "h2": "봇을 사용해 보세요!",
       "question-label": "질문",
