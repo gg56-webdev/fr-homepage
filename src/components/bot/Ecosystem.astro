@@ -1,9 +1,16 @@
 ---
-import { t } from 'i18next'
+import i18next, { t } from 'i18next'
 import EcosystemBot from './EcosystemBot.astro'
-import dashboard from '@/assets/bot/ecosystem/dashboard.png'
-import app from '@/assets/bot/ecosystem/app.png'
 import { Image } from 'astro:assets'
+
+const app =
+  i18next.language === 'ko'
+    ? (await import('@/assets/bot/ecosystem/app-ko.png')).default
+    : (await import('@/assets/bot/ecosystem/app.png')).default
+const dashboard =
+  i18next.language === 'ko'
+    ? (await import('@/assets/bot/ecosystem/dashboard-ko.png')).default
+    : (await import('@/assets/bot/ecosystem/dashboard.png')).default
 
 const tabs = [
   ['bot', t('bot.ecosystem.tabs.0')],
