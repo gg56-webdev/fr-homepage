@@ -89,31 +89,5 @@
     },
     "socials": ["https://www.linkedin.com/in/nikita-liakhovka/"],
     "categories": ["Development", "Design"]
-  },
-  {
-    "id": "lee-jong-won",
-    "name": {
-      "en": "Lee Jong-won",
-      "ko": "이종원"
-    },
-    "subtitles": {
-      "en": ["Unity Developer"],
-      "ko": ["Unity 개발자"]
-    },
-    "socials": ["https://www.linkedin.com/in/%EC%A2%85%EC%9B%90-%EC%9D%B4-8a59352a2/"],
-    "categories": ["Development"]
-  },
-  {
-    "id": "lee-jun-ha",
-    "name": {
-      "en": "Lee Jun-ha",
-      "ko": "이준하"
-    },
-    "subtitles": {
-      "en": ["Unity Developer"],
-      "ko": ["Unity 개발자"]
-    },
-    "socials": ["https://www.linkedin.com/in/준하-이-4859362a2"],
-    "categories": ["Development"]
   }
 ]
