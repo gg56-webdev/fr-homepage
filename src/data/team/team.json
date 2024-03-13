@@ -52,19 +52,6 @@
     "categories": ["HR"]
   },
   {
-    "id": "marc",
-    "name": {
-      "en": "Marc Breynart",
-      "ko": "마크 브레나트"
-    },
-    "subtitles": {
-      "en": ["Global&nbsp;Marketing Team&nbsp;Leader"],
-      "ko": ["글로벌 마케팅 팀장"]
-    },
-    "socials": ["https://www.linkedin.com/in/marc-breynart"],
-    "categories": ["Marketing", "Business"]
-  },
-  {
     "id": "mari",
     "name": {
       "en": "Oh Mari",
