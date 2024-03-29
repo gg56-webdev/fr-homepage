@@ -50,7 +50,12 @@ export const SOCIAL_LINKS = {
     isImportant: false,
   },
   X: { name: 'X', href: 'https://twitter.com/fingerate_kr', isExternal: true, isImportant: false },
-  FACEBOOK: { name: 'facebook', href: 'https://www.facebook.com/FingeRate.kr', isExternal: true, isImportant: false },
+  FACEBOOK: {
+    name: 'facebook',
+    href: 'https://www.facebook.com/profile.php?id=61557866274126',
+    isExternal: true,
+    isImportant: false,
+  },
   MEDIUM: { name: 'medium', href: 'https://fingerate.medium.com/', isExternal: true, isImportant: false },
   TELEGRAM: { name: 'telegram', href: 'https://t.me/fingerate_en', isExternal: true, isImportant: false },
 } as const
