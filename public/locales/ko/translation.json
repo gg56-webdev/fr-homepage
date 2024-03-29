@@ -180,7 +180,7 @@
       "link": "MSOT 거래를 위해 마켓플레이스로 이동하세요"
     },
     "platforms": {
-      "tooltips": ["ERC-20 기반", "Polygon 기술", "CoinGecko의 최신 통계", "FingeRate 에코시스템"]
+      "tooltips": ["ERC-20 기반", "Polygon 기술", "CoinMarketCap의 최신 통계", "FingeRate 에코시스템"]
     },
     "chart": {
       "caption": "MSOT, 최근 {{days}}일"

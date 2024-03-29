@@ -189,7 +189,7 @@
       "link": "Go to the marketplace to trade MSOT"
     },
     "platforms": {
-      "tooltips": ["ERC-20 Standard", "Polygon Technology", "Latest stats on Coin Gecko", "FingeRate Ecosystem"]
+      "tooltips": ["ERC-20 Standard", "Polygon Technology", "Latest stats on CoinMarketCap ", "FingeRate Ecosystem"]
     },
     "chart": {
       "caption": "MSOT, last {{days}} days"
