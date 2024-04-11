@@ -1,16 +1,16 @@
 ---
-import Apple from "@/components/DownloadBtn/Apple.astro";
-import Google from "@/components/DownloadBtn/Google.astro";
-import QR from "@/components/DownloadBtn/QR.astro";
-import Social from "@/components/Social.astro";
-import { SOCIAL_LINKS } from "@/constants";
-import metaverse from "@/assets/home/metaverse-sot.webp";
-import Form from "@/components/Form.astro";
-import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import { changeLanguage, t } from "i18next";
+import Apple from '@/components/DownloadBtn/Apple.astro'
+import Google from '@/components/DownloadBtn/Google.astro'
+import QR from '@/components/DownloadBtn/QR.astro'
+import Social from '@/components/Social.astro'
+import { SOCIAL_LINKS } from '@/constants'
+import metaverse from '@/assets/home/metaverse-sot.webp'
+import Form from '@/components/Form.astro'
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import i18next, { changeLanguage, t } from 'i18next'
 
-changeLanguage("en");
+changeLanguage('en')
 ---
 
 <Layout image="/og/contact.jpg" title={t('seo.contact.title')!} description={t('seo.contact.description')!}>
@@ -37,7 +37,7 @@ changeLanguage("en");
             {t('contact.details.h2')}
           </h2>
           <a
-            href={SOCIAL_LINKS.TELEGRAM.href}
+            href={SOCIAL_LINKS.TELEGRAM.href(i18next.language)}
             target="_blank"
             rel="noopener noreferrer"
             class="rounded-lg bg-intelligentBlue inline-block px-5 py-2.5 text-center text-sm font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"

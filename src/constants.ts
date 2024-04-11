@@ -57,9 +57,12 @@ export const SOCIAL_LINKS = {
     isImportant: false,
   },
   MEDIUM: { name: 'medium', href: 'https://fingerate.medium.com/', isExternal: true, isImportant: false },
-  TELEGRAM: { name: 'telegram', href: 'https://t.me/fingerate_en', isExternal: true, isImportant: false },
+  TELEGRAM: {
+    name: 'telegram',
+    href: (lang: string) => `https://t.me/fingerate_${lang === 'ko' ? 'kr' : 'en'}`,
+    isExternal: true,
+    isImportant: false,
+  },
 } as const
-
-export const TELEGRAM_KO = 'https://t.me/fingerate_kr'
 
 export const CALENDLY = 'https://calendly.com/gg56world/fingerate-solutions'

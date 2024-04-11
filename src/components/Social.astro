@@ -1,5 +1,5 @@
 ---
-import { SOCIAL_LINKS as S_L, TELEGRAM_KO } from '@/constants'
+import { SOCIAL_LINKS as S_L } from '@/constants'
 import ig from '@/assets/social/IG.svg'
 import lin from '@/assets/social/IN.svg'
 import x from '@/assets/social/X.svg'
@@ -14,7 +14,7 @@ const links = [
   [S_L.X.href, S_L.X.name, x],
   [S_L.FACEBOOK.href, S_L.FACEBOOK.name, fb],
   [S_L.MEDIUM.href, S_L.MEDIUM.name, md],
-  [i18next.language === 'ko' ? TELEGRAM_KO : S_L.TELEGRAM.href, S_L.TELEGRAM.name, tg],
+  [S_L.TELEGRAM.href(i18next.language), S_L.TELEGRAM.name, tg],
 ] as const
 ---
 

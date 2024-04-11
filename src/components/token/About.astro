@@ -2,7 +2,7 @@
 import tg from '@/assets/social/TG.svg'
 import network from '@/assets/token/network.png'
 import socials from '@/assets/token/socials.png'
-import { SOCIAL_LINKS, TELEGRAM_KO } from '@/constants'
+import { SOCIAL_LINKS } from '@/constants'
 import { Image } from 'astro:assets'
 import i18next, { t } from 'i18next'
 import { formatNumber } from './Hero.astro'
@@ -30,7 +30,7 @@ import { formatNumber } from './Hero.astro'
         </dl>
         <a
           class="rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1"
-          href={i18next.language === 'ko' ? TELEGRAM_KO : SOCIAL_LINKS.TELEGRAM.href}
+          href={SOCIAL_LINKS.TELEGRAM.href(i18next.language)}
           target="_blank"
           rel="noopener noreferrer"
           title="Join Telegram group!"

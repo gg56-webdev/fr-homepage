@@ -1,8 +1,8 @@
 ---
 import Accordion from '@/components/FAQ/Accordion.astro'
-import { TELEGRAM_KO, APP_STORE_URL, GOOGLE_PLAY_URL, NAV_LINKS, SOCIAL_LINKS } from '@/constants'
-import { Trans } from 'astro-i18next/components'
+import { APP_STORE_URL, GOOGLE_PLAY_URL, NAV_LINKS, SOCIAL_LINKS } from '@/constants'
 import { localizePath } from 'astro-i18next'
+import { Trans } from 'astro-i18next/components'
 import i18next, { t } from 'i18next'
 ---
 
@@ -122,10 +122,8 @@ import i18next, { t } from 'i18next'
             href={SOCIAL_LINKS.X.href}
             target="_blank"
             rel="noopener noreferrer">X</a
-          >, <a
-            href={i18next.language === 'ko' ? TELEGRAM_KO : SOCIAL_LINKS.TELEGRAM.href}
-            target="_blank"
-            rel="noopener noreferrer">Telegram</a
+          >, <a href={SOCIAL_LINKS.TELEGRAM.href(i18next.language)} target="_blank" rel="noopener noreferrer"
+            >Telegram</a
           >, and <a href={SOCIAL_LINKS.LINKEDIN.href} target="_blank" rel="noopener noreferrer">LinkedIn</a>!
         </p>
       </Trans>
