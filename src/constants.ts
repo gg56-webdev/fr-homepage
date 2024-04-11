@@ -49,7 +49,7 @@ export const SOCIAL_LINKS = {
     isExternal: true,
     isImportant: false,
   },
-  X: { name: 'X', href: 'https://twitter.com/fingerate_kr', isExternal: true, isImportant: false },
+  X: { name: 'X', href: 'https://twitter.com/fingerate_msot', isExternal: true, isImportant: false },
   FACEBOOK: {
     name: 'facebook',
     href: 'https://www.facebook.com/profile.php?id=61557866274126',
