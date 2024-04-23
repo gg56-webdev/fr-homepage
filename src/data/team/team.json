@@ -52,19 +52,6 @@
     "categories": ["HR"]
   },
   {
-    "id": "mari",
-    "name": {
-      "en": "Oh Mari",
-      "ko": "오마리"
-    },
-    "subtitles": {
-      "en": ["Marketing Team Leader"],
-      "ko": ["마케팅 팀장"]
-    },
-    "socials": ["https://www.linkedin.com/in/mari-oh-6a89b4228/"],
-    "categories": ["Marketing", "Design"]
-  },
-  {
     "id": "nikita-liakhovka",
     "name": {
       "en": "Nikita Liakhovka",
