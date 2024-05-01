@@ -90,7 +90,11 @@
         "discount": "Discount",
         "wallet": "My Wallet",
         "coupon": "Coupon",
-        "coupon-title": "Friends Group Set Coffee x5"
+        "gift-card": "Gift Card",
+        "coupon-1-title": "CRÈME de AURORA -50%",
+        "coupon-2-title": "Friends Group Set Coffee x5",
+        "coupon-3-title": "Holiday Special Gift Card",
+        "coupon-4-title": "1 + 1 Footlong Meal Event"
       }
     },
     "features": [

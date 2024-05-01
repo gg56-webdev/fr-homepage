@@ -78,8 +78,11 @@
       "app-ui": {
         "discount": "할인",
         "wallet": "내 지갑",
+        "gift-card": "기프트 카드",
         "coupon": "쿠폰",
-        "coupon-title": "그룹(친구) 커피 5잔 쿠폰 설정"
+        "coupon-2-title": "그룹(친구) 커피 5잔 쿠폰 설정",
+        "coupon-3-title": "홀리데이 스페셜 기프트 카드",
+        "coupon-4-title": "1 + 1 Footlong 식사 이벤트"
       }
     },
     "features": [
