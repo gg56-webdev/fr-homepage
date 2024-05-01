@@ -340,6 +340,10 @@
       [
         "How do you handle security?",
         "<0>We have implemented robust measures to prioritize the security of your information. Our secure infrastructure, industry-standard protocols, and encryption techniques safeguard your data during transmission and storage. Access controls are designed and regularly monitored to restrict unauthorized access. Whenever possible, we anonymize and aggregate data to protect individual identities. We are committed to complying with data protection and privacy regulations like GDPR and strive to meet legal requirements for data processing, storage, and sharing.</0><1>For more detailed information, please refer to our <2>Privacy Policy</2> and <3>Terms of Use</3> on our website.</1><4>Please don't hesitate to contact us for further inquiries or concerns regarding data protection.</4>"
+      ],
+      [
+        "How do I redeem a coupon?",
+        "<0>Each coupon on the FingeRate app is unique! After purchasing it from the marketplace, you'll receive it either by email or SMS along with all the details you need. These details include the barcode (if applicable), expiration date, and the brand. To redeem your coupon, simply visit the brand’s official website for more information!</0>"
       ]
     ],
     "ecosystem": {
