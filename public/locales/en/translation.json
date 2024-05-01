@@ -4,6 +4,7 @@
   "links": {
     "home": "Home",
     "ecosystem": "Ecosystem",
+    "app": "FingeRate App",
     "bot": "FingeRate Bot",
     "token": "MSOT Token",
     "about": "About",
@@ -12,6 +13,9 @@
     "support": "Support",
     "user-guide": "User Guide",
     "faq": "FAQ",
+    "redeem-coupon": "Redeem a Coupon",
+    "businesses": "For Businesses",
+    "how-it-works": "How It Works",
     "contact": "Contact",
     "whitepaper": "Whitepaper",
     "privacy-policy": "Privacy Policy",

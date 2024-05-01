@@ -34,6 +34,9 @@ export const NAV_LINKS = {
     isExternal: true,
     isImportant: false,
   },
+  HOW_IT_WORKS: { name: 'How It Works', href: '/how-it-works', isExternal: false, isImportant: false },
+  REDEEM_COUPON: { name: 'Redeem a Coupon', href: '/faq#how-to-use-coupon', isExternal: false, isImportant: false },
+  BUSINESSES: { name: 'For Businesses', href: '/business', isExternal: false, isImportant: false },
 } as const
 
 export const SOCIAL_LINKS = {
