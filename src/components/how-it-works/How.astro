@@ -1,0 +1,36 @@
+---
+import Collapse from '../Collapse.astro'
+---
+
+<section id="how-it-works" class="container mx-auto">
+  <h2>How FingeRate App Works</h2>
+  <div class="space-y-4">
+    <ol class="list-decimal">
+      <li class="marker:align-top">
+        <Collapse
+          checked
+          title="Sign up"
+          content="Create an account and add additional information to earn extra in-app points!"
+        />
+      </li>
+      <li>
+        <Collapse
+          title="Find Virtual Bots"
+          content="Explore the world to find Virtual Bots with active surveys! They are everywhere!"
+        />
+      </li>
+      <li>
+        <Collapse
+          title="Take Quick Surveys"
+          content="Take surveys and answer questions to earn SoM! Not only it’s easy but it only takes a few minutes every day!"
+        />
+      </li>
+      <li>
+        <Collapse
+          title="Cash Out Your Rewards"
+          content="Choose the perfect reward just for you directly on the marketplace: we’ve got what you want"
+        />
+      </li>
+    </ol>
+  </div>
+</section>

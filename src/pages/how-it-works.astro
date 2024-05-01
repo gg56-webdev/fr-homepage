@@ -1,0 +1,12 @@
+---
+import How from '@/components/how-it-works/How.astro'
+import Layout from '@/layouts/Layout.astro'
+import { changeLanguage, t } from 'i18next'
+
+changeLanguage('en')
+---
+
+<Layout image="/og/faq.jpg">
+  <h1>How it works</h1>
+  <How />
+</Layout>
