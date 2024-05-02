@@ -9,7 +9,7 @@ const { checked = false, title, content } = Astro.props
 ---
 
 <div
-  class="has-[*:checked]:grid-rows-[auto_1fr] grid grid-rows-[auto_0fr] text-white overflow-hidden transition-all rounded-lg"
+  class="has-[*:checked]:grid-rows-[auto_1fr] duration-700 grid grid-rows-[auto_0fr] text-white overflow-hidden transition-all rounded-lg"
 >
   <input
     type="radio"
@@ -18,8 +18,8 @@ const { checked = false, title, content } = Astro.props
     {checked}
     class="appearance-none opacity-0 col-start-1 row-start-1 peer w-full cursor-pointer h-full"
   />
-  <div class="peer-checked:text-white text-white/50 transition col-start-1 row-start-1 p-2 text-xl">{title}</div>
-  <div class="overflow-hidden peer-checked:opacity-100 opacity-0 transition px-2 peer-checked:pb-2">
+  <div class="peer-checked:text-white text-white/50 transition col-start-1 row-start-1 font-bold text-2xl">{title}</div>
+  <div class="overflow-hidden peer-checked:opacity-100 opacity-0 transition text-xl">
     {content}
   </div>
 </div>
