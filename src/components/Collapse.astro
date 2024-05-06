@@ -20,6 +20,6 @@ const { checked = false, title, content } = Astro.props
   />
   <div class="peer-checked:text-white text-white/50 transition col-start-1 row-start-1 font-bold text-2xl">{title}</div>
   <div class="overflow-hidden peer-checked:opacity-100 opacity-0 transition text-xl">
-    {content}
+    <div class="mt-4">{content}</div>
   </div>
 </div>

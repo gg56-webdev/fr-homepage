@@ -1,10 +1,15 @@
 ---
+import { Image } from 'astro:assets'
 import Collapse from '../Collapse.astro'
+import img1 from '@/assets/home/coupon-1.webp'
+import img2 from '@/assets/home/coupon-2.webp'
+import img3 from '@/assets/home/coupon-3.jpg'
+import img4 from '@/assets/home/coupon-4.jpg'
 ---
 
 <section id="how-it-works" class="container mx-auto">
   <h2>How FingeRate App Works</h2>
-  <div class="space-y-4 max-w-screen-sm">
+  <div class="grid sm:grid-cols-2" id="steps">
     <ol
       class="space-y-12 isolate relative before:w-1 before:absolute before:top-0 before:left-3.5 before:h-full before:bg-intelligentBlue before:-z-10 before:rounded-full"
     >
@@ -30,5 +35,31 @@ import Collapse from '../Collapse.astro'
         ))
       }
     </ol>
+    <div class="grid *:[grid-area:1/1/1/1] items-start justify-items-center max-sm:-order-1">
+      <Image src={img1} alt="" />
+      <Image src={img2} alt="" />
+      <Image src={img3} alt="" />
+      <Image src={img4} alt="" />
+    </div>
   </div>
 </section>
+
+<style>
+  #steps img {
+    transition: all 0.3s;
+    opacity: 0;
+  }
+
+  #steps:has(li:nth-of-type(1) input:checked) img:nth-of-type(1) {
+    opacity: 1;
+  }
+  #steps:has(li:nth-of-type(2) input:checked) img:nth-of-type(2) {
+    opacity: 1;
+  }
+  #steps:has(li:nth-of-type(3) input:checked) img:nth-of-type(3) {
+    opacity: 1;
+  }
+  #steps:has(li:nth-of-type(4) input:checked) img:nth-of-type(4) {
+    opacity: 1;
+  }
+</style>
