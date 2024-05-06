@@ -1,14 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@property --a {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: true;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-block-start: 75px;
-}
