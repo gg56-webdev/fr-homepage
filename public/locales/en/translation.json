@@ -390,5 +390,23 @@
     }
   },
 
+  "how-it-works": {
+    "how-app-works": {
+      "h2": "How FingeRate App Works",
+      "steps": [
+        ["Sign up", "Create an account and add additional information to earn extra in-app points!"],
+        ["Find Virtual Bots", "Explore the world to find Virtual Bots with active surveys! They are everywhere!"],
+        [
+          "Take Quick Surveys",
+          "Take surveys and answer questions to earn SoM! Not only it’s easy but it only takes a few minutes every day!"
+        ],
+        [
+          "Cash Out Your Rewards",
+          "Choose the perfect reward just for you directly on the marketplace: we’ve got what you want"
+        ]
+      ]
+    }
+  },
+
   "404": "Page not Found..."
 }

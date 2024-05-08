@@ -1,5 +1,5 @@
 ---
-import How from '@/components/how-it-works/How.astro'
+import HowAppWorks from '@/components/how-it-works/HowAppWorks.astro'
 import Layout from '@/layouts/Layout.astro'
 import { changeLanguage, t } from 'i18next'
 
@@ -7,6 +7,7 @@ changeLanguage('en')
 ---
 
 <Layout image="/og/faq.jpg">
-  <h1>How it works</h1>
-  <How />
+  <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
+    <HowAppWorks />
+  </div>
 </Layout>

@@ -1,0 +1,65 @@
+---
+import { t } from 'i18next'
+import { Image } from 'astro:assets'
+import Collapse from '../Collapse.astro'
+import step1 from '@/assets/how-it-works/how-app-works/step-1.png'
+import step2 from '@/assets/how-it-works/how-app-works/step-2.png'
+import step3 from '@/assets/how-it-works/how-app-works/step-3.png'
+import step4 from '@/assets/how-it-works/how-app-works/step-4.png'
+
+const steps = t('how-it-works.how-app-works.steps', { returnObjects: true }) as [string, string][]
+const stepImgs = [
+  [step1, 'FingeRate App Sign up screen'],
+  [step2, 'FingeRate App Home screen'],
+  [step3, 'FingeRate App Survey completion screen'],
+  [step4, 'FingeRate App Marketplace screen'],
+] as const
+---
+
+<section id="how-app-works" class="bg-slate-950/80 py-32">
+  <div class="mx-auto max-w-screen-lg px-2">
+    <h2
+      set:text={t('how-it-works.how-app-works.h2')}
+      class="brand-text text-2xl max-sm:text-center sm:text-4xl text-balance font-bold"
+    />
+    <div class="grid sm:grid-cols-2 gap-y-8 h-fit mt-16 items-center" id="steps">
+      <ol
+        class="space-y-12 h-fit isolate relative before:w-1 before:absolute before:top-0 before:left-3.5 before:h-full before:bg-intelligentBlue before:-z-10 before:rounded-full"
+      >
+        {
+          steps.map(([title, content], i) => (
+            <li class="flex items-start gap-4">
+              <div class="rounded-full size-8 bg-intelligentBlue text-white grid place-items-center text-center text-xl font-bold shrink-0">
+                {i + 1}
+              </div>
+              <Collapse checked={i == 0} {title} {content} />
+            </li>
+          ))
+        }
+      </ol>
+      <div class="grid *:[grid-area:1/1/1/1] items-start justify-items-center">
+        {stepImgs.map(([src, alt]) => <Image {src} {alt} class="object-contain h-[450px]" />)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #steps img {
+    transition: all 0.3s;
+    opacity: 0;
+  }
+
+  #steps:has(li:nth-of-type(1) input:checked) img:nth-of-type(1) {
+    opacity: 1;
+  }
+  #steps:has(li:nth-of-type(2) input:checked) img:nth-of-type(2) {
+    opacity: 1;
+  }
+  #steps:has(li:nth-of-type(3) input:checked) img:nth-of-type(3) {
+    opacity: 1;
+  }
+  #steps:has(li:nth-of-type(4) input:checked) img:nth-of-type(4) {
+    opacity: 1;
+  }
+</style>
