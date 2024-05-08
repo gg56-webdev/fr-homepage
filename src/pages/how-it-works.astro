@@ -3,6 +3,7 @@ import Coupons from '@/components/how-it-works/Coupons.astro'
 import Cta from '@/components/how-it-works/Cta.astro'
 import Hero from '@/components/how-it-works/Hero.astro'
 import HowAppWorks from '@/components/how-it-works/HowAppWorks.astro'
+import Missions from '@/components/how-it-works/Missions.astro'
 import Layout from '@/layouts/Layout.astro'
 import { changeLanguage, t } from 'i18next'
 
@@ -13,6 +14,7 @@ changeLanguage('en')
   <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
     <Hero />
     <HowAppWorks />
+    <Missions />
     <Coupons />
     <Cta />
   </div>

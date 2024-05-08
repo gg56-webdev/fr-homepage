@@ -410,6 +410,10 @@
         ]
       ]
     },
+    "missions": {
+      "h2": "Missions – Because more earnings mean better rewards!",
+      "p": "Who doesn't like earning more? Our mission system allows you to earn extra goodies, coupons, and in-app currencies. We've got you covered!"
+    },
     "cta": {
       "h2": "What are you waiting for?",
       "link": "Start earning now on the FingeRate App"
