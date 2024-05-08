@@ -32,12 +32,17 @@ const stepImgs = [
               <div class="rounded-full size-8 bg-intelligentBlue text-white grid place-items-center text-center text-xl font-bold shrink-0">
                 {i + 1}
               </div>
-              <Collapse checked={i == 0} {title} {content} />
+              <Collapse checked={i == 0} {title}>
+                <p>{content}</p>
+                <div class="sm:hidden mt-4 w-fit">
+                  <Image src={stepImgs[i][0]} alt={stepImgs[i][1]} class="object-contain h-[450px]" />
+                </div>
+              </Collapse>
             </li>
           ))
         }
       </ol>
-      <div class="grid *:[grid-area:1/1/1/1] items-start justify-items-center">
+      <div id="step-img" class="grid *:[grid-area:1/1/1/1] items-start justify-items-center max-sm:hidden">
         {stepImgs.map(([src, alt]) => <Image {src} {alt} class="object-contain h-[450px]" />)}
       </div>
     </div>
@@ -45,7 +50,7 @@ const stepImgs = [
 </section>
 
 <style>
-  #steps img {
+  #step-img img {
     transition: all 0.3s;
     opacity: 0;
   }
