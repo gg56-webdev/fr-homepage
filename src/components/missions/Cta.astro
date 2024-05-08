@@ -1,0 +1,13 @@
+---
+import { DOWNLOAD_LINK } from '@/constants'
+import { t } from 'i18next'
+---
+
+<div class="mx-auto max-w-screen-md px-2">
+  <section data-scroll-animation class="rounded-lg bg-brandGradient text-center p-8 mx-auto max-w-screen-md">
+    <h2 class="font-bold text-3xl text-balance mb-4" set:html={t('missions.cta.h2')} />
+    <a href={DOWNLOAD_LINK} target="_blank" rel="noopener noreferrer" class="hover:underline text-lg"
+      >{t('missions.cta.link')}</a
+    >
+  </section>
+</div>

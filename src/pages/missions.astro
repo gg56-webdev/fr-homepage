@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Cta from '@/components/missions/Cta.astro'
+import FAQ from '@/components/missions/FAQ.astro'
+import { changeLanguage } from 'i18next'
+
+changeLanguage('en')
+---
+
+<Layout>
+  <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
+    <FAQ />
+    <Cta />
+  </div>
+</Layout>

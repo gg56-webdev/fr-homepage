@@ -420,5 +420,33 @@
     }
   },
 
+  "missions": {
+    "cta": {
+      "h2": "Don’t wait any longer",
+      "link": "Try the new missions!"
+    },
+    "faq": {
+      "h2": "FAQ",
+      "q&a": [
+        [
+          "How can access my missions?",
+          "You can access your missions directly on the map! Simply go to the new tab located next to the daily check tab!"
+        ],
+        [
+          "How do I get a stamp?",
+          "You can earn a stamp by taking a survey on a specific Virtual Bot. Look for Virtual Bots with active missions; they are recognizable by their unique visuals!"
+        ],
+        [
+          "I took a survey but did not get a stamp. What shall I do?",
+          "If you’re sure that you took a survey on the right Virtual Bot, then you can contact us and we’ll get back to you!"
+        ],
+        [
+          "NEED QUESTION",
+          "We're sorry that there are no missions available in your country at the moment. However, we're working hard to expand our reach! If you have any ideas for missions or would like to share feedback with us, please feel free to contact us."
+        ]
+      ]
+    }
+  },
+
   "404": "Page not Found..."
 }
