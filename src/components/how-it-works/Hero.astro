@@ -1,0 +1,40 @@
+---
+import { t } from 'i18next'
+---
+
+<section
+  id="hero"
+  class="grid min-h-[85vh] max-w-screen-xl mx-auto lg:grid-cols-2 items-center px-2 gap-6 md:grid-rows-[1fr_auto]"
+>
+  <div class="grid gap-4 md:gap-8 z-10 relative">
+    <h1 class="text-3xl md:text-5xl/tight font-bold text-balance">
+      {t('how-it-works.hero.h1')}
+    </h1>
+    <p class="md:text-2xl/tight text-pretty max-md:mb-4">{t('how-it-works.hero.p')}</p>
+  </div>
+  <div class="max-md:order-first relative">
+    <div class="rounded-lg z-10 relative overflow-clip"></div>
+
+    <div
+      class:list={[
+        '[animation-delay:0s]',
+        'animate-blob  blur-2xl  absolute top-1/4 -left-1/4 w-1/2 aspect-square rounded-full  bg-softFire/30',
+      ]}
+    >
+    </div>
+    <div
+      class:list={[
+        '[animation-delay:2s]',
+        'animate-blob  blur-2xl  absolute top-0 -right-1/4 w-1/2 aspect-square rounded-full  bg-neonBlue/30',
+      ]}
+    >
+    </div>
+    <div
+      class:list={[
+        '[animation-delay:4s]',
+        'animate-blob  blur-2xl  absolute -bottom-1/2 right-1/4 w-1/2 aspect-square rounded-full  bg-intelligentBlue/30',
+      ]}
+    >
+    </div>
+  </div>
+</section>

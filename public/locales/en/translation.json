@@ -391,6 +391,10 @@
   },
 
   "how-it-works": {
+    "hero": {
+      "h1": "Create an account, take a survey, and cash out rewards!",
+      "p": "Learn how to earn coupons, cryptocurrencies, and other rewards easily with the FingeRate app. It couldn't be simpler!"
+    },
     "how-app-works": {
       "h2": "How FingeRate App Works",
       "steps": [
