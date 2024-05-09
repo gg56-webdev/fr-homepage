@@ -1,0 +1,63 @@
+---
+import phoneScreen1En from '@/assets/home/features/phone-screen-1-en.png'
+import phoneScreen2En from '@/assets/home/features/phone-screen-2-en.png'
+import phoneScreen3En from '@/assets/home/features/phone-screen-3-en.png'
+import phoneScreen1Ko from '@/assets/home/features/phone-screen-1-ko.png'
+import phoneScreen2Ko from '@/assets/home/features/phone-screen-2-ko.png'
+import phoneScreen3Ko from '@/assets/home/features/phone-screen-3-ko.png'
+import { Image } from 'astro:assets'
+import i18next, { t } from 'i18next'
+
+// TODO: change images
+
+const content = [
+  [t('missions.steps.steps.0.0'), i18next.language === 'ko' ? phoneScreen1Ko : phoneScreen1En],
+  [t('missions.steps.steps.1.0'), i18next.language === 'ko' ? phoneScreen2Ko : phoneScreen2En],
+  [t('missions.steps.steps.2.0'), i18next.language === 'ko' ? phoneScreen3Ko : phoneScreen3En],
+] as const
+---
+
+<section class="mx-auto max-w-screen-lg space-y-36 px-2 py-24">
+  {
+    content.map(([p, src], i) => (
+      <div
+        class:list={[
+          'flex flex-col items-center gap-6 md:justify-between',
+          i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse',
+        ]}
+      >
+        <div
+          data-scroll-animation
+          class=" relative w-[200px] motion-safe:animate-bob motion-safe:[animation-duration:8s] md:w-[300px]"
+        >
+          <div
+            class:list={[
+              i % 2 === 0 ? '[animation-delay:0s]' : '[animation-delay:2s]',
+              'animate-blob  mix-blend-overlay blur-2xl absolute top-1/4 -left-1/4 w-full aspect-square rounded-full bg-softFire/50',
+            ]}
+          />
+          <div
+            class:list={[
+              i % 2 === 0 ? '[animation-delay:2s]' : '[animation-delay:0s]',
+              'animate-blob  mix-blend-overlay blur-2xl absolute top-0 -right-1/4 w-full aspect-square rounded-full bg-neonBlue/50',
+            ]}
+          />
+          <div
+            class:list={[
+              i % 2 === 0 ? '[animation-delay:4s]' : '[animation-delay:2s]',
+              'animate-blob  mix-blend-overlay blur-2xl absolute bottom-0 -right-1/4 w-full aspect-square rounded-full bg-intelligentBlue/50',
+            ]}
+          />
+          <Image {src} alt="" class:list={[' object-contain', i % 2 === 0 ? '[rotate:12deg]' : '[rotate:-12deg]']} />
+        </div>
+        <div class:list={['text-center space-y-4 md:text-left relative z-10 md:w-1/2']}>
+          <p
+            data-scroll-animation
+            class="tracking-wide text-cyberLilac [text-wrap:balance] md:text-xl md:[text-wrap:initial]"
+            set:text={p}
+          />
+        </div>
+      </div>
+    ))
+  }
+</section>
