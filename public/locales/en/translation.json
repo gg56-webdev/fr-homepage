@@ -422,6 +422,9 @@
   },
 
   "missions": {
+    "hero": {
+      "h1": "<0>Connect, Visit, Earn<1><2>Missions</2> are now available on the FingeRate&nbsp;App</0>"
+    },
     "steps": {
       "steps": [
         [
