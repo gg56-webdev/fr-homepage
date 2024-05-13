@@ -5,8 +5,16 @@ import googleLogo from '@/assets/how-it-works/coupons/google.png'
 import subwayLogo from '@/assets/how-it-works/coupons/subway.png'
 import sevenElevenLogo from '@/assets/how-it-works/coupons/sevenEleven.png'
 import mcdonaldLogo from '@/assets/how-it-works/coupons/mcdonald.png'
+
+import daisoLogo from '@/assets/how-it-works/coupons/daiso.png'
+import oliveYoungLogo from '@/assets/how-it-works/coupons/oliveYoung.png'
+import gs25Logo from '@/assets/how-it-works/coupons/gs25.png'
+import yogiyoLogo from '@/assets/how-it-works/coupons/yogiyo.png'
+import twosomePlaceLogo from '@/assets/how-it-works/coupons/twosomePlace.png'
+import cuLogo from '@/assets/how-it-works/coupons/cu.png'
+
 import { Image } from 'astro:assets'
-const coupons = [
+const coupons1 = [
   ['Starbucks', starbucksLogo],
   ['Amazon', amazonLogo],
   ['Google', googleLogo],
@@ -14,14 +22,40 @@ const coupons = [
   ['7-Eleven', sevenElevenLogo],
   ["McDonald's", mcdonaldLogo],
 ] as const
+const coupons2 = [
+  ['Daiso', daisoLogo],
+  ['Olive Young', oliveYoungLogo],
+  ['GS25', gs25Logo],
+  ['Yogiyo', yogiyoLogo],
+  ['Twosome Place', twosomePlaceLogo],
+  ['CU', cuLogo],
+] as const
 ---
 
-<section id="coupons" data-scroll-animation>
-  <ul class="flex">
+<section id="coupons" data-scroll-animation class="space-y-4">
+  <ul class="flex marquee">
     {
       [...Array(2)].map(() => (
         <div class="flex w-full shrink-0">
-          {coupons.map(([name, src]) => (
+          {coupons1.map(([name, src]) => (
+            <li class="flex-1 ml-2 md:ml-4">
+              <div class="bg-slate-950/80 rounded-xl p-2  flex flex-col h-full">
+                <b class="text-[clamp(1rem,50%,2rem)] max-md:hidden p-2">{name}</b>
+                <div class=" mt-auto md:self-end max-h-16 max-sm:aspect-square">
+                  {src && <Image {src} alt={`${name} logo`} class="object-contain aspect-square h-full w-full" />}
+                </div>
+              </div>
+            </li>
+          ))}
+        </div>
+      ))
+    }
+  </ul>
+  <ul class="flex marquee">
+    {
+      [...Array(2)].map(() => (
+        <div class="flex w-full shrink-0">
+          {coupons2.map(([name, src]) => (
             <li class="flex-1 ml-2 md:ml-4">
               <div class="bg-slate-950/80 rounded-xl p-2  flex flex-col h-full">
                 <b class="text-[clamp(1rem,50%,2rem)] max-md:hidden p-2">{name}</b>
@@ -40,11 +74,18 @@ const coupons = [
 <style>
   @keyframes marquee {
     to {
-      translate: -100%;
+      translate: var(--translate-x, -100%);
     }
   }
 
-  ul {
-    animation: infinite marquee 30s linear;
+  @media (prefers-reduced-motion: no-preference) {
+    .marquee {
+      animation: infinite marquee 30s linear;
+    }
+  }
+
+  .marquee:first-child {
+    --translate-x: 100%;
+    transform: translateX(-100%);
   }
 </style>
