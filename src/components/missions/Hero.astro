@@ -8,7 +8,7 @@ import { Image } from 'astro:assets'
   <div
     class="grid md:place-items-center md:*:[grid-area:1/1/1/1] rounded-xl overflow-hidden max-w-screen-lg mx-auto z-10 relative"
   >
-    <Image src={heroImg} alt="Blurred map with mission locations" />
+    <Image src={heroImg} loading="eager" alt="Blurred map with mission locations" />
     <div class="backdrop-blur-md p-6 md:rounded-lg bg-white/30 max-md:bg-slate-950/50">
       <Trans i18nKey="missions.hero.h1">
         <h1
