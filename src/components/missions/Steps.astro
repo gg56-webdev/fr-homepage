@@ -2,28 +2,16 @@
 import phoneScreen1En from '@/assets/missions/steps/step-1-en.png'
 import phoneScreen2En from '@/assets/missions/steps/step-2-en.png'
 import phoneScreen3En from '@/assets/missions/steps/step-3-en.png'
-import phoneScreen1Ko from '@/assets/home/features/phone-screen-1-ko.png'
-import phoneScreen2Ko from '@/assets/home/features/phone-screen-2-ko.png'
-import phoneScreen3Ko from '@/assets/home/features/phone-screen-3-ko.png'
+
 import { Image } from 'astro:assets'
 import i18next, { t } from 'i18next'
 
+// TODO: add KO images
+
 const content = [
-  [
-    t('missions.steps.steps.0.0'),
-    i18next.language === 'ko' ? phoneScreen1Ko : phoneScreen1En,
-    'FingeRate App screen with quest location on the map',
-  ],
-  [
-    t('missions.steps.steps.1.0'),
-    i18next.language === 'ko' ? phoneScreen2Ko : phoneScreen2En,
-    'FingeRate App screen with quest details',
-  ],
-  [
-    t('missions.steps.steps.2.0'),
-    i18next.language === 'ko' ? phoneScreen3Ko : phoneScreen3En,
-    'FingeRate App screen with quest reward',
-  ],
+  [t('missions.steps.steps.0.0'), phoneScreen1En, 'FingeRate App screen with quest location on the map'],
+  [t('missions.steps.steps.1.0'), phoneScreen2En, 'FingeRate App screen with quest details'],
+  [t('missions.steps.steps.2.0'), phoneScreen3En, 'FingeRate App screen with quest reward'],
 ] as const
 ---
 
