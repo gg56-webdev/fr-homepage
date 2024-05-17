@@ -1,14 +1,16 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'details'> {
   title: string
   name?: string
 }
 
-const { title, name } = Astro.props
+const { title, ...props } = Astro.props
 ---
 
 <details
-  {name}
+  {...props}
   data-scroll-animation
   class="ring-neonBlue marker:text-neonBlue rounded-lg p-4 bg-slate-950/80 transition open:ring hover:ring"
 >
@@ -17,3 +19,7 @@ const { title, name } = Astro.props
     <slot />
   </div>
 </details>
+
+<script>
+  document.querySelectorAll('details').forEach((el) => `#${el.id}` === location.hash && (el.open = true))
+</script>

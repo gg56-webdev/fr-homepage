@@ -4,6 +4,7 @@
   "links": {
     "home": "Home",
     "ecosystem": "Ecosystem",
+    "app": "FingeRate App",
     "bot": "FingeRate Bot",
     "token": "MSOT Token",
     "about": "About",
@@ -12,10 +13,14 @@
     "support": "Support",
     "user-guide": "User Guide",
     "faq": "FAQ",
+    "redeem-coupon": "Redeem a Coupon",
+    "businesses": "For Businesses",
+    "how-it-works": "How It Works",
     "contact": "Contact",
     "whitepaper": "Whitepaper",
     "privacy-policy": "Privacy Policy",
-    "terms-of-use": "Terms of Use"
+    "terms-of-use": "Terms of Use",
+    "missions": "Missions"
   },
 
   "seo": {
@@ -46,6 +51,12 @@
     "news": {
       "title": "$t(links.news) | $t(name)",
       "description": "Stay updated with the latest news and happenings related to FingeRate and its ecosystem. Explore our news page for exciting updates, insights, and events."
+    },
+    "how-it-works": {
+      "title": "$t(links.how-it-works) | $t(name)"
+    },
+    "missions": {
+      "title": "$t(links.missions) | $t(name)"
     }
   },
 
@@ -86,23 +97,27 @@
         "discount": "Discount",
         "wallet": "My Wallet",
         "coupon": "Coupon",
-        "coupon-title": "Friends Group Set Coffee x5"
+        "gift-card": "Gift Card",
+        "coupon-1-title": "CRÈME de AURORA -50%",
+        "coupon-2-title": "Friends Group Set Coffee x5",
+        "coupon-3-title": "Holiday Special Gift Card",
+        "coupon-4-title": "1 + 1 Footlong Meal Event"
       }
     },
     "features": [
       [
         "Survey To Earn (S2E)",
-        "Create your account, take surveys, and watch those points add up. Say goodbye to waiting – it's all about instant joy when you trade your points for exclusive coupons. Get ready to treat yourself!",
+        "Create an account, take quick surveys, and watch your points add up! With the FingeRate App, you can say goodbye to waiting and hello to amazing rewards! Get ready to treat yourself!",
         "FingeRate App Screenshot of getting rewarded for survey participation"
       ],
       [
-        "More Rewards",
-        "Collect mileage, snag cool coupons, and deck out your avatar in style! Trade your SoM for amazing rewards and epic accessories - your opinion, your style, your rewards!",
+        "The Perfect Rewards just for You",
+        "Trade your SoM for amazing rewards and epic accessories - your opinion, your style, your rewards! From coupons to gift cards and cryptocurrencies, we have exactly what you want!",
         "FingeRate App Screenshot of My Wallet page, showing amount of SoM points and coupons"
       ],
       [
         "Safe & Secure",
-        "Our app prioritizes security and privacy. We have carefully developed it using the latest technology to ensure an unmatched level of protection for your data.",
+        "With the FingeRate App, your rights and privacy are respected! We made sure to use the latest technology and know-how to protect your data as it should be!",
         "FingeRate App Screenshot of My Profile page"
       ]
     ],
@@ -340,6 +355,10 @@
       [
         "How do you handle security?",
         "<0>We have implemented robust measures to prioritize the security of your information. Our secure infrastructure, industry-standard protocols, and encryption techniques safeguard your data during transmission and storage. Access controls are designed and regularly monitored to restrict unauthorized access. Whenever possible, we anonymize and aggregate data to protect individual identities. We are committed to complying with data protection and privacy regulations like GDPR and strive to meet legal requirements for data processing, storage, and sharing.</0><1>For more detailed information, please refer to our <2>Privacy Policy</2> and <3>Terms of Use</3> on our website.</1><4>Please don't hesitate to contact us for further inquiries or concerns regarding data protection.</4>"
+      ],
+      [
+        "How do I redeem a coupon?",
+        "<0>Each coupon on the FingeRate app is unique! After purchasing it from the marketplace, you'll receive it either by email or SMS along with all the details you need. These details include the barcode (if applicable), expiration date, and the brand. To redeem your coupon, simply visit the brand’s official website for more information!</0>"
       ]
     ],
     "ecosystem": {
@@ -375,6 +394,79 @@
     },
     "cta": {
       "h2": "Try FingeRate App Now"
+    }
+  },
+
+  "how-it-works": {
+    "hero": {
+      "h1": "Create an account, take a survey, and cash out rewards!",
+      "p": "Learn how to earn coupons, cryptocurrencies, and other rewards easily with the FingeRate app. It couldn't be simpler!"
+    },
+    "how-app-works": {
+      "h2": "How FingeRate App Works",
+      "steps": [
+        ["Sign up", "Create an account and add additional information to earn extra in-app points!"],
+        ["Find Virtual Bots", "Explore the world to find Virtual Bots with active surveys! They are everywhere!"],
+        [
+          "Take Quick Surveys",
+          "Take surveys and answer questions to earn SoM! Not only it’s easy but it only takes a few minutes every day!"
+        ],
+        [
+          "Cash Out Your Rewards",
+          "Choose the perfect reward just for you directly on the marketplace: we’ve got what you want"
+        ]
+      ]
+    },
+    "missions": {
+      "h2": "Missions – Because more earnings mean better rewards!",
+      "p": "Who doesn't like earning more? Our mission system allows you to earn extra goodies, coupons, and in-app currencies. We've got you covered!"
+    },
+    "cta": {
+      "h2": "What are you waiting for?",
+      "link": "Start earning now on the FingeRate App"
+    }
+  },
+
+  "missions": {
+    "hero": {
+      "h1": "<0>Connect, Visit, Earn<1><2>Missions</2> are now available on the FingeRate&nbsp;App</0>"
+    },
+    "steps": {
+      "steps": [
+        [
+          "Discover the latest addition to the FingeRate App: Missions! Now available, these missions add a new dimension to your FingeRate experience and your earnings!"
+        ],
+        ["Visit specific places and collect all the stamps to complete the missions."],
+        [
+          "Complete missions to earn extra and unique rewards! Start today and make your experience as rewarding as possible!"
+        ]
+      ]
+    },
+
+    "cta": {
+      "h2": "Don’t wait any longer",
+      "link": "Try the new missions!"
+    },
+    "faq": {
+      "h2": "FAQ",
+      "q&a": [
+        [
+          "How can access my missions?",
+          "You can access your missions directly on the map! Simply go to the new tab located next to the daily check tab!"
+        ],
+        [
+          "How do I get a stamp?",
+          "You can earn a stamp by taking a survey on a specific Virtual Bot. Look for Virtual Bots with active missions; they are recognizable by their unique visuals!"
+        ],
+        [
+          "I took a survey but did not get a stamp. What shall I do?",
+          "If you’re sure that you took a survey on the right Virtual Bot, then you can contact us and we’ll get back to you!"
+        ],
+        [
+          "Why are there currently no missions available in my country?",
+          "We're sorry that there are no missions available in your country at the moment. However, we're working hard to expand our reach! If you have any ideas for missions or would like to share feedback with us, please feel free to contact us."
+        ]
+      ]
     }
   },
 

@@ -1,0 +1,31 @@
+---
+import Accordion from '@/components/FAQ/Accordion.astro'
+import { Trans } from 'astro-i18next/components'
+import { t } from 'i18next'
+---
+
+<section class="mx-auto max-w-screen-sm px-2">
+  <h2 class="text-4xl font-bold text-center mb-8">FAQ</h2>
+  <div class="space-y-4">
+    <Accordion name="q&a" title={t('missions.faq.q&a.0.0')}>
+      <Trans i18nKey="missions.faq.q&a.0.1">
+        <p></p>
+      </Trans>
+    </Accordion>
+    <Accordion name="q&a" title={t('missions.faq.q&a.1.0')}>
+      <Trans i18nKey="missions.faq.q&a.1.1">
+        <p></p>
+      </Trans>
+    </Accordion>
+    <Accordion name="q&a" title={t('missions.faq.q&a.2.0')}>
+      <Trans i18nKey="missions.faq.q&a.2.1">
+        <p></p>
+      </Trans>
+    </Accordion>
+    <Accordion name="q&a" title={t('missions.faq.q&a.3.0')}>
+      <Trans i18nKey="missions.faq.q&a.3.1">
+        <p></p>
+      </Trans>
+    </Accordion>
+  </div>
+</section>

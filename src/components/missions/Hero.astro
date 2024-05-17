@@ -1,0 +1,46 @@
+---
+import heroImg from '@/assets/missions/hero/hero.png'
+import { Trans } from 'astro-i18next/components'
+import { Image } from 'astro:assets'
+---
+
+<section class="relative px-2" id="hero">
+  <div
+    class="grid md:place-items-center md:*:[grid-area:1/1/1/1] rounded-xl overflow-hidden max-w-screen-lg mx-auto z-10 relative"
+  >
+    <Image src={heroImg} loading="eager" alt="Blurred map with mission locations" class="max-md:hidden" />
+    <div class="backdrop-blur-md p-6 md:rounded-lg md:bg-white/30">
+      <Trans i18nKey="missions.hero.h1">
+        <h1
+          class="text-3xl/relaxed md:text-4xl/relaxed text-balance md:max-w-[30ch] text-intelligentBlue max-md:text-white md:text-center font-bold"
+        >
+          Connect, Visit, Earn
+          <br />
+          <mark class="bg-intelligentBlue text-white px-6 py-2 rounded-full">Missions</mark> are now available on the FingeRate
+          App
+        </h1>
+      </Trans>
+    </div>
+  </div>
+  <div
+    class:list={[
+      '[animation-delay:0s]',
+      'animate-blob  blur-2xl  absolute top-1/4 -left-1/4 w-1/2 aspect-square rounded-full  bg-softFire/30',
+    ]}
+  >
+  </div>
+  <div
+    class:list={[
+      '[animation-delay:2s]',
+      'animate-blob  blur-2xl  absolute top-0 -right-1/4 w-1/2 aspect-square rounded-full  bg-neonBlue/30',
+    ]}
+  >
+  </div>
+  <div
+    class:list={[
+      '[animation-delay:4s]',
+      'animate-blob  blur-2xl  absolute -bottom-1/2 right-1/4 w-1/2 aspect-square rounded-full  bg-intelligentBlue/30',
+    ]}
+  >
+  </div>
+</section>

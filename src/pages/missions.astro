@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Cta from '@/components/missions/Cta.astro'
+import FAQ from '@/components/missions/FAQ.astro'
+import { changeLanguage, t } from 'i18next'
+import Steps from '@/components/missions/Steps.astro'
+import Hero from '@/components/missions/Hero.astro'
+
+changeLanguage('en')
+---
+
+<Layout title={t('seo.missions.title')!}>
+  <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
+    <Hero />
+    <Steps />
+    <FAQ />
+    <Cta />
+  </div>
+</Layout>
