@@ -10,7 +10,9 @@
     "contact": "연락처",
     "whitepaper": "백서",
     "privacy-policy": "개인정보 보호정책",
-    "terms-of-use": "이용 약관"
+    "terms-of-use": "이용 약관",
+    "how-it-works": "앱의 작동 방식",
+    "missions": "미션"
   },
 
   "seo": {
@@ -41,6 +43,12 @@
     "news": {
       "title": "$t(links.news) | $t(name)",
       "description": "FingeRate 및 그 에코시스템에 대해 업데이트된 최신 뉴스와 정보 동향을 받으세요. 저희 뉴스 페이지에 오셔서 업데이트된 흥미진진한 내용들과 그 인사이트 그리고 이벤트 들에 대해 알아보세요."
+    },
+    "how-it-works": {
+      "title": "$t(links.how-it-works) | $t(name)"
+    },
+    "missions": {
+      "title": "$t(links.missions) | $t(name)"
     }
   },
 

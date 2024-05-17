@@ -51,6 +51,12 @@
     "news": {
       "title": "$t(links.news) | $t(name)",
       "description": "Stay updated with the latest news and happenings related to FingeRate and its ecosystem. Explore our news page for exciting updates, insights, and events."
+    },
+    "how-it-works": {
+      "title": "$t(links.how-it-works) | $t(name)"
+    },
+    "missions": {
+      "title": "$t(links.missions) | $t(name)"
     }
   },
 
