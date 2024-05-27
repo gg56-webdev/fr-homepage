@@ -7,7 +7,7 @@ import { changeLanguage } from 'i18next'
 changeLanguage(frontmatter.lang ?? 'en')
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={frontmatter.title} noIndex={frontmatter.noIndex}>
   <article class="prose prose-invert mx-auto max-w-screen-lg bg-slate-900 px-2 py-12 md:px-12">
     <slot />
   </article>

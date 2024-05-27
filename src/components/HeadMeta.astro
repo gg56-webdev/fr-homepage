@@ -5,12 +5,14 @@ interface Props {
   title?: string
   description?: string
   image?: string
+  noIndex?: boolean
 }
 
 const {
   title = t('seo.default.title'),
   description = t('seo.default.description'),
   image = '/og/default.jpg',
+  noIndex = false,
 } = Astro.props
 ---
 
@@ -49,3 +51,6 @@ const {
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Robots -->
+<meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
