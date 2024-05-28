@@ -6,13 +6,15 @@ noIndex: true
 
 # Account Deletion Request for FingeRate App
 
-If you wish to delete your account and all associated data for FingeRate App, please follow the steps below. This process is irreversible, and all your data will be permanently removed from our system.
+At FingeRate, we want to give you control over your data and information. You can delete your account at any time by following the steps listed below or [by contacting us](/contact).
+
+Please note that this process is irreversible. Once your account is deleted, your data will be permanently removed from our system.
 
 ## Steps to Delete Your Account
 
 1. Open the **FingeRate App**: Launch the application on your device.
 
-2. Navigate to **"My Page"**:
+2. Navigate to **"My Page"**.
 
 3. Click the **Edit My Profile button (Pencil icon)** in the top right corner:
    ![My page screen with steps](../assets/delete-account/delete-1.png)
@@ -42,4 +44,4 @@ If you wish to delete your account and all associated data for FingeRate App, pl
 
 If you encounter any issues or have questions regarding the account deletion process, [please contact our support team](/contact).
 
-Thank you for using FingeRate App. We value your feedback and are sorry to see you go.
+Thank you for using FingeRate App! We hope to see you soon for more rewards!
