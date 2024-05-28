@@ -76,5 +76,44 @@
     },
     "socials": ["https://www.linkedin.com/in/nikita-liakhovka/"],
     "categories": ["Development", "Design"]
+  },
+  {
+    "id": "kim-dong-hoon",
+    "name": {
+      "en": "Kim Dong-hoon",
+      "ko": "김동훈"
+    },
+    "subtitles": {
+      "en": ["Backend Developer"],
+      "ko": ["백엔드 개발자"]
+    },
+    "socials": ["https://www.linkedin.com/in/dh-k-8b838b230"],
+    "categories": ["Development"]
+  },
+  {
+    "id": "jang-hee-jung",
+    "name": {
+      "en": "Jang Hee-jung",
+      "ko": "장희정"
+    },
+    "subtitles": {
+      "en": ["Unity Developer"],
+      "ko": ["Unity 개발자"]
+    },
+    "socials": ["https://github.com/JangHJ"],
+    "categories": ["Development"]
+  },
+  {
+    "id": "yang-geon-hee",
+    "name": {
+      "en": "Yang Geon-hee",
+      "ko": "양건희"
+    },
+    "subtitles": {
+      "en": ["Sales Representative"],
+      "ko": ["사업관리 사원"]
+    },
+    "socials": [],
+    "categories": ["Sales"]
   }
 ]
