@@ -16,6 +16,7 @@ const icons: ImageMetadata[] = await Astro.glob('../../assets/social/*.svg').the
 const getIcon = (href: string) => {
   if (href.includes('linkedin.com')) return icons.find(({ src }) => src.includes('IN'))!
   if (href.includes('wikipedia.org')) return icons.find(({ src }) => src.includes('WI'))!
+  if (href.includes('github.com')) return icons.find(({ src }) => src.includes('GH'))!
   return icons.find(({ src }) => src.includes('LI'))!
 }
 ---
