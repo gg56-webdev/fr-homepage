@@ -65,6 +65,19 @@
     "categories": ["Marketing", "Design"]
   },
   {
+    "id": "kim-se-mee",
+    "name": {
+      "en": "Kim Se-mee",
+      "ko": "김세미"
+    },
+    "subtitles": {
+      "en": ["Marketing Representative"],
+      "ko": ["마케팅 사원"]
+    },
+    "socials": ["https://www.linkedin.com/in/semee-kim-3a7388218/"],
+    "categories": ["Marketing"]
+  },
+  {
     "id": "nikita-liakhovka",
     "name": {
       "en": "Nikita Liakhovka",
@@ -88,6 +101,19 @@
       "ko": ["백엔드 개발자"]
     },
     "socials": ["https://www.linkedin.com/in/dh-k-8b838b230"],
+    "categories": ["Development"]
+  },
+  {
+    "id": "kim-tae-geun",
+    "name": {
+      "en": "Kim Tae-geun",
+      "ko": "김태근"
+    },
+    "subtitles": {
+      "en": ["Unity Developer"],
+      "ko": ["Unity 개발자"]
+    },
+    "socials": ["https://www.linkedin.com/in/taegeun-kim-4194aa310/"],
     "categories": ["Development"]
   },
   {
@@ -115,5 +141,18 @@
     },
     "socials": ["https://www.linkedin.com/in/%EA%B1%B4%ED%9D%AC-%EC%96%91-57bb082a4/"],
     "categories": ["Sales"]
+  },
+  {
+    "id": "nora-okba",
+    "name": {
+      "en": "Nora Okba",
+      "ko": "노라 옥바"
+    },
+    "subtitles": {
+      "en": ["Global Marketing Assistant"],
+      "ko": ["글로벌 마케터"]
+    },
+    "socials": ["https://www.linkedin.com/in/nora-okba/"],
+    "categories": ["Business"]
   }
 ]
