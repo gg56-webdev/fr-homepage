@@ -32,10 +32,14 @@ const recentPosts = (await getPosts({ lang: i18next.language, limit: 4 })).filte
     <h1 class="[text-wrap:balance;]" set:html={post.title.rendered} />
     <time datetime={post.date} class="text-neonBlue">{new Date(post.date).toLocaleDateString(i18next.language)}</time>
     <Fragment set:html={post.content.rendered} />
-    <h2>{t('news.recent')}</h2>
-    <ul class="grid sm:grid-cols-3 w-full mt-8 gap-4 not-prose p-0">
-      {recentPosts.map((post) => <NewsCard {post} />)}
-    </ul>
-    <a href={localizePath(NAV_LINKS.NEWS.href)} class="not-prose">← {t('news.go-news')}</a>
+    <footer class="space-y-8">
+      <h2>{t('news.recent')}</h2>
+      <ul class="not-prose grid sm:grid-cols-3 w-full gap-4">
+        {recentPosts.map((post) => <NewsCard {post} />)}
+      </ul>
+      <a href={localizePath(NAV_LINKS.NEWS.href)} class="not-prose block hover:underline max-sm:underline"
+        >← {t('news.go-news')}</a
+      >
+    </footer>
   </article>
 </Layout>

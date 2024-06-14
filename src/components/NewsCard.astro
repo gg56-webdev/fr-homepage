@@ -1,30 +1,30 @@
 ---
-import { Image } from 'astro:assets';
-import { localizePath } from 'astro-i18next';
-import i18next, { t } from 'i18next';
-import type { WP_REST_API_Post } from 'wp-types';
-import { NAV_LINKS } from '@/constants';
+import { Image } from 'astro:assets'
+import { localizePath } from 'astro-i18next'
+import i18next, { t } from 'i18next'
+import type { WP_REST_API_Post } from 'wp-types'
+import { NAV_LINKS } from '@/constants'
 
 interface Props {
-  post: Partial<WP_REST_API_Post>;
+  post: Partial<WP_REST_API_Post>
 }
-const { post } = Astro.props;
+const { post } = Astro.props
 
-type ImgData = { width: number; height: number; source_url: string };
+type ImgData = { width: number; height: number; source_url: string }
 
 type ImgDetails = {
-  media_details: { sizes: { [size: string]: ImgData; full: ImgData } };
-  alt_text: string;
-};
-const img = post._embedded?.['wp:featuredmedia']?.at(0);
+  media_details: { sizes: { [size: string]: ImgData; full: ImgData } }
+  alt_text: string
+}
+const img = post._embedded?.['wp:featuredmedia']?.at(0)
 
 const isImgDetails = (media: unknown): media is ImgDetails => {
-  if (media && typeof media === 'object' && 'media_details' in media && 'alt_text' in media) return true;
-  return false;
-};
+  if (media && typeof media === 'object' && 'media_details' in media && 'alt_text' in media) return true
+  return false
+}
 
-const isExternal = post.link?.startsWith('https://gg56.com/') ? false : true;
-const href = isExternal ? post.link : localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`);
+const isExternal = post.link?.startsWith('https://gg56.com/') ? false : true
+const href = isExternal ? post.link : localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`)
 ---
 
 <article
@@ -74,13 +74,17 @@ const href = isExternal ? post.link : localizePath(`${NAV_LINKS.NEWS.href}/${pos
       <div class="mt-auto flex items-center justify-between">
         {
           post.date && (
-            <time class="text-neonBlue text-sm sr-only @[13rem]:not-sr-only" datetime={post.date}>
+            <time class="text-neonBlue text-sm sr-only @[16rem]:not-sr-only" datetime={post.date}>
               {new Date(post.date).toLocaleDateString(i18next.language)}
             </time>
           )
         }
-        <a {href} target={isExternal ? '_blank' : '_self'} class="hover:underline">
-          {t('news.read')}&nbsp;<span class="sr-only @[4rem]:not-sr-only">→</span>
+        <a
+          {href}
+          target={isExternal ? '_blank' : '_self'}
+          class="max-sm:underline hover:underline text-sm @lg:text-base"
+        >
+          {t('news.read')}<span class="sr-only @[12rem]:not-sr-only">&nbsp;→</span>
         </a>
       </div>
     </div>
