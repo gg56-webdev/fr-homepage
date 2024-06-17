@@ -1,11 +1,11 @@
 ---
-layout: "@/layouts/DocumentLayout.astro"
-title: "Terms of Use | FingeRate"
+layout: '@/layouts/DocumentLayout.astro'
+title: 'Terms of Use | FingeRate'
 ---
 
 # Terms of Use
 
-Date: <time datetime="2023-06-08">2023.06.08</time>
+Date: <time datetime="2024-06-17">2024.06.17</time>
 
 Please read these Terms of Use ("Terms") carefully before using the FingeRate mobile application ("App") provided by GG56 Ltd ("Company"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the App.
 
@@ -19,7 +19,7 @@ Please read these Terms of Use ("Terms") carefully before using the FingeRate mo
 
 1. FingeRate provides users with the ability to create their own surveys using “SoM”: Users can design and customize their surveys within the App. The Company reserves the right to moderate or remove any surveys that violate these Terms or are deemed inappropriate, offensive, or in violation of applicable laws or regulations. Moreover, Users are responsible for the content of their surveys and must ensure that their surveys comply with these Terms, as well as any applicable laws and regulations. The Company does not assume responsibility for the accuracy, legality, or content of the surveys created by users.
 
-1. Users can trade their accumulated SoM currency directly within the App for coupons, discounts, or virtual items to customize their avatars.
+1. Users can trade their accumulated SoM currency directly within the App for coupons, discounts, or cryptos.
 
 ## 2. License and App Usage
 
