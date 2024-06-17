@@ -67,6 +67,12 @@ export const SOCIAL_LINKS = {
     isExternal: true,
     isImportant: false,
   },
+  YOUTUBE: {
+    name: 'youtube',
+    href: 'https://www.youtube.com/@FingeRate',
+    isExternal: true,
+    isImportant: false,
+  },
 } as const
 
 export const CALENDLY = 'https://calendly.com/gg56world/fingerate-solutions'
