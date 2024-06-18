@@ -32,6 +32,7 @@ export interface Props {
     <link rel="preload" as="image" href={optimizedBg.src} />
     {!import.meta.env.DEV && <GA />}
     <script src="../scripts/reveal-animation.ts"></script>
+    <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col bg-slate-950">
     <Header />
