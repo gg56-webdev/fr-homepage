@@ -104,19 +104,6 @@
     "categories": ["Development"]
   },
   {
-    "id": "kim-tae-geun",
-    "name": {
-      "en": "Kim Tae-geun",
-      "ko": "김태근"
-    },
-    "subtitles": {
-      "en": ["Unity Developer"],
-      "ko": ["Unity 개발자"]
-    },
-    "socials": ["https://www.linkedin.com/in/taegeun-kim-4194aa310/"],
-    "categories": ["Development"]
-  },
-  {
     "id": "jang-hee-jung",
     "name": {
       "en": "Jang Hee-jung",
