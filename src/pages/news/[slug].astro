@@ -1,30 +1,30 @@
 ---
-import i18next, { changeLanguage, t } from "i18next";
-import { localizePath } from "astro-i18next";
-import Layout from "@/layouts/Layout.astro";
-import { getPost, getPosts } from "@/api";
-import type { GetStaticPaths } from "astro";
-import type { WP_REST_API_Post } from "wp-types";
-import { NAV_LINKS } from "@/constants";
-import NewsCard from "@/components/NewsCard.astro";
+import i18next, { changeLanguage, t } from 'i18next'
+import { localizePath } from 'astro-i18next'
+import Layout from '@/layouts/Layout.astro'
+import { getPost, getPosts } from '@/api'
+import type { GetStaticPaths } from 'astro'
+import type { WP_REST_API_Post } from 'wp-types'
+import { NAV_LINKS } from '@/constants'
+import NewsCard from '@/components/NewsCard.astro'
 
-changeLanguage("en");
+changeLanguage('en')
 
 interface Props {
-    id: WP_REST_API_Post["id"];
+  id: WP_REST_API_Post['id']
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await getPosts({ lang: i18next.language, minimal: true });
-    return posts
-        .filter(({ link }) => link.startsWith("https://gg56.com/"))
-        .map(({ slug, id }) => ({
-        params: { slug },
-        props: { id },
-    }));
-};
-const { id } = Astro.props;
-const post = await getPost({ id, lang: i18next.language });
-const recentPosts = (await getPosts({ lang: i18next.language, limit: 4 })).filter((post) => post.id !== id).slice(0, 3);
+  const posts = await getPosts({ lang: i18next.language, minimal: true })
+  return posts
+    .filter(({ link }) => link.startsWith('https://gg56.com/'))
+    .map(({ slug, id }) => ({
+      params: { slug },
+      props: { id },
+    }))
+}
+const { id } = Astro.props
+const post = await getPost({ id, lang: i18next.language })
+const recentPosts = (await getPosts({ lang: i18next.language, limit: 4 })).filter((post) => post.id !== id).slice(0, 3)
 ---
 
 <Layout title={post.title.rendered}>
@@ -35,7 +35,13 @@ const recentPosts = (await getPosts({ lang: i18next.language, limit: 4 })).filte
     <footer class="space-y-8">
       <h2>{t('news.recent')}</h2>
       <ul class="not-prose grid sm:grid-cols-3 w-full gap-4">
-        {recentPosts.map((post) => <NewsCard {post} />)}
+        {
+          recentPosts.map((post) => (
+            <li>
+              <NewsCard {post} />
+            </li>
+          ))
+        }
       </ul>
       <a href={localizePath(NAV_LINKS.NEWS.href)} class="not-prose block hover:underline max-sm:underline"
         >← {t('news.go-news')}</a
