@@ -69,7 +69,7 @@ export const SOCIAL_LINKS = {
   },
   YOUTUBE: {
     name: 'youtube',
-    href: 'https://www.youtube.com/@FingeRate',
+    href: 'https://www.youtube.com/@fingerate_kr',
     isExternal: true,
     isImportant: false,
   },
