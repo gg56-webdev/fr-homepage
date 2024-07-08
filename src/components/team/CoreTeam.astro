@@ -59,7 +59,8 @@ const getIcon = (href: string) => {
         return (
           <li
             style={`view-transition-name: person-${i + 1}`}
-            class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-8"
+            class="w-full sm:w-1/2 md:w-1/3 p-8"
+            class:list={[{ 'lg:w-1/4': people.length > 9 }]}
             data-categories={p.categories}
           >
             <div class="relative rounded-lg grid aspect-square group justify-center">
