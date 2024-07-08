@@ -7,8 +7,9 @@ import { NAV_LINKS } from '@/constants'
 
 interface Props {
   post: Partial<WP_REST_API_Post>
+  priority?: boolean
 }
-const { post } = Astro.props
+const { post, priority = false } = Astro.props
 
 type ImgData = { width: number; height: number; source_url: string }
 
@@ -47,6 +48,7 @@ const href = isExternal ? post.link : localizePath(`${NAV_LINKS.NEWS.href}/${pos
         {
           isImgDetails(img) && (
             <Image
+              loading={priority ? 'eager' : 'lazy'}
               class=" object-cover group-hover:scale-105 w-full h-full transition"
               width={img.media_details.sizes?.medium_large?.width || img.media_details.sizes.full.width}
               height={img.media_details.sizes?.medium_large?.height || img.media_details.sizes.full.height}

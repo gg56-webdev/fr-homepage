@@ -20,7 +20,7 @@ export const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
   </div>
   <div class="space-y-6">
     <div class="flex gap-8 rounded-full bg-slate-950/80 p-2">
-      <Image src={token} alt="MSOT token logo" class="h-24 w-24" />
+      <Image src={token} loading="eager" alt="MSOT token logo" class="h-24 w-24" />
       <dl class="flex flex-1 items-center justify-around gap-8 pr-8">
         <div class="flex flex-col-reverse flex-wrap gap-2">
           <dt>{t('token.hero.quantity')}</dt>

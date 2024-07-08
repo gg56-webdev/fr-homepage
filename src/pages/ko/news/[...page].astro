@@ -1,17 +1,17 @@
 ---
-import i18next, { changeLanguage, t } from "i18next";
-import { getPosts } from "@/api";
-import Layout from "@/layouts/Layout.astro";
-import NewsCard from "@/components/NewsCard.astro";
-import { type GetStaticPathsOptions } from "astro";
+import i18next, { changeLanguage, t } from 'i18next'
+import { getPosts } from '@/api'
+import Layout from '@/layouts/Layout.astro'
+import NewsCard from '@/components/NewsCard.astro'
+import { type GetStaticPathsOptions } from 'astro'
 
-changeLanguage("ko");
+changeLanguage('ko')
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-    const posts = await getPosts({ lang: i18next.language });
-    return paginate(posts, { pageSize: 12 });
+  const posts = await getPosts({ lang: i18next.language })
+  return paginate(posts, { pageSize: 12 })
 }
-const { page } = Astro.props;
+const { page } = Astro.props
 ---
 
 <Layout image="/og/news.jpg" title={t('seo.news.title')!} description={t('seo.news.description')!}>
@@ -21,7 +21,7 @@ const { page } = Astro.props;
       {
         page.data.length > 0 ? (
           <ul class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6">
-            {page.data.map((post) => {
+            {page.data.map((post, i) => {
               return (
                 <li
                   data-scroll-animation
@@ -33,7 +33,7 @@ const { page } = Astro.props;
                     },
                   ]}
                 >
-                  <NewsCard {post} />
+                  <NewsCard {post} priority={i <= 5} />
                 </li>
               )
             })}
