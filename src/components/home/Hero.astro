@@ -182,7 +182,7 @@ import Share from '../DownloadBtn/Share.astro'
 </section>
 
 <script>
-  if (window.matchMedia('(any-hover: hover)').matches) {
+  if (!window.matchMedia('(pointer: coarse)').matches) {
     const $tiltEl = document.querySelector('[data-tilt-animation]') as HTMLDivElement
 
     document.addEventListener('mousemove', ({ clientX, clientY }) => {
