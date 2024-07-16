@@ -8,56 +8,56 @@ type Dropdown = { name: string; href?: string; links: Link[] }
 const navLinks: Array<Link | Dropdown> = [
   {
     ...NAV_LINKS.HOME,
-    name: t('links.home', { lng: 'en' }),
+    name: t('links.home'),
     href: localizePath(NAV_LINKS.HOME.href),
   },
   {
-    name: t('links.app', { lng: 'en' }),
+    name: t('links.app'),
     links: [
       {
         ...NAV_LINKS.HOW_IT_WORKS,
-        name: t('links.how-it-works', { lng: 'en' }),
+        name: t('links.how-it-works'),
         href: localizePath(NAV_LINKS.HOW_IT_WORKS.href),
       },
       {
         ...NAV_LINKS.MISSIONS,
-        name: t('links.missions', { lng: 'en' }),
+        name: t('links.missions'),
         href: localizePath(NAV_LINKS.MISSIONS.href),
       },
       {
         ...NAV_LINKS.FAQ,
-        name: t('links.faq', { lng: 'en' }),
+        name: t('links.faq'),
         href: localizePath(NAV_LINKS.FAQ.href),
       },
     ],
   },
   {
     ...NAV_LINKS.TOKEN,
-    name: t('links.token', { lng: 'en' }),
+    name: t('links.token'),
     href: localizePath(NAV_LINKS.TOKEN.href),
   },
   {
-    name: t('links.about', { lng: 'en' }),
+    name: t('links.about'),
     links: [
       {
         ...NAV_LINKS.TEAM,
-        name: t('links.team', { lng: 'en' }),
+        name: t('links.team'),
         href: localizePath(NAV_LINKS.TEAM.href),
       },
       {
         ...NAV_LINKS.NEWS,
-        name: t('links.news', { lng: 'en' }),
+        name: t('links.news'),
         href: localizePath(NAV_LINKS.NEWS.href),
       },
       {
         ...NAV_LINKS.CONTACT,
-        name: t('links.contact', { lng: 'en' }),
+        name: t('links.contact'),
         href: localizePath(NAV_LINKS.CONTACT.href),
       },
     ],
   },
 
-  { ...NAV_LINKS.WHITEPAPER, name: t('links.whitepaper', { lng: 'en' }) },
+  { ...NAV_LINKS.WHITEPAPER, name: t('links.whitepaper') },
 ]
 
 // const localizeNavItem = (item: Link | Dropdown): Link | Dropdown => {
