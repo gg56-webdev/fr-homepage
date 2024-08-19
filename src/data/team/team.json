@@ -102,18 +102,5 @@
     },
     "socials": ["https://github.com/JangHJ"],
     "categories": ["Development"]
-  },
-  {
-    "id": "nora-okba",
-    "name": {
-      "en": "Nora Okba",
-      "ko": "노라 옥바"
-    },
-    "subtitles": {
-      "en": ["Global Marketing Assistant"],
-      "ko": ["글로벌 마케터"]
-    },
-    "socials": ["https://www.linkedin.com/in/nora-okba/"],
-    "categories": ["Business"]
   }
 ]
