@@ -20,7 +20,8 @@
     "whitepaper": "Whitepaper",
     "privacy-policy": "Privacy Policy",
     "terms-of-use": "Terms of Use",
-    "missions": "Missions"
+    "missions": "Missions",
+    "agent": "Agent"
   },
 
   "seo": {
@@ -57,6 +58,9 @@
     },
     "missions": {
       "title": "$t(links.missions) | $t(name)"
+    },
+    "agent": {
+      "title": "$t(links.agent) | $t(name)"
     }
   },
 
@@ -467,6 +471,57 @@
           "We're sorry that there are no missions available in your country at the moment. However, we're working hard to expand our reach! If you have any ideas for missions or would like to share feedback with us, please feel free to contact us."
         ]
       ]
+    }
+  },
+
+  "agent": {
+    "hero": {
+      "banner": {
+        "tag": "Special Event",
+        "message": "Become an agent now and receive additional APs (Agent Points) to kickstart your journey!"
+      },
+      "h1": "Become a FingeRate Agent Today",
+      "p": "Manage your own Virtual Bots directly on the FingeRate App! Create custom surveys and take your curiosity to the next level!",
+      "cta": "Jump in FingeRate"
+    },
+    "benefits": {
+      "h2": "Benefits",
+      "benefit-1": {
+        "h3": "Easy Management",
+        "p": "Create your own Virtual Bots and mange your surveys from the comfort of your personal device."
+      },
+      "benefit-2": {
+        "h3": "Discover Agent Points (AP), a new in-app currency just for you, Agent!"
+      }
+    },
+    "explanations": {
+      "h2": "Explanations",
+      "steps": [
+        "Log in to the FingeRate App and visit your page.",
+        "Tap on “Become an Agent”, complete the form, and choose your first Virtual Bot’s location.",
+        "On the agent panel, begin managing your Virtual Bots and create surveys."
+      ]
+    },
+    "faq": {
+      "q&a": [
+        [
+          "Why Become an Agent?",
+          "Becoming an agent grants you access to exclusive features like virtual bot management, giving you new ways to satisfy your curiosity."
+        ],
+        ["Is There a Cost to Join?", "No, it's completely free to become a FingeRate Agent at this time."],
+        [
+          "What Information Is Collected?",
+          "<0>Please review <1>our Terms of Use</1> for detailed information on data collection. For additional inquiries, <2>our contact form</2> is available.</0>"
+        ],
+        [
+          "Who Is This For?",
+          "Anyone can join! Whether you're a student, a marketer, or just curious, FingeRate Agent Mode is designed with you in mind."
+        ]
+      ]
+    },
+    "cta": {
+      "h2": "Why not Giving it a Try",
+      "link": "The Agent Mode is Waiting for You!"
     }
   },
 

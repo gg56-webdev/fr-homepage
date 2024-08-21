@@ -1,0 +1,21 @@
+---
+import Benefits from '@/components/agent/Benefits.astro'
+import Cta from '@/components/agent/Cta.astro'
+import Explanations from '@/components/agent/Explanations.astro'
+import FAQ from '@/components/agent/FAQ.astro'
+import Hero from '@/components/agent/Hero.astro'
+import Layout from '@/layouts/Layout.astro'
+import { changeLanguage, t } from 'i18next'
+
+changeLanguage('en')
+---
+
+<Layout title={t('seo.agent.title')!}>
+  <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
+    <Hero />
+    <Benefits />
+    <Explanations />
+    <FAQ />
+    <Cta />
+  </div>
+</Layout>

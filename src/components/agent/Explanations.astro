@@ -1,0 +1,110 @@
+---
+import { t } from 'i18next'
+---
+
+<section data-scroll-animation class="mx-auto max-w-[850px] py-16 px-2">
+  <h2 class="sr-only">How</h2>
+  <div
+    class='grid gap-8 text-center text-sm sm:grid-cols-2 sm:gap-0 sm:text-base sm:[grid-template-areas:"c1_c2"_"c4_c3"_"c5_c6"] md:grid-cols-3 md:[grid-template-areas:"c1_c4_c5"_"c2_c3_c6"]'
+  >
+    <div
+      class="relative grid h-full place-items-center overflow-hidden rounded-lg p-4 before:absolute before:h-full before:w-full before:opacity-0 before:transition before:bg-brandGradient odd:hidden odd:aspect-square odd:bg-slate-950/90 hover:shadow-lg before:hover:opacity-100 sm:[grid-area:c1] sm:odd:grid"
+    >
+      <svg class="z-10 h-24 w-24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g fill="currentColor">
+          <path
+            d="M46.4012 50.8648C46.4012 53.2617 48.3447 55.203 50.7393 55.203C53.1362 55.203 55.0774 53.2594 55.0774 50.8648V28.3373C55.0774 25.9404 53.1362 23.9992 50.7393 23.9992C48.3424 23.9992 46.4012 25.9404 46.4012 28.3373V50.8648Z"
+          ></path>
+          <path
+            d="M33.1148 55.9353C33.1148 58.3322 35.0584 60.2734 37.4529 60.2734C39.8498 60.2734 41.791 58.3298 41.791 55.9353V36.3928C41.791 33.9959 39.8498 32.0547 37.4529 32.0547C35.056 32.0547 33.1148 33.9982 33.1148 36.3928V55.9353Z"
+          ></path>
+          <path
+            d="M64.028 60.2734C61.6334 60.2734 59.6899 58.3322 59.6899 55.9353V34.7631C59.6899 32.3685 61.6311 30.425 64.028 30.425C66.4249 30.425 68.3661 32.3662 68.3661 34.7631V55.9353C68.3661 58.3298 66.4249 60.2734 64.028 60.2734Z"
+          ></path>
+          <path
+            d="M72.9762 60.7337C72.9762 63.1306 74.9198 65.0718 77.3144 65.0718C79.7113 65.0718 81.6525 63.1283 81.6525 60.7337V46.4849C81.6525 44.088 79.7113 42.1467 77.3144 42.1467C74.9175 42.1467 72.9762 44.0903 72.9762 46.4849V60.7337Z"
+          ></path>
+          <path
+            d="M27.2958 71.2512C25.7963 71.2512 24.3386 70.4724 23.5342 69.0822L18.9287 61.1057C17.7314 59.0319 18.4428 56.3793 20.5166 55.1797C22.5926 53.9847 25.2429 54.6938 26.4426 56.7676L31.048 64.744C32.2453 66.8178 31.5339 69.4704 29.4602 70.67C28.7767 71.0629 28.0304 71.2512 27.2958 71.2512Z"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            stroke-width="1.5"
+            stroke="currentColor"
+            d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM96 50C96 75.4051 75.4051 96 50 96C24.5949 96 4 75.4051 4 50C4 24.5949 24.5949 4 50 4C75.4051 4 96 24.5949 96 50Z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div
+      class="grid h-full place-items-center content-center gap-4 rounded-lg p-4 odd:hidden odd:aspect-square odd:bg-slate-950/90 sm:[grid-area:c2] sm:odd:grid"
+    >
+      <div
+        class="grid h-12 w-12 text-pretty place-items-center rounded-full bg-slate-950/90 text-2xl font-bold leading-none"
+      >
+        1
+      </div>
+      {t('agent.explanations.steps.0')}
+    </div>
+    <div
+      class="relative grid h-full place-items-center overflow-hidden rounded-lg p-4 before:absolute before:h-full before:w-full before:opacity-0 before:transition before:bg-brandGradient odd:hidden odd:aspect-square odd:bg-slate-950/90 hover:shadow-lg before:hover:opacity-100 sm:[grid-area:c3] sm:odd:grid"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-24 z-10"
+        ><circle cx="18" cy="15" r="3"></circle><circle cx="9" cy="7" r="4"></circle><path d="M10 15H6a4 4 0 0 0-4 4v2"
+        ></path><path d="m21.7 16.4-.9-.3"></path><path d="m15.2 13.9-.9-.3"></path><path d="m16.6 18.7.3-.9"
+        ></path><path d="m19.1 12.2.3-.9"></path><path d="m19.6 18.7-.4-1"></path><path d="m16.8 12.3-.4-1"></path><path
+          d="m14.3 16.6 1-.4"></path><path d="m20.7 13.8 1-.4"></path></svg
+      >
+    </div>
+    <div
+      class="grid h-full place-items-center content-center gap-4 rounded-lg p-4 odd:hidden odd:aspect-square odd:bg-slate-950/90 sm:[grid-area:c4] sm:odd:grid"
+    >
+      <div
+        class="grid h-12 w-12 text-pretty place-items-center rounded-full bg-slate-950/90 text-2xl font-bold leading-none"
+      >
+        2
+      </div>
+      {t('agent.explanations.steps.1')}
+    </div>
+    <div
+      class="relative grid h-full place-items-center overflow-hidden rounded-lg p-4 before:absolute before:h-full before:w-full before:opacity-0 before:transition before:bg-brandGradient odd:hidden odd:aspect-square odd:bg-slate-950/90 hover:shadow-lg before:hover:opacity-100 sm:[grid-area:c5] sm:odd:grid"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-24 z-10"
+        ><path
+          d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+        ></path><path d="m15 5 4 4"></path></svg
+      >
+    </div>
+    <div
+      class="grid h-full place-items-center content-center gap-4 rounded-lg p-4 odd:hidden odd:aspect-square odd:bg-slate-950/90 sm:[grid-area:c6] sm:odd:grid"
+    >
+      <div
+        class="grid h-12 w-12 text-pretty place-items-center rounded-full bg-slate-950/90 text-2xl font-bold leading-none"
+      >
+        3
+      </div>
+      {t('agent.explanations.steps.2')}
+    </div>
+  </div>
+</section>

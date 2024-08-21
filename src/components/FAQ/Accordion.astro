@@ -12,10 +12,10 @@ const { title, ...props } = Astro.props
 <details
   {...props}
   data-scroll-animation
-  class="ring-neonBlue marker:text-neonBlue rounded-lg p-4 bg-slate-950/80 transition open:ring hover:ring"
+  class="ring-neonBlue marker:text-neonBlue rounded-lg bg-slate-950/80 transition open:ring hover:ring"
 >
-  <summary class="font-medium hover:cursor-pointer">{title}</summary>
-  <div class="mt-4 prose prose-invert">
+  <summary class="font-medium hover:cursor-pointer p-4">{title}</summary>
+  <div class="prose prose-invert p-4">
     <slot />
   </div>
 </details>
