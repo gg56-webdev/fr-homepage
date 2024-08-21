@@ -1,0 +1,50 @@
+---
+import Benefits from '@/components/agent/Benefits.astro'
+import Cta from '@/components/agent/Cta.astro'
+import Explanations from '@/components/agent/Explanations.astro'
+import FAQ from '@/components/agent/FAQ.astro'
+import Hero from '@/components/agent/Hero.astro'
+import Layout from '@/layouts/Layout.astro'
+import { changeLanguage, t } from 'i18next'
+
+changeLanguage('ko')
+---
+
+<Layout title={t('seo.agent.title')!}>
+  <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
+    <Hero />
+    <section data-scroll-animation id="benefits" class="bg-slate-950/80 py-24 relative z-10">
+      <div class="mx-auto max-w-screen-lg px-2">
+        <div class="text-center">
+          <h2 set:text={t('agent.benefits.h2')} class="brand-text text-5xl md:text-6xl font-bold" />
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="p-8 rounded-lg bg-brandGradient">
+            <h3 class="text-2xl font-bold md:text-4xl mb-4 md:mb-6">쉬운 관리시스템</h3>
+            <ul class="list-disc md:space-y-2 md:ps-6 text-lg md:text-2xl text-pretty">
+              <li>나만의 버츄얼 봇 만들기</li>
+              <li>설문조사 작성 및 관리 필요한건 오직 핸드폰</li>
+            </ul>
+          </div>
+          <div class="p-8 rounded-lg bg-brandGradient grid content-between">
+            <h3 class="text-2xl font-bold md:text-4xl mb-4 md:mb-6">에이전트 전용 포인트</h3>
+            <ul class="list-disc md:space-y-2 md:ps-6 text-lg md:text-2xl text-pretty">
+              <li>설문조사를 위한 AP(AgentPoint)제공</li>
+              <li>설문조사를 자유롭게 즐길 수 있습니다</li>
+            </ul>
+            <div
+              class="flex justify-center mt-6 md:justify-end *:size-12 text-xl *:rounded-full *:border-2 *:shadow-md *:border-intelligentBlue *:grid text-center gap-4 *:font-bold *:bg-white *:text-intelligentBlue *:place-items-center"
+            >
+              <div class="hover:-translate-y-4 transition-transform">AP</div>
+              <div class="hover:-translate-y-4 transition-transform">AP</div>
+              <div class="hover:-translate-y-4 transition-transform">AP</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Explanations />
+    <FAQ />
+    <Cta />
+  </div>
+</Layout>
