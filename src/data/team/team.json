@@ -51,19 +51,7 @@
     "socials": ["https://www.linkedin.com/in/%EC%9E%AC%ED%98%81-%EC%9E%A5-208283216/"],
     "categories": ["HR"]
   },
-  {
-    "id": "kim-se-mee",
-    "name": {
-      "en": "Kim Se-mee",
-      "ko": "김세미"
-    },
-    "subtitles": {
-      "en": ["Marketing Representative"],
-      "ko": ["마케팅 사원"]
-    },
-    "socials": ["https://www.linkedin.com/in/semee-kim-3a7388218/"],
-    "categories": ["Marketing"]
-  },
+
   {
     "id": "nikita-liakhovka",
     "name": {
