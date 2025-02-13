@@ -2,7 +2,6 @@
 import Layout from '@/layouts/Layout.astro'
 import Partners from '@/components/Partners.astro'
 import i18next, { changeLanguage, t } from 'i18next'
-import { CALENDLY } from '@/constants'
 import Contact from '@/components/bot/Contact.astro'
 import botVid from '@/assets/bot/hero.mp4'
 import Ecosystem from '@/components/bot/Ecosystem.astro'
@@ -33,13 +32,7 @@ const benefits = [
           {t('bot.hero.h1')}
         </h1>
         <p class="md:text-2xl/tight text-pretty max-md:mb-4">{t('bot.hero.p')}</p>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={CALENDLY}
-          class="rounded-lg bg-intelligentBlue px-5 py-2.5 text-center md:text-lg max-md:justify-self-start font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
-          >{t('bot.hero.get-in-touch')}</a
-        >
+     
       </div>
       <div class="max-md:order-first relative">
         <div class="rounded-lg z-10 relative overflow-clip">
