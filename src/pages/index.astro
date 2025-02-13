@@ -1,30 +1,162 @@
 ---
-import { changeLanguage } from 'i18next'
-import Features from '@/components/home/Features.astro'
-import App from '@/components/home/App.astro'
-import Hero from '@/components/home/Hero.astro'
-import Partners from '@/components/Partners.astro'
-import Steps from '@/components/home/Steps.astro'
 import Layout from '@/layouts/Layout.astro'
+import Partners from '@/components/Partners.astro'
+import i18next, { changeLanguage, t } from 'i18next'
+import Contact from '@/components/bot/Contact.astro'
+import botVid from '@/assets/bot/hero.mp4'
+import Ecosystem from '@/components/bot/Ecosystem.astro'
+import Dashboard from '@/components/bot/Dashboard.astro'
 
 changeLanguage('en')
+
+const videoSrc =
+  i18next.language === 'ko'
+    ? (await import('@/assets/bot/bot_intro_ko.mp4')).default
+    : (await import('@/assets/bot/bot_intro_en.mp4')).default
+
+const benefits = [
+  [t('bot.benefits.points.0.0'), t('bot.benefits.points.0.1'), `bg-intelligentBlue`, 'order-0'],
+  [t('bot.benefits.points.1.0'), t('bot.benefits.points.1.1'), `bg-softFire`, 'order-2'],
+  [t('bot.benefits.points.2.0'), t('bot.benefits.points.2.1'), `bg-[#207DA2]`, 'order-4'],
+]
 ---
 
-<Layout>
-  {
-    import.meta.env.PROD && (
-      <meta slot="head" name="facebook-domain-verification" content="l07jc69qpntjzcxw2qp7ljg9s96nzn" />
-    )
-  }
-  <div class="relative z-10 space-y-12 overflow-x-hidden py-12 md:space-y-32 pb-24">
-    <div class="space-y-12">
-      <Hero />
-      <div class="mx-auto max-w-screen-lg px-2">
-        <Partners />
+<Layout image="/og/bot.jpg" title={t('seo.bot.title')!} description={t('seo.bot.description')!}>
+  <div class="space-y-12 py-12 md:space-y-24 lg:space-y-32 md:pb-24 overflow-hidden">
+    <section
+      id="hero"
+      class="grid min-h-[85vh] max-w-screen-xl mx-auto lg:grid-cols-2 items-center px-2 gap-6 md:grid-rows-[1fr_auto]"
+    >
+      <div class="grid gap-4 md:gap-8 z-10 relative">
+        <h1 class="text-3xl md:text-5xl/tight font-bold text-balance">
+          {t('bot.hero.h1')}
+        </h1>
+        <p class="md:text-2xl/tight text-pretty max-md:mb-4">{t('bot.hero.p')}</p>
+       
       </div>
-    </div>
-    <Features />
-    <Steps />
-    <App />
+      <div class="max-md:order-first relative">
+        <div class="rounded-lg z-10 relative overflow-clip">
+          <video src={botVid} width="1200" height="720" autoplay loop muted playsinline></video>
+        </div>
+
+        <div
+          class:list={[
+            '[animation-delay:0s]',
+            'animate-blob  blur-2xl  absolute top-1/4 -left-1/4 w-1/2 aspect-square rounded-full  bg-softFire/30',
+          ]}
+        >
+        </div>
+        <div
+          class:list={[
+            '[animation-delay:2s]',
+            'animate-blob  blur-2xl  absolute top-0 -right-1/4 w-1/2 aspect-square rounded-full  bg-neonBlue/30',
+          ]}
+        >
+        </div>
+        <div
+          class:list={[
+            '[animation-delay:4s]',
+            'animate-blob  blur-2xl  absolute -bottom-1/2 right-1/4 w-1/2 aspect-square rounded-full  bg-intelligentBlue/30',
+          ]}
+        >
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <p
+          class="text-center text-cyberLilac relative after:absolute after:left-1/2 after:-bottom-10 after:animate-bounce after:content-['↓'] after:[translate:-50%] after:text-3xl"
+        >
+          Scroll Down
+        </p>
+      </div>
+    </section>
+
+    <section id="partners" class="mx-auto max-w-screen-xl">
+      <Partners />
+    </section>
+
+    <section id="intro" data-scroll-animation class="bg-slate-950/80 py-32">
+      <div class="mx-auto max-w-screen-lg">
+        <div class="text-center space-y-4 px-2">
+          <h2 class="brand-text text-3xl font-bold">{t('bot.intro.h2')}</h2>
+          <p class="text-pretty md:text-lg/tight max-w-[60ch] mx-auto">{t('bot.intro.p')}</p>
+        </div>
+        <div class="grid md:grid-cols-[1fr_3fr] mx-auto max-w-[850px] md:gap-6 mt-12">
+          <div class="text-center p-4 md:rounded-lg bg-brandGradient grid h-full place-content-center">
+            <p class="leading-snug"><span class="block font-bold text-6xl mb-4">86%</span>{t('bot.intro.stat.p')}</p>
+          </div>
+          <div class="max-md:order-first overflow-hidden md:rounded-lg">
+            <video src={`${videoSrc}#t=0.001`} width="1280" height="720" controls muted loop preload="metadata"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" data-scroll-animation class="mx-auto max-w-screen-lg px-2">
+      <div class="text-center space-y-4">
+        <h2 class="text-3xl text-balance font-bold">{t('bot.benefits.h2')}</h2>
+        <p class="text-pretty md:text-lg/tight max-w-[60ch] mx-auto">{t('bot.benefits.h2-sub')}</p>
+      </div>
+      <dl
+        class="flex items-center justify-evenly gap-4 flex-wrap mt-12 before:w-8 before:aspect-square before:border-cyberLilac before:border-2 before:hidden min-[850px]:before:block before:border-dashed before:animate-spin before:[animation-duration:10s] before:rounded-full before:order-1 after:w-8 after:aspect-square after:border-cyberLilac after:border-2 after:hidden min-[850px]:after:block after:border-dashed after:animate-spin after:[animation-duration:10s] after:rounded-full after:order-3"
+      >
+        {
+          benefits.map(([dt, dd, bg, order]) => (
+            <div
+              class:list={[
+                bg,
+                order,
+                'w-56 p-4 rounded-full aspect-square text-center h-full grid place-content-center',
+              ]}
+            >
+              <dt class="font-bold text-2xl mb-4">{dt}</dt>
+              <dd class="text-sm">{dd}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+    <Ecosystem />
+    <section id="industries" data-scroll-animation class="relative max-w-screen-lg mx-auto px-2 isolate">
+      <svg
+        class="absolute w-full h-full -z-10 max-lg:hidden"
+        width="1329"
+        height="590"
+        viewBox="0 0 1329 590"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M1328.56 11.4336C1328.9 3.74294 1320.78 -1.42723 1313.95 2.12731L1229.37 46.1575C1222.55 49.7121 1222.13 59.3254 1228.62 63.4615L1262.87 85.2844C1132.41 273.49 751.179 570 10 570C4.47715 570 0 574.477 0 580C0 585.523 4.47715 590 10 590C756.662 590 1145.1 290.955 1279.76 96.0415L1309.04 114.696C1315.53 118.832 1324.07 114.389 1324.4 106.698L1328.56 11.4336Z"
+          fill="url(#paint0_linear_1_9)"></path>
+        <defs>
+          <linearGradient
+            id="paint0_linear_1_9"
+            x1="1339"
+            y1="-15.0001"
+            x2="4.79516e-05"
+            y2="590"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#2697C2"></stop>
+            <stop offset="1" stop-color="#502FC6" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <h2 class="text-3xl text-balance font-bold text-center">{t('bot.industries.h2')}</h2>
+      <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 lg:[&>*:nth-child(4)]:col-start-2 mt-16">
+        {
+          (t('bot.industries.list', { returnObjects: true }) as string[]).map((item) => (
+            <li class="p-2 aspect-square bg-slate-950/90 rounded-lg grid h-full place-items-center text-2xl font-bold text-center">
+              <div class="brand-text">{item}</div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <Dashboard />
+    <Contact />
   </div>
 </Layout>
