@@ -66,19 +66,6 @@
     "categories": ["Development", "Design"]
   },
   {
-    "id": "kim-dong-hoon",
-    "name": {
-      "en": "Kim Dong-hoon",
-      "ko": "김동훈"
-    },
-    "subtitles": {
-      "en": ["Backend Developer"],
-      "ko": ["백엔드 개발자"]
-    },
-    "socials": ["https://www.linkedin.com/in/dong-hoon-kim/"],
-    "categories": ["Development"]
-  },
-  {
     "id": "jang-hee-jung",
     "name": {
       "en": "Jang Hee-jung",
