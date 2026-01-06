@@ -1,10 +1,12 @@
 ---
 import { NAV_LINKS, type Link } from '../constants'
-import { localizePath } from 'astro-i18next'
-import { t } from 'i18next'
+import { useTranslations, localizePath, getLocale } from '@/i18n'
 import logo from '../assets/logo.webp'
 import Social from './Social.astro'
 import { Image } from 'astro:assets'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 const footerLinks: Link[][] = [
   [
@@ -36,7 +38,7 @@ const footerLinks: Link[][] = [
                 {group.map((l) => (
                   <li class="hover:underline">
                     <a
-                      href={l.isExternal ? l.href : localizePath(l.href)}
+                      href={l.isExternal ? l.href : localizePath(l.href, locale)}
                       target={l.isExternal ? '_blank' : '_self'}
                       rel={l.isExternal ? 'noopener noreferrer' : ''}
                     >

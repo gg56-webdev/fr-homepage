@@ -1,11 +1,14 @@
 ---
-import { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import { Image } from 'astro:assets'
 import Collapse from '../Collapse.astro'
 import step1 from '@/assets/how-it-works/how-app-works/step-1.png'
 import step2 from '@/assets/how-it-works/how-app-works/step-2.png'
 import step3 from '@/assets/how-it-works/how-app-works/step-3.png'
 import step4 from '@/assets/how-it-works/how-app-works/step-4.png'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 const steps = t('how-it-works.how-app-works.steps', { returnObjects: true }) as [string, string][]
 const stepImgs = [

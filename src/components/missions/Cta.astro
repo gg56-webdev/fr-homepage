@@ -1,6 +1,9 @@
 ---
 import { DOWNLOAD_LINK } from '@/constants'
-import { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <div class="mx-auto max-w-screen-md px-2">

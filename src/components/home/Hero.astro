@@ -10,9 +10,23 @@ import Apple from '@/components/DownloadBtn/Apple.astro'
 import Google from '@/components/DownloadBtn/Google.astro'
 import QR from '@/components/DownloadBtn/QR.astro'
 import { Image } from 'astro:assets'
-import { Trans } from 'astro-i18next/components'
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale, interpolateComponents } from '@/i18n'
 import Share from '../DownloadBtn/Share.astro'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
+const heroH1 = interpolateComponents(t('home.hero.h1') as string, {
+  0: (content) => `<span class="inline-grid text-center animate-stack">${content}</span>`,
+  1: (content) => `<span>${content}</span>`,
+  2: (content) => `<span>${content}</span>`,
+  3: (content) => `<span>${content}</span>`,
+  4: (content) => `<span>${content}</span>`,
+  5: (content) => `<span>${content}</span>`,
+  6: (content) => `<span>${content}</span>`,
+  7: (content) => `<span>${content}</span>`,
+  8: (content) => `<span>${content}</span>`
+})
 ---
 
 <section
@@ -49,7 +63,7 @@ import Share from '../DownloadBtn/Share.astro'
     >
       <div class="relative [transform-style:preserve-3d]">
         <Image
-          src={i18next.language === 'ko' ? phoneKo : phoneEn}
+          src={locale === 'ko' ? phoneKo : phoneEn}
           alt="Phone with a FingeRate App demo"
           class="block h-[350px] w-fit object-contain drop-shadow-md md:order-2 md:h-[500px]"
           loading={'eager'}
@@ -84,7 +98,7 @@ import Share from '../DownloadBtn/Share.astro'
           <span class="hidden md:inline text-sm font-medium">{t('home.hero.app-ui.wallet')}</span>
         </div>
         <div class="grid place-items-center font-bold text-sm md:text-base">
-          {new Intl.NumberFormat(i18next.language).format(2798)} SoM
+          {new Intl.NumberFormat(locale).format(2798)} SoM
         </div>
         <p class="justify-self-end text-xs">1 SoM = $0.1</p>
       </div>
@@ -92,7 +106,7 @@ import Share from '../DownloadBtn/Share.astro'
         class="absolute -right-[50%] top-[30%] [transform:translateZ(-30px)] flex gap-2 transition-all hover:[translate:0] md:-right-[105%] md:[translate:-30%] text-xs *:w-[120px]"
       >
         {
-          i18next.language === 'ko' && (
+          locale === 'ko' && (
             <li class="transition hover:-translate-y-2">
               <article class="h-full flex flex-col overflow-hidden bg-white text-deepSpace rounded-xl">
                 <Image
@@ -121,7 +135,7 @@ import Share from '../DownloadBtn/Share.astro'
           </article>
         </li>
         {
-          i18next.language !== 'ko' && (
+          locale !== 'ko' && (
             <li class="transition hover:-translate-y-2">
               <article class="h-full flex flex-col overflow-hidden bg-white text-deepSpace rounded-xl">
                 <Image src={coupon3} loading="eager" alt="Amazon logo" class="aspect-video w-full object-cover" />
@@ -150,22 +164,7 @@ import Share from '../DownloadBtn/Share.astro'
   <div class="relative z-10 text-center md:text-left">
     <div class="h-[clamp(1rem,8.5vw,3.9rem)] overflow-hidden md:h-[clamp(1rem,4.4vw,3.2rem)]">
       <h1 class="sr-only">Survey × Metaverse = FingeRate</h1>
-      <div class="text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]">
-        <Trans i18nKey="home.hero.h1">
-          Survey ×
-          <span class="inline-grid text-center animate-stack">
-            <span>Metaverse</span>
-            <span>Avatar</span>
-            <span>Business</span>
-            <span>Rewards</span>
-            <span>Satisfaction</span>
-            <span>LBS</span>
-            <span>Simplicity</span>
-            <span>Metaverse</span>
-          </span>
-          = FingeRate
-        </Trans>
-      </div>
+      <div class="text-[clamp(1.1rem,5.5vw,2.5rem)] font-bold md:text-[clamp(1.1rem,2.9vw,2.3rem)]" set:html={heroH1} />
     </div>
     <p class="mx-auto mt-4 max-w-[70ch] tracking-wide sm:text-xl md:mx-0 md:mt-8">
       {t('home.hero.p')}

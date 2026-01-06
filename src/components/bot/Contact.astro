@@ -1,6 +1,9 @@
 ---
 import Form from "@/components/Form.astro";
-import { t } from "i18next";
+import { useTranslations, getLocale } from '@/i18n';
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section id="contact" data-scroll-animation class="mx-auto max-w-screen-lg p-2">

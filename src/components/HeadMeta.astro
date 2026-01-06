@@ -1,5 +1,8 @@
 ---
-import { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 interface Props {
   title?: string

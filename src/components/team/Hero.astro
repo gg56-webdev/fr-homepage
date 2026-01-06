@@ -7,7 +7,10 @@ import img5 from '@/assets/team/hero/5.webp'
 import img6 from '@/assets/team/hero/6.jpeg'
 import img7 from '@/assets/team/hero/7.webp'
 import { Image } from 'astro:assets'
-import { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section class="mx-auto max-w-screen-xl px-2">

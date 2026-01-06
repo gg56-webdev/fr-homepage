@@ -1,14 +1,15 @@
 ---
-import i18next, { changeLanguage, t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import { getPosts } from '@/api'
 import Layout from '@/layouts/Layout.astro'
 import NewsCard from '@/components/NewsCard.astro'
 import { type GetStaticPathsOptions } from 'astro'
 
-changeLanguage('en')
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const posts = await getPosts({ lang: i18next.language })
+  const posts = await getPosts({ lang: 'en' })
   return paginate(posts, { pageSize: 12 })
 }
 const { page } = Astro.props

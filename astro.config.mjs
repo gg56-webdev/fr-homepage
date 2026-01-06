@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config'
-import astroI18next from 'astro-i18next'
 import tailwind from '@astrojs/tailwind'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
@@ -7,11 +6,17 @@ import sitemap from '@astrojs/sitemap'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.fingerate.world',
+  i18n: {
+    locales: ['en', 'ko'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
-    astroI18next(),
     partytown({
       config: {
         forward: ['dataLayer.push'],

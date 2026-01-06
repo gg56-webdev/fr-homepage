@@ -5,9 +5,10 @@ import Hero from '@/components/how-it-works/Hero.astro'
 import HowAppWorks from '@/components/how-it-works/HowAppWorks.astro'
 import Missions from '@/components/how-it-works/Missions.astro'
 import Layout from '@/layouts/Layout.astro'
-import { changeLanguage, t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 
-changeLanguage('ko')
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <Layout image="/og/faq.jpg" title={t('seo.how-it-works.title')!}>

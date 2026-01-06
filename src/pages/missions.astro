@@ -2,11 +2,12 @@
 import Layout from '@/layouts/Layout.astro'
 import Cta from '@/components/missions/Cta.astro'
 import FAQ from '@/components/missions/FAQ.astro'
-import { changeLanguage, t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import Steps from '@/components/missions/Steps.astro'
 import Hero from '@/components/missions/Hero.astro'
 
-changeLanguage('en')
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <Layout title={t('seo.missions.title')!}>

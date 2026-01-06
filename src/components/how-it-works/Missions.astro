@@ -1,7 +1,10 @@
 ---
-import { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import missionTrack from '@/assets/how-it-works/missions/track.png'
 import { Image } from 'astro:assets'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section data-scroll-animation id="missions" class="max-w-screen-lg mx-auto px-2">

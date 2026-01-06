@@ -7,7 +7,9 @@ import fb from '@/assets/social/FB.svg'
 import tg from '@/assets/social/TG.svg'
 import md from '@/assets/social/MD.svg'
 import yt from '@/assets/social/YT.svg'
-import i18next from 'i18next'
+import { getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
 
 const links = [
   [S_L.INSTAGRAM.href, S_L.INSTAGRAM.name, ig],
@@ -15,7 +17,7 @@ const links = [
   [S_L.X.href, S_L.X.name, x],
   [S_L.FACEBOOK.href, S_L.FACEBOOK.name, fb],
   [S_L.MEDIUM.href, S_L.MEDIUM.name, md],
-  [S_L.TELEGRAM.href(i18next.language), S_L.TELEGRAM.name, tg],
+  [S_L.TELEGRAM.href(locale), S_L.TELEGRAM.name, tg],
   [S_L.YOUTUBE.href, S_L.YOUTUBE.name, yt],
 ] as const
 ---

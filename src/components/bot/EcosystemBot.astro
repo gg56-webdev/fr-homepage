@@ -1,7 +1,10 @@
 ---
 import { Image } from 'astro:assets'
 import botImg from '@/assets/bot/ecosystem/bot.png'
-import { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 const botBtns = [
   ['camera', t('bot.ecosystem.tab-panels.0.0')],

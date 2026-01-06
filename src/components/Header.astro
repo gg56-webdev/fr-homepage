@@ -1,7 +1,9 @@
 ---
-import { localizePath } from 'astro-i18next'
-import i18next, { t } from 'i18next'
+import { useTranslations, localizePath, getLocale, locales } from '@/i18n'
 import { NAV_LINKS, type Link } from '../constants'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 type Dropdown = { name: string; href?: string; links: Link[] }
 
@@ -9,7 +11,7 @@ const navLinks: Array<Link | Dropdown> = [
   {
     ...NAV_LINKS.HOME,
     name: t('links.home'),
-    href: localizePath(NAV_LINKS.HOME.href),
+    href: localizePath(NAV_LINKS.HOME.href, locale),
   },
   {
     name: t('links.app'),
@@ -17,22 +19,22 @@ const navLinks: Array<Link | Dropdown> = [
       {
         ...NAV_LINKS.HOW_IT_WORKS,
         name: t('links.how-it-works'),
-        href: localizePath(NAV_LINKS.HOW_IT_WORKS.href),
+        href: localizePath(NAV_LINKS.HOW_IT_WORKS.href, locale),
       },
       {
         ...NAV_LINKS.AGENT,
         name: t('links.agent'),
-        href: localizePath(NAV_LINKS.AGENT.href),
+        href: localizePath(NAV_LINKS.AGENT.href, locale),
       },
       {
         ...NAV_LINKS.MISSIONS,
         name: t('links.missions'),
-        href: localizePath(NAV_LINKS.MISSIONS.href),
+        href: localizePath(NAV_LINKS.MISSIONS.href, locale),
       },
       {
         ...NAV_LINKS.FAQ,
         name: t('links.faq'),
-        href: localizePath(NAV_LINKS.FAQ.href),
+        href: localizePath(NAV_LINKS.FAQ.href, locale),
       },
     ],
   },
@@ -42,17 +44,17 @@ const navLinks: Array<Link | Dropdown> = [
       {
         ...NAV_LINKS.TEAM,
         name: t('links.team'),
-        href: localizePath(NAV_LINKS.TEAM.href),
+        href: localizePath(NAV_LINKS.TEAM.href, locale),
       },
       {
         ...NAV_LINKS.NEWS,
         name: t('links.news'),
-        href: localizePath(NAV_LINKS.NEWS.href),
+        href: localizePath(NAV_LINKS.NEWS.href, locale),
       },
       {
         ...NAV_LINKS.CONTACT,
         name: t('links.contact'),
-        href: localizePath(NAV_LINKS.CONTACT.href),
+        href: localizePath(NAV_LINKS.CONTACT.href, locale),
       },
     ],
   },
@@ -200,11 +202,11 @@ const currentUrl = import.meta.env.DEV
         <li>
           <div class="md:pl-4 md:border-l">
             {
-              ['en', 'ko'].map((lang) => (
+              locales.map((lang) => (
                 <a
                   class:list={[
                     'text-sm  px-2 rounded uppercase py-1 font-medium hover:underline',
-                    { 'bg-intelligentBlue': lang === i18next.language },
+                    { 'bg-intelligentBlue': lang === locale },
                   ]}
                   href={localizePath(Astro.url.pathname, lang)}
                   set:text={lang}

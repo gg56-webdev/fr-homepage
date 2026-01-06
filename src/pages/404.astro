@@ -1,9 +1,10 @@
 ---
-import { changeLanguage, t } from "i18next";
+import { useTranslations, getLocale } from '@/i18n';
 import { NAV_LINKS } from "@/constants";
 import Layout from "@/layouts/Layout.astro";
 
-changeLanguage("en");
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <Layout>

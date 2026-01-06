@@ -1,21 +1,25 @@
 ---
-import { Trans } from 'astro-i18next/components';
-import { t } from 'i18next';
+import { useTranslations, getLocale, interpolateComponents } from '@/i18n';
 import FormField from './FormField.astro';
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
+const messageLabel = interpolateComponents(t('contact-form.text') as string, {
+  0: (content) => `<small>${content}</small>`
+})
 ---
 
 <form class="grid gap-6" action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_WEB3_FORM_ACCESS_KEY} />
   <input type="checkbox" name="botcheck" class="hidden" />
 
-  <FormField label={t('contact-form.name')} name="name" required autocomplete="name" />
-  <FormField label={t('contact-form.email')} name="email" type="email" required autocomplete="email" />
+  <FormField label={t('contact-form.name') as string} name="name" required autocomplete="name" />
+  <FormField label={t('contact-form.email') as string} name="email" type="email" required autocomplete="email" />
 
   <div class="grid gap-2">
     <label class="mb-1 block text-sm font-medium" for="message"
-      ><Trans i18nKey="contact-form.text">
-        Message <small>(max 225 characters)</small>
-      </Trans></label
+      ><span set:html={messageLabel} /></label
     >
     <textarea
       maxlength="225"

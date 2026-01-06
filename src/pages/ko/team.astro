@@ -1,12 +1,13 @@
 ---
-import { changeLanguage, t } from "i18next";
+import { useTranslations, getLocale } from '@/i18n';
 import Layout from "@/layouts/Layout.astro";
 import CoreTeam from "@/components/team/CoreTeam.astro";
 import Hero from "@/components/team/Hero.astro";
 import History from "@/components/team/History.astro";
 import Partners from "@/components/Partners.astro";
 
-changeLanguage("ko");
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <Layout image="/og/team.jpg" title={t('seo.team.title')!} description={t('seo.team.description')!}>

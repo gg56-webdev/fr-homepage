@@ -4,12 +4,14 @@ import CookieBanner from '@/components/CookieBanner.astro'
 import Footer from '@/components/Footer.astro'
 import HeadMeta from '@/components/HeadMeta.astro'
 import Header from '@/components/Header.astro'
+import HeadHrefLangs from '@/components/HeadHrefLangs.astro'
 import ScrollToTop from '@/components/ScrollToTop.astro'
 import GA from '@/scripts/GA.astro'
-import { HeadHrefLangs } from 'astro-i18next/components'
+import { getLocale } from '@/i18n'
 import { getImage } from 'astro:assets'
-import i18next from 'i18next'
 import './style.css'
+
+const locale = getLocale(Astro)
 
 const optimizedBg = await getImage({ src: bg, format: 'avif', quality: 'mid' })
 
@@ -23,7 +25,7 @@ export interface Props {
 
 <!doctype html>
 <html
-  lang={i18next.language}
+  lang={locale}
   class="[&:has(dialog[data-modal][open])]:overflow-hidden [&[lang='ko']]:break-keep [color-scheme:dark] scroll-smooth scroll-pt-20"
 >
   <head>

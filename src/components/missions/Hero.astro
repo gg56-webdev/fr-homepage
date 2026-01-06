@@ -1,7 +1,15 @@
 ---
 import heroImg from '@/assets/missions/hero/hero.png'
-import { Trans } from 'astro-i18next/components'
+import { useTranslations, getLocale, interpolateComponents } from '@/i18n'
 import { Image } from 'astro:assets'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
+const heroH1 = interpolateComponents(t('missions.hero.h1') as string, {
+  0: (content) => `<h1 class="text-balance text-3xl/relaxed md:text-4xl/relaxed text-balance md:max-w-[30ch] text-intelligentBlue max-md:text-white md:text-center font-bold">${content}</h1>`,
+  1: (content) => `<mark class="bg-intelligentBlue text-white px-6 py-2 rounded-full">${content}</mark>`
+})
 ---
 
 <section class="relative px-2" id="hero">
@@ -10,16 +18,7 @@ import { Image } from 'astro:assets'
   >
     <Image src={heroImg} loading="eager" alt="Blurred map with mission locations" class="max-md:hidden" />
     <div class="backdrop-blur-md p-6 md:rounded-lg md:bg-white/30">
-      <Trans i18nKey="missions.hero.h1">
-        <h1
-          class="text-3xl/relaxed md:text-4xl/relaxed text-balance md:max-w-[30ch] text-intelligentBlue max-md:text-white md:text-center font-bold"
-        >
-          Connect, Visit, Earn
-          <br />
-          <mark class="bg-intelligentBlue text-white px-6 py-2 rounded-full">Missions</mark> are now available on the FingeRate
-          App
-        </h1>
-      </Trans>
+      <span set:html={heroH1} />
     </div>
   </div>
   <div

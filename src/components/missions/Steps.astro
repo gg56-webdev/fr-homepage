@@ -4,7 +4,10 @@ import phoneScreen2En from '@/assets/missions/steps/step-2-en.png'
 import phoneScreen3En from '@/assets/missions/steps/step-3-en.png'
 
 import { Image } from 'astro:assets'
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 // TODO: add KO images
 
