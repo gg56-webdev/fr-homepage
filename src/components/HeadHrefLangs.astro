@@ -1,0 +1,21 @@
+---
+/**
+ * HeadHrefLangs component - generates hreflang link tags for SEO
+ * Replacement for astro-i18next's HeadHrefLangs
+ */
+import { getAlternateLocaleUrls, defaultLocale } from '../i18n'
+
+const currentPath = Astro.url.pathname
+const alternates = getAlternateLocaleUrls(currentPath, Astro.site)
+---
+
+{
+  alternates.map(({ locale, url }) => (
+    <link rel="alternate" hreflang={locale} href={url} />
+  ))
+}
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href={alternates.find((a) => a.locale === defaultLocale)?.url}
+/>

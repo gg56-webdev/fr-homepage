@@ -1,9 +1,12 @@
 ---
 import team from '@/data/team/team.json'
 import { Image } from 'astro:assets'
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 
-const lang = i18next.language as 'ko' | 'en'
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
+const lang = locale as 'ko' | 'en'
 const people = team.map(({ name, subtitles, ...info }) => ({ name: name[lang], subtitles: subtitles[lang], ...info }))
 const categories = new Set(team.flatMap(({ categories }) => categories))
 const photos: ImageMetadata[] = await Astro.glob('../../assets/team/team/*.{png,webp}').then((files) =>

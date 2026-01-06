@@ -1,31 +1,33 @@
 ---
-import { localizePath } from 'astro-i18next'
-import { t } from 'i18next'
+import { useTranslations, getLocale, localizePath } from '@/i18n'
 import { NAV_LINKS, COINGECKO_LINK } from '@/constants'
 import { Image } from 'astro:assets'
 import logo from '@/assets/logo.webp'
 import Apple from '../DownloadBtn/Apple.astro'
 import Google from '../DownloadBtn/Google.astro'
 
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
 const products = [
   [
     'App',
-    localizePath(NAV_LINKS.APP.href),
+    localizePath(NAV_LINKS.APP.href, locale),
     'bg-indigo-600 translate-x-[calc(cos(0deg+var(--a))*var(--r))] translate-y-[calc(sin(0deg+var(--a))*var(--r))]',
   ],
   [
     'Bot',
-    localizePath(NAV_LINKS.BOT.href),
+    localizePath(NAV_LINKS.BOT.href, locale),
     'bg-rose-700 translate-x-[calc(cos(90deg+var(--a))*var(--r))] translate-y-[calc(sin(90deg+var(--a))*var(--r))]',
   ],
   [
     'Token',
-    localizePath(NAV_LINKS.APP.href),
+    localizePath(NAV_LINKS.APP.href, locale),
     'bg-sky-700 translate-x-[calc(cos(180deg+var(--a))*var(--r))] translate-y-[calc(sin(180deg+var(--a))*var(--r))]',
   ],
   [
     'Millage',
-    localizePath(NAV_LINKS.APP.href) + '#som',
+    localizePath(NAV_LINKS.APP.href, locale) + '#som',
     'bg-purple-700 translate-x-[calc(cos(270deg+var(--a))*var(--r))] translate-y-[calc(sin(270deg+var(--a))*var(--r))]',
   ],
 ] as const

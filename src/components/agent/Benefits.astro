@@ -1,5 +1,8 @@
 ---
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section data-scroll-animation id="benefits" class="bg-slate-950/80 py-24 relative z-10">

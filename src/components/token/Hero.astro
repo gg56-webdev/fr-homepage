@@ -2,14 +2,20 @@
 import { DOWNLOAD_LINK } from '@/constants'
 import token from '@/assets/token/msot.webp'
 import { Image } from 'astro:assets'
-import i18next, { t } from 'i18next'
-import { Trans } from 'astro-i18next/components'
+import { useTranslations, getLocale, interpolateComponents } from '@/i18n'
 
-export const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
-  new Intl.NumberFormat(i18next.language, {
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
+export const formatNumber = (num: number, locale: string, options?: Intl.NumberFormatOptions) =>
+  new Intl.NumberFormat(locale, {
     notation: 'compact',
     ...options,
   }).format(num)
+
+const heroP = interpolateComponents(t('token.hero.p') as string, {
+  0: (content) => `<a href="${DOWNLOAD_LINK}" class="text-neonBlue underline" target="_blank" rel="noopener noreferrer">${content}</a>`
+})
 ---
 
 <section class="mx-auto grid max-w-screen-lg content-center items-center gap-8 px-2 pt-12 md:grid-cols-2">
@@ -25,14 +31,14 @@ export const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
         <div class="flex flex-col-reverse flex-wrap gap-2">
           <dt>{t('token.hero.quantity')}</dt>
           <dd class="md:text-4xl text-3xl font-bold">
-            {formatNumber(1_800_000_000)}
+            {formatNumber(1_800_000_000, locale)}
           </dd>
         </div>
         <div class="flex flex-col-reverse gap-2">
           <dt>{t('token.hero.price')}</dt>
           <dd id="token-price" class="animate-pulse md:text-4xl text-3xl font-bold">
             {
-              formatNumber(0.0, {
+              formatNumber(0.0, locale, {
                 currency: 'USD',
                 style: 'currency',
                 maximumFractionDigits: 4,
@@ -42,16 +48,7 @@ export const formatNumber = (num: number, options?: Intl.NumberFormatOptions) =>
         </div>
       </dl>
     </div>
-    <p class="text-center text-lg">
-      <Trans i18nKey="token.hero.p">
-        Take full advantage of the FingeRate ecosystem! Download the <a
-          href={DOWNLOAD_LINK}
-          class="text-neonBlue underline"
-          target="_blank"
-          rel="noopener noreferrer">App</a
-        >, earn rewards, and trade MSOT on Latoken
-      </Trans>
-    </p>
+    <p class="text-center text-lg" set:html={heroP} />
     <a
       class="flex rounded-full border-2 border-intelligentBlue p-2 font-medium transition hover:bg-intelligentBlue focus:bg-intelligentBlue"
       href="https://latoken.com/exchange/MSOT_BTC"

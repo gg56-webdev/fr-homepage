@@ -1,31 +1,38 @@
 ---
 import Accordion from '@/components/FAQ/Accordion.astro'
-import { Trans } from 'astro-i18next/components'
-import { t } from 'i18next'
+import { useTranslations, getLocale, interpolateComponents } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
+const faq01 = interpolateComponents(t('missions.faq.q&a.0.1') as string, {
+  0: (content) => `<p>${content}</p>`
+})
+const faq11 = interpolateComponents(t('missions.faq.q&a.1.1') as string, {
+  0: (content) => `<p>${content}</p>`
+})
+const faq21 = interpolateComponents(t('missions.faq.q&a.2.1') as string, {
+  0: (content) => `<p>${content}</p>`
+})
+const faq31 = interpolateComponents(t('missions.faq.q&a.3.1') as string, {
+  0: (content) => `<p>${content}</p>`
+})
 ---
 
 <section class="mx-auto max-w-screen-sm px-2">
   <h2 class="text-4xl font-bold text-center mb-8">FAQ</h2>
   <div class="space-y-4">
-    <Accordion name="q&a" title={t('missions.faq.q&a.0.0')}>
-      <Trans i18nKey="missions.faq.q&a.0.1">
-        <p></p>
-      </Trans>
+    <Accordion name="q&a" title={t('missions.faq.q&a.0.0') as string}>
+      <span set:html={faq01} />
     </Accordion>
-    <Accordion name="q&a" title={t('missions.faq.q&a.1.0')}>
-      <Trans i18nKey="missions.faq.q&a.1.1">
-        <p></p>
-      </Trans>
+    <Accordion name="q&a" title={t('missions.faq.q&a.1.0') as string}>
+      <span set:html={faq11} />
     </Accordion>
-    <Accordion name="q&a" title={t('missions.faq.q&a.2.0')}>
-      <Trans i18nKey="missions.faq.q&a.2.1">
-        <p></p>
-      </Trans>
+    <Accordion name="q&a" title={t('missions.faq.q&a.2.0') as string}>
+      <span set:html={faq21} />
     </Accordion>
-    <Accordion name="q&a" title={t('missions.faq.q&a.3.0')}>
-      <Trans i18nKey="missions.faq.q&a.3.1">
-        <p></p>
-      </Trans>
+    <Accordion name="q&a" title={t('missions.faq.q&a.3.0') as string}>
+      <span set:html={faq31} />
     </Accordion>
   </div>
 </section>

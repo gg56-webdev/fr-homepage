@@ -3,10 +3,10 @@ import Ecosystem from "@/components/FAQ/Ecosystem.astro";
 import QnA from "@/components/FAQ/QnA.astro";
 import { NAV_LINKS } from "@/constants";
 import Layout from "@/layouts/Layout.astro";
-import { localizePath } from "astro-i18next";
-import { changeLanguage, t } from "i18next";
+import { useTranslations, localizePath, getLocale } from '@/i18n';
 
-changeLanguage("ko");
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <Layout image="/og/faq.jpg" title={t('seo.faq.title')!} description={t('seo.faq.description')!}>
@@ -17,7 +17,7 @@ changeLanguage("ko");
     </section>
     <section data-scroll-animation class="md:col-span-2 rounded-lg bg-brandGradient text-center p-8">
       <h2 class="font-bold text-3xl mb-4">{t('faq.contact.h2')}</h2>
-      <a class="hover:underline text-lg" href={localizePath(NAV_LINKS.CONTACT.href)}>{t('faq.contact.link')}</a>
+      <a class="hover:underline text-lg" href={localizePath(NAV_LINKS.CONTACT.href, locale)}>{t('faq.contact.link')}</a>
     </section>
   </div>
 </Layout>

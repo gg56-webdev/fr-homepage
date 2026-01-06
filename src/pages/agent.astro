@@ -5,9 +5,10 @@ import Explanations from '@/components/agent/Explanations.astro'
 import FAQ from '@/components/agent/FAQ.astro'
 import Hero from '@/components/agent/Hero.astro'
 import Layout from '@/layouts/Layout.astro'
-import { changeLanguage, t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 
-changeLanguage('en')
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <Layout title={t('seo.agent.title')!}>

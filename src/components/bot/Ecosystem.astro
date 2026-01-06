@@ -1,14 +1,17 @@
 ---
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import EcosystemBot from './EcosystemBot.astro'
 import { Image } from 'astro:assets'
 
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
 const app =
-  i18next.language === 'ko'
+  locale === 'ko'
     ? (await import('@/assets/bot/ecosystem/app-ko.png')).default
     : (await import('@/assets/bot/ecosystem/app.png')).default
 const dashboard =
-  i18next.language === 'ko'
+  locale === 'ko'
     ? (await import('@/assets/bot/ecosystem/dashboard-ko.png')).default
     : (await import('@/assets/bot/ecosystem/dashboard.png')).default
 

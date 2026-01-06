@@ -1,12 +1,22 @@
 ---
 import { NAV_LINKS } from "@/constants";
-import { t } from "i18next";
-import { Trans } from "astro-i18next/components";
-import { localizePath } from "astro-i18next";
+import { useTranslations, localizePath, getLocale, interpolateComponents } from "@/i18n";
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
+
 const privacyLink = NAV_LINKS.PRIVACY;
 const href = privacyLink.isExternal
   ? privacyLink.href
-  : localizePath(privacyLink.href);
+  : localizePath(privacyLink.href, locale);
+
+// Process the cookie description with the privacy link
+const cookieDescription = interpolateComponents(
+  t('cookie.description') as string,
+  {
+    0: (content) => `<a href="${href}" target="${privacyLink.isExternal ? '_blank' : '_self'}" rel="${privacyLink.isExternal ? 'noopener noreferrer' : ''}" class="underline">${content}</a>`
+  }
+)
 ---
 
 <div id="cookie-banner" class="fixed bottom-0 z-20 hidden w-full p-2">
@@ -15,19 +25,7 @@ const href = privacyLink.isExternal
   >
     <div class="max-w-[70ch]">
       <b>{t("cookie.title")}</b>
-      <small class="block">
-        <Trans i18nKey="cookie.description">
-          To provide the best experiences, we use technologies like cookies to
-          store and/or access device information. Consenting to these
-          technologies will allow us to process data such as browsing behavior
-          or unique IDs on this site. <a
-            {href}
-            target={privacyLink.isExternal ? "_blank" : "_self"}
-            rel={privacyLink.isExternal ? "noopener noreferrer" : ""}
-            class="underline">Privacy&nbsp;Policy</a
-          >
-        </Trans>
-      </small>
+      <small class="block" set:html={cookieDescription} />
     </div>
     <div class="grid grow grid-flow-col gap-2 sm:max-w-[25%]">
       <button

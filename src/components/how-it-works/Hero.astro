@@ -1,7 +1,10 @@
 ---
 import { Image } from 'astro:assets'
-import { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import hero from '@/assets/how-it-works/hero/hero.png'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section

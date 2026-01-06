@@ -8,9 +8,10 @@ import metaverse from '@/assets/home/metaverse-sot.webp'
 import Form from '@/components/Form.astro'
 import Layout from '@/layouts/Layout.astro'
 import { Image } from 'astro:assets'
-import i18next, { changeLanguage, t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 
-changeLanguage('en')
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <Layout image="/og/contact.jpg" title={t('seo.contact.title')!} description={t('seo.contact.description')!}>
@@ -37,7 +38,7 @@ changeLanguage('en')
             {t('contact.details.h2')}
           </h2>
           <a
-            href={SOCIAL_LINKS.TELEGRAM.href(i18next.language)}
+            href={SOCIAL_LINKS.TELEGRAM.href(locale)}
             target="_blank"
             rel="noopener noreferrer"
             class="rounded-lg bg-intelligentBlue inline-block px-5 py-2.5 text-center text-sm font-medium transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"

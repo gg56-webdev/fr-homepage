@@ -4,7 +4,10 @@ import Apple from "@/components/DownloadBtn/Apple.astro";
 import Google from "@/components/DownloadBtn/Google.astro";
 import QR from "@/components/DownloadBtn/QR.astro";
 import { Image } from "astro:assets";
-import { t } from "i18next";
+import { useTranslations, getLocale } from '@/i18n';
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section

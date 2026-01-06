@@ -2,11 +2,13 @@
 import { Image } from 'astro:assets'
 import token from '@/assets/token/msot.webp'
 import { NAV_LINKS } from '@/constants'
-import { localizePath } from 'astro-i18next'
+import { getLocale, localizePath } from '@/i18n'
+
+const locale = getLocale(Astro)
 ---
 
 <a
-  href={localizePath(NAV_LINKS.TOKEN.href)}
+  href={localizePath(NAV_LINKS.TOKEN.href, locale)}
   class="hover:ring-2 transition hover:ring-white hover:ring-offset-1 inline-flex gap-2 bg-slate-950/80 rounded-full items-center"
 >
   <Image src={token} alt="MSOT token logo" class="h-6 w-6" loading={'eager'} />

@@ -4,8 +4,11 @@ import network from '@/assets/token/network.png'
 import socials from '@/assets/token/socials.png'
 import { SOCIAL_LINKS } from '@/constants'
 import { Image } from 'astro:assets'
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import { formatNumber } from './Hero.astro'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section class="mx-auto max-w-screen-lg p-2 space-y-16 md:space-y-24">
@@ -21,16 +24,16 @@ import { formatNumber } from './Hero.astro'
         <dl class="flex gap-12">
           <div class="flex flex-col-reverse gap-2">
             <dt class="text-sm">{t('token.hero.quantity')}</dt>
-            <dd class="font-bold text-4xl text-white">{formatNumber(1_800_000_000)}</dd>
+            <dd class="font-bold text-4xl text-white">{formatNumber(1_800_000_000, locale)}</dd>
           </div>
           <div class="flex flex-col-reverse gap-2">
             <dt class="text-sm">{t('token.about.section-1.stat')}</dt>
-            <dd class="font-bold text-4xl text-white">+{formatNumber(30_000, { notation: 'standard' })}</dd>
+            <dd class="font-bold text-4xl text-white">+{formatNumber(30_000, locale, { notation: 'standard' })}</dd>
           </div>
         </dl>
         <a
           class="rounded-full ring-offset-black transition hover:ring-2 hover:ring-white hover:ring-offset-1"
-          href={SOCIAL_LINKS.TELEGRAM.href(i18next.language)}
+          href={SOCIAL_LINKS.TELEGRAM.href(locale)}
           target="_blank"
           rel="noopener noreferrer"
           title="Join Telegram group!"

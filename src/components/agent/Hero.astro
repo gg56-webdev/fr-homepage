@@ -1,7 +1,10 @@
 ---
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
 import Coupons from '@/components/how-it-works/Coupons.astro'
 import { DOWNLOAD_LINK } from '@/constants'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 ---
 
 <section class="relative px-2" id="hero">

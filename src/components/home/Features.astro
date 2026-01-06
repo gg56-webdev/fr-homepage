@@ -6,28 +6,31 @@ import phoneScreen1Ko from '@/assets/home/features/phone-screen-1-ko.png'
 import phoneScreen2Ko from '@/assets/home/features/phone-screen-2-ko.png'
 import phoneScreen3Ko from '@/assets/home/features/phone-screen-3-ko.png'
 import { Image } from 'astro:assets'
-import i18next, { t } from 'i18next'
+import { useTranslations, getLocale } from '@/i18n'
+
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 const content = [
   [
     t('home.features.0.0'),
     t('home.features.0.1'),
     t('home.features.0.2'),
-    i18next.language === 'ko' ? phoneScreen1Ko : phoneScreen1En,
+    locale === 'ko' ? phoneScreen1Ko : phoneScreen1En,
     's2e',
   ],
   [
     t('home.features.1.0'),
     t('home.features.1.1'),
     t('home.features.1.2'),
-    i18next.language === 'ko' ? phoneScreen2Ko : phoneScreen2En,
+    locale === 'ko' ? phoneScreen2Ko : phoneScreen2En,
     'som',
   ],
   [
     t('home.features.2.0'),
     t('home.features.2.1'),
     t('home.features.2.2'),
-    i18next.language === 'ko' ? phoneScreen3Ko : phoneScreen3En,
+    locale === 'ko' ? phoneScreen3Ko : phoneScreen3En,
     'safety',
   ],
 ] as const

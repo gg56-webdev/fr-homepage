@@ -1,6 +1,5 @@
 ---
-import i18next, { changeLanguage, t } from 'i18next'
-import { localizePath } from 'astro-i18next'
+import { useTranslations, localizePath, getLocale } from '@/i18n'
 import Layout from '@/layouts/Layout.astro'
 import { getPost, getPosts } from '@/api'
 import type { GetStaticPaths } from 'astro'
@@ -8,13 +7,14 @@ import type { WP_REST_API_Post } from 'wp-types'
 import { NAV_LINKS } from '@/constants'
 import NewsCard from '@/components/NewsCard.astro'
 
-changeLanguage('en')
+const locale = getLocale(Astro)
+const { t } = useTranslations(locale)
 
 interface Props {
   id: WP_REST_API_Post['id']
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getPosts({ lang: i18next.language, minimal: true })
+  const posts = await getPosts({ lang: 'en', minimal: true })
   return posts
     .filter(({ link }) => link.startsWith('https://gg56.com/'))
     .map(({ slug, id }) => ({
@@ -23,14 +23,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }))
 }
 const { id } = Astro.props
-const post = await getPost({ id, lang: i18next.language })
-const recentPosts = (await getPosts({ lang: i18next.language, limit: 4 })).filter((post) => post.id !== id).slice(0, 3)
+const post = await getPost({ id, lang: locale })
+const recentPosts = (await getPosts({ lang: locale, limit: 4 })).filter((post) => post.id !== id).slice(0, 3)
 ---
 
 <Layout title={post.title.rendered}>
   <article class="prose prose-invert mx-auto max-w-screen-md bg-slate-900 px-2 py-12 md:px-12 rounded-lg">
     <h1 class="[text-wrap:balance;]" set:html={post.title.rendered} />
-    <time datetime={post.date} class="text-neonBlue">{new Date(post.date).toLocaleDateString(i18next.language)}</time>
+    <time datetime={post.date} class="text-neonBlue">{new Date(post.date).toLocaleDateString(locale)}</time>
     <Fragment set:html={post.content.rendered} />
     <footer class="space-y-8">
       <h2>{t('news.recent')}</h2>
@@ -43,7 +43,7 @@ const recentPosts = (await getPosts({ lang: i18next.language, limit: 4 })).filte
           ))
         }
       </ul>
-      <a href={localizePath(NAV_LINKS.NEWS.href)} class="not-prose block hover:underline max-sm:underline"
+      <a href={localizePath(NAV_LINKS.NEWS.href, locale)} class="not-prose block hover:underline max-sm:underline"
         >← {t('news.go-news')}</a
       >
     </footer>
