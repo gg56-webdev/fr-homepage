@@ -2,7 +2,7 @@ import type { WP_REST_API_Post } from 'wp-types'
 import EleventyFetch from '@11ty/eleventy-fetch'
 import type { Locale } from './i18n'
 
-const WP_URL = 'https://old.gg56.com'
+export const WP_URL = 'https://old.gg56.com'
 const WP_POSTS_API_ENDPOINT = 'wp-json/wp/v2/posts'
 const FINGERATE_CATEGORY_ID = '7'
 const ENGLISH_TAG = '107'

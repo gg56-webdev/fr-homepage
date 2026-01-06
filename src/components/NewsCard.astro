@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 import { useTranslations, getLocale, localizePath } from '@/i18n'
 import type { WP_REST_API_Post } from 'wp-types'
 import { NAV_LINKS } from '@/constants'
+import { WP_URL } from '@/api'
 
 const locale = getLocale(Astro)
 const { t } = useTranslations(locale)
@@ -26,7 +27,7 @@ const isImgDetails = (media: unknown): media is ImgDetails => {
   return false
 }
 
-const isExternal = post.link?.startsWith('https://gg56.com/') ? false : true
+const isExternal = post.link?.startsWith(WP_URL) ? false : true
 const href = isExternal ? post.link : localizePath(`${NAV_LINKS.NEWS.href}/${post.slug}`, locale)
 ---
 
