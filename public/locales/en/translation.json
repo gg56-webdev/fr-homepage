@@ -353,10 +353,6 @@
       ],
       ["What platform is FingeRate available on?", "<0>FingeRate is available on <1>iOS</1> and <2>Android</2>!</0>"],
       [
-        "Who can I contact for press inquiries?",
-        "<0>For press inquiries, please contact us directly at <1>marc6@gg56.world</1> or use the <2>contact form</2> on our website.</0>"
-      ],
-      [
         "How do you handle security?",
         "<0>We have implemented robust measures to prioritize the security of your information. Our secure infrastructure, industry-standard protocols, and encryption techniques safeguard your data during transmission and storage. Access controls are designed and regularly monitored to restrict unauthorized access. Whenever possible, we anonymize and aggregate data to protect individual identities. We are committed to complying with data protection and privacy regulations like GDPR and strive to meet legal requirements for data processing, storage, and sharing.</0><1>For more detailed information, please refer to our <2>Privacy Policy</2> and <3>Terms of Use</3> on our website.</1><4>Please don't hesitate to contact us for further inquiries or concerns regarding data protection.</4>"
       ],
