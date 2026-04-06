@@ -18,17 +18,12 @@ const products = [
   [
     'Bot',
     localizePath(NAV_LINKS.BOT.href, locale),
-    'bg-rose-700 translate-x-[calc(cos(90deg+var(--a))*var(--r))] translate-y-[calc(sin(90deg+var(--a))*var(--r))]',
-  ],
-  [
-    'Token',
-    localizePath(NAV_LINKS.APP.href, locale),
-    'bg-sky-700 translate-x-[calc(cos(180deg+var(--a))*var(--r))] translate-y-[calc(sin(180deg+var(--a))*var(--r))]',
+    'bg-rose-700 translate-x-[calc(cos(120deg+var(--a))*var(--r))] translate-y-[calc(sin(120deg+var(--a))*var(--r))]',
   ],
   [
     'Millage',
     localizePath(NAV_LINKS.APP.href, locale) + '#som',
-    'bg-purple-700 translate-x-[calc(cos(270deg+var(--a))*var(--r))] translate-y-[calc(sin(270deg+var(--a))*var(--r))]',
+    'bg-purple-700 translate-x-[calc(cos(240deg+var(--a))*var(--r))] translate-y-[calc(sin(240deg+var(--a))*var(--r))]',
   ],
 ] as const
 ---
@@ -73,27 +68,7 @@ const products = [
         ></path>
       </svg>
     </a>
-    <a
-      href={COINGECKO_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="hover:text-neonBlue p-3 transition focus:outline-none focus:ring-2 flex items-center gap-1 focus:ring-blue-200"
-      >{t('faq.ecosystem.link')}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-4 h-4"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-        ></path>
-      </svg>
-    </a>
+    
     <div class="mt-8 flex gap-4 flex-wrap">
       <Google />
       <Apple />

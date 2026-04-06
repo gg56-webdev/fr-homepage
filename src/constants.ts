@@ -8,7 +8,6 @@ export const COINGECKO_LINK = 'https://www.coingecko.com/en/coins/btour-chain'
 export const NAV_LINKS = {
   HOME: { name: 'Home', href: '/', isExternal: false, isImportant: false },
   APP: { name: 'FingeRate App', href: '/app', isExternal: false, isImportant: false },
-  TOKEN: { name: 'MSOT Token', href: '/token', isExternal: false, isImportant: false },
   BOT: { name: 'FingeRate Bot', href: '/', isExternal: false, isImportant: false },
   NEWS: { name: 'News', href: '/news', isExternal: false, isImportant: false },
   TEAM: { name: 'Team', href: '/team', isExternal: false, isImportant: false },
