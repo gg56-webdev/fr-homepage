@@ -39,20 +39,6 @@
     "categories": ["Sales", "Leadership"]
   },
   {
-    "id": "jang-jae-hyouk",
-    "name": {
-      "en": "Jang Jae-hyouk",
-      "ko": "장재혁"
-    },
-    "subtitles": {
-      "en": ["Management&nbsp;Support Team&nbsp;Leader"],
-      "ko": ["경영지원 팀장"]
-    },
-    "socials": ["https://www.linkedin.com/in/%EC%9E%AC%ED%98%81-%EC%9E%A5-208283216/"],
-    "categories": ["HR"]
-  },
-
-  {
     "id": "nikita-liakhovka",
     "name": {
       "en": "Nikita Liakhovka",
